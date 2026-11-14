@@ -1,0 +1,30 @@
+{
+  "frontier_black_market": {
+    "title": "The Frontier Market",
+    "desc": "A spy report details an illicit trade outside the Great Wall: General Huo's subordinates melt down obsolete imperial iron plates in exchange for northern horses and furs. At the bottom, Huo's own brush scrawls: 'Starving soldiers cannot fight barbarians.'",
+    "choices": {
+      "tolerate": {
+        "text": "Turn a blind eye and let the gray revenue subsidize the army",
+        "outcome": "The imperial treasury gains a stealthy cut, and the northern garrison acquires fresh mounts. Huo offers no effusive thanks, yet victory reports from the frontier grow unusually frequent."
+      },
+      "ban_strict": {
+        "text": "Issue a stern reprimand and order Huo to stamp out the market within three days",
+        "outcome": "The black market is burned to cinders, choking off the garrison's extra grease. Huo sneers in the envoy's face, reducing future frontier memorials to cold, bare numbers."
+      }
+    }
+  },
+  "frontier_snow_storm": {
+    "title": "The White Disaster",
+    "desc": "A blinding December blizzard locks down the northern pass. Huo's urgent dispatch arrives at the cost of three spent horses: padded winter gear is lacking, over a hundred men have frozen to death, and mutiny brews in the drifts.",
+    "choices": {
+      "drain_vault": {
+        "text": "Grit your teeth, squeeze 300,000 taels from the vault, and rush winter supplies north",
+        "outcome": "Supply wagons brave the howling gale. A fortnight later, a blood-inked scroll arrives from the gate, stamped with the thumbprints of every commander. The frontier holds, but your coffers are bare."
+      },
+      "ignore_storm": {
+        "text": "Command them to hold their posts at all costs; the court has nothing to spare",
+        "outcome": "The snow buries a suppressed uprising along with the frostbitten dead. A gaping tear forms in the northwestern defense line, and everyone knows what follows."
+      }
+    }
+  }
+}

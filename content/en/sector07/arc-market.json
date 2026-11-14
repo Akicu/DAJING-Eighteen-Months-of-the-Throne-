@@ -1,0 +1,151 @@
+{
+  "market_ilya_intro": {
+    "title": "The document man with one hand",
+    "desc": "He sits behind a folding table, left sleeve tucked into his belt. \"What do you need to be?\" He fans out three passports. \"Worker, nurse, and one from quarantine control. That one's expensive, but nobody searches you.\"",
+    "choices": {
+      "buy_papers": {
+        "text": "Buy a new identity",
+        "req": "Needs 55 credits",
+        "outcome": "You took the nurse. He swapped the photograph and crimped the edge with a heated spoon, steadier than any machine. \"Balance on delivery. I'm not worried you'll run. This place is only so big.\""
+      },
+      "buy_pass": {
+        "text": "Just one travel permit",
+        "req": "Needs 20 credits",
+        "outcome": "Twenty for a handwritten permit with a real stamp. \"Single use,\" he stressed. \"Don't gamble it.\""
+      },
+      "rob_him": {
+        "text": "Take his drawer",
+        "outcome": "Four hundred credits in the drawer and seven other people's identities. He didn't resist. He just held the empty sleeve with his right hand and said, \"That wasn't only mine you took.\""
+      }
+    }
+  },
+  "market_ilya_papers": {
+    "title": "The passport belongs to a dead woman",
+    "desc": "Ilya slides it over. \"Name on it is Zhou Lin, twenty-nine. Died in the camp three days ago.\" He taps the photo. \"She's yours now. Sixty on balance, or walk away.\"",
+    "choices": {
+      "pay_full": {
+        "text": "Pay the balance",
+        "req": "Needs 60 credits",
+        "outcome": "He took the money, wrapped the passport in oilpaper and pushed it into your coat. \"Learn her birthday,\" he said. \"Sometimes they ask.\""
+      },
+      "haggle": {
+        "text": "Push him down to thirty-five",
+        "req": "Needs 35 credits",
+        "outcome": "He looked at you a long time, then said fine. The twenty-five he lost went into a little notebook. \"I won't chase you,\" he said. \"But I'll remember.\""
+      },
+      "back_out": {
+        "text": "Back out",
+        "outcome": "He put it back in the drawer. \"You're cleaner than I thought.\" It didn't sound like a compliment, but you didn't argue."
+      }
+    }
+  },
+  "market_ilya_arrest": {
+    "title": "They have his face on the table",
+    "desc": "Three inspectors have Ilya bent over the folding table, going through his drawer. \"Document fraud. Twenty years.\" One turns to you. \"You know him?\" Ilya doesn't look up.",
+    "choices": {
+      "vouch": {
+        "text": "Say he just repairs watches",
+        "req": "Needs Rachel ≥ 15",
+        "outcome": "You dropped Rachel's name. The inspectors looked at each other and let him go. Ilya stood up, rubbed his face and said, \"I owe you one.\""
+      },
+      "silence": {
+        "text": "Say nothing",
+        "outcome": "You stood there while they bagged every item in the drawer. As they took him out, Ilya made a small gesture with his right hand, like a goodbye."
+      },
+      "identify": {
+        "text": "Identify him",
+        "outcome": "Fifty credits, settled on the spot. When the cuffs went on he finally looked up at you. You saw that look on a lot of faces afterwards."
+      }
+    }
+  },
+  "market_ilya_debt": {
+    "title": "He owes the company four hundred and fifty",
+    "desc": "Ilya's stall is in pieces and he's sitting in the glass. \"The company's money. Four-fifty.\" He shows you the notebook, every entry there. \"They gave me three days.\"",
+    "choices": {
+      "pay_debt": {
+        "text": "Pay it for him",
+        "req": "Needs 45 credits",
+        "outcome": "You pushed the money into his hand. He counted it twice, then took a brass seal from around his neck and gave it to you. \"Old quarantine seal. Genuine. It's worth something now.\""
+      },
+      "let_him": {
+        "text": "Let him sort it out",
+        "outcome": "You said you couldn't help. He nodded and closed the notebook. \"I know.\" Three days later the stall was gone, he was still there, and the empty sleeve seemed emptier."
+      },
+      "buy_stamp": {
+        "text": "Buy the seal off him",
+        "req": "Needs 25 credits",
+        "outcome": "You bought the seal. When he put the brass into your palm his fingers paused, then withdrew quickly."
+      }
+    }
+  },
+  "market_ilya_choice": {
+    "title": "The last genuine boarding pass",
+    "desc": "Ilya sets a stiff card in front of you, embossed edges, the real thing. \"I kept it for myself,\" he says. \"Now it's yours. Take me with you.\"",
+    "choices": {
+      "take_his": {
+        "text": "Take the pass. Leave him",
+        "outcome": "You put the card in your pocket. He didn't stop you. He smoothed the empty sleeve and said, \"You could at least say thank you.\""
+      },
+      "give_to_chen": {
+        "text": "Give it to Dr. Chen",
+        "outcome": "Ilya was quiet a long time, then laughed. \"Best deal I ever made,\" he said, \"was giving it to the wrong person.\""
+      },
+      "burn_both": {
+        "text": "Burn both passes",
+        "outcome": "You tore them up in front of him and put them in the stove. He watched the fire and said at last, \"You know what I was thinking? That this is fine too.\""
+      }
+    }
+  },
+  "market_militia": {
+    "title": "The militia wants this month's protection",
+    "desc": "Five men with armbands block the alley. The one in front holds a tin box. \"Price went up. Twenty.\" He shrugs. \"Or don't pay. We just can't guarantee your stall's still here tomorrow.\"",
+    "choices": {
+      "pay": {
+        "text": "Pay",
+        "req": "Needs 20 credits",
+        "outcome": "You threw twenty in the tin. He counted it, said good, and stuck a red marker on your stall."
+      },
+      "refuse": {
+        "text": "Refuse",
+        "outcome": "They hit you rhythmically and then helped you up. \"Twenty next month,\" the leader said. You spat blood and said, \"Still no.\""
+      },
+      "name_drop": {
+        "text": "Drop a quarantine control name",
+        "outcome": "You said a name. They looked at each other, picked up the box and left. Only later did you learn that name belonged to their supplier."
+      }
+    }
+  },
+  "market_child_return": {
+    "title": "The boy who stole tins comes back",
+    "desc": "He stands at the edge of the stall, thinner than last time, holding two empty cans. \"I can work,\" he says fast. \"Carry things, watch the stall, run errands. I eat once a day.\"",
+    "choices": {
+      "hire": {
+        "text": "Hire him",
+        "req": "Needs 10 credits",
+        "outcome": "You gave him ten and told him to start hauling. He worked all day and that night handed nine-fifty back. \"I only ate once.\" You never let him go hungry again."
+      },
+      "chase": {
+        "text": "Send him off",
+        "outcome": "You waved him away. He ran three steps, looked back at your stall, and it wasn't a child's look."
+      },
+      "ignore": {
+        "text": "Act like he isn't there",
+        "outcome": "You kept sorting stock. He stood there about ten minutes, then left. Two empty cans stayed on the ground. You didn't pick them up."
+      }
+    }
+  },
+  "market_fence_seal": {
+    "title": "Someone wants a quarantine seal",
+    "desc": "The fence offers thirty-five for a complete seal — numbered, stamped. \"Better than a passport,\" he says. \"Put a seal on a crate and nobody opens it.\"",
+    "choices": {
+      "sell_seal": {
+        "text": "Sell it",
+        "outcome": "Thirty-five credits. Three days later three trucks of \"medical supplies\" left the city under your seal. You didn't ask what was inside."
+      },
+      "keep_seal": {
+        "text": "Keep it",
+        "outcome": "You slid the seal into your duty log. It might save you once. It might hang you once. You decided to wait for the day you needed it."
+      }
+    }
+  }
+}

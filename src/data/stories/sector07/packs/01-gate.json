@@ -1,0 +1,568 @@
+{
+  "pack": "01-gate",
+  "loc": "gate",
+  "events": [
+    {
+      "id": "gate_mother_child",
+      "loc": "gate",
+      "weight": 14,
+      "once": true,
+      "cond": {
+        "notFlags": [
+          "met_mother"
+        ],
+        "dayMax": 3
+      },
+      "choices": [
+        {
+          "id": "let_through",
+          "effects": {
+            "money": -10,
+            "sanity": 15
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "setFlags": {
+            "met_mother": true,
+            "saved_mother": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 25,
+            "sanity": -20
+          },
+          "morality": -2,
+          "setFlags": {
+            "met_mother": true,
+            "reported_mother": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "money": 10,
+            "sanity": -5
+          },
+          "setFlags": {
+            "met_mother": true
+          },
+          "tone": "neutral",
+          "key": true
+        }
+      ],
+      "art": "art/ev-gate-mother.jpg"
+    },
+    {
+      "id": "gate_mother_revenge",
+      "loc": "gate",
+      "priority": 100,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "reported_mother"
+        ],
+        "notFlags": [
+          "revenge_resolved"
+        ],
+        "dayMin": 3
+      },
+      "choices": [
+        {
+          "id": "pay",
+          "effects": {
+            "money": -35,
+            "health": -15
+          },
+          "requires": {
+            "statMin": {
+              "money": 35
+            }
+          },
+          "setFlags": {
+            "revenge_resolved": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "fight",
+          "effects": {
+            "health": -45,
+            "sanity": -15
+          },
+          "setFlags": {
+            "revenge_resolved": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "call_backup",
+          "effects": {
+            "health": -20,
+            "sanity": -25
+          },
+          "morality": -1,
+          "setFlags": {
+            "revenge_resolved": true,
+            "called_guard": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_pharma_convoy",
+      "loc": "gate",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "take_card",
+          "effects": {
+            "money": 30,
+            "sanity": -15
+          },
+          "morality": -1,
+          "setFlags": {
+            "pharma_bribe": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "inspect",
+          "effects": {
+            "money": 15,
+            "sanity": 5
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "sanity": 50
+            }
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "turn_away",
+          "effects": {
+            "sanity": -5
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_pharma_audit",
+      "loc": "gate",
+      "priority": 100,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "pharma_bribe"
+        ],
+        "notFlags": [
+          "audit_done"
+        ],
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "confess",
+          "effects": {
+            "money": -40,
+            "sanity": 10
+          },
+          "morality": 2,
+          "setFlags": {
+            "audit_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "bribe_auditor",
+          "effects": {
+            "money": -25,
+            "sanity": -10
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 25
+            }
+          },
+          "setFlags": {
+            "audit_done": true,
+            "auditor_bribed": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "deny",
+          "effects": {
+            "sanity": -20,
+            "health": -10
+          },
+          "setFlags": {
+            "audit_done": true,
+            "denied_audit": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_inspector",
+      "loc": "gate",
+      "weight": 7,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "bribe",
+          "effects": {
+            "money": -20,
+            "sanity": 10
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "honest",
+          "effects": {
+            "money": 5,
+            "sanity": 5
+          },
+          "morality": 1,
+          "tone": "good"
+        },
+        {
+          "id": "push_back",
+          "effects": {
+            "money": 15,
+            "sanity": -10
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_deserter",
+      "loc": "gate",
+      "weight": 9,
+      "once": true,
+      "choices": [
+        {
+          "id": "let_pass",
+          "effects": {
+            "money": -15,
+            "sanity": 10
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "helped_deserter": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 30,
+            "sanity": -25
+          },
+          "morality": -2,
+          "setFlags": {
+            "reported_deserter": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "take_gear",
+          "effects": {
+            "money": 20,
+            "sanity": -20
+          },
+          "morality": -1,
+          "setFlags": {
+            "took_gear": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_body_cart",
+      "loc": "gate",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "look_inside",
+          "effects": {
+            "money": 20,
+            "sanity": -12
+          },
+          "morality": -1,
+          "tone": "neutral"
+        },
+        {
+          "id": "wave_through",
+          "effects": {
+            "money": 10,
+            "sanity": -5
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_riot",
+      "loc": "gate",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "fire_warning",
+          "effects": {
+            "money": 10,
+            "health": -30,
+            "sanity": -15
+          },
+          "morality": -1,
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "open_gate",
+          "effects": {
+            "money": -20,
+            "sanity": 20
+          },
+          "morality": 2,
+          "setFlags": {
+            "opened_gate": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "call_backup",
+          "effects": {
+            "money": 15,
+            "sanity": -10
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_children",
+      "loc": "gate",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "register",
+          "effects": {
+            "money": 12,
+            "sanity": -8
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "hide",
+          "effects": {
+            "money": -15,
+            "sanity": 10
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "good"
+        },
+        {
+          "id": "send_back",
+          "effects": {
+            "sanity": -12
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_new_order",
+      "loc": "gate",
+      "weight": 8,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "lockdown_order"
+        ]
+      },
+      "choices": [
+        {
+          "id": "obey",
+          "effects": {
+            "money": 5,
+            "sanity": 5
+          },
+          "setFlags": {
+            "lockdown_order": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "warn_rachel",
+          "effects": {
+            "favor": 15,
+            "sanity": -20
+          },
+          "morality": 1,
+          "setFlags": {
+            "lockdown_order": true,
+            "warned_rachel": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "ignore",
+          "effects": {
+            "money": -15,
+            "sanity": -10
+          },
+          "setFlags": {
+            "lockdown_order": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_bribe_small",
+      "loc": "gate",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "take",
+          "effects": {
+            "money": 12,
+            "sanity": -8
+          },
+          "morality": -1,
+          "tone": "dark"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "money": 3,
+            "sanity": 3
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "gate_quiet_night",
+      "loc": "gate",
+      "weight": 2,
+      "repeatable": true,
+      "choices": [
+        {
+          "id": "stamp",
+          "effects": {
+            "money": 10,
+            "sanity": 4
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_overtime",
+      "loc": "gate",
+      "repeatable": true,
+      "cooldown": 2,
+      "weight": 9,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "double",
+          "effects": {
+            "money": 16,
+            "health": -6,
+            "sanity": -8
+          },
+          "tone": "neutral",
+          "key": false
+        },
+        {
+          "id": "normal",
+          "effects": {
+            "money": 4,
+            "sanity": 4
+          },
+          "tone": "good"
+        }
+      ]
+    }
+  ],
+  "bookkeeping": [
+    "reported_deserter",
+    "serum_route_missed",
+    "deserter_dead",
+    "guard_enemies",
+    "confessed",
+    "rifle_handed",
+    "armed",
+    "unarmed"
+  ]
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sector 7: The Last Gate - 叙事生存原型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade { animation: fadeIn 0.25s ease-out forwards; }
+        /* 自定义暗黑滚动条 */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #090d16; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans min-h-screen flex flex-col items-center justify-center p-4 selection:bg-amber-500/30">
+
+    <!-- 游戏主终端容器 -->
+    <div id="game-app" class="w-full max-w-md bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[820px] relative">
+        
+        <!-- 顶部：边境终端状态栏 -->
+        <div class="bg-zinc-950 border-b border-zinc-800/90 p-4 space-y-3">
+            <div class="flex justify-between items-center text-xs">
+                <span class="text-zinc-400 font-mono tracking-tight">SECTOR-07 // 撤离倒计时</span>
+                <span class="bg-amber-500/10 border border-amber-500/30 text-amber-400 px-2.5 py-0.5 rounded font-mono font-bold">
+                    DAY <span id="day-count">1</span> / 5
+                </span>
+            </div>
+            
+            <!-- 四维核心数值 -->
+            <div class="grid grid-cols-4 gap-2 text-xs text-center">
+                <div class="bg-red-950/40 border border-red-900/50 py-1.5 rounded-lg">
+                    <div class="text-[11px] text-red-300/80">❤️ 健康</div>
+                    <strong id="stat-health" class="text-sm font-mono text-red-400">100</strong>
+                </div>
+                <div class="bg-sky-950/40 border border-sky-900/50 py-1.5 rounded-lg">
+                    <div class="text-[11px] text-sky-300/80">🧠 理智</div>
+                    <strong id="stat-sanity" class="text-sm font-mono text-sky-400">80</strong>
+                </div>
+                <div class="bg-emerald-950/40 border border-emerald-900/50 py-1.5 rounded-lg">
+                    <div class="text-[11px] text-emerald-300/80">💵 信用点</div>
+                    <strong id="stat-money" class="text-sm font-mono text-emerald-400">35</strong>
+                </div>
+                <div class="bg-purple-950/40 border border-purple-900/50 py-1.5 rounded-lg">
+                    <div class="text-[11px] text-purple-300/80">🕵️‍♀️ 瑞秋</div>
+                    <strong id="stat-favor" class="text-sm font-mono text-purple-400">10</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主交互区 -->
+        <div class="flex-1 p-5 flex flex-col justify-between relative overflow-y-auto">
+            
+            <!-- C类外皮：区域地图与行动点分配 -->
+            <div id="map-view" class="flex flex-col h-full justify-between">
+                <div class="bg-zinc-950/60 border border-zinc-800/80 rounded-xl p-3 text-center">
+                    <div class="text-xs text-zinc-400">撤离潜艇船票需 <span class="text-emerald-400 font-bold">80 信用点</span> 或 <span class="text-purple-400 font-bold">瑞秋好感 ≥ 30</span></div>
+                    <div class="text-sm font-bold text-zinc-200 mt-1">
+                        今日剩余行动点：<span id="ap-count" class="text-amber-400 font-mono text-base">3</span> / 3
+                        <span class="text-[11px] font-normal text-zinc-500 ml-1">(日结配给费: 10💵)</span>
+                    </div>
+                </div>
+
+                <!-- 三个核心探索地点 -->
+                <div class="space-y-3 my-auto">
+                    <button onclick="exploreLocation('gate')" class="w-full bg-zinc-800/70 hover:bg-zinc-800 border border-zinc-700/80 hover:border-amber-500/50 p-4 rounded-xl text-left transition flex justify-between items-center group">
+                        <div>
+                            <div class="font-bold text-sm text-zinc-100 group-hover:text-amber-400 transition flex items-center">
+                                🛂 7号闸门执勤亭
+                                <span id="badge-gate" class="hidden ml-2 text-[10px] bg-red-500/20 text-red-300 border border-red-500/30 px-1.5 py-0.5 rounded">突发事件</span>
+                            </div>
+                            <div class="text-xs text-zinc-400 mt-1">审查通行证、赚取薪水或暗中收受贿赂。</div>
+                        </div>
+                        <span class="text-xs font-mono bg-zinc-950 px-2.5 py-1 rounded text-amber-400 border border-zinc-800 shrink-0">-1 AP</span>
+                    </button>
+
+                    <button onclick="exploreLocation('pub')" class="w-full bg-zinc-800/70 hover:bg-zinc-800 border border-zinc-700/80 hover:border-purple-500/50 p-4 rounded-xl text-left transition flex justify-between items-center group">
+                        <div>
+                            <div class="font-bold text-sm text-zinc-100 group-hover:text-purple-400 transition flex items-center">
+                                🥃 “生锈锚点”地下酒馆
+                                <span id="badge-pub" class="hidden ml-2 text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/30 px-1.5 py-0.5 rounded">新线索</span>
+                            </div>
+                            <div class="text-xs text-zinc-400 mt-1">与走私头目【瑞秋】交易，打探黑市船票门路。</div>
+                        </div>
+                        <span class="text-xs font-mono bg-zinc-950 px-2.5 py-1 rounded text-amber-400 border border-zinc-800 shrink-0">-1 AP</span>
+                    </button>
+
+                    <button onclick="exploreLocation('medbay')" class="w-full bg-zinc-800/70 hover:bg-zinc-800 border border-zinc-700/80 hover:border-sky-500/50 p-4 rounded-xl text-left transition flex justify-between items-center group">
+                        <div>
+                            <div class="font-bold text-sm text-zinc-100 group-hover:text-sky-400 transition">🏥 隔离区医疗站</div>
+                            <div class="text-xs text-zinc-400 mt-1">注射抗辐射针剂或精神抑制剂，维持生存体征。</div>
+                        </div>
+                        <span class="text-xs font-mono bg-zinc-950 px-2.5 py-1 rounded text-amber-400 border border-zinc-800 shrink-0">-1 AP</span>
+                    </button>
+
+                    <button onclick="endDay()" class="w-full bg-zinc-950/80 hover:bg-zinc-800/50 border border-zinc-800 p-2.5 rounded-xl text-center transition text-xs text-zinc-500 hover:text-zinc-300">
+                        🛏️ 结束今日执勤，返回宿舍结算配给
+                    </button>
+                </div>
+
+                <!-- 底部行动日志 -->
+                <div class="bg-zinc-950 border border-zinc-800/90 rounded-xl p-3 h-28 overflow-y-auto text-xs space-y-1.5 font-mono" id="log-box">
+                    <div class="text-zinc-500">> 终端已连接。灰烬症正在蔓延，请谨慎做出每一次盖章决定...</div>
+                </div>
+            </div>
+
+            <!-- B类核心：事件卡片流弹窗 -->
+            <div id="event-modal" class="absolute inset-0 bg-zinc-900/95 backdrop-blur-md p-6 flex flex-col justify-between hidden animate-fade z-10">
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span id="event-location-tag" class="text-xs font-mono uppercase tracking-widest text-amber-500">SECTOR-07 // EVENT</span>
+                        <span id="event-chain-badge" class="text-[11px] bg-purple-950 text-purple-300 border border-purple-700/60 px-2 py-0.5 rounded hidden">🔗 因果连锁触发</span>
+                    </div>
+                    <h3 id="event-title" class="text-xl font-bold text-white leading-snug">事件标题</h3>
+                    <div id="event-desc" class="text-sm text-zinc-300 leading-relaxed bg-zinc-950/90 p-4 rounded-xl border border-zinc-800 shadow-inner">
+                        事件描述...
+                    </div>
+                </div>
+
+                <!-- 选项执行结果反馈面板 -->
+                <div id="outcome-box" class="hidden bg-zinc-800/90 border border-amber-500/40 p-4 rounded-xl space-y-3 animate-fade">
+                    <div id="outcome-text" class="text-sm text-zinc-200 leading-relaxed"></div>
+                    <div id="outcome-stats" class="text-xs font-mono font-bold text-amber-400"></div>
+                    <button onclick="closeEventModal()" class="w-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold py-2.5 rounded-lg text-sm transition">
+                        确认并继续
+                    </button>
+                </div>
+
+                <!-- 多分支选项按钮容器 -->
+                <div id="choices-container" class="space-y-2.5 mt-4"></div>
+            </div>
+
+            <!-- 社交裂变：结局人格档案卡 -->
+            <div id="ending-modal" class="absolute inset-0 bg-zinc-950 p-5 flex flex-col justify-between hidden animate-fade z-20">
+                <div class="border border-amber-500/40 bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-2xl p-5 flex-1 flex flex-col justify-between shadow-2xl">
+                    <div>
+                        <div class="flex justify-between items-center text-[11px] font-mono text-zinc-400 border-b border-zinc-800 pb-2.5">
+                            <span>SECTOR-07 ARCHIVE</span>
+                            <span id="end-rarity" class="text-amber-400 font-bold">全球达成率: 9.2%</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <div id="end-status-badge" class="inline-block text-xs px-3 py-1 rounded-full font-bold mb-2">结局状态</div>
+                            <h2 id="end-title" class="text-2xl font-black tracking-wide text-white">【结局称号】</h2>
+                            <p id="end-desc" class="text-xs text-zinc-300 mt-3 leading-relaxed text-left bg-zinc-950/80 p-3.5 rounded-xl border border-zinc-800">
+                                结局详情...
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 全球玩家对比数据（社交裂变核心） -->
+                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-xl p-3 text-xs space-y-1.5">
+                        <div class="text-zinc-400 font-semibold flex justify-between">
+                            <span>📊 关键道德抉择轨迹</span>
+                            <span class="text-[11px] text-zinc-500">全服实时统计</span>
+                        </div>
+                        <div id="end-choices-summary" class="text-zinc-300 space-y-1 text-[11px]"></div>
+                    </div>
+
+                    <div class="text-center text-[11px] text-zinc-500 pt-1 font-mono">
+                        命运对比邀请码：<span class="text-amber-400 font-bold">#S7-4092</span>（复制分享对比分歧）
+                    </div>
+                </div>
+
+                <button onclick="location.reload()" class="w-full mt-3 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold py-3 rounded-xl text-sm transition">
+                    🔄 重新开始值班（探索其他分支）
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // 1. 游戏状态机
+        let state = {
+            day: 1,
+            maxDays: 5,
+            health: 100,
+            sanity: 80,
+            money: 35,
+            favor: 10,     // 走私贩瑞秋好感度
+            ap: 3,
+            morality: 0,   // 道德倾向
+            flags: {},     // 剧情因果记忆开关
+            keyChoices: [] // 社交对比记录
+        };
+
+        // 2. 剧本配置库：《第7区边境检查站》
+        const scriptEvents = {
+            gate: [
+                {
+                    id: "gate_mother_child",
+                    condition: (s) => !s.flags.met_mother,
+                    title: "发烧的女孩与过期通行证",
+                    desc: "夜雨倾盆。一位浑身湿透的母亲抱着昏迷的小女孩跪在窗口前，递上一张昨天刚过期的通行证：“求求你，孩子只是普通肺炎，不是灰烬症！只要让我们过去……” 旁边的监控探头正闪烁着红光。",
+                    choices: [
+                        {
+                            text: "【违规放行】偷偷盖章放她们过去（信用点 -10 罚款，理智 +15，道德 +2）",
+                            req: (s) => s.money >= 10,
+                            reqText: "需 10 信用点抵扣罚款",
+                            effect: { money: -10, sanity: 15 },
+                            morality: 2,
+                            setFlag: { met_mother: true, saved_mother: true },
+                            keyLog: "冒着被扣薪的风险违规放行了母女（仅 24% 玩家选择）",
+                            outcome: "你在监控死角悄悄按下了绿色通行章。母亲含泪向你鞠躬后消失在雨幕中。虽然月底被扣了绩效，但你今晚能睡个好觉了。"
+                        },
+                        {
+                            text: "【冷血举报】按条例拉响警报并领取举报赏金（信用点 +25，理智 -20，道德 -2）",
+                            effect: { money: 25, sanity: -20 },
+                            morality: -2,
+                            setFlag: { met_mother: true, reported_mother: true },
+                            keyLog: "冷血举报了绝望的母女并领取了赏金（31% 玩家选择）",
+                            outcome: "刺耳的警报声撕裂了夜空，防暴队粗暴地拖走了哭喊的母女。你拿着系统自动发放的 25 信用点赏金，双手微微发抖。"
+                        },
+                        {
+                            text: "【公事公办】冷漠退回证件，拒绝放行（信用点 +10，理智 -5）",
+                            effect: { money: 10, sanity: -5 },
+                            morality: 0,
+                            setFlag: { met_mother: true },
+                            keyLog: "严格执行条例拒绝了母女的请求（45% 玩家选择）",
+                            outcome: "“证件过期，下一个。”你拉下了防弹玻璃百叶窗，隔绝了窗外的哭声，拿到了今日的基础执勤薪水。"
+                        }
+                    ]
+                },
+                {
+                    id: "gate_assassin_revenge",
+                    isChain: true,
+                    condition: (s) => s.flags.reported_mother && !s.flags.revenge_resolved && s.day >= 3,
+                    title: "暗巷里的复仇枪声",
+                    desc: "你刚走出执勤亭，一个双眼布满血丝的男人用自制土枪顶住了你的后脑勺：“你还记得三天前被你举报送进隔离营的那对母女吗？她们昨晚死在里面了！”",
+                    choices: [
+                        {
+                            text: "交出全部积蓄求饶（信用点 -35，健康 -15）",
+                            req: (s) => s.money >= 35,
+                            reqText: "需至少 35 信用点买命",
+                            effect: { money: -35, health: -15 },
+                            setFlag: { revenge_resolved: true },
+                            outcome: "你把口袋里的钱全撒在地上，趁他愣神时挨了一枪托滚进排水沟，捡回一条命。"
+                        },
+                        {
+                            text: "拼死夺枪搏斗（健康 -45，理智 -15）",
+                            effect: { health: -45, sanity: -15 },
+                            setFlag: { revenge_resolved: true },
+                            outcome: "枪响了，子弹擦过你的肩膀，你勉强将他制服，但失血过多让你眼前发黑。"
+                        }
+                    ]
+                },
+                {
+                    id: "gate_smuggler_bribe",
+                    condition: () => true,
+                    title: "医药公司的秘密车队",
+                    desc: "深夜，三辆没有牌照的装甲车停在闸门前。车窗降下，一名西装革履的男子递出一张黑卡：“别问箱子里装的是什么，直接抬杆，这笔钱够你买半张船票。”",
+                    choices: [
+                        {
+                            text: "收下黑卡，闭眼放行（信用点 +30，理智 -15，道德 -1）",
+                            effect: { money: 30, sanity: -15 },
+                            morality: -1,
+                            keyLog: "收受了神秘医药公司的巨额黑钱（62% 玩家选择）",
+                            outcome: "你把黑卡塞进口袋，按下了抬杆按钮。车队呼啸而过，空气中弥漫着一股诡异的福尔马林气味。"
+                        },
+                        {
+                            text: "【理智检定】坚持开箱例行检查（需理智 ≥ 65，信用点 +15，理智 +5）",
+                            req: (s) => s.sanity >= 65,
+                            reqText: "理智不足 65，不敢得罪权贵",
+                            effect: { money: 15, sanity: 5 },
+                            morality: 1,
+                            outcome: "你在箱子里发现了违禁的血清样本，对方见你不好惹，丢下一笔封口费后灰溜溜掉头离开了。"
+                        }
+                    ]
+                }
+            ],
+            pub: [
+                {
+                    id: "pub_mechanic_gift",
+                    isChain: true,
+                    condition: (s) => s.flags.saved_mother && !s.flags.got_mechanic_help && s.day >= 2,
+                    title: "机械师的秘密回报",
+                    desc: "酒馆最角落的卡座里，一个满手油污的男人压低帽子向你招手：“长官，我是那天那对母女的丈夫。她们已经安全抵达安全区了。这是我从潜艇维修厂顺出来的内部通行证和补贴，拿着！”",
+                    choices: [
+                        {
+                            text: "收下这份沉甸甸的谢礼（信用点 +35，瑞秋好感 +10，理智 +15）",
+                            effect: { money: 35, favor: 10, sanity: 15 },
+                            setFlag: { got_mechanic_help: true },
+                            keyLog: "收获了被救母女丈夫的报恩，拿到核心逃生资金（仅 19% 玩家达成）",
+                            outcome: "好人有好报！连旁边的走私头目瑞秋都对你刮目相看：“没想到你这铁面警卫还挺有人情味。”"
+                        }
+                    ]
+                },
+                {
+                    id: "pub_rachel_deal",
+                    condition: () => true,
+                    title: "走私头目瑞秋的交易",
+                    desc: "酒吧老板娘兼地下走私头目【瑞秋】正把玩着一枚黄铜打火机：“潜艇的船票可不是有钱就能买到的。想让我把你塞进走私舱，你得先证明自己靠得住。”",
+                    choices: [
+                        {
+                            text: "花钱购买黑市情报并请她喝酒（信用点 -15，瑞秋好感 +12）",
+                            req: (s) => s.money >= 15,
+                            reqText: "需 15 信用点",
+                            effect: { money: -15, favor: 12 },
+                            outcome: "瑞秋晃了晃酒杯，嘴角勾起一抹笑意：“算你懂规矩，有船期消息我会留你一个位置。”"
+                        },
+                        {
+                            text: "帮她伪造一批通关文书（理智 -15，信用点 +20，瑞秋好感 +8）",
+                            effect: { sanity: -15, money: 20, favor: 8 },
+                            outcome: "你利用职务之便伪造了三份印章，赚了外快，但精神高度紧绷让你头痛欲裂。"
+                        },
+                        {
+                            text: "在吧台听醉汉吹牛打发时间（理智 +8）",
+                            effect: { sanity: 8 },
+                            outcome: "听着荒诞的末日笑话，你紧绷的神经稍微松弛了一点。"
+                        }
+                    ]
+                }
+            ],
+            medbay: [
+                {
+                    id: "medbay_routine",
+                    condition: () => true,
+                    title: "隔离区医疗站",
+                    desc: "消毒水的味道刺鼻难闻。值班医生连头都没抬：“抗感染血清 15 块，神经镇定剂 15 块。先付钱后打针。”",
+                    choices: [
+                        {
+                            text: "注射抗感染血清（信用点 -15，健康 +30）",
+                            req: (s) => s.money >= 15,
+                            reqText: "需 15 信用点",
+                            effect: { money: -15, health: 30 },
+                            outcome: "冰凉的药液注入血管，你的体力迅速恢复了。"
+                        },
+                        {
+                            text: "注射神经镇定剂（信用点 -15，理智 +30，健康 -5）",
+                            req: (s) => s.money >= 15,
+                            reqText: "需 15 信用点",
+                            effect: { money: -15, sanity: 30, health: -5 },
+                            outcome: "耳边的幻听消失了，虽然心脏有些负荷，但你的思维重新变得清晰。"
+                        },
+                        {
+                            text: "太贵了，转身离开（无变化）",
+                            effect: {},
+                            outcome: "你摸了摸口袋，决定把钱留给更紧要的关头。"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // 3. 日志记录
+        function addLog(msg, color = "text-zinc-300") {
+            const box = document.getElementById('log-box');
+            const p = document.createElement('div');
+            p.className = color;
+            p.innerText = `[D${state.day}] ${msg}`;
+            box.prepend(p);
+        }
+
+        // 4. 界面刷新与因果徽章提示
+        function updateUI() {
+            document.getElementById('day-count').innerText = state.day;
+            document.getElementById('stat-health').innerText = state.health;
+            document.getElementById('stat-sanity').innerText = state.sanity;
+            document.getElementById('stat-money').innerText = state.money;
+            document.getElementById('stat-favor').innerText = state.favor;
+            document.getElementById('ap-count').innerText = state.ap;
+
+            // 因果后续红点提示
+            const gateBadge = document.getElementById('badge-gate');
+            if (state.flags.reported_mother && !state.flags.revenge_resolved && state.day >= 3) {
+                gateBadge.classList.remove('hidden');
+            } else {
+                gateBadge.classList.add('hidden');
+            }
+
+            const pubBadge = document.getElementById('badge-pub');
+            if (state.flags.saved_mother && !state.flags.got_mechanic_help && state.day >= 2) {
+                pubBadge.classList.remove('hidden');
+            } else {
+                pubBadge.classList.add('hidden');
+            }
+        }
+
+        // 5. 地图地点点击
+        function exploreLocation(loc) {
+            if (state.ap <= 0) return;
+            state.ap--;
+            updateUI();
+
+            const pool = scriptEvents[loc];
+            const ev = pool.find(item => item.condition(state));
+            openEventModal(ev, loc);
+        }
+
+        // 6. 打开事件卡片
+        function openEventModal(ev, loc) {
+            document.getElementById('outcome-box').classList.add('hidden');
+            const container = document.getElementById('choices-container');
+            container.classList.remove('hidden');
+            container.innerHTML = '';
+
+            document.getElementById('event-location-tag').innerText = `SECTOR-07 // ${loc.toUpperCase()}`;
+            document.getElementById('event-title').innerText = ev.title;
+            document.getElementById('event-desc').innerText = ev.desc;
+
+            const chainBadge = document.getElementById('event-chain-badge');
+            if (ev.isChain) chainBadge.classList.remove('hidden');
+            else chainBadge.classList.add('hidden');
+
+            ev.choices.forEach(c => {
+                const unlocked = c.req ? c.req(state) : true;
+                const btn = document.createElement('button');
+                if (unlocked) {
+                    btn.className = "w-full bg-zinc-800 hover:bg-zinc-700 hover:border-amber-500/60 border border-zinc-700 p-3.5 rounded-xl text-left text-xs sm:text-sm transition text-zinc-100 font-medium";
+                    btn.innerText = `👉 ${c.text}`;
+                    btn.onclick = () => selectChoice(c);
+                } else {
+                    btn.className = "w-full bg-zinc-950/70 border border-zinc-800/80 p-3.5 rounded-xl text-left text-xs text-zinc-500 cursor-not-allowed flex justify-between items-center";
+                    btn.innerHTML = `<span>🔒 ${c.text}</span><span class="text-[11px] text-red-400/80 shrink-0 ml-2">[${c.reqText}]</span>`;
+                }
+                container.appendChild(btn);
+            });
+
+            document.getElementById('event-modal').classList.remove('hidden');
+        }
+
+        // 7. 结算选择结果
+        function selectChoice(c) {
+            let diff = [];
+            if (c.effect.health) { state.health += c.effect.health; diff.push(`健康 ${c.effect.health > 0 ? '+' : ''}${c.effect.health}`); }
+            if (c.effect.sanity) { state.sanity += c.effect.sanity; diff.push(`理智 ${c.effect.sanity > 0 ? '+' : ''}${c.effect.sanity}`); }
+            if (c.effect.money)  { state.money += c.effect.money;   diff.push(`信用点 ${c.effect.money > 0 ? '+' : ''}${c.effect.money}`); }
+            if (c.effect.favor)  { state.favor += c.effect.favor;   diff.push(`瑞秋好感 ${c.effect.favor > 0 ? '+' : ''}${c.effect.favor}`); }
+
+            if (c.morality) state.morality += c.morality;
+            if (c.setFlag) Object.assign(state.flags, c.setFlag);
+            if (c.keyLog) state.keyChoices.push(c.keyLog);
+
+            state.health = Math.max(0, Math.min(100, state.health));
+            state.sanity = Math.max(0, Math.min(100, state.sanity));
+            updateUI();
+
+            const summary = diff.length > 0 ? diff.join('  |  ') : "无数值变动";
+            addLog(`${c.outcome.slice(0, 16)}... (${summary})`, "text-amber-300/90");
+
+            document.getElementById('choices-container').classList.add('hidden');
+            document.getElementById('outcome-text').innerText = c.outcome;
+            document.getElementById('outcome-stats').innerText = summary;
+            document.getElementById('outcome-box').classList.remove('hidden');
+        }
+
+        // 8. 关闭事件卡片
+        function closeEventModal() {
+            document.getElementById('event-modal').classList.add('hidden');
+
+            if (state.health <= 0) {
+                showEnding(false, "【7号闸门的殉职者】", "你的生命体征在执勤岗位上彻底归零，尸体随后被清理小队拖入了焚化炉。", "28.4%");
+                return;
+            }
+            if (state.sanity <= 0) {
+                showEnding(false, "【狂乱的守门人】", "长期的道德折磨与压抑让你彻底疯癫，你锁死了闸门并吞掉了钥匙，在狂笑中迎来了封锁区的陷落。", "17.9%");
+                return;
+            }
+
+            if (state.ap <= 0) {
+                setTimeout(() => endDay(), 300);
+            }
+        }
+
+        // 9. 日结配给与天数推进
+        function endDay() {
+            if (state.money >= 10) {
+                state.money -= 10;
+                addLog("宿舍日结：扣除 10 信用点用于购买净水与合成食物。", "text-zinc-400");
+            } else {
+                state.health = Math.max(0, state.health - 25);
+                addLog("⚠️ 信用点不足！严重脱水与饥饿导致健康 -25！", "text-red-400 font-bold");
+            }
+
+            updateUI();
+
+            if (state.health <= 0) {
+                showEnding(false, "【饥饿的幽灵】", "你没能熬过黎明前的寒冷与饥饿，在宿舍冰冷的铁床上停止了呼吸。", "21.5%");
+                return;
+            }
+
+            if (state.day >= state.maxDays) {
+                evaluateFinalEnding();
+                return;
+            }
+
+            state.day++;
+            state.ap = 3;
+            updateUI();
+            addLog(`☀️ 第 ${state.day} 天值班开始，行动点已恢复至 3 点。`, "text-emerald-400");
+        }
+
+        // 10. 最终结局判定
+        function evaluateFinalEnding() {
+            if (state.money >= 80) {
+                showEnding(true, "【黄金船票持有者】", "第 5 天深夜，你用整整 80 信用点买下了最后一班撤离潜艇的头等舱船票，头也不回地离开了沦陷的灰烬城。", "8.1%");
+            } else if (state.favor >= 30) {
+                showEnding(true, "【暗夜走私客】", "虽然没攒够天价船票，但走私头目瑞秋看在过命交情的份上，将你藏进了货舱暗格，带你成功偷渡出境。", "6.4%");
+            } else if (state.morality >= 2) {
+                showEnding(true, "【第7区的灯塔】", "你没能登上潜艇，但你在执勤期间救助的人们自发组织起了反抗军，推举你为新秩序的守护者。", "11.2%");
+            } else {
+                showEnding(false, "【被遗忘的守卫】", "撤离潜艇的汽笛在港口响起，你既没攒够船票，也没能打通走私关系，只能眼睁睁看着大铁门缓缓落下。", "16.5%");
+            }
+        }
+
+        // 11. 渲染结局档案卡
+        function showEnding(isWin, title, desc, rarity) {
+            const badge = document.getElementById('end-status-badge');
+            if (isWin) {
+                badge.className = "inline-block text-xs px-3 py-1 rounded-full font-bold mb-2 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40";
+                badge.innerText = "🏆 成功撤离 · 达成生还结局";
+            } else {
+                badge.className = "inline-block text-xs px-3 py-1 rounded-full font-bold mb-2 bg-red-500/20 text-red-300 border border-red-500/40";
+                badge.innerText = "💀 滞留沦陷 · 触发死亡/困守结局";
+            }
+
+            document.getElementById('end-title').innerText = title;
+            document.getElementById('end-desc').innerText = desc;
+            document.getElementById('end-rarity').innerText = `全球达成率: ${rarity}`;
+
+            const summaryBox = document.getElementById('end-choices-summary');
+            if (state.keyChoices.length > 0) {
+                summaryBox.innerHTML = state.keyChoices.map(c => `<div>• ${c}</div>`).join('');
+            } else {
+                summaryBox.innerHTML = `<div>• 你在五天里谨小慎微，没有留下任何极端抉择（39% 玩家同款）</div>`;
+            }
+
+            document.getElementById('ending-modal').classList.remove('hidden');
+        }
+
+        updateUI();
+    </script>
+</body>
+</html>

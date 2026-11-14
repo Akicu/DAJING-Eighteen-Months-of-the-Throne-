@@ -1,0 +1,387 @@
+{
+  "pack": "08-court-factions",
+  "loc": "court",
+  "bookkeeping": [
+    "censor_spared",
+    "censor_ally",
+    "censor_silenced",
+    "envoy_honored",
+    "envoy_insulted",
+    "wang_seal",
+    "met_shen",
+    "met_wang",
+    "shen_ally",
+    "wang_ally",
+    "wang_betrayed"
+  ],
+  "events": [
+    {
+      "id": "court_censor_coffin",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 74,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "censor_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "flog",
+          "tone": "dark",
+          "effects": {
+            "favor": 9,
+            "sanity": -6
+          },
+          "morality": -2,
+          "setFlags": {
+            "censor_done": true,
+            "censor_beaten": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "pardon",
+          "tone": "neutral",
+          "effects": {
+            "favor": 6,
+            "sanity": -3
+          },
+          "morality": 1,
+          "setFlags": {
+            "censor_done": true,
+            "censor_spared": true
+          }
+        },
+        {
+          "id": "hear",
+          "tone": "good",
+          "effects": {
+            "favor": 11,
+            "sanity": -8
+          },
+          "morality": 2,
+          "setFlags": {
+            "censor_done": true,
+            "censor_ally": true,
+            "met_shen": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_land_survey",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 68,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "land_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "survey_all",
+          "tone": "good",
+          "effects": {
+            "money": 34,
+            "favor": -12,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "land_done": true,
+            "land_surveyed": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "survey_small",
+          "tone": "neutral",
+          "effects": {
+            "money": 20,
+            "favor": -2
+          },
+          "setFlags": {
+            "land_done": true
+          }
+        },
+        {
+          "id": "drop_survey",
+          "tone": "neutral",
+          "effects": {
+            "favor": 6,
+            "sanity": 3
+          },
+          "setFlags": {
+            "land_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_northern_envoy",
+      "loc": "court",
+      "priority": 66,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "envoy_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "feast",
+          "tone": "neutral",
+          "effects": {
+            "money": -18,
+            "favor": 9,
+            "sanity": 2
+          },
+          "setFlags": {
+            "envoy_done": true,
+            "envoy_honored": true
+          }
+        },
+        {
+          "id": "insult",
+          "tone": "dark",
+          "effects": {
+            "favor": 7,
+            "sanity": 4
+          },
+          "morality": -1,
+          "setFlags": {
+            "envoy_done": true,
+            "envoy_insulted": true
+          }
+        },
+        {
+          "id": "market",
+          "tone": "good",
+          "effects": {
+            "money": 16,
+            "favor": 2,
+            "sanity": -2
+          },
+          "setFlags": {
+            "envoy_done": true,
+            "market_opened": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_red_brush",
+      "loc": "court",
+      "npc": "wang",
+      "priority": 64,
+      "once": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "seal_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "grant_seal",
+          "tone": "dark",
+          "effects": {
+            "money": 26,
+            "favor": 4,
+            "sanity": 5
+          },
+          "morality": -2,
+          "setFlags": {
+            "seal_done": true,
+            "wang_seal": true,
+            "wang_ally": true,
+            "met_wang": true
+          }
+        },
+        {
+          "id": "take_seal",
+          "tone": "good",
+          "effects": {
+            "favor": -7,
+            "sanity": -6
+          },
+          "morality": 1,
+          "setFlags": {
+            "seal_done": true,
+            "wang_betrayed": true,
+            "met_wang": true
+          }
+        },
+        {
+          "id": "split_seal",
+          "tone": "neutral",
+          "effects": {
+            "money": 8,
+            "favor": 3,
+            "sanity": -4
+          },
+          "setFlags": {
+            "seal_done": true,
+            "met_wang": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_guard_rotation",
+      "loc": "court",
+      "priority": 88,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 14,
+        "flags": [
+          "letters_intercepted"
+        ],
+        "notFlags": [
+          "rotation_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "replace_commander",
+          "tone": "dark",
+          "effects": {
+            "favor": -10,
+            "sanity": -5,
+            "money": 10
+          },
+          "morality": -1,
+          "setFlags": {
+            "rotation_done": true,
+            "met_dowager": true
+          },
+          "key": true
+        },
+        {
+          "id": "double_guard",
+          "tone": "neutral",
+          "effects": {
+            "money": -20,
+            "favor": 5,
+            "health": -4
+          },
+          "setFlags": {
+            "rotation_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "wait_and_see",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -6,
+            "favor": -3
+          },
+          "setFlags": {
+            "rotation_done": true
+          }
+        },
+        {
+          "id": "rush_gate",
+          "tone": "dark",
+          "roll": {
+            "chance": 0.55,
+            "win": {
+              "effects": {
+                "money": -8,
+                "favor": 11,
+                "health": -5,
+                "sanity": -4
+              },
+              "setFlags": {
+                "rotation_done": true,
+                "met_dowager": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -8,
+                "health": -15,
+                "favor": -7,
+                "sanity": -9
+              },
+              "setFlags": {
+                "rotation_done": true,
+                "met_dowager": true
+              }
+            }
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "court_blood_letter",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "censor_beaten"
+        ],
+        "notFlags": [
+          "blood_letter_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hunt_them",
+          "tone": "dark",
+          "effects": {
+            "money": 12,
+            "favor": -8,
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "blood_letter_done": true,
+            "censor_silenced": true
+          },
+          "key": true
+        },
+        {
+          "id": "reverse_it",
+          "tone": "good",
+          "effects": {
+            "money": -20,
+            "favor": 12,
+            "sanity": -4
+          },
+          "morality": 2,
+          "setFlags": {
+            "blood_letter_done": true,
+            "censor_spared": true
+          },
+          "key": true
+        },
+        {
+          "id": "let_it_stand",
+          "tone": "neutral",
+          "effects": {
+            "favor": -2,
+            "sanity": -5
+          },
+          "setFlags": {
+            "blood_letter_done": true
+          }
+        }
+      ]
+    }
+  ]
+}

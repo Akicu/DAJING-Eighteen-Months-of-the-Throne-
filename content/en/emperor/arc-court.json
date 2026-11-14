@@ -1,0 +1,152 @@
+{
+  "court_first_court": {
+    "title": "The first court",
+    "desc": "The curtain is three paces to your right. The Chancellor lifts a drafted edict: three articles, all ordinary. He is waiting for your seal. The court is waiting for your voice. The Dowager is waiting for you to make a mistake. Water drips from the bronze crane's beak. Once. Again.",
+    "choices": {
+      "sign": {
+        "text": "Sign as drafted",
+        "outcome": "The seal comes down and the whole hall exhales at once. Afterwards the Chancellor says: the emperor is wise. You can hear that it is not praise for you. It is praise for a well-behaved child."
+      },
+      "amend": {
+        "text": "Change one article",
+        "outcome": "You change the third: 'implement at once' becomes 'deliberate further'. The hall goes quiet for a long time. The Chancellor looks down at the page and says: as decreed. His brush leaves a single ink blot."
+      },
+      "reject_all": {
+        "text": "Push the edict back",
+        "outcome": "The scroll rolls down the steps and stops at a censor's feet. Nobody picks it up. The curtain moves. You can hear your own heartbeat, loud enough to reach the gate."
+      }
+    }
+  },
+  "court_salt_tax": {
+    "title": "The salt tax",
+    "desc": "The Lianghuai salt commissioner skimmed three hundred thousand taels in three years. The books are clean except one line reading 'a gift'. Follow it and it leads to the Chancellor's own student. The Chancellor kneels below the dais and says nothing at all.",
+    "choices": {
+      "probe": {
+        "text": "Follow it all the way",
+        "outcome": "The confiscated silver takes a full day to carry into the treasury. The student is exiled three thousand li. The Chancellor offers his resignation and you refuse it. From that day, the six ministries begin sending memorials around him, straight to your desk."
+      },
+      "bury": {
+        "text": "Bury it and take his loyalty",
+        "outcome": "You move two hundred and fifty thousand taels out of the treasury to plug the hole. Three days later the Chancellor requests a private audience, kneels for half an incense stick, and says on rising: this old man's life belongs to the emperor now."
+      },
+      "bleed": {
+        "text": "Don't touch the man, take the money",
+        "outcome": "The commissioner disgorges three hundred thousand taels and keeps his post. Everyone learns the same lesson: in this court, crimes are purchasable, and the price is posted."
+      }
+    }
+  },
+  "court_impeach_huo": {
+    "title": "The impeachment of Huo Lie",
+    "desc": "The censorate's memorial is longer than a battle report: the northern general holds a hundred thousand men, hasn't entered the capital in three years, raises his own pay, and appoints his own officers. The last line reads: this is not the shape of a subject. Seven signatures sit beneath it.",
+    "choices": {
+      "try_him": {
+        "text": "Send it to the board for judgment",
+        "outcome": "The order reaches the northern gate. Huo Lie reads it in front of the courier and drops it into the brazier. He does not rebel. He simply starts filing every dispatch half a month late."
+      },
+      "shelve": {
+        "text": "Hold it, unsent",
+        "outcome": "The memorial goes to the bottom of your desk. You send a hundred and fifty thousand taels north with no explanation. Huo Lie's reply is eight characters: the emperor knows me; I will not fail him."
+      },
+      "summon": {
+        "text": "Summon him to answer in person",
+        "outcome": "He comes with three hundred guards and brings four of them inside. He kneels and does not look up. You do not tell him to rise. You both stay like that until the candle burns out."
+      }
+    }
+  },
+  "court_empty_seat": {
+    "title": "The empty place",
+    "desc": "Halfway through court you notice a gap in the ranks: the Dowager's brother, commander of the imperial guard. Nobody mentions it. Everyone is speaking around that empty patch of floor as if around a hole.",
+    "choices": {
+      "ask": {
+        "text": "Ask, in open court: where is he?",
+        "outcome": "Silence. Finally the Dowager speaks from behind the curtain: he is ill. That evening a note arrives in her own hand: the emperor has grown up. The characters are very steady."
+      },
+      "cut": {
+        "text": "Strip his command while the seat is empty",
+        "outcome": "The order goes out the same day and the guard changes hands. Thirty thousand men are re-registered, and the register gains names that were never paid. The Dowager does not sleep. The next morning the curtain is pulled back three inches."
+      },
+      "ignore": {
+        "text": "Pretend you didn't notice",
+        "outcome": "Court ends on schedule. You said nothing, so you got nothing. The empty place stays empty for a full month and nobody fills it."
+      }
+    }
+  },
+  "court_grand_audience": {
+    "title": "The accession",
+    "desc": "The last item of eighteen months. The doors are thrown open, everyone above the sixth rank is present, and the curtain comes down today. The Chancellor holds the edict you wrote yourself and waits at the foot of the steps. You look up at the ceiling. There is a crack in it. It has been there since the day you took the chair.",
+    "choices": {
+      "declare": {
+        "text": "Read it: from today, the emperor rules",
+        "outcome": "Your voice bounces off the hall three times. When the edict ends, nobody moves. Then the Chancellor kneels, then the second man, then the tenth, then all of them. Two maids roll up the curtain and carry it away."
+      },
+      "purge": {
+        "text": "Take the men first, then read it",
+        "outcome": "The doors shut behind you and the guard comes in along both colonnades. Wang Bao reads the list: forty-seven names. Sixty thousand taels enter the treasury that day, and the hall is as quiet as an empty house from then on."
+      },
+      "abdicate": {
+        "text": "Put the seal back on the desk",
+        "outcome": "It makes almost no sound when you set it down. The Chancellor freezes, one corner of the edict sliding to the floor. You walk out through the kneeling crowd. Nobody dares look up. Nobody stops you."
+      }
+    }
+  },
+  "study_memorial_stack": {
+    "title": "Three hundred catties",
+    "desc": "Today's stack: three hundred catties. All of it is supposed to be read, all of it signed. The candle is on its third wick and the ones at the bottom haven't been opened. There's dust on the covers.",
+    "choices": {
+      "work": {
+        "text": "Work through all of it",
+        "outcome": "By dawn your right hand can't close. Three items in that stack were urgent. One of them would have killed two thousand people if you hadn't sent it back tonight. You sent it back."
+      },
+      "skim": {
+        "text": "Take the urgent ones, seal the rest",
+        "outcome": "You seal them as required. The inner court decides which ones reach you and which don't. You spend the time you saved sleeping two hours."
+      }
+    }
+  },
+  "study_forged_edict": {
+    "title": "An edict you never spoke",
+    "desc": "The chief eunuch brings in an edict, saying it came from your own mouth yesterday and he only copied it out. You said no such thing. It transfers command of three capital battalions. The reasoning is excellent. The seal is genuine.",
+    "choices": {
+      "burn": {
+        "text": "Burn it in front of him",
+        "outcome": "You touch the corner to the candle and the fire climbs the characters. He kneels without moving until the ash lands on the back of his hand. The next day, three directors of the Directorate are replaced."
+      },
+      "use": {
+        "text": "Let it stand and send it out",
+        "outcome": "The battalions rotate and nobody questions it. Your grip on the capital tightens by one notch, and the price is that every edict now passes through his hands first. He gets things done for you. He also has you."
+      },
+      "trace": {
+        "text": "Trace it back",
+        "outcome": "You find a clerk in the inner court. The clerk is in a well by nightfall. The trail ends there. What you remember isn't the clerk. It's that the rim of the well had been wiped."
+      }
+    }
+  },
+  "study_secret_memorial": {
+    "title": "The secret memorial",
+    "desc": "A memorial that never passed the cabinet. Eight characters: the northern army unpaid three months, I have sold my horses. Signed Huo Lie, in a rushed hand, with a brown stain on the paper. It could be blood. It could be wine.",
+    "choices": {
+      "pay": {
+        "text": "Send four hundred thousand taels from the treasury",
+        "outcome": "The silver leaves the city and you tell no one. Half a month later a herd of horses arrives from the north, listed as captured. The numbers don't add up. You don't ask."
+      },
+      "ignore_it": {
+        "text": "Lock it away and let him manage",
+        "outcome": "You put the memorial in a box. Three months later deserters start appearing at the northern gate, and the numbers in the dispatches get cleaner every time."
+      }
+    }
+  },
+  "study_history": {
+    "title": "The court diary",
+    "desc": "The record of your father's last year, supposed to be sealed by the historians. You open it to the autumn hunt and find three days missing — not unwritten, cut out, with a very straight blade. In the gutter of the binding, half a line survives: ...the emperor took medicine three times.",
+    "choices": {
+      "read": {
+        "text": "Read the rest",
+        "outcome": "You sit in the study until dawn. When you finish you know two things: your father did not die of illness, and there are three people left alive who know it. You close the book, put it back, and don't even disturb the dust."
+      },
+      "close": {
+        "text": "Close it and forget it",
+        "outcome": "You shelve the book and put out the lamp. Some truths, once known, make it impossible to be a comfortably ignorant emperor. You decide to stay ignorant a while longer."
+      }
+    }
+  }
+}

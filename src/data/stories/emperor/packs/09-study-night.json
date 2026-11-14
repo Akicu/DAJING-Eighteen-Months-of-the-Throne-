@@ -1,0 +1,232 @@
+{
+  "pack": "09-study-night",
+  "loc": "study",
+  "bookkeeping": [
+    "asked_tutor",
+    "warned_dowager",
+    "met_shen",
+    "met_dowager",
+    "dowager_ally",
+    "dowager_betrayed",
+    "knows_truth"
+  ],
+  "events": [
+    {
+      "id": "study_lecture",
+      "loc": "study",
+      "npc": "shen",
+      "priority": 50,
+      "once": true,
+      "cond": {
+        "dayMin": 2,
+        "notFlags": [
+          "lecture_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "listen",
+          "tone": "good",
+          "effects": {
+            "favor": 5,
+            "sanity": 5
+          },
+          "morality": 1,
+          "setFlags": {
+            "lecture_done": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "ask_father",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": -9
+          },
+          "setFlags": {
+            "lecture_done": true,
+            "asked_tutor": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "cancel",
+          "tone": "neutral",
+          "effects": {
+            "favor": -5,
+            "sanity": 4
+          },
+          "setFlags": {
+            "lecture_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_river_works",
+      "loc": "study",
+      "priority": 62,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "river_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "fund",
+          "tone": "good",
+          "effects": {
+            "money": -30,
+            "favor": 14,
+            "sanity": 2
+          },
+          "morality": 2,
+          "setFlags": {
+            "river_done": true,
+            "dikes_repaired": true
+          }
+        },
+        {
+          "id": "partial",
+          "tone": "neutral",
+          "effects": {
+            "money": -12,
+            "favor": 4
+          },
+          "setFlags": {
+            "river_done": true
+          }
+        },
+        {
+          "id": "refuse_works",
+          "tone": "dark",
+          "effects": {
+            "sanity": 2,
+            "favor": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "river_done": true,
+            "dikes_ignored": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_land_ledger",
+      "loc": "study",
+      "npc": "shen",
+      "priority": 72,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 9,
+        "flags": [
+          "land_surveyed"
+        ],
+        "notFlags": [
+          "ledger_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "audit",
+          "tone": "good",
+          "effects": {
+            "money": 26,
+            "favor": -9,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "ledger_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "burn_ledger",
+          "tone": "dark",
+          "effects": {
+            "favor": 9,
+            "money": 8,
+            "sanity": -2
+          },
+          "morality": -2,
+          "setFlags": {
+            "ledger_done": true
+          }
+        },
+        {
+          "id": "keep_ledger",
+          "tone": "neutral",
+          "effects": {
+            "favor": 4,
+            "sanity": -4
+          },
+          "setFlags": {
+            "ledger_done": true,
+            "ledger_held": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_intercepted_letter",
+      "loc": "study",
+      "npc": "dowager",
+      "priority": 76,
+      "once": true,
+      "cond": {
+        "dayMin": 11,
+        "notFlags": [
+          "letters_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "intercept",
+          "tone": "dark",
+          "effects": {
+            "favor": -6,
+            "sanity": -7
+          },
+          "morality": -1,
+          "setFlags": {
+            "letters_done": true,
+            "letters_intercepted": true,
+            "dowager_betrayed": true,
+            "met_dowager": true
+          }
+        },
+        {
+          "id": "pretend",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3
+          },
+          "setFlags": {
+            "letters_done": true
+          }
+        },
+        {
+          "id": "return_it",
+          "tone": "good",
+          "effects": {
+            "favor": 9,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "letters_done": true,
+            "warned_dowager": true,
+            "dowager_ally": true,
+            "met_dowager": true
+          }
+        }
+      ]
+    }
+  ]
+}

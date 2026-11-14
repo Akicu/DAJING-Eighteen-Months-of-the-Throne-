@@ -1,0 +1,147 @@
+{
+  "dorm_nadia_intro": {
+    "title": "There's light in the vent",
+    "desc": "Two in the morning. A thin blue light comes through the vent above your bunk, and a very quiet voice. You pry off the grille: a fourteen-year-old girl with a modified shortwave set, reading a list out loud.",
+    "choices": {
+      "feed": {
+        "text": "Give her food and let her stay",
+        "req": "Needs 5 credits",
+        "outcome": "Two biscuits and a tin of beans. She ate fast, then said, \"I'm Nadia. I'm reading the list out. People outside are listening.\""
+      },
+      "evict": {
+        "text": "Tell her to go",
+        "outcome": "You said nobody can live up here. She packed the radio with practised hands, like someone who had moved many times. At the hatch she said, \"You'll need someone to speak for you too.\""
+      },
+      "report": {
+        "text": "Report her to the dorm officer",
+        "outcome": "Thirty-five credits. The officer brought two men and pulled the vent apart. The girl watched your face the whole way out, as if memorising it."
+      }
+    }
+  },
+  "dorm_nadia_parts": {
+    "title": "The transmitter needs a capacitor",
+    "desc": "Nadia opens the back of the set. Half of it is hand-soldered. \"Not enough power. Forty kilometres, maybe.\" She looks up. \"The medbay has parts. But someone's always watching them.\"",
+    "choices": {
+      "steal_parts": {
+        "text": "Steal them from the medbay",
+        "outcome": "Three capacitors and a roll of copper wire from the maintenance room. On the way out you ran into the night nurse. She looked at you and said nothing."
+      },
+      "buy_parts": {
+        "text": "Buy them",
+        "req": "Needs 40 credits",
+        "outcome": "Forty credits for a complete amplifier module off the black market. When she fitted it, the indicator lit green for the first time."
+      },
+      "give_up": {
+        "text": "Drop it",
+        "outcome": "You said it wasn't worth it. She nodded and screwed the back on. \"That's all right,\" she said. \"I'll read quieter.\""
+      }
+    }
+  },
+  "dorm_nadia_broadcast": {
+    "title": "Tonight she reads the whole list",
+    "desc": "Nadia has copied four hundred names into an exercise book in tiny handwriting. \"Four hours to read it all. Every shortwave in the city will hear.\" She looks up. \"They'll come for me. Are you going to stop me?\"",
+    "choices": {
+      "let_her": {
+        "text": "Let her broadcast",
+        "req": "Needs sanity ≥ 40",
+        "outcome": "Her voice went at hour three. You read the last hundred and twenty names for her. Next day the list was all anyone talked about. The day after, military police started searching homes for receivers."
+      },
+      "stop_her": {
+        "text": "Stop her",
+        "outcome": "You pulled the power. She didn't cry. She closed the exercise book and said, \"I'll read it tomorrow.\" You hid the cable. She never looked for it."
+      },
+      "do_it_yourself": {
+        "text": "Read it yourself",
+        "outcome": "You pushed her out and sat down at the set. Your voice sounded like a stranger's on the band. At the seventieth name you heard a vehicle stop downstairs."
+      }
+    }
+  },
+  "dorm_nadia_raid": {
+    "title": "The search team is on the stairs",
+    "desc": "Four in the morning, boots the length of the corridor. Nadia's set is still warm. You have about forty seconds.",
+    "choices": {
+      "hide_her": {
+        "text": "Fold her into the duty locker",
+        "outcome": "Sixty centimetres wide. She curled up in it with the radio. The team stood by your bunk for six minutes. After they left she stayed in there another half hour before she dared come out."
+      },
+      "hand_over": {
+        "text": "Give her up",
+        "outcome": "Sixty credits. She didn't struggle when they took her. She asked one question: \"Was it you?\" You didn't answer. It may have been the quietest silence of your life."
+      },
+      "roof_escape": {
+        "text": "Send her over the roof",
+        "outcome": "You twisted bedsheets into a rope and lowered her from the third floor. She turned her ankle on landing but ran fast. The radio stayed under your bunk."
+      }
+    }
+  },
+  "dorm_nadia_choice": {
+    "title": "She has no ticket",
+    "desc": "Nadia has stripped the set into parts and packed them in a canvas bag. \"I'm not going,\" she says. \"I'm useful here.\" She is fourteen, has no boarding pass, and nobody will sign for one.",
+    "choices": {
+      "give_ticket": {
+        "text": "Give her your ticket",
+        "outcome": "You pushed it into the bottom of her bag. She fished it out and stared at it. \"Then what about you?\" You said you had another way. You didn't."
+      },
+      "let_stay": {
+        "text": "Let her stay",
+        "outcome": "You helped her re-rig the antenna on the roof. She tuned it, said \"Gate seven, test,\" and smiled. You didn't try to talk her out of it that day."
+      },
+      "tell_truth": {
+        "text": "Tell her you have no ticket either",
+        "outcome": "She blinked, then pulled a sheet of paper from her bag — a boarding pass she had drawn herself. \"I made lots,\" she said. \"Want one?\""
+      }
+    }
+  },
+  "dorm_guard_search": {
+    "title": "Riot control is searching for contraband",
+    "desc": "Six of them, two minutes a room. There is something under your bunk — a rifle, a seal, or a radio that should not exist.",
+    "choices": {
+      "comply": {
+        "text": "Cooperate and pay the fine",
+        "req": "Needs 15 credits",
+        "outcome": "Fifteen credits, logged as unauthorised possession. They bagged it up. On the way out one of them patted your shoulder and said, \"Stay smart.\""
+      },
+      "hide_stuff": {
+        "text": "Push it all into the ceiling",
+        "outcome": "You stood on the top bunk and shoved everything up there. They searched the bed and the locker and never looked up. One of them said on the way out, \"This room smells wrong.\""
+      },
+      "point_next_door": {
+        "text": "Point at the next room",
+        "outcome": "Twenty credits and the neighbours got hit. Three men lived there. One moved out the next day, and stood outside your door a long time before he went."
+      }
+    }
+  },
+  "dorm_letter_reply": {
+    "title": "Your mother wrote back",
+    "desc": "The handwriting on the envelope is unsteady. The postmark is two months old. You leave it on the table and look at it for ten minutes before opening it.",
+    "choices": {
+      "read_reply": {
+        "text": "Open it",
+        "outcome": "The well's dry, your father's fine, don't come back. The last line says they've kept your room as it was. You read it three times."
+      },
+      "no_reply": {
+        "text": "Don't open it. Put it away",
+        "outcome": "You pressed it under a stack of old uniforms. It stayed there a long time, and you knew it was there every day."
+      }
+    }
+  },
+  "dorm_rooftop": {
+    "title": "You can see the submarine from the roof",
+    "desc": "Before dawn the submarine runs a trial, tail light dragging a red line across the water. It is much smaller than you imagined.",
+    "choices": {
+      "count_berths": {
+        "text": "Count the berths",
+        "outcome": "Three times, four hundred and twenty. Four hundred names on the list, sixty thousand people outside the gate. You kept the number to yourself."
+      },
+      "just_watch": {
+        "text": "Just watch",
+        "outcome": "You sat on the roof until daylight, and the wind was cold. The submarine came back with no lights on. Going downstairs, you felt emptier and lighter at once."
+      },
+      "with_nadia": {
+        "text": "Bring Nadia up to see it",
+        "req": "Requires having met Nadia",
+        "outcome": "It was the first submarine she'd ever seen. She looked a long time and said, \"It's so small.\" You said yes. She said, \"Then we have to make more people stay.\""
+      }
+    }
+  }
+}

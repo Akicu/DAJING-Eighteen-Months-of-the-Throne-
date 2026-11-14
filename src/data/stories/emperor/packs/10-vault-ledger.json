@@ -1,0 +1,386 @@
+{
+  "pack": "10-vault-ledger",
+  "loc": "vault",
+  "bookkeeping": [
+    "mint_tolerated",
+    "market_taxed",
+    "market_free",
+    "market_closed",
+    "met_huo",
+    "huo_ally",
+    "huo_betrayed",
+    "mint_ring_found"
+  ],
+  "events": [
+    {
+      "id": "vault_private_mint",
+      "loc": "vault",
+      "priority": 58,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "mint_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "crack_down",
+          "tone": "good",
+          "effects": {
+            "money": 22,
+            "favor": -6,
+            "sanity": -5
+          },
+          "morality": 2,
+          "setFlags": {
+            "mint_done": true
+          }
+        },
+        {
+          "id": "tax_it",
+          "tone": "dark",
+          "effects": {
+            "money": 38,
+            "favor": -12,
+            "sanity": -2
+          },
+          "morality": -3,
+          "setFlags": {
+            "mint_done": true,
+            "mint_tolerated": true
+          }
+        },
+        {
+          "id": "ignore_mint",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 3
+          },
+          "setFlags": {
+            "mint_done": true,
+            "mint_tolerated": true
+          }
+        },
+        {
+          "id": "stake_it_out",
+          "tone": "neutral",
+          "roll": {
+            "chance": 0.45,
+            "win": {
+              "effects": {
+                "money": 34,
+                "favor": 7,
+                "sanity": -5
+              },
+              "morality": 1,
+              "setFlags": {
+                "mint_done": true,
+                "mint_ring_found": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -12,
+                "favor": -9,
+                "sanity": -7
+              },
+              "setFlags": {
+                "mint_done": true,
+                "mint_tolerated": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_armory",
+      "loc": "vault",
+      "npc": "huo",
+      "priority": 60,
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "armory_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "replenish",
+          "tone": "good",
+          "effects": {
+            "money": -28,
+            "favor": 10,
+            "health": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "armory_done": true,
+            "huo_ally": true,
+            "met_huo": true
+          }
+        },
+        {
+          "id": "report_it",
+          "tone": "neutral",
+          "effects": {
+            "money": 18,
+            "favor": -6,
+            "sanity": -5
+          },
+          "setFlags": {
+            "armory_done": true,
+            "huo_betrayed": true,
+            "met_huo": true
+          }
+        },
+        {
+          "id": "look_away",
+          "tone": "dark",
+          "effects": {
+            "money": 26,
+            "favor": -3,
+            "sanity": -4
+          },
+          "morality": -2,
+          "setFlags": {
+            "armory_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_border_market",
+      "loc": "vault",
+      "priority": 70,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 8,
+        "flags": [
+          "market_opened"
+        ],
+        "notFlags": [
+          "market_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "tax_market",
+          "tone": "neutral",
+          "effects": {
+            "money": 34,
+            "favor": 4
+          },
+          "setFlags": {
+            "market_done": true,
+            "market_taxed": true
+          },
+          "key": true
+        },
+        {
+          "id": "free_trade",
+          "tone": "good",
+          "effects": {
+            "money": 16,
+            "favor": 11,
+            "sanity": 2
+          },
+          "morality": 1,
+          "setFlags": {
+            "market_done": true,
+            "market_free": true
+          }
+        },
+        {
+          "id": "close_market",
+          "tone": "dark",
+          "effects": {
+            "money": 6,
+            "favor": -7,
+            "sanity": 2
+          },
+          "setFlags": {
+            "market_done": true,
+            "market_closed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_river_report",
+      "loc": "vault",
+      "priority": 66,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 11,
+        "flags": [
+          "dikes_repaired"
+        ],
+        "notFlags": [
+          "river_report_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "accept_umbrella",
+          "tone": "neutral",
+          "effects": {
+            "favor": 9,
+            "sanity": 4,
+            "money": -6
+          },
+          "setFlags": {
+            "river_report_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "reward_engineers",
+          "tone": "good",
+          "effects": {
+            "money": -18,
+            "favor": 14
+          },
+          "morality": 2,
+          "setFlags": {
+            "river_report_done": true
+          }
+        },
+        {
+          "id": "downplay",
+          "tone": "dark",
+          "effects": {
+            "money": 8,
+            "favor": -3,
+            "sanity": 2
+          },
+          "morality": -1,
+          "setFlags": {
+            "river_report_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_flood_crisis",
+      "loc": "vault",
+      "priority": 78,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "dikes_ignored"
+        ],
+        "notFlags": [
+          "flood_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "open_granary",
+          "tone": "good",
+          "effects": {
+            "money": -40,
+            "favor": 16,
+            "sanity": -6
+          },
+          "morality": 3,
+          "setFlags": {
+            "flood_done": true,
+            "granary_opened": true
+          },
+          "key": true
+        },
+        {
+          "id": "work_for_food",
+          "tone": "neutral",
+          "effects": {
+            "money": -22,
+            "favor": 6,
+            "health": -6,
+            "sanity": -3
+          },
+          "morality": 1,
+          "setFlags": {
+            "flood_done": true
+          }
+        },
+        {
+          "id": "seal_gates",
+          "tone": "dark",
+          "effects": {
+            "money": 12,
+            "favor": -22,
+            "sanity": -9
+          },
+          "morality": -3,
+          "setFlags": {
+            "flood_done": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "vault_ledger_buyer",
+      "loc": "vault",
+      "priority": 68,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "ledger_held"
+        ],
+        "notFlags": [
+          "ledger_buyer_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sell_ledger",
+          "tone": "dark",
+          "effects": {
+            "money": 48,
+            "favor": -12,
+            "sanity": 2
+          },
+          "morality": -3,
+          "setFlags": {
+            "ledger_buyer_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "expose_them",
+          "tone": "good",
+          "effects": {
+            "money": -10,
+            "favor": 12,
+            "sanity": -6
+          },
+          "morality": 2,
+          "setFlags": {
+            "ledger_buyer_done": true
+          }
+        },
+        {
+          "id": "keep_quiet",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3,
+            "favor": 2
+          },
+          "setFlags": {
+            "ledger_buyer_done": true
+          }
+        }
+      ]
+    }
+  ]
+}

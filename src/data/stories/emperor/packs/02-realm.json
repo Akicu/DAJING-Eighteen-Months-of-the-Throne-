@@ -1,0 +1,486 @@
+{
+  "pack": "02-realm",
+  "loc": "vault",
+  "bookkeeping": [
+    "granary_opened",
+    "loan_taken",
+    "cut_court",
+    "tribute_paid",
+    "war_declared",
+    "met_huo",
+    "met_dowager",
+    "met_wang",
+    "huo_ally",
+    "huo_betrayed",
+    "dowager_ally",
+    "dowager_betrayed",
+    "wang_ally",
+    "wang_betrayed"
+  ],
+  "events": [
+    {
+      "id": "vault_empty",
+      "loc": "vault",
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "vault_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "levy",
+          "tone": "dark",
+          "effects": {
+            "money": 45,
+            "favor": -14
+          },
+          "morality": -2,
+          "setFlags": {
+            "vault_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "cut",
+          "tone": "neutral",
+          "effects": {
+            "money": 25,
+            "favor": -4,
+            "sanity": -3
+          },
+          "setFlags": {
+            "vault_done": true,
+            "cut_court": true
+          }
+        },
+        {
+          "id": "borrow",
+          "tone": "neutral",
+          "effects": {
+            "money": 40,
+            "favor": 4,
+            "sanity": -6
+          },
+          "setFlags": {
+            "vault_done": true,
+            "loan_taken": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_famine",
+      "loc": "vault",
+      "npc": "shen",
+      "once": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "famine_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "open_granary",
+          "tone": "good",
+          "effects": {
+            "money": -50,
+            "favor": 26,
+            "sanity": 4
+          },
+          "morality": 3,
+          "setFlags": {
+            "famine_done": true,
+            "granary_opened": true
+          },
+          "key": true
+        },
+        {
+          "id": "half",
+          "tone": "neutral",
+          "effects": {
+            "money": -20,
+            "favor": 6
+          },
+          "morality": 1,
+          "setFlags": {
+            "famine_done": true
+          }
+        },
+        {
+          "id": "shut",
+          "tone": "dark",
+          "effects": {
+            "money": 20,
+            "favor": -20,
+            "sanity": -8
+          },
+          "morality": -3,
+          "setFlags": {
+            "famine_done": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "vault_merchant",
+      "loc": "vault",
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "merchant_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take",
+          "tone": "dark",
+          "effects": {
+            "money": 45,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "merchant_done": true
+          }
+        },
+        {
+          "id": "refuse",
+          "tone": "good",
+          "effects": {
+            "favor": 8,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "merchant_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_eunuch_cut",
+      "loc": "vault",
+      "npc": "wang",
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "eunuch_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "audit",
+          "tone": "good",
+          "effects": {
+            "money": 28,
+            "favor": -6,
+            "sanity": -5
+          },
+          "morality": 2,
+          "setFlags": {
+            "eunuch_done": true,
+            "met_wang": true,
+            "wang_betrayed": true
+          }
+        },
+        {
+          "id": "share",
+          "tone": "dark",
+          "effects": {
+            "money": 24,
+            "favor": 2
+          },
+          "morality": -2,
+          "setFlags": {
+            "eunuch_done": true,
+            "met_wang": true,
+            "wang_ally": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_tribute",
+      "loc": "frontier",
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "tribute_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "pay",
+          "tone": "neutral",
+          "effects": {
+            "money": -45,
+            "favor": -4,
+            "sanity": 2
+          },
+          "setFlags": {
+            "tribute_done": true,
+            "tribute_paid": true
+          }
+        },
+        {
+          "id": "war",
+          "tone": "dark",
+          "effects": {
+            "money": -30,
+            "favor": 10,
+            "health": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "tribute_done": true,
+            "war_declared": true
+          },
+          "key": true
+        },
+        {
+          "id": "stall",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -6,
+            "favor": -2
+          },
+          "setFlags": {
+            "tribute_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_general_ask",
+      "loc": "frontier",
+      "npc": "huo",
+      "once": true,
+      "cond": {
+        "dayMin": 11,
+        "anyFlags": [
+          "huo_ally",
+          "huo_summoned"
+        ],
+        "notFlags": [
+          "general_ask_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "grant",
+          "tone": "good",
+          "effects": {
+            "money": -35,
+            "favor": 12,
+            "health": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "general_ask_done": true,
+            "met_huo": true,
+            "huo_ally": true
+          }
+        },
+        {
+          "id": "deny",
+          "tone": "dark",
+          "effects": {
+            "money": 20,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "general_ask_done": true,
+            "met_huo": true,
+            "huo_betrayed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_defect",
+      "loc": "frontier",
+      "npc": "huo",
+      "once": true,
+      "cond": {
+        "dayMin": 14,
+        "flags": [
+          "huo_summoned"
+        ],
+        "notFlags": [
+          "defect_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "execute",
+          "tone": "dark",
+          "effects": {
+            "favor": -8,
+            "money": 30,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "defect_done": true,
+            "huo_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "pardon",
+          "tone": "good",
+          "effects": {
+            "favor": 10,
+            "health": -8
+          },
+          "morality": 2,
+          "setFlags": {
+            "defect_done": true,
+            "huo_ally": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_dowager",
+      "loc": "chamber",
+      "npc": "dowager",
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "dowager_talk_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "obey",
+          "tone": "neutral",
+          "effects": {
+            "favor": 12,
+            "sanity": 4
+          },
+          "setFlags": {
+            "dowager_talk_done": true,
+            "met_dowager": true,
+            "dowager_ally": true
+          }
+        },
+        {
+          "id": "refuse",
+          "tone": "dark",
+          "effects": {
+            "favor": -10,
+            "sanity": -4,
+            "health": -4
+          },
+          "morality": -1,
+          "setFlags": {
+            "dowager_talk_done": true,
+            "met_dowager": true,
+            "dowager_betrayed": true
+          }
+        },
+        {
+          "id": "ask_truth",
+          "tone": "good",
+          "effects": {
+            "sanity": -8,
+            "favor": 3
+          },
+          "setFlags": {
+            "dowager_talk_done": true,
+            "met_dowager": true,
+            "knows_truth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_insomnia",
+      "loc": "chamber",
+      "repeatable": true,
+      "weight": 30,
+      "choices": [
+        {
+          "id": "sleep",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 12,
+            "health": 4
+          }
+        },
+        {
+          "id": "memorials",
+          "tone": "neutral",
+          "effects": {
+            "money": 12,
+            "sanity": -7
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_poison",
+      "loc": "chamber",
+      "once": true,
+      "cond": {
+        "dayMin": 12,
+        "notFlags": [
+          "poison_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "purge",
+          "tone": "dark",
+          "effects": {
+            "health": 5,
+            "favor": -14,
+            "sanity": -6
+          },
+          "morality": -2,
+          "setFlags": {
+            "poison_done": true,
+            "huo_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "hide",
+          "tone": "neutral",
+          "effects": {
+            "health": -6,
+            "sanity": 2
+          },
+          "setFlags": {
+            "poison_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "swap",
+          "tone": "good",
+          "effects": {
+            "health": 2,
+            "sanity": -4,
+            "favor": 4
+          },
+          "setFlags": {
+            "poison_done": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "market_forger": {
+    "title": "The Paper Man",
+    "desc": "Deep in the market, a man with no left hand sells permits. \"Sixty. The real kind. The submarine hold doesn't check faces, only stamps.\" He holds a sheet up to the light; the fibre grain matches a genuine one exactly.",
+    "choices": {
+      "buy_papers": {
+        "text": "Buy one",
+        "req": "Needs 35 credits",
+        "outcome": "The paper is real and so is the stamp — peeled off a dead man. He folds it and hands it over. \"And don't look back at the dock.\""
+      },
+      "refuse": {
+        "text": "Shake your head and walk away",
+        "outcome": "You walk off. He calls after you: \"Price goes up tomorrow!\" You don't look back."
+      }
+    }
+  },
+  "market_organs": {
+    "title": "Your Body Is Currency",
+    "desc": "A man in a lab coat runs \"recovery\" out of a tarpaulin shelter. He appraises you the way a butcher weighs a cut. \"One kidney. Fifty-five. Clean surgery, two hours, you walk out on your own.\"",
+    "choices": {
+      "sell": {
+        "text": "Sell",
+        "outcome": "You walk out with fifty-five credits and have to hold the wall to stay upright. The painkillers don't help much. The money does."
+      },
+      "walk": {
+        "text": "Leave",
+        "outcome": "You step out of the shelter and take a deep breath. Lungs still there. Kidney still there."
+      }
+    }
+  },
+  "market_pawn_gun": {
+    "title": "Pawn the Sidearm",
+    "desc": "The pawnbroker lifts your sidearm between two fingers as if it were something dirty. \"Thirty-five. Nobody wants these now. You can't eat a gun.\"",
+    "choices": {
+      "pawn": {
+        "text": "Pawn it",
+        "outcome": "You trade the gun for thirty-five credits and a ticket. Walking out, it hits you that you no longer own a single thing in this city to lean on."
+      },
+      "keep": {
+        "text": "Take it back",
+        "outcome": "You holster it again. The broker shrugs. \"Your call. Worth less tomorrow anyway.\""
+      }
+    }
+  },
+  "market_thief": {
+    "title": "The Kid With the Tin",
+    "desc": "A boy no older than ten is held up by the collar, feet kicking, a tin of corned beef clenched in his fist. The stallholder is shouting, \"Break his hand!\" The boy doesn't cry.",
+    "choices": {
+      "catch": {
+        "text": "Do what the stallholder says",
+        "outcome": "You pin his wrist. The stallholder kicks him twice and tosses you ten credits for your trouble. When the boy breaks free the tin falls and rolls into the drain."
+      },
+      "buy_food": {
+        "text": "Buy the tin and let him go",
+        "req": "Needs 15 credits",
+        "outcome": "You pay for it and press a second tin into his hands. He runs a dozen metres, looks back once, then disappears into the crowd."
+      },
+      "let_go": {
+        "text": "Let him run",
+        "outcome": "You open your hand and the boy slips into the crowd like a fish. The stallholder curses at you. You ignore him."
+      }
+    }
+  },
+  "market_fake_medicine": {
+    "title": "\"Ash Cure\"",
+    "desc": "A stall is piled with garish bottles. \"Cures the Ash. Fifteen a bottle. Last course available.\" The batch number on the base is handwritten and the ink is still wet.",
+    "choices": {
+      "buy": {
+        "text": "Buy a bottle",
+        "outcome": "Your stomach cramps all night. The factory on that batch number burned down three years ago."
+      },
+      "refuse": {
+        "text": "Don't buy",
+        "outcome": "You put the bottle down and the seller turns immediately to the next customer."
+      }
+    }
+  },
+  "market_dice": {
+    "title": "Dice in the Alley",
+    "desc": "Three men are shooting dice against a wall. One of them pushes the cup towards you. The dice are weighted — you can tell, and they don't mind that you can tell.",
+    "choices": {
+      "roll": {
+        "text": "Put down twenty",
+        "req": "Needs 20 credits",
+        "outcome": "The cup comes up against the wall and all four of you stare at the dice.",
+        "win": "All red. All three of them swear at once and push thirty-eight across. Your hands are steady when you take it.",
+        "lose": "All black. You put down the twenty and hear one of them laugh. That laugh follows you down the whole street."
+      },
+      "pass": {
+        "text": "Smile and wave it off",
+        "outcome": "You wave and walk on. Behind you, the dice hit the ground and someone starts cursing."
+      }
+    }
+  },
+  "market_rumor": {
+    "title": "Word From the Meat Stall",
+    "desc": "The butcher keeps chopping while he talks. \"Heard? The sub changed schedule. Leaves a day early. They don't want too many people knowing.\" He never looks up.",
+    "choices": {
+      "listen": {
+        "text": "Buy some meat and hear him out",
+        "outcome": "You spend five credits on half a kilo of something unidentifiable. The rumour is worth more than the meat: the sub really is leaving early."
+      }
+    }
+  },
+  "market_ration": {
+    "title": "Ration Coupons",
+    "desc": "Behind the distribution centre, a man in uniform is buying coupons. \"Eighteen each, cash.\" You know exactly where those coupons come from — the hands of people who didn't make it to today.",
+    "choices": {
+      "sell": {
+        "text": "Sell this week's coupons",
+        "outcome": "You get eighteen credits. For the next three days you live on water and cigarettes."
+      },
+      "share": {
+        "text": "Give them to the old woman in the queue",
+        "outcome": "You press the coupons into the hands of a woman holding an empty pot. She chases you half a block to say thank you. You walk faster."
+      }
+    }
+  }
+}

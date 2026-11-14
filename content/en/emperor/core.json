@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "langName": "English"
+  },
+  "ui": {
+    "appTitle": "DAJING",
+    "appSubtitle": "Countdown to the accession",
+    "appTagline": "Eighteen months of the throne",
+    "day": "Month {day} / {max}",
+    "stat": {
+      "health": "Body",
+      "sanity": "Nerve",
+      "money": "Treasury",
+      "favor": "Standing"
+    },
+    "ap": {
+      "label": "Decisions left",
+      "upkeep": "Upkeep {n}k/mo · +2k per {every}mo"
+    },
+    "goal": {
+      "money": "Treasury {money}k taels by accession",
+      "favor": "or Standing ≥ {favor}",
+      "secured": "Accession assured"
+    },
+    "act": {
+      "regency": "ACT I · THE CURTAIN",
+      "faction": "ACT II · THE FACTIONS",
+      "reckoning": "ACT III · THE RECKONING"
+    },
+    "action": {
+      "endDay": "End the night and retire",
+      "confirm": "So be it",
+      "hold": "press and hold",
+      "restart": "Begin a new reign",
+      "start": "Take the throne",
+      "share": "Generate share card",
+      "continue": "Continue",
+      "newGame": "Start over",
+      "close": "Close"
+    },
+    "story": {
+      "premise": "The old emperor died on the autumn hunt and left no edict. You are nineteen, sitting on a chair that is still warm. The Dowager holds the curtain, the Chancellor drafts the decrees, and a general with a hundred thousand men sits at the northern gate. In eighteen months comes your accession — before then, this court has to decide you are its emperor.",
+      "switch": "Switch story",
+      "pickerTag": "STORY LIBRARY",
+      "title": "Choose a world",
+      "current": "CURRENT",
+      "saved": "Save at month {day} / {max}",
+      "hint": "Each story is a separate world. Saves and ending archives never mix.",
+      "close": "Close"
+    },
+    "badge": {
+      "chain": "Consequence",
+      "new": "New thread",
+      "key": "Pivotal",
+      "chainPending": "PENDING",
+      "chainFrom": "From month {day}"
+    },
+    "roll": {
+      "tag": "GAMBLE",
+      "win": "IT HELD",
+      "lose": "IT FAILED",
+      "likely": "likely",
+      "even": "even odds",
+      "thin": "thin odds",
+      "grim": "long odds"
+    },
+    "dayCard": {
+      "day": "Month {day}",
+      "income": "Tax +{n}",
+      "spend": "Court -{n}",
+      "hint": "tap to continue",
+      "off": "don't show this"
+    },
+    "interlude": {
+      "faction": "In the seventh month, the chair behind the curtain went half an inch empty. They began to practise not looking at you.",
+      "reckoning": "The thirteenth month. Everyone knows what you are about to do — except you."
+    },
+    "event": {
+      "tag": "AUDIENCE",
+      "locked": "Locked",
+      "apCost": "-{n}",
+      "rollWin": "It held",
+      "rollLose": "It broke"
+    },
+    "log": {
+      "title": "Court diary",
+      "boot": "You are emperor. Three hundred catties of memorials on the desk, thirty men kneeling outside waiting for you to speak first.",
+      "dayStart": "Month {day} begins. Decisions restored to {n}.",
+      "upkeepPaid": "Court upkeep: {n}k taels spent.",
+      "wage": "Tax silver received: +{n}k taels.",
+      "upkeepFail": "The treasury is empty. The guard goes unpaid and riots — Body -25.",
+      "arrive": "You move to {loc}.",
+      "effectNone": "No change",
+      "saved": "Progress saved.",
+      "restore": "Another month passes. Nerve +{n}."
+    },
+    "ending": {
+      "archive": "DAJING ARCHIVE",
+      "win": "ACCESSION SECURED",
+      "lose": "POWER LOST",
+      "rarity": "Ending rarity",
+      "trajectory": "Pivotal decisions",
+      "noChoice": "Eighteen months, and you did nothing anyone will remember. The historian wrote four characters: no faults in office.",
+      "days": "Reigned {n} months",
+      "shareHint": "Long-press or right-click to save, then post it",
+      "shareFail": "Could not generate the image, try again",
+      "sealLine1": "DAJING",
+      "sealLine2": "ARCHIVE"
+    },
+    "settings": {
+      "sound": "Sound",
+      "music": "Ambience",
+      "on": "On",
+      "off": "Off",
+      "language": "Language"
+    },
+    "contacts": {
+      "title": "THE COURT",
+      "open": "Court",
+      "close": "Back",
+      "hint": "What these four think of you decides who stands below the dais on accession day, and who stands behind you.",
+      "status": {
+        "unknown": "Unmet",
+        "met": "Met",
+        "ally": "Loyal",
+        "betray": "Soured"
+      }
+    },
+    "rarity": {
+      "1": "Common",
+      "2": "Uncommon",
+      "3": "Rare",
+      "4": "Legendary",
+      "5": "Immortal"
+    },
+    "share": {
+      "label": "DAJING // REIGN RECORD",
+      "stats": "FINAL STATE",
+      "code": "Record no.",
+      "footer": "THE SON OF HEAVEN"
+    }
+  },
+  "npcs": {
+    "shen": {
+      "name": "Shen Yan",
+      "role": "Grand Chancellor / three reigns of service",
+      "bio": "He drafted edicts for your father for twenty years, and now drafts them for you. Whether your words leave the palace depends on his brush.",
+      "stage": {
+        "unknown": "You have not summoned him alone yet.",
+        "met": "He looks at you before every sentence, weighing an object he hasn't priced.",
+        "ally": "He put his own list of names into your hand.",
+        "betray": "He has pleaded illness for nine days running."
+      }
+    },
+    "dowager": {
+      "name": "The Dowager",
+      "role": "Empress of the late emperor / holds the curtain",
+      "bio": "She knows better than anyone how to sit in that chair without falling off. She said it once: the throne isn't given to you, it's lent.",
+      "stage": {
+        "unknown": "Through a curtain, you have only heard her voice.",
+        "met": "She has started calling you 'the emperor' instead of 'child'.",
+        "ally": "She gave you your father's private seal.",
+        "betray": "She has moved to the western garden and speaks to no one — including you."
+      }
+    },
+    "huo": {
+      "name": "Huo Lie",
+      "role": "General of the North / a hundred thousand men",
+      "bio": "Fourteen years at the northern gate. More scars from frost than from battle. He never kneels, only salutes.",
+      "stage": {
+        "unknown": "You have only seen the name on victory reports.",
+        "met": "He brought three hundred guards to the capital and let four of them in.",
+        "ally": "He left half a tiger tally on your desk.",
+        "betray": "His dispatches now run four words: I am here. Do not worry."
+      }
+    },
+    "wang": {
+      "name": "Wang Bao",
+      "role": "Chief Eunuch of the Directorate of Ceremonial",
+      "bio": "He knows every hidden passage, every burned edict, and the name of every maid who died.",
+      "stage": {
+        "unknown": "He poured your tea once. You did not remember his face.",
+        "met": "He has begun saying things to you that no third person is present to hear.",
+        "ally": "He gave you the real ledger of the inner treasury.",
+        "betray": "He no longer pours your tea."
+      }
+    }
+  },
+  "locations": {
+    "court": {
+      "name": "Hall of Supreme Harmony",
+      "desc": "Hold court, rule in public, let everyone see whose voice carries."
+    },
+    "study": {
+      "name": "The Imperial Study",
+      "desc": "Sign, dig through old records, draft secret edicts — the truth only shows up alone."
+    },
+    "vault": {
+      "name": "The Inner Treasury",
+      "desc": "Revenues, relief, levies. Money is where loyalty is."
+    },
+    "frontier": {
+      "name": "The Northern Gate",
+      "desc": "Dispatches, generals, war and peace. A blade is always faster than an edict."
+    },
+    "chamber": {
+      "name": "The Sleeping Chamber",
+      "desc": "Sleep, or let one person say the whole thing out loud at night."
+    }
+  },
+  "endings": {
+    "ending_emperor_zenith": {
+      "title": "The Restoration",
+      "desc": "On accession day you walked out from behind the curtain and stood at the front of the hall. When Shen Yan led the hundred officials down, the words he read were not the Dowager's. The treasury could pay three years of wages, and there was no crack at the northern gate. The historian wrote: at nineteen, the emperor set the realm right. They called it a restoration."
+    },
+    "ending_emperor_beloved": {
+      "title": "The Benevolent",
+      "desc": "You never filled the treasury. You emptied the granaries instead. On accession day the road from the palace to Zhuque Street was lined with people who had not been ordered to stand there. From the carriage you heard someone shout the salute, ragged and unrehearsed. The historian wrote: the emperor was lenient, cut taxes repeatedly, and the people built shrines to him."
+    },
+    "ending_emperor_ironfist": {
+      "title": "The Iron Hand",
+      "desc": "You killed everyone who needed killing, and a few who did not. No one in that hall dares look at another man while you are speaking. The treasury is full, the border is quiet, and no memorial wastes a single word. The historian wrote: the emperor was resolute, killed too freely, and the state survived because of it."
+    },
+    "ending_emperor_abdicate": {
+      "title": "The Abdication",
+      "desc": "At the accession ceremony you set the seal back on the desk. The whole hall stayed kneeling and would not rise. You walked out through them and no one stopped you. Only outside the gate did you notice the autumn wind was sweet. The historian wrote: the emperor yielded, and where he went is not known."
+    },
+    "ending_emperor_puppet": {
+      "title": "The Puppet",
+      "desc": "Eighteen months later you are still behind the curtain. The Dowager says you are young. The Chancellor says wait. The general says he doesn't understand capital business. You have nodded so many times you can no longer tell which thoughts were yours. The realm is still here. It is simply not in your hands."
+    },
+    "ending_dead": {
+      "title": "The Death of an Emperor",
+      "desc": "The physicians knelt in a row and none of them spoke first. The last thing you saw was the coiling dragon on the canopy, one flake of gilt missing. At the fifth watch the palace bell rang twenty-seven times. The historian wrote: the emperor died, aged nineteen, no heir."
+    },
+    "ending_mad": {
+      "title": "The Madness",
+      "desc": "You began summoning dead men at midnight. In the third month the Dowager issued an edict: the sacred person is unwell and requires quiet. They moved you to the innermost room of the western garden. You lived there many years, and the whole time you believed you were holding court."
+    },
+    "ending_starved": {
+      "title": "The Empty Treasury",
+      "desc": "On the sixteenth day without pay, the guard broke open the inner treasury. There was nothing inside but ledgers. You waited in the hall until dawn and no one came. The historian wrote: the army mutinied, the emperor died in the disorder, the dynasty broke."
+    },
+    "ending_emperor_faded": {
+      "title": "The Caretaker",
+      "desc": "Eighteen months, and you did nothing great and nothing wrong. The accession ceremony went ahead as scheduled and you completed every step of it. The historian wrote: the emperor reigned eighteen months, no great faults, no great works. It is not a bad verdict. Nobody remembers it either."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "stories": [
+    {
+      "id": "sector07",
+      "order": 1,
+      "cover": "art/title.jpg",
+      "accent": "amber",
+      "tag": {
+        "zh": "反乌托邦 · 道德困境",
+        "en": "Dystopia · Moral dilemma"
+      },
+      "title": {
+        "zh": "SECTOR-07 · 7 号闸门",
+        "en": "SECTOR-07 · The Last Gate"
+      },
+      "tagline": {
+        "zh": "检疫官的最后十八天",
+        "en": "Eighteen days on the quarantine line"
+      }
+    },
+    {
+      "id": "emperor",
+      "order": 2,
+      "cover": "art/cover-emperor.jpg",
+      "accent": "amber",
+      "tag": {
+        "zh": "宫廷权谋 · 帝王心术",
+        "en": "Court Intrigue · Imperial Survival"
+      },
+      "title": {
+        "zh": "大靖 · 朕的十八个月",
+        "en": "DAJING · Eighteen Months on the Throne"
+      },
+      "tagline": {
+        "zh": "先帝暴崩，太后垂帘，你坐上那把椅子",
+        "en": "The old emperor is dead. You take the chair."
+      }
+    }
+  ]
+}

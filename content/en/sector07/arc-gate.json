@@ -1,0 +1,238 @@
+{
+  "gate_queues": {
+    "title": "The line runs three kilometres out",
+    "desc": "The numbering system collapsed on day four. Thirty thousand people standing in the rain, clutching expired tags. Someone is now trading a child's name for a place near the front. The floodlights sweep the queue every forty seconds.",
+    "choices": {
+      "triage": {
+        "text": "Void the tags and sort by age — elderly and children first",
+        "outcome": "You voided every tag and re-sorted by age. The queue went quiet for ten minutes, then a man lifted his son onto his shoulders and said the boy was three. The boy was twelve."
+      },
+      "auction": {
+        "text": "Sell the front of the line to whoever can pay",
+        "outcome": "The first place went for thirty-five. By the seventh, the back of the queue started pushing. You heard bones give. You did not look up that day."
+      },
+      "shut": {
+        "text": "Close the window and let riot control handle it",
+        "outcome": "You pulled the shutter and sat behind it for two hours. Riot control cleared the square in forty minutes. The next morning someone had painted a name on the wall outside the gate. It was yours."
+      }
+    }
+  },
+  "gate_deserter_return": {
+    "title": "He came back with a map",
+    "desc": "The deserter you let through stands outside the window, ten kilos lighter, a hand-drawn map against his chest. \"Serum convoy out of Supply Station Three. Eleven every night, through B sector. Two trucks, four guards.\" He pushes it through the slot. \"I'm not here to ask for anything.\"",
+    "choices": {
+      "believe": {
+        "text": "Take the map and trust him",
+        "outcome": "The map marks a blind spot in the patrol route, the lines shaking. You learned later he had lain in the rain three nights to draw it."
+      },
+      "doubt": {
+        "text": "Call it a trap and send him away",
+        "outcome": "He folded the map down to the size of a stamp and slid it into his boot. \"Understood,\" he said. He did not explain further."
+      },
+      "sell_him": {
+        "text": "Note where he is standing. Collect the bounty",
+        "outcome": "Forty-five credits, more than last time. The enforcement team took him away and this time he did not run. Your finger hit the wrong key twice while you confirmed the transfer."
+      }
+    }
+  },
+  "gate_guard_grudge": {
+    "title": "They remember who called riot control",
+    "desc": "Three riot officers at the window, helmets under their arms. The one in front has a fresh scratch down his face. \"We carried four people out that night. One of them was my brother.\" He says it calmly. \"You free to step outside for a minute?\"",
+    "choices": {
+      "drinks": {
+        "text": "Buy them a drink and clear the air",
+        "req": "Needs 15 credits",
+        "outcome": "Three bad drinks, fifteen credits. Nobody mentioned the brother again. On the way out, one of them turned his glass upside down on the table — around here that means this isn't finished."
+      },
+      "stand": {
+        "text": "Hold your ground. You were following orders",
+        "outcome": "The first punch caught your chest. By the third you stopped counting. You lay on the concrete a long while; when you got up, two buttons were gone from your uniform."
+      },
+      "remember": {
+        "text": "Write down their badge numbers and say nothing",
+        "outcome": "You copied the three numbers onto the back of the duty log, slowly. After they left you sat under the lamp looking at those digits for a long time."
+      }
+    }
+  },
+  "gate_audit_return": {
+    "title": "The auditor is back, with seals",
+    "desc": "The same man as last time, a roll of red sealing tape in his hand. \"What you gave me, I handed in.\" He winds the tape around one finger. \"Now it's my turn to ask. Which side do you want sealed?\"",
+    "choices": {
+      "ledger": {
+        "text": "Hand over the ledger. Let him seal it",
+        "req": "Needs 30 credits (fine)",
+        "outcome": "Thirty credits in fines and the ledger closed on page thirty-seven. \"You're a sensible man,\" he said on his way out."
+      },
+      "counter": {
+        "text": "Report him for taking your money",
+        "req": "Needs sanity ≥ 50",
+        "outcome": "Dates, amounts, the exact look on his face when he pocketed it. He was gone in two days. Someone in the canteen said whoever wrote that report was vicious."
+      },
+      "pay_again": {
+        "text": "Pay him again",
+        "req": "Needs 60 credits",
+        "outcome": "He counted it twice, then smiled and put the tape away. This time he remembered to ask for a receipt."
+      }
+    }
+  },
+  "gate_rifle": {
+    "title": "The rifle is still under the bed",
+    "desc": "Still wrapped in a raincoat under your bunk. Someone at the market offered fifty today. It also means that if a search team comes, there is no story you can tell.",
+    "choices": {
+      "sell": {
+        "text": "Sell it",
+        "outcome": "Fifty-five credits, no questions. Your finger paused on the trigger guard as you handed it over."
+      },
+      "keep": {
+        "text": "Keep it",
+        "outcome": "You oiled it and slid it back under the bunk. You slept light that night, but better than before."
+      },
+      "hand_in": {
+        "text": "Turn it in to quarantine control",
+        "outcome": "The shift supervisor looked at you for three seconds, wrote \"voluntary surrender\" in the register and logged a commendation. On your way out you heard someone behind you say the man has some nerve."
+      }
+    }
+  },
+  "gate_lockdown_blame": {
+    "title": "Inquiry: who opened that door",
+    "desc": "Four days after the quarantine camp was emptied, the inquiry team arrived. They pulled the footage for that night — only eleven seconds of it, the eleven seconds the gate was open. Eleven people went through in those seconds.",
+    "choices": {
+      "confess": {
+        "text": "Admit you opened it",
+        "outcome": "Fourteen days suspended, all performance pay docked, no referral for prosecution. The investigator closed his folder and said, \"At least you didn't lie.\""
+      },
+      "frame": {
+        "text": "Put it on the officer who died that night",
+        "outcome": "The dead don't argue. You matched the timestamps precisely. The day the case closed you saw his daughter in the canteen queue and she did not recognise you."
+      },
+      "hide": {
+        "text": "Disappear for a few days",
+        "outcome": "Three days in the C sector drains on one pack of biscuits. Nobody asked where you had been. But your name was gone from the duty roster."
+      }
+    }
+  },
+  "gate_tunnel": {
+    "title": "There are people in the drain",
+    "desc": "On night patrol you hear an echo under the gate — not water. Shovels. C sector has been digging a drainage tunnel under the cordon; forty metres so far. They see you. Nobody stops.",
+    "choices": {
+      "dig": {
+        "text": "Climb down and dig with them",
+        "outcome": "Four hours in the mud, two nails gone. Someone handed you a canteen. Nobody thanked you and nobody asked why."
+      },
+      "report": {
+        "text": "Report it. Have it sealed",
+        "outcome": "The engineering crew poured concrete the next day. Forty metres, three truckloads. Forty credits bounty. Your hand was steady on the receipt."
+      },
+      "ignore": {
+        "text": "Pretend you heard nothing",
+        "outcome": "You aimed your torch the other way and finished the route. The tunnel opened a week later. You never used it, but you know it's there."
+      }
+    }
+  },
+  "gate_press": {
+    "title": "The publicity team arrives",
+    "desc": "Two people in softshell jackets set up a camera. They want footage of an \"orderly evacuation\". You, at the window, stamp in hand, smiling. \"Ten seconds. The whole Federation will see how efficient Gate 7 is.\"",
+    "choices": {
+      "perform": {
+        "text": "Play along",
+        "outcome": "Seventeen takes, they used the third. You smiled like a man who just got his pension. Next day, twenty-five credits arrived as a publicity assistance stipend."
+      },
+      "turn_camera": {
+        "text": "Turn the camera on the queue",
+        "outcome": "The cameraman hesitated, then actually did it. Three thousand faces in frame and not one of them smiling. The footage never aired."
+      },
+      "grab": {
+        "text": "Take the camera",
+        "outcome": "You smashed it against the gate and cut your hand on the housing. The team pulled out that day. You were logged for \"emotional instability\" and missed the year's commendation."
+      }
+    }
+  },
+  "gate_evac_list": {
+    "title": "The evacuation list is four hundred lines",
+    "desc": "It sits on the duty terminal. Four hundred names, encrypted. The submarine is rated for four hundred. There are sixty thousand people outside the gate. Line three is your own name — someone has already signed for you.",
+    "choices": {
+      "copy": {
+        "text": "Copy it and take it with you",
+        "outcome": "Three minutes to copy. A prompt appeared: this operation has been logged. You didn't stop."
+      },
+      "sell_copy": {
+        "text": "Sell the list on the black market",
+        "outcome": "Ninety credits, no haggling. Three days later forty people who weren't on the list had boarding passes. The other three hundred and sixty places stayed empty."
+      },
+      "burn": {
+        "text": "Delete it",
+        "outcome": "Three confirmations and the screen went black. Four hundred seats became first come, first served. You still don't know whether that saved them or killed them."
+      }
+    }
+  },
+  "gate_list_use": {
+    "title": "The list is in your pocket now",
+    "desc": "The paper has gone soft with sweat. The people outside are still waiting. The submarine docks the night after tomorrow. You have the authority, and you have a list.",
+    "choices": {
+      "by_list": {
+        "text": "Only let through the names on the list",
+        "outcome": "You read out four hundred names over six hours. By a hundred and seventy your voice was gone. People not on the list started hitting the gate. You kept reading."
+      },
+      "give_rachel": {
+        "text": "Give it to Rachel",
+        "outcome": "She read it for a long time, then said, \"Do you know what this is worth?\" You said yes. She folded it into her jacket pocket."
+      },
+      "tear": {
+        "text": "Tear it up",
+        "outcome": "Four pieces into the incinerator. Four hundred names burned in under three seconds. You stood there until the furnace went cold."
+      }
+    }
+  },
+  "gate_last_night": {
+    "title": "The last night",
+    "desc": "The submarine leaves at four. Two floodlights outside the gate are dead, and a few thousand people are waiting in the dark. You are the only name on tonight's roster.",
+    "choices": {
+      "hold": {
+        "text": "Hold the gate and finish the shift by the book",
+        "outcome": "You stayed until four, filling the handover log page by page. The submarine left without sounding its horn. Under \"irregularities\" you wrote one word: none."
+      },
+      "clock_out": {
+        "text": "Leave early. Go to the dock",
+        "outcome": "You killed the booth light and left the key in the lock. Halfway there you looked back once. The gate was black in the rain, like a closed mouth."
+      },
+      "open": {
+        "text": "Open the gate. Let them all through",
+        "req": "Needs sanity ≥ 40",
+        "outcome": "You pressed the green button and killed the cameras. When the crowd came through there was no cheering, only footsteps, like rain that had been falling for years finally reaching the ground."
+      }
+    }
+  },
+  "gate_tunnel_escape": {
+    "title": "The tunnel is through",
+    "desc": "C sector comes for you before dawn, covered in mud. \"It's open. Runs all the way to the old pump station past the cordon.\" The one in front looks at you. \"Coming? There's fourteen spots left.\"",
+    "choices": {
+      "alone": {
+        "text": "Go alone",
+        "outcome": "Forty minutes crawling in the dark. You came out at first light. No footsteps behind you. You lived, and you thought about that for a long time afterwards."
+      },
+      "lead_them": {
+        "text": "Take them with you",
+        "req": "Needs Rachel ≥ 30",
+        "outcome": "Sixteen people, two children, one pregnant woman. Ten metres from the end the torch died; you felt along the wall and pushed every one of them out. One was missing at the count. Nobody dared go back."
+      },
+      "collapse": {
+        "text": "Collapse the tunnel",
+        "outcome": "You lit the fuse and backed off thirty metres. The collapse was muffled, like someone underground letting out a breath. Next day you logged it as a structural hazard, cleared."
+      }
+    }
+  },
+  "gate_overtime": {
+    "title": "Double shift",
+    "desc": "A gap opened in the roster — someone called in sick. The supervisor asks if you'll cover it. Double allowance, sixteen hours on your feet. The queue outside won't thin out because you feel unwell.",
+    "choices": {
+      "double": {
+        "text": "Take it. Double allowance",
+        "outcome": "Sixteen hours, four hundred stamps, one toilet break. The allowance landed and the number looked good. Back at the barracks it took you three tries to get your boots off."
+      },
+      "normal": {
+        "text": "Decline. Clock off on time",
+        "outcome": "You said no. The supervisor shrugged and wrote in someone else's name. You clocked off on time and bought a bowl of hot soup on the way back."
+      }
+    }
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "pack": "14-dorm-nadia",
+  "loc": "dorm",
+  "events": [
+    {
+      "id": "dorm_nadia_intro",
+      "loc": "dorm",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "met_nadia"
+        ]
+      },
+      "choices": [
+        {
+          "id": "feed",
+          "effects": {
+            "money": -5,
+            "sanity": 15
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 5
+            }
+          },
+          "setFlags": {
+            "met_nadia": true,
+            "nadia_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "evict",
+          "effects": {
+            "sanity": -8
+          },
+          "setFlags": {
+            "met_nadia": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 35,
+            "sanity": -18
+          },
+          "morality": -3,
+          "setFlags": {
+            "met_nadia": true,
+            "nadia_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_parts",
+      "loc": "dorm",
+      "priority": 82,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "nadia_ally"
+        ],
+        "notFlags": [
+          "antenna_fixed"
+        ],
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "steal_parts",
+          "effects": {
+            "sanity": -8,
+            "health": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "antenna_fixed": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "buy_parts",
+          "effects": {
+            "money": -40,
+            "sanity": 8
+          },
+          "requires": {
+            "statMin": {
+              "money": 40
+            }
+          },
+          "setFlags": {
+            "antenna_fixed": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "give_up",
+          "effects": {
+            "sanity": -5
+          },
+          "setFlags": {
+            "antenna_abandoned": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_broadcast",
+      "loc": "dorm",
+      "priority": 88,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "antenna_fixed"
+        ],
+        "notFlags": [
+          "broadcast_tried"
+        ],
+        "dayMin": 10
+      },
+      "choices": [
+        {
+          "id": "let_her",
+          "effects": {
+            "health": -15,
+            "sanity": 15,
+            "favor": 10
+          },
+          "morality": 3,
+          "requires": {
+            "statMin": {
+              "sanity": 40
+            }
+          },
+          "setFlags": {
+            "broadcast_tried": true,
+            "broadcast_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "stop_her",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "broadcast_tried": true,
+            "broadcast_blocked": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "do_it_yourself",
+          "effects": {
+            "sanity": -20,
+            "favor": 15
+          },
+          "morality": 2,
+          "setFlags": {
+            "broadcast_tried": true,
+            "broadcast_done": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ],
+      "art": "art/ev-broadcast.jpg"
+    },
+    {
+      "id": "dorm_nadia_raid",
+      "loc": "dorm",
+      "priority": 92,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "met_nadia"
+        ],
+        "notFlags": [
+          "nadia_raid_done"
+        ],
+        "dayMin": 13,
+        "anyFlags": [
+          "nadia_ally",
+          "broadcast_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hide_her",
+          "effects": {
+            "health": -10,
+            "sanity": 8
+          },
+          "morality": 2,
+          "setFlags": {
+            "nadia_raid_done": true,
+            "nadia_hidden": true,
+            "nadia_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "hand_over",
+          "effects": {
+            "money": 60,
+            "sanity": -20
+          },
+          "morality": -3,
+          "setFlags": {
+            "nadia_raid_done": true,
+            "nadia_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "roof_escape",
+          "effects": {
+            "sanity": -10,
+            "health": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "nadia_raid_done": true,
+            "nadia_free": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_choice",
+      "loc": "dorm",
+      "priority": 89,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "nadia_ally"
+        ],
+        "dayMin": 16,
+        "notFlags": [
+          "nadia_final_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "give_ticket",
+          "effects": {
+            "sanity": 15,
+            "favor": 5
+          },
+          "morality": 3,
+          "setFlags": {
+            "nadia_final_done": true,
+            "gave_ticket": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "let_stay",
+          "effects": {
+            "sanity": -5,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "nadia_final_done": true,
+            "nadia_stays": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "tell_truth",
+          "effects": {
+            "sanity": -10
+          },
+          "setFlags": {
+            "nadia_final_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_guard_search",
+      "loc": "dorm",
+      "priority": 81,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "called_guard"
+        ],
+        "notFlags": [
+          "guard_search_done"
+        ],
+        "dayMin": 8
+      },
+      "choices": [
+        {
+          "id": "comply",
+          "effects": {
+            "money": -15,
+            "sanity": -5
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "guard_search_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "hide_stuff",
+          "effects": {
+            "health": -15,
+            "sanity": -8
+          },
+          "setFlags": {
+            "guard_search_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "point_next_door",
+          "effects": {
+            "money": 20,
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "guard_search_done": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_letter_reply",
+      "loc": "dorm",
+      "weight": 9,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "letter_reply_done"
+        ],
+        "anyFlags": [
+          "read_letter",
+          "burned_letter"
+        ]
+      },
+      "choices": [
+        {
+          "id": "read_reply",
+          "effects": {
+            "sanity": 12
+          },
+          "morality": 1,
+          "setFlags": {
+            "letter_reply_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "no_reply",
+          "effects": {
+            "sanity": -10
+          },
+          "setFlags": {
+            "letter_reply_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_rooftop",
+      "loc": "dorm",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "dayMin": 12,
+        "notFlags": [
+          "rooftop_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "count_berths",
+          "effects": {
+            "sanity": -6
+          },
+          "setFlags": {
+            "rooftop_done": true,
+            "counted_berths": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "just_watch",
+          "effects": {
+            "sanity": 10
+          },
+          "setFlags": {
+            "rooftop_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "with_nadia",
+          "effects": {
+            "sanity": 14,
+            "favor": 5
+          },
+          "requires": {
+            "flags": [
+              "met_nadia"
+            ]
+          },
+          "setFlags": {
+            "rooftop_done": true,
+            "nadia_ally": true
+          },
+          "tone": "good",
+          "key": true
+        }
+      ]
+    }
+  ],
+  "bookkeeping": [
+    "broadcast_blocked",
+    "nadia_hidden",
+    "nadia_free",
+    "gave_ticket",
+    "nadia_stays",
+    "counted_berths",
+    "antenna_abandoned",
+    "has_seal"
+  ]
+}

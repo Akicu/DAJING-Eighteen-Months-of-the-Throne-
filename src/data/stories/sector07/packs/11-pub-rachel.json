@@ -1,0 +1,523 @@
+{
+  "pack": "11-pub-rachel",
+  "loc": "pub",
+  "events": [
+    {
+      "id": "pub_rachel_trust",
+      "loc": "pub",
+      "priority": 82,
+      "once": true,
+      "chain": true,
+      "npc": "rachel",
+      "cond": {
+        "dayMin": 5,
+        "anyFlags": [
+          "warned_rachel",
+          "forged_for_rachel"
+        ],
+        "notFlags": [
+          "rachel_trust_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "ally",
+          "effects": {
+            "favor": 15,
+            "sanity": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "rachel_trust_done": true,
+            "rachel_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "business",
+          "effects": {
+            "money": 25,
+            "favor": 8
+          },
+          "setFlags": {
+            "rachel_trust_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell_berth",
+          "effects": {
+            "money": 60,
+            "favor": -20,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "rachel_trust_done": true,
+            "rachel_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_crew",
+      "loc": "pub",
+      "weight": 10,
+      "once": true,
+      "npc": "rachel",
+      "cond": {
+        "flags": [
+          "met_rachel"
+        ],
+        "dayMin": 7,
+        "notFlags": [
+          "rachel_crew_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "draw_lots",
+          "effects": {
+            "favor": 8,
+            "sanity": -6
+          },
+          "morality": 1,
+          "setFlags": {
+            "rachel_crew_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "pick_strong",
+          "effects": {
+            "favor": 12,
+            "sanity": -3
+          },
+          "morality": -2,
+          "setFlags": {
+            "rachel_crew_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "take_one",
+          "effects": {
+            "favor": -15,
+            "money": 0
+          },
+          "morality": -2,
+          "setFlags": {
+            "rachel_crew_done": true,
+            "rachel_seat": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_offer",
+      "loc": "pub",
+      "priority": 84,
+      "once": true,
+      "chain": true,
+      "npc": "rachel",
+      "cond": {
+        "dayMin": 10,
+        "statMin": {
+          "favor": 22
+        },
+        "notFlags": [
+          "rota_offer_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "accept",
+          "effects": {
+            "favor": 14,
+            "sanity": -12
+          },
+          "morality": -1,
+          "setFlags": {
+            "rota_offer_done": true,
+            "rota_stolen": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "favor": -8,
+            "sanity": 6
+          },
+          "setFlags": {
+            "rota_offer_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "report_her",
+          "effects": {
+            "money": 70,
+            "sanity": -20,
+            "favor": -30
+          },
+          "morality": -3,
+          "setFlags": {
+            "rota_offer_done": true,
+            "rachel_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_arrest",
+      "loc": "pub",
+      "priority": 87,
+      "once": true,
+      "chain": true,
+      "npc": "rachel",
+      "cond": {
+        "flags": [
+          "rota_stolen"
+        ],
+        "notFlags": [
+          "rachel_arrest_done"
+        ],
+        "dayMin": 12
+      },
+      "choices": [
+        {
+          "id": "release",
+          "effects": {
+            "health": -15,
+            "favor": 20,
+            "sanity": 5
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "favor": 30
+            }
+          },
+          "setFlags": {
+            "rachel_arrest_done": true,
+            "rachel_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "pretend",
+          "effects": {
+            "sanity": -15,
+            "favor": -25
+          },
+          "setFlags": {
+            "rachel_arrest_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "cuff",
+          "effects": {
+            "money": 60,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "rachel_arrest_done": true,
+            "rachel_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_smuggle_run",
+      "loc": "pub",
+      "priority": 86,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "boat_pass"
+        ],
+        "notFlags": [
+          "boat_pass_done"
+        ],
+        "dayMin": 14
+      },
+      "choices": [
+        {
+          "id": "give_seat",
+          "effects": {
+            "favor": 18,
+            "sanity": 10
+          },
+          "morality": 2,
+          "setFlags": {
+            "boat_pass_done": true,
+            "crew_saved": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "keep_route",
+          "effects": {
+            "sanity": 10,
+            "favor": -6
+          },
+          "setFlags": {
+            "boat_pass_done": true,
+            "escape_route": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "strip",
+          "effects": {
+            "money": 40,
+            "favor": -12
+          },
+          "morality": -1,
+          "setFlags": {
+            "boat_pass_done": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_bounty_after",
+      "loc": "pub",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "bounty_cleared"
+        ],
+        "notFlags": [
+          "bounty_after_done"
+        ],
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "drink",
+          "effects": {
+            "money": -8,
+            "favor": 6,
+            "sanity": 8
+          },
+          "requires": {
+            "statMin": {
+              "money": 8
+            }
+          },
+          "setFlags": {
+            "bounty_after_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "ask_client",
+          "effects": {
+            "sanity": -8,
+            "favor": 3
+          },
+          "setFlags": {
+            "bounty_after_done": true,
+            "knows_client": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "take_gun",
+          "effects": {
+            "health": -25,
+            "money": 30,
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "bounty_after_done": true,
+            "armed": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_rota_use",
+      "loc": "pub",
+      "once": true,
+      "cond": {
+        "flags": [
+          "knows_schedule"
+        ],
+        "notFlags": [
+          "rota_used"
+        ],
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "tell_rachel",
+          "effects": {
+            "favor": 10,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "rota_used": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "self_use",
+          "effects": {
+            "sanity": 5
+          },
+          "setFlags": {
+            "rota_used": true,
+            "patrol_gap": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell",
+          "effects": {
+            "money": 35,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "rota_used": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_list_rumor",
+      "loc": "pub",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "flags": [
+          "heard_rumor"
+        ],
+        "dayMin": 8,
+        "notFlags": [
+          "list_rumor_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "probe",
+          "effects": {
+            "money": -10,
+            "sanity": -6
+          },
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "setFlags": {
+            "list_rumor_done": true,
+            "knows_buyer": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "warn",
+          "effects": {
+            "favor": 6,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "list_rumor_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "save",
+          "effects": {
+            "sanity": 3
+          },
+          "setFlags": {
+            "list_rumor_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_last_smoke_variant",
+      "loc": "pub",
+      "weight": 8,
+      "once": true,
+      "npc": "rachel",
+      "cond": {
+        "flags": [
+          "rachel_ally"
+        ],
+        "dayMin": 13,
+        "notFlags": [
+          "farewell_done",
+          "last_smoke_variant_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "promise",
+          "effects": {
+            "sanity": 12,
+            "favor": 10
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_smoke_variant_done": true,
+            "farewell_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "truth",
+          "effects": {
+            "sanity": -6,
+            "favor": 4
+          },
+          "setFlags": {
+            "last_smoke_variant_done": true,
+            "farewell_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    }
+  ],
+  "bookkeeping": [
+    "rachel_seat",
+    "crew_saved",
+    "patrol_gap",
+    "knows_client",
+    "knows_buyer"
+  ]
+}

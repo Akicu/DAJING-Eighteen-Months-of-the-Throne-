@@ -1,0 +1,277 @@
+{
+  "meta": {
+    "langName": "English"
+  },
+  "ui": {
+    "appTitle": "SECTOR-07",
+    "appSubtitle": "Evacuation Countdown",
+    "appTagline": "The Last Gate",
+    "day": "Day {day} / {max}",
+    "stat": {
+      "health": "Health",
+      "sanity": "Sanity",
+      "money": "Credits",
+      "favor": "Standing"
+    },
+    "ap": {
+      "label": "Actions left today",
+      "upkeep": "Rations {n}/day · +2 every {every} days"
+    },
+    "goal": {
+      "money": "A berth costs {money} credits",
+      "favor": "or Standing ≥ {favor}",
+      "secured": "Berth secured"
+    },
+    "act": {
+      "gate": "ACT I · THE GATE",
+      "fault": "ACT II · THE FAULT",
+      "list": "ACT III · THE LIST"
+    },
+    "action": {
+      "endDay": "End the shift and return to the barracks",
+      "confirm": "Confirm and continue",
+      "hold": "press and hold",
+      "restart": "Start over",
+      "start": "Begin your shift",
+      "share": "Create share card",
+      "continue": "Resume",
+      "newGame": "New run",
+      "close": "Close"
+    },
+    "story": {
+      "premise": "Ninety days since Ashfall crossed the third cordon. You are the quarantine officer at Gate 7, one stamp in your hand, deciding who gets through. The last evacuation submarine leaves in eighteen days. Four hundred seats. Sixty thousand people outside the gate.",
+      "switch": "Switch story",
+      "pickerTag": "STORY LIBRARY",
+      "title": "Choose a world",
+      "current": "CURRENT",
+      "saved": "Save at day {day} / {max}",
+      "hint": "Each story is a separate world. Saves and ending archives never mix.",
+      "close": "Close"
+    },
+    "badge": {
+      "chain": "Consequence",
+      "new": "New lead",
+      "key": "Pivotal",
+      "chainPending": "PENDING",
+      "chainFrom": "From day {day}"
+    },
+    "roll": {
+      "tag": "GAMBLE",
+      "win": "IT HELD",
+      "lose": "IT FAILED",
+      "likely": "likely",
+      "even": "even odds",
+      "thin": "thin odds",
+      "grim": "long odds"
+    },
+    "dayCard": {
+      "day": "Day {day}",
+      "income": "Shift +{n}",
+      "spend": "Rations -{n}",
+      "hint": "tap to continue",
+      "off": "don't show this"
+    },
+    "interlude": {
+      "fault": "Day seven. The queue outside the gate has not shortened; the red line on the map has begun to move inward.",
+      "list": "Day thirteen. The list is written. Only the last column is waiting for your hand."
+    },
+    "event": {
+      "tag": "Incident",
+      "locked": "Locked",
+      "apCost": "-{n} AP",
+      "rollWin": "You won",
+      "rollLose": "You lost"
+    },
+    "log": {
+      "title": "Action log",
+      "boot": "Terminal connected. Ashfall is spreading. Choose every stamp carefully.",
+      "dayStart": "Day {day} shift begins. Actions restored to {n}.",
+      "upkeepPaid": "Barracks upkeep: {n} credits for clean water and synth rations.",
+      "wage": "Shift allowance paid: +{n} credits.",
+      "upkeepFail": "Not enough credits. Dehydration and hunger cost you 25 health.",
+      "arrive": "Arrived at {loc}.",
+      "effectNone": "No change",
+      "saved": "Progress saved automatically.",
+      "restore": "You get some sleep. Sanity +{n}."
+    },
+    "ending": {
+      "archive": "SECTOR-07 FILE",
+      "win": "Evacuated",
+      "lose": "Left behind",
+      "rarity": "Ending rarity",
+      "trajectory": "Pivotal choices",
+      "noChoice": "Eighteen days of caution. You never made a single extreme choice.",
+      "days": "Survived {n} days",
+      "shareHint": "Long-press or right-click to save, then post to TikTok / Twitter / Instagram",
+      "shareFail": "Couldn't generate the image. Try again.",
+      "sealLine1": "SECTOR",
+      "sealLine2": "ARCHIVE"
+    },
+    "settings": {
+      "sound": "Sound",
+      "music": "Ambience",
+      "on": "On",
+      "off": "Off",
+      "language": "Language"
+    },
+    "contacts": {
+      "title": "Personnel file",
+      "open": "People",
+      "close": "Back",
+      "hint": "How these four end up is decided by how you treat them over eighteen days.",
+      "status": {
+        "unknown": "Unmet",
+        "met": "Known",
+        "ally": "Ally",
+        "betray": "Severed"
+      }
+    },
+    "rarity": {
+      "1": "Common",
+      "2": "Uncommon",
+      "3": "Rare",
+      "4": "Epic",
+      "5": "Legendary"
+    },
+    "share": {
+      "label": "SECTOR 07 // EVACUATION FILE",
+      "stats": "Final vitals",
+      "code": "File no.",
+      "footer": "THE LAST GATE"
+    }
+  },
+  "npcs": {
+    "rachel": {
+      "name": "Rachel",
+      "role": "Owner, The Rusted Anchor / smuggling node",
+      "bio": "There is no morals column on her price list. Ask her why she stayed and she'll say the bar has good liquor.",
+      "stage": {
+        "unknown": "You haven't been down to that cellar bar yet.",
+        "met": "She remembers your face, and what you owe her.",
+        "ally": "She counts you as hers — which means a hold, a key, or a lie told on your behalf.",
+        "betray": "She won't give you a second chance."
+      }
+    },
+    "chen": {
+      "name": "Dr. Chen",
+      "role": "Physician, quarantine medbay",
+      "bio": "Forty-seven days without a full night's sleep, and she is still counting vials.",
+      "stage": {
+        "unknown": "The medbay door is always open. You haven't walked in.",
+        "met": "She talks to you while straightening instruments, eyes never leaving you.",
+        "ally": "She gave you a copy of the cold-box key.",
+        "betray": "She checks the door before she speaks to you."
+      }
+    },
+    "ilya": {
+      "name": "Ilya",
+      "role": "Document forger, black market",
+      "bio": "No left hand, and he can still put anyone's face into any passport.",
+      "stage": {
+        "unknown": "That folding table at the back of the market — you don't know whose it is.",
+        "met": "He knows your gait, and exactly how much you still owe him.",
+        "ally": "He'll take one risk for you. One.",
+        "betray": "He wrote your name in the little notebook."
+      }
+    },
+    "nadia": {
+      "name": "Nadia",
+      "role": "14 / shortwave broadcaster",
+      "bio": "She reads the list from the vent, very quietly. Four hundred kilometres away, people hear it.",
+      "stage": {
+        "unknown": "The vent above your bunk. You've never opened it.",
+        "met": "She knows your name, and which bunk is yours.",
+        "ally": "She kept the last boarding pass she drew by hand for you.",
+        "betray": "She will never appear on this frequency again."
+      }
+    }
+  },
+  "locations": {
+    "gate": {
+      "name": "Gate 7 checkpoint",
+      "desc": "Check permits, collect your pay, or take an envelope in the dark."
+    },
+    "pub": {
+      "name": "The Rusted Anchor",
+      "desc": "Deal with Rachel, and find a way onto the black-market berth list."
+    },
+    "medbay": {
+      "name": "Quarantine medbay",
+      "desc": "Serum, sedatives, and the arithmetic of who gets a bed."
+    },
+    "market": {
+      "name": "Black market",
+      "desc": "Fake papers, organs, dice. Everything is bought, everything is sold."
+    },
+    "dorm": {
+      "name": "Duty barracks",
+      "desc": "Sleep an hour, listen to the radio, or face yourself in the mirror."
+    }
+  },
+  "endings": {
+    "ending_together": {
+      "title": "Four on two berths",
+      "desc": "The submarine had two seats. Four of you went aboard. You still can't explain how — maybe someone handed their papers to someone else, maybe Rachel tore the cargo seal at the last minute. You spent the crossing in a forty-centimetre gap, and nobody spoke. It was raining when you landed. Same as when you left."
+    },
+    "ending_gateopen": {
+      "title": "The one who opened it",
+      "desc": "You pressed the green button and killed the cameras. Sixty thousand people went through Gate 7 in eight hours. In the quarantine files, the page is marked equipment failure. Nobody investigated. The investigators were in the queue."
+    },
+    "ending_broadcast": {
+      "title": "Four hundred names",
+      "desc": "That night every shortwave in the city read the same list. On the third day they started smashing radios. On the fourth, someone copied the names onto a wall. When the submarine left, the docks were packed and nobody made a sound."
+    },
+    "ending_cure": {
+      "title": "The answer at minus eighteen",
+      "desc": "The formula was read out over four hours and four camps started compounding their own. You never got on that boat, but Ashfall mortality fell from sixty percent to twenty in a fortnight. Someone painted on a wall: Dr. Chen's recipe."
+    },
+    "ending_identity": {
+      "title": "A borrowed name",
+      "desc": "You boarded under a dead woman's name. She was twenty-nine in the photograph, and smiling. For two days nobody used your real name. You found work in the new city and gave them her birthday."
+    },
+    "ending_boat": {
+      "title": "The two o'clock tide",
+      "desc": "The mechanic's tug left at two with eight aboard and an engine that kept dying. You rowed by hand for four hours. Near dawn someone started laughing, and then everyone was laughing, including the child who had been sick the whole way."
+    },
+    "ending_soldlist": {
+      "title": "Three hundred and sixty empty seats",
+      "desc": "You sold the list for ninety credits and bought a berth with it. The hold was still three hundred and sixty seats empty when the submarine left. Beside you, someone asked, \"Where are all these people?\" You said, \"They didn't make it.\""
+    },
+    "ending_golden": {
+      "title": "The golden ticket",
+      "desc": "On the last night you emptied everything you had and bought the final first-class seat out. As the hatch sealed you saw people still waving on the other side of the gate. You did not wave back."
+    },
+    "ending_smuggler": {
+      "title": "Night runner",
+      "desc": "You never raised the fare, but Rachel opened the cargo hatch a hand's width. \"Not a sound,\" she said. \"And don't forget you owe me a life.\" As the submarine dived, you heard someone knocking on the hull outside."
+    },
+    "ending_cutrate": {
+      "title": "The berth with no vent",
+      "desc": "The stamp on your forged papers came off a dead man. Cargo bay nineteen has no vent. You lasted eleven hours curled in a forty-centimetre gap. They practically dragged you out at the dock — but you were alive."
+    },
+    "ending_lighthouse": {
+      "title": "The lighthouse of Sector 7",
+      "desc": "You never boarded. On the last morning a thousand people gathered outside the gate, chanting your name, and pushed the gate open from the outside. You didn't become an evacuee. You became the first person among those who stayed to speak."
+    },
+    "ending_loyalist": {
+      "title": "Promoted",
+      "desc": "Your report was clean and your handling decisive, so the system gave you a better post — a larger quarantine zone. The promotion letter carried your staff number and, beneath it, one small line: this position may not apply for evacuation."
+    },
+    "ending_forgotten": {
+      "title": "The forgotten guard",
+      "desc": "The submarine's horn sounded in the harbour once, twice, three times. You never raised the fare and never found a contact. When the gate came down you were still in the booth, holding a stamp you never used."
+    },
+    "ending_dead": {
+      "title": "Killed at Gate 7",
+      "desc": "Your vitals flatlined on post. The cleanup crew carried you out the next morning. The register says line of duty, and there is a neat tick after your number."
+    },
+    "ending_mad": {
+      "title": "The keeper of the gate",
+      "desc": "Eighteen days of moral arithmetic finally broke you. You sealed the gate, swallowed the key, and read the same manifest over the broadcast again and again. When they broke in, you were stamping your own papers."
+    },
+    "ending_starved": {
+      "title": "The hungry ghost",
+      "desc": "You didn't die at the gate and you didn't die by a gun. You died on a cold iron bunk with nothing in your stomach. Your post was filled the next day. It took four hours."
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "pub_rachel_trust": {
+    "title": "She takes you down to the hold",
+    "desc": "Rachel lifts the floor behind the bar and shows you an iron ladder. \"Two berths, rented, in the sub's hold.\" She hands you a torch. \"Cramped down there. But you live. Now you know why quarantine control doesn't frighten me.\"",
+    "choices": {
+      "ally": {
+        "text": "Take her side",
+        "outcome": "You shook on the ladder. Her palm was hard with callus. \"I don't need friends,\" she said. \"I need someone who won't run at the last minute.\""
+      },
+      "business": {
+        "text": "Keep it strictly business",
+        "outcome": "You asked the price. She named it, you knocked ten off, done. She never offered to show you the hold again."
+      },
+      "sell_berth": {
+        "text": "Sell the location to quarantine control",
+        "outcome": "Sixty credits, paid in full. Three days later they raided the bar. Rachel wasn't in it. She never came back to this sector."
+      }
+    }
+  },
+  "pub_rachel_crew": {
+    "title": "Four people, two berths",
+    "desc": "Rachel's four crew stand behind the bar and say nothing. She only bought two berths. \"You choose.\" She slides the list over. \"Two of them will hate you for the rest of their lives.\"",
+    "choices": {
+      "draw_lots": {
+        "text": "Make them draw lots",
+        "outcome": "Four lots. The one who drew short laughed and said he couldn't run far anyway. He stayed, hauling crates on the gate side, right up to the last night."
+      },
+      "pick_strong": {
+        "text": "Pick the two strongest",
+        "outcome": "You took the two with the most muscle. The others didn't argue; they moved out of the bar that night. One of them later sold your movements at the market."
+      },
+      "take_one": {
+        "text": "Put yourself down for one",
+        "outcome": "You wrote your name in the second slot. Rachel looked at you for a long moment, said nothing, folded the list away. She didn't speak to you again that night."
+      }
+    }
+  },
+  "pub_rachel_offer": {
+    "title": "She needs a duty roster",
+    "desc": "Rachel pushes a blank sheet across the bar. \"Sub docking times. Shift change gaps. Patrol blind spots.\" She taps the paper. \"Give me those and the berth is yours. Free.\"",
+    "choices": {
+      "accept": {
+        "text": "Agree",
+        "outcome": "You copied three months of rosters by hand until dawn. She folded it into a cigarette case. From then on, every time the radio clicked, your pulse jumped."
+      },
+      "refuse": {
+        "text": "Refuse",
+        "outcome": "You pushed the sheet back. She raised an eyebrow. \"Fine. Full price then.\" Walking out, the money in your pocket felt suddenly heavier."
+      },
+      "report_her": {
+        "text": "Take the sheet and report her",
+        "outcome": "Seventy credits and a major service record. When the team hit the bar she had already burned the cigarette case. All she said was, \"So it was you.\""
+      }
+    }
+  },
+  "pub_rachel_arrest": {
+    "title": "They bring her into the booth",
+    "desc": "Two military police have Rachel bent over the iron counter. Her lip is split, but when she sees you she smiles. \"I know this one,\" the MP says. \"Do you know her?\"",
+    "choices": {
+      "release": {
+        "text": "Let her go",
+        "req": "Needs Rachel ≥ 30",
+        "outcome": "You signed the handover form and said the paperwork was wrong. The MP swore, but they left. Rachel dropped a brass key on the sill as she went out the back."
+      },
+      "pretend": {
+        "text": "Say you've never seen her",
+        "outcome": "\"Never seen her.\" She watched you the whole way out. No shouting, no pleading. Three days later the bar had a new owner."
+      },
+      "cuff": {
+        "text": "Put the cuffs on yourself",
+        "outcome": "The cuffs clicked loudly. She said quietly, \"You'll get your berth.\" Sixty credits landed that day, marked assistance with interdiction."
+      }
+    }
+  },
+  "pub_smuggle_run": {
+    "title": "The mechanic's boat leaves tonight",
+    "desc": "The mechanic you helped has patched up a leaking tug. Room for eight. \"Tide peaks at two,\" he says. \"After that she sits in the mud and you wait to die.\"",
+    "choices": {
+      "give_seat": {
+        "text": "Give your seat to Rachel's crew",
+        "outcome": "Eight people got on. Not you. The tug died two hundred metres out and they rowed by hand for four hours. At dawn they made the far bank."
+      },
+      "keep_route": {
+        "text": "Keep it as a way out",
+        "outcome": "Tide times, boat position, the mechanic's name. You carried them in your head for days, like a piece of dry food you could bite."
+      },
+      "strip": {
+        "text": "Break it up for parts",
+        "outcome": "Forty credits. Twenty-five for the engine, fifteen for the hull. The mechanic watched you carry off the last sheet of steel and said nothing."
+      }
+    }
+  },
+  "pub_bounty_after": {
+    "title": "The hunter comes to say goodbye",
+    "desc": "The man who collected the bounty sits in the corner with two glasses. He pushes one towards you. \"I'm done,\" he says. \"In this trade, whoever I kill today comes for me tomorrow.\"",
+    "choices": {
+      "drink": {
+        "text": "Have a drink with him",
+        "req": "Needs 8 credits",
+        "outcome": "You drank until closing. He said a great deal; you remember none of it except the last thing: you don't look like you belong in this line."
+      },
+      "ask_client": {
+        "text": "Ask who paid him",
+        "outcome": "He was quiet a long time, then gave you a name. The name belongs to office three at quarantine control. You never went up to that floor again."
+      },
+      "take_gun": {
+        "text": "Take his gun",
+        "outcome": "You came from behind and he had no time. The gun was heavier than you expected. He looked up at you from the floor and said, \"I should have known.\""
+      }
+    }
+  },
+  "pub_rota_use": {
+    "title": "That roster is useful now",
+    "desc": "Half of your copy is out of date, but blind spots don't move. Tonight, 20:00 to 21:20, nobody on the B section wall.",
+    "choices": {
+      "tell_rachel": {
+        "text": "Tell Rachel",
+        "outcome": "She moved three people through that night. Came back with mud to the ankles. \"You're more reliable than I thought.\" First compliment she'd given anyone."
+      },
+      "self_use": {
+        "text": "Use the gap yourself",
+        "outcome": "Eighty minutes bought you two cordon crossings and a look at what's outside. There's nothing outside. Just more walls."
+      },
+      "sell": {
+        "text": "Sell it to quarantine control",
+        "outcome": "Thirty-five credits. Where did the information come from, they asked. You said you heard it on shift. They didn't ask again, but they wrote your name down."
+      }
+    }
+  },
+  "pub_list_rumor": {
+    "title": "The list can be bought",
+    "desc": "Word in the bar: the evacuation list isn't a lottery, it's a sale. Four hundred places, three hundred already allocated, the last hundred taking bids.",
+    "choices": {
+      "probe": {
+        "text": "Pay for the buyer's name",
+        "req": "Needs 10 credits",
+        "outcome": "Ten credits bought a name and an office number. You wrote both on the back of a drinks tab, in light pencil."
+      },
+      "warn": {
+        "text": "Tell Rachel to stop waiting",
+        "outcome": "She said \"noted\", then put two crew on a truck that same night. She trusted you. That's rare in this sector."
+      },
+      "save": {
+        "text": "Do nothing. Keep saving",
+        "outcome": "You finished your drink and counted your savings three times. The number hadn't changed, but it felt lighter."
+      }
+    }
+  },
+  "pub_last_smoke_variant": {
+    "title": "One last time, she leaves you a way in",
+    "desc": "Rachel keeps one light on after closing. \"Cargo bay nineteen. I kept it for you.\" She sets the key on the bar. \"Don't thank me. Just remember that berth was my crew's.\"",
+    "choices": {
+      "promise": {
+        "text": "Promise to bring someone up with you",
+        "outcome": "You closed your hand around the key and said nothing. She laughed. \"Knew you'd say yes.\" It may have been the first thing she ever got wrong."
+      },
+      "truth": {
+        "text": "Tell her you might go alone",
+        "outcome": "She nodded, took the key back, then pushed it over again. \"Up to you,\" she said. \"This place is finished anyway.\""
+      }
+    }
+  }
+}

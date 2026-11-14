@@ -1,0 +1,1774 @@
+{
+  "meta": {
+    "langName": "English"
+  },
+  "ui": {
+    "appTitle": "SECTOR-07",
+    "appSubtitle": "Evacuation Countdown",
+    "appTagline": "The Last Gate",
+    "day": "Day {day} / {max}",
+    "stat": {
+      "health": "Health",
+      "sanity": "Sanity",
+      "money": "Credits",
+      "favor": "Standing"
+    },
+    "ap": {
+      "label": "Actions left today",
+      "upkeep": "Rations {n}/day · +2 every {every} days"
+    },
+    "goal": {
+      "money": "A berth costs {money} credits",
+      "favor": "or Standing ≥ {favor}",
+      "secured": "Berth secured"
+    },
+    "act": {
+      "gate": "ACT I · THE GATE",
+      "fault": "ACT II · THE FAULT",
+      "list": "ACT III · THE LIST"
+    },
+    "action": {
+      "endDay": "End the shift and return to the barracks",
+      "confirm": "Confirm and continue",
+      "hold": "press and hold",
+      "restart": "Start over",
+      "start": "Begin your shift",
+      "share": "Create share card",
+      "continue": "Resume",
+      "newGame": "New run",
+      "close": "Close"
+    },
+    "story": {
+      "premise": "Ninety days since Ashfall crossed the third cordon. You are the quarantine officer at Gate 7, one stamp in your hand, deciding who gets through. The last evacuation submarine leaves in eighteen days. Four hundred seats. Sixty thousand people outside the gate.",
+      "switch": "Switch story",
+      "pickerTag": "STORY LIBRARY",
+      "title": "Choose a world",
+      "current": "CURRENT",
+      "saved": "Save at day {day} / {max}",
+      "hint": "Each story is a separate world. Saves and ending archives never mix.",
+      "close": "Close"
+    },
+    "badge": {
+      "chain": "Consequence",
+      "new": "New lead",
+      "key": "Pivotal",
+      "chainPending": "PENDING",
+      "chainFrom": "From day {day}"
+    },
+    "roll": {
+      "tag": "GAMBLE",
+      "win": "IT HELD",
+      "lose": "IT FAILED",
+      "likely": "likely",
+      "even": "even odds",
+      "thin": "thin odds",
+      "grim": "long odds"
+    },
+    "dayCard": {
+      "day": "Day {day}",
+      "income": "Shift +{n}",
+      "spend": "Rations -{n}",
+      "hint": "tap to continue",
+      "off": "don't show this"
+    },
+    "interlude": {
+      "fault": "Day seven. The queue outside the gate has not shortened; the red line on the map has begun to move inward.",
+      "list": "Day thirteen. The list is written. Only the last column is waiting for your hand."
+    },
+    "event": {
+      "tag": "Incident",
+      "locked": "Locked",
+      "apCost": "-{n} AP",
+      "rollWin": "You won",
+      "rollLose": "You lost"
+    },
+    "log": {
+      "title": "Action log",
+      "boot": "Terminal connected. Ashfall is spreading. Choose every stamp carefully.",
+      "dayStart": "Day {day} shift begins. Actions restored to {n}.",
+      "upkeepPaid": "Barracks upkeep: {n} credits for clean water and synth rations.",
+      "wage": "Shift allowance paid: +{n} credits.",
+      "upkeepFail": "Not enough credits. Dehydration and hunger cost you 25 health.",
+      "arrive": "Arrived at {loc}.",
+      "effectNone": "No change",
+      "saved": "Progress saved automatically.",
+      "restore": "You get some sleep. Sanity +{n}."
+    },
+    "ending": {
+      "archive": "SECTOR-07 FILE",
+      "win": "Evacuated",
+      "lose": "Left behind",
+      "rarity": "Ending rarity",
+      "trajectory": "Pivotal choices",
+      "noChoice": "Eighteen days of caution. You never made a single extreme choice.",
+      "days": "Survived {n} days",
+      "shareHint": "Long-press or right-click to save, then post to TikTok / Twitter / Instagram",
+      "shareFail": "Couldn't generate the image. Try again.",
+      "sealLine1": "SECTOR",
+      "sealLine2": "ARCHIVE"
+    },
+    "settings": {
+      "sound": "Sound",
+      "music": "Ambience",
+      "on": "On",
+      "off": "Off",
+      "language": "Language"
+    },
+    "contacts": {
+      "title": "Personnel file",
+      "open": "People",
+      "close": "Back",
+      "hint": "How these four end up is decided by how you treat them over eighteen days.",
+      "status": {
+        "unknown": "Unmet",
+        "met": "Known",
+        "ally": "Ally",
+        "betray": "Severed"
+      }
+    },
+    "rarity": {
+      "1": "Common",
+      "2": "Uncommon",
+      "3": "Rare",
+      "4": "Epic",
+      "5": "Legendary"
+    },
+    "share": {
+      "label": "SECTOR 07 // EVACUATION FILE",
+      "stats": "Final vitals",
+      "code": "File no.",
+      "footer": "THE LAST GATE"
+    }
+  },
+  "npcs": {
+    "rachel": {
+      "name": "Rachel",
+      "role": "Owner, The Rusted Anchor / smuggling node",
+      "bio": "There is no morals column on her price list. Ask her why she stayed and she'll say the bar has good liquor.",
+      "stage": {
+        "unknown": "You haven't been down to that cellar bar yet.",
+        "met": "She remembers your face, and what you owe her.",
+        "ally": "She counts you as hers — which means a hold, a key, or a lie told on your behalf.",
+        "betray": "She won't give you a second chance."
+      }
+    },
+    "chen": {
+      "name": "Dr. Chen",
+      "role": "Physician, quarantine medbay",
+      "bio": "Forty-seven days without a full night's sleep, and she is still counting vials.",
+      "stage": {
+        "unknown": "The medbay door is always open. You haven't walked in.",
+        "met": "She talks to you while straightening instruments, eyes never leaving you.",
+        "ally": "She gave you a copy of the cold-box key.",
+        "betray": "She checks the door before she speaks to you."
+      }
+    },
+    "ilya": {
+      "name": "Ilya",
+      "role": "Document forger, black market",
+      "bio": "No left hand, and he can still put anyone's face into any passport.",
+      "stage": {
+        "unknown": "That folding table at the back of the market — you don't know whose it is.",
+        "met": "He knows your gait, and exactly how much you still owe him.",
+        "ally": "He'll take one risk for you. One.",
+        "betray": "He wrote your name in the little notebook."
+      }
+    },
+    "nadia": {
+      "name": "Nadia",
+      "role": "14 / shortwave broadcaster",
+      "bio": "She reads the list from the vent, very quietly. Four hundred kilometres away, people hear it.",
+      "stage": {
+        "unknown": "The vent above your bunk. You've never opened it.",
+        "met": "She knows your name, and which bunk is yours.",
+        "ally": "She kept the last boarding pass she drew by hand for you.",
+        "betray": "She will never appear on this frequency again."
+      }
+    }
+  },
+  "locations": {
+    "gate": {
+      "name": "Gate 7 checkpoint",
+      "desc": "Check permits, collect your pay, or take an envelope in the dark."
+    },
+    "pub": {
+      "name": "The Rusted Anchor",
+      "desc": "Deal with Rachel, and find a way onto the black-market berth list."
+    },
+    "medbay": {
+      "name": "Quarantine medbay",
+      "desc": "Serum, sedatives, and the arithmetic of who gets a bed."
+    },
+    "market": {
+      "name": "Black market",
+      "desc": "Fake papers, organs, dice. Everything is bought, everything is sold."
+    },
+    "dorm": {
+      "name": "Duty barracks",
+      "desc": "Sleep an hour, listen to the radio, or face yourself in the mirror."
+    }
+  },
+  "events": {
+    "dorm_nadia_intro": {
+      "title": "There's light in the vent",
+      "desc": "Two in the morning. A thin blue light comes through the vent above your bunk, and a very quiet voice. You pry off the grille: a fourteen-year-old girl with a modified shortwave set, reading a list out loud.",
+      "choices": {
+        "feed": {
+          "text": "Give her food and let her stay",
+          "req": "Needs 5 credits",
+          "outcome": "Two biscuits and a tin of beans. She ate fast, then said, \"I'm Nadia. I'm reading the list out. People outside are listening.\""
+        },
+        "evict": {
+          "text": "Tell her to go",
+          "outcome": "You said nobody can live up here. She packed the radio with practised hands, like someone who had moved many times. At the hatch she said, \"You'll need someone to speak for you too.\""
+        },
+        "report": {
+          "text": "Report her to the dorm officer",
+          "outcome": "Thirty-five credits. The officer brought two men and pulled the vent apart. The girl watched your face the whole way out, as if memorising it."
+        }
+      }
+    },
+    "dorm_nadia_parts": {
+      "title": "The transmitter needs a capacitor",
+      "desc": "Nadia opens the back of the set. Half of it is hand-soldered. \"Not enough power. Forty kilometres, maybe.\" She looks up. \"The medbay has parts. But someone's always watching them.\"",
+      "choices": {
+        "steal_parts": {
+          "text": "Steal them from the medbay",
+          "outcome": "Three capacitors and a roll of copper wire from the maintenance room. On the way out you ran into the night nurse. She looked at you and said nothing."
+        },
+        "buy_parts": {
+          "text": "Buy them",
+          "req": "Needs 40 credits",
+          "outcome": "Forty credits for a complete amplifier module off the black market. When she fitted it, the indicator lit green for the first time."
+        },
+        "give_up": {
+          "text": "Drop it",
+          "outcome": "You said it wasn't worth it. She nodded and screwed the back on. \"That's all right,\" she said. \"I'll read quieter.\""
+        }
+      }
+    },
+    "dorm_nadia_broadcast": {
+      "title": "Tonight she reads the whole list",
+      "desc": "Nadia has copied four hundred names into an exercise book in tiny handwriting. \"Four hours to read it all. Every shortwave in the city will hear.\" She looks up. \"They'll come for me. Are you going to stop me?\"",
+      "choices": {
+        "let_her": {
+          "text": "Let her broadcast",
+          "req": "Needs sanity ≥ 40",
+          "outcome": "Her voice went at hour three. You read the last hundred and twenty names for her. Next day the list was all anyone talked about. The day after, military police started searching homes for receivers."
+        },
+        "stop_her": {
+          "text": "Stop her",
+          "outcome": "You pulled the power. She didn't cry. She closed the exercise book and said, \"I'll read it tomorrow.\" You hid the cable. She never looked for it."
+        },
+        "do_it_yourself": {
+          "text": "Read it yourself",
+          "outcome": "You pushed her out and sat down at the set. Your voice sounded like a stranger's on the band. At the seventieth name you heard a vehicle stop downstairs."
+        }
+      }
+    },
+    "dorm_nadia_raid": {
+      "title": "The search team is on the stairs",
+      "desc": "Four in the morning, boots the length of the corridor. Nadia's set is still warm. You have about forty seconds.",
+      "choices": {
+        "hide_her": {
+          "text": "Fold her into the duty locker",
+          "outcome": "Sixty centimetres wide. She curled up in it with the radio. The team stood by your bunk for six minutes. After they left she stayed in there another half hour before she dared come out."
+        },
+        "hand_over": {
+          "text": "Give her up",
+          "outcome": "Sixty credits. She didn't struggle when they took her. She asked one question: \"Was it you?\" You didn't answer. It may have been the quietest silence of your life."
+        },
+        "roof_escape": {
+          "text": "Send her over the roof",
+          "outcome": "You twisted bedsheets into a rope and lowered her from the third floor. She turned her ankle on landing but ran fast. The radio stayed under your bunk."
+        }
+      }
+    },
+    "dorm_nadia_choice": {
+      "title": "She has no ticket",
+      "desc": "Nadia has stripped the set into parts and packed them in a canvas bag. \"I'm not going,\" she says. \"I'm useful here.\" She is fourteen, has no boarding pass, and nobody will sign for one.",
+      "choices": {
+        "give_ticket": {
+          "text": "Give her your ticket",
+          "outcome": "You pushed it into the bottom of her bag. She fished it out and stared at it. \"Then what about you?\" You said you had another way. You didn't."
+        },
+        "let_stay": {
+          "text": "Let her stay",
+          "outcome": "You helped her re-rig the antenna on the roof. She tuned it, said \"Gate seven, test,\" and smiled. You didn't try to talk her out of it that day."
+        },
+        "tell_truth": {
+          "text": "Tell her you have no ticket either",
+          "outcome": "She blinked, then pulled a sheet of paper from her bag — a boarding pass she had drawn herself. \"I made lots,\" she said. \"Want one?\""
+        }
+      }
+    },
+    "dorm_guard_search": {
+      "title": "Riot control is searching for contraband",
+      "desc": "Six of them, two minutes a room. There is something under your bunk — a rifle, a seal, or a radio that should not exist.",
+      "choices": {
+        "comply": {
+          "text": "Cooperate and pay the fine",
+          "req": "Needs 15 credits",
+          "outcome": "Fifteen credits, logged as unauthorised possession. They bagged it up. On the way out one of them patted your shoulder and said, \"Stay smart.\""
+        },
+        "hide_stuff": {
+          "text": "Push it all into the ceiling",
+          "outcome": "You stood on the top bunk and shoved everything up there. They searched the bed and the locker and never looked up. One of them said on the way out, \"This room smells wrong.\""
+        },
+        "point_next_door": {
+          "text": "Point at the next room",
+          "outcome": "Twenty credits and the neighbours got hit. Three men lived there. One moved out the next day, and stood outside your door a long time before he went."
+        }
+      }
+    },
+    "dorm_letter_reply": {
+      "title": "Your mother wrote back",
+      "desc": "The handwriting on the envelope is unsteady. The postmark is two months old. You leave it on the table and look at it for ten minutes before opening it.",
+      "choices": {
+        "read_reply": {
+          "text": "Open it",
+          "outcome": "The well's dry, your father's fine, don't come back. The last line says they've kept your room as it was. You read it three times."
+        },
+        "no_reply": {
+          "text": "Don't open it. Put it away",
+          "outcome": "You pressed it under a stack of old uniforms. It stayed there a long time, and you knew it was there every day."
+        }
+      }
+    },
+    "dorm_rooftop": {
+      "title": "You can see the submarine from the roof",
+      "desc": "Before dawn the submarine runs a trial, tail light dragging a red line across the water. It is much smaller than you imagined.",
+      "choices": {
+        "count_berths": {
+          "text": "Count the berths",
+          "outcome": "Three times, four hundred and twenty. Four hundred names on the list, sixty thousand people outside the gate. You kept the number to yourself."
+        },
+        "just_watch": {
+          "text": "Just watch",
+          "outcome": "You sat on the roof until daylight, and the wind was cold. The submarine came back with no lights on. Going downstairs, you felt emptier and lighter at once."
+        },
+        "with_nadia": {
+          "text": "Bring Nadia up to see it",
+          "req": "Requires having met Nadia",
+          "outcome": "It was the first submarine she'd ever seen. She looked a long time and said, \"It's so small.\" You said yes. She said, \"Then we have to make more people stay.\""
+        }
+      }
+    },
+    "gate_queues": {
+      "title": "The line runs three kilometres out",
+      "desc": "The numbering system collapsed on day four. Thirty thousand people standing in the rain, clutching expired tags. Someone is now trading a child's name for a place near the front. The floodlights sweep the queue every forty seconds.",
+      "choices": {
+        "triage": {
+          "text": "Void the tags and sort by age — elderly and children first",
+          "outcome": "You voided every tag and re-sorted by age. The queue went quiet for ten minutes, then a man lifted his son onto his shoulders and said the boy was three. The boy was twelve."
+        },
+        "auction": {
+          "text": "Sell the front of the line to whoever can pay",
+          "outcome": "The first place went for thirty-five. By the seventh, the back of the queue started pushing. You heard bones give. You did not look up that day."
+        },
+        "shut": {
+          "text": "Close the window and let riot control handle it",
+          "outcome": "You pulled the shutter and sat behind it for two hours. Riot control cleared the square in forty minutes. The next morning someone had painted a name on the wall outside the gate. It was yours."
+        }
+      }
+    },
+    "gate_deserter_return": {
+      "title": "He came back with a map",
+      "desc": "The deserter you let through stands outside the window, ten kilos lighter, a hand-drawn map against his chest. \"Serum convoy out of Supply Station Three. Eleven every night, through B sector. Two trucks, four guards.\" He pushes it through the slot. \"I'm not here to ask for anything.\"",
+      "choices": {
+        "believe": {
+          "text": "Take the map and trust him",
+          "outcome": "The map marks a blind spot in the patrol route, the lines shaking. You learned later he had lain in the rain three nights to draw it."
+        },
+        "doubt": {
+          "text": "Call it a trap and send him away",
+          "outcome": "He folded the map down to the size of a stamp and slid it into his boot. \"Understood,\" he said. He did not explain further."
+        },
+        "sell_him": {
+          "text": "Note where he is standing. Collect the bounty",
+          "outcome": "Forty-five credits, more than last time. The enforcement team took him away and this time he did not run. Your finger hit the wrong key twice while you confirmed the transfer."
+        }
+      }
+    },
+    "gate_guard_grudge": {
+      "title": "They remember who called riot control",
+      "desc": "Three riot officers at the window, helmets under their arms. The one in front has a fresh scratch down his face. \"We carried four people out that night. One of them was my brother.\" He says it calmly. \"You free to step outside for a minute?\"",
+      "choices": {
+        "drinks": {
+          "text": "Buy them a drink and clear the air",
+          "req": "Needs 15 credits",
+          "outcome": "Three bad drinks, fifteen credits. Nobody mentioned the brother again. On the way out, one of them turned his glass upside down on the table — around here that means this isn't finished."
+        },
+        "stand": {
+          "text": "Hold your ground. You were following orders",
+          "outcome": "The first punch caught your chest. By the third you stopped counting. You lay on the concrete a long while; when you got up, two buttons were gone from your uniform."
+        },
+        "remember": {
+          "text": "Write down their badge numbers and say nothing",
+          "outcome": "You copied the three numbers onto the back of the duty log, slowly. After they left you sat under the lamp looking at those digits for a long time."
+        }
+      }
+    },
+    "gate_audit_return": {
+      "title": "The auditor is back, with seals",
+      "desc": "The same man as last time, a roll of red sealing tape in his hand. \"What you gave me, I handed in.\" He winds the tape around one finger. \"Now it's my turn to ask. Which side do you want sealed?\"",
+      "choices": {
+        "ledger": {
+          "text": "Hand over the ledger. Let him seal it",
+          "req": "Needs 30 credits (fine)",
+          "outcome": "Thirty credits in fines and the ledger closed on page thirty-seven. \"You're a sensible man,\" he said on his way out."
+        },
+        "counter": {
+          "text": "Report him for taking your money",
+          "req": "Needs sanity ≥ 50",
+          "outcome": "Dates, amounts, the exact look on his face when he pocketed it. He was gone in two days. Someone in the canteen said whoever wrote that report was vicious."
+        },
+        "pay_again": {
+          "text": "Pay him again",
+          "req": "Needs 60 credits",
+          "outcome": "He counted it twice, then smiled and put the tape away. This time he remembered to ask for a receipt."
+        }
+      }
+    },
+    "gate_rifle": {
+      "title": "The rifle is still under the bed",
+      "desc": "Still wrapped in a raincoat under your bunk. Someone at the market offered fifty today. It also means that if a search team comes, there is no story you can tell.",
+      "choices": {
+        "sell": {
+          "text": "Sell it",
+          "outcome": "Fifty-five credits, no questions. Your finger paused on the trigger guard as you handed it over."
+        },
+        "keep": {
+          "text": "Keep it",
+          "outcome": "You oiled it and slid it back under the bunk. You slept light that night, but better than before."
+        },
+        "hand_in": {
+          "text": "Turn it in to quarantine control",
+          "outcome": "The shift supervisor looked at you for three seconds, wrote \"voluntary surrender\" in the register and logged a commendation. On your way out you heard someone behind you say the man has some nerve."
+        }
+      }
+    },
+    "gate_lockdown_blame": {
+      "title": "Inquiry: who opened that door",
+      "desc": "Four days after the quarantine camp was emptied, the inquiry team arrived. They pulled the footage for that night — only eleven seconds of it, the eleven seconds the gate was open. Eleven people went through in those seconds.",
+      "choices": {
+        "confess": {
+          "text": "Admit you opened it",
+          "outcome": "Fourteen days suspended, all performance pay docked, no referral for prosecution. The investigator closed his folder and said, \"At least you didn't lie.\""
+        },
+        "frame": {
+          "text": "Put it on the officer who died that night",
+          "outcome": "The dead don't argue. You matched the timestamps precisely. The day the case closed you saw his daughter in the canteen queue and she did not recognise you."
+        },
+        "hide": {
+          "text": "Disappear for a few days",
+          "outcome": "Three days in the C sector drains on one pack of biscuits. Nobody asked where you had been. But your name was gone from the duty roster."
+        }
+      }
+    },
+    "gate_tunnel": {
+      "title": "There are people in the drain",
+      "desc": "On night patrol you hear an echo under the gate — not water. Shovels. C sector has been digging a drainage tunnel under the cordon; forty metres so far. They see you. Nobody stops.",
+      "choices": {
+        "dig": {
+          "text": "Climb down and dig with them",
+          "outcome": "Four hours in the mud, two nails gone. Someone handed you a canteen. Nobody thanked you and nobody asked why."
+        },
+        "report": {
+          "text": "Report it. Have it sealed",
+          "outcome": "The engineering crew poured concrete the next day. Forty metres, three truckloads. Forty credits bounty. Your hand was steady on the receipt."
+        },
+        "ignore": {
+          "text": "Pretend you heard nothing",
+          "outcome": "You aimed your torch the other way and finished the route. The tunnel opened a week later. You never used it, but you know it's there."
+        }
+      }
+    },
+    "gate_press": {
+      "title": "The publicity team arrives",
+      "desc": "Two people in softshell jackets set up a camera. They want footage of an \"orderly evacuation\". You, at the window, stamp in hand, smiling. \"Ten seconds. The whole Federation will see how efficient Gate 7 is.\"",
+      "choices": {
+        "perform": {
+          "text": "Play along",
+          "outcome": "Seventeen takes, they used the third. You smiled like a man who just got his pension. Next day, twenty-five credits arrived as a publicity assistance stipend."
+        },
+        "turn_camera": {
+          "text": "Turn the camera on the queue",
+          "outcome": "The cameraman hesitated, then actually did it. Three thousand faces in frame and not one of them smiling. The footage never aired."
+        },
+        "grab": {
+          "text": "Take the camera",
+          "outcome": "You smashed it against the gate and cut your hand on the housing. The team pulled out that day. You were logged for \"emotional instability\" and missed the year's commendation."
+        }
+      }
+    },
+    "gate_evac_list": {
+      "title": "The evacuation list is four hundred lines",
+      "desc": "It sits on the duty terminal. Four hundred names, encrypted. The submarine is rated for four hundred. There are sixty thousand people outside the gate. Line three is your own name — someone has already signed for you.",
+      "choices": {
+        "copy": {
+          "text": "Copy it and take it with you",
+          "outcome": "Three minutes to copy. A prompt appeared: this operation has been logged. You didn't stop."
+        },
+        "sell_copy": {
+          "text": "Sell the list on the black market",
+          "outcome": "Ninety credits, no haggling. Three days later forty people who weren't on the list had boarding passes. The other three hundred and sixty places stayed empty."
+        },
+        "burn": {
+          "text": "Delete it",
+          "outcome": "Three confirmations and the screen went black. Four hundred seats became first come, first served. You still don't know whether that saved them or killed them."
+        }
+      }
+    },
+    "gate_list_use": {
+      "title": "The list is in your pocket now",
+      "desc": "The paper has gone soft with sweat. The people outside are still waiting. The submarine docks the night after tomorrow. You have the authority, and you have a list.",
+      "choices": {
+        "by_list": {
+          "text": "Only let through the names on the list",
+          "outcome": "You read out four hundred names over six hours. By a hundred and seventy your voice was gone. People not on the list started hitting the gate. You kept reading."
+        },
+        "give_rachel": {
+          "text": "Give it to Rachel",
+          "outcome": "She read it for a long time, then said, \"Do you know what this is worth?\" You said yes. She folded it into her jacket pocket."
+        },
+        "tear": {
+          "text": "Tear it up",
+          "outcome": "Four pieces into the incinerator. Four hundred names burned in under three seconds. You stood there until the furnace went cold."
+        }
+      }
+    },
+    "gate_last_night": {
+      "title": "The last night",
+      "desc": "The submarine leaves at four. Two floodlights outside the gate are dead, and a few thousand people are waiting in the dark. You are the only name on tonight's roster.",
+      "choices": {
+        "hold": {
+          "text": "Hold the gate and finish the shift by the book",
+          "outcome": "You stayed until four, filling the handover log page by page. The submarine left without sounding its horn. Under \"irregularities\" you wrote one word: none."
+        },
+        "clock_out": {
+          "text": "Leave early. Go to the dock",
+          "outcome": "You killed the booth light and left the key in the lock. Halfway there you looked back once. The gate was black in the rain, like a closed mouth."
+        },
+        "open": {
+          "text": "Open the gate. Let them all through",
+          "req": "Needs sanity ≥ 40",
+          "outcome": "You pressed the green button and killed the cameras. When the crowd came through there was no cheering, only footsteps, like rain that had been falling for years finally reaching the ground."
+        }
+      }
+    },
+    "gate_tunnel_escape": {
+      "title": "The tunnel is through",
+      "desc": "C sector comes for you before dawn, covered in mud. \"It's open. Runs all the way to the old pump station past the cordon.\" The one in front looks at you. \"Coming? There's fourteen spots left.\"",
+      "choices": {
+        "alone": {
+          "text": "Go alone",
+          "outcome": "Forty minutes crawling in the dark. You came out at first light. No footsteps behind you. You lived, and you thought about that for a long time afterwards."
+        },
+        "lead_them": {
+          "text": "Take them with you",
+          "req": "Needs Rachel ≥ 30",
+          "outcome": "Sixteen people, two children, one pregnant woman. Ten metres from the end the torch died; you felt along the wall and pushed every one of them out. One was missing at the count. Nobody dared go back."
+        },
+        "collapse": {
+          "text": "Collapse the tunnel",
+          "outcome": "You lit the fuse and backed off thirty metres. The collapse was muffled, like someone underground letting out a breath. Next day you logged it as a structural hazard, cleared."
+        }
+      }
+    },
+    "gate_overtime": {
+      "title": "Double shift",
+      "desc": "A gap opened in the roster — someone called in sick. The supervisor asks if you'll cover it. Double allowance, sixteen hours on your feet. The queue outside won't thin out because you feel unwell.",
+      "choices": {
+        "double": {
+          "text": "Take it. Double allowance",
+          "outcome": "Sixteen hours, four hundred stamps, one toilet break. The allowance landed and the number looked good. Back at the barracks it took you three tries to get your boots off."
+        },
+        "normal": {
+          "text": "Decline. Clock off on time",
+          "outcome": "You said no. The supervisor shrugged and wrote in someone else's name. You clocked off on time and bought a bowl of hot soup on the way back."
+        }
+      }
+    },
+    "market_ilya_intro": {
+      "title": "The document man with one hand",
+      "desc": "He sits behind a folding table, left sleeve tucked into his belt. \"What do you need to be?\" He fans out three passports. \"Worker, nurse, and one from quarantine control. That one's expensive, but nobody searches you.\"",
+      "choices": {
+        "buy_papers": {
+          "text": "Buy a new identity",
+          "req": "Needs 55 credits",
+          "outcome": "You took the nurse. He swapped the photograph and crimped the edge with a heated spoon, steadier than any machine. \"Balance on delivery. I'm not worried you'll run. This place is only so big.\""
+        },
+        "buy_pass": {
+          "text": "Just one travel permit",
+          "req": "Needs 20 credits",
+          "outcome": "Twenty for a handwritten permit with a real stamp. \"Single use,\" he stressed. \"Don't gamble it.\""
+        },
+        "rob_him": {
+          "text": "Take his drawer",
+          "outcome": "Four hundred credits in the drawer and seven other people's identities. He didn't resist. He just held the empty sleeve with his right hand and said, \"That wasn't only mine you took.\""
+        }
+      }
+    },
+    "market_ilya_papers": {
+      "title": "The passport belongs to a dead woman",
+      "desc": "Ilya slides it over. \"Name on it is Zhou Lin, twenty-nine. Died in the camp three days ago.\" He taps the photo. \"She's yours now. Sixty on balance, or walk away.\"",
+      "choices": {
+        "pay_full": {
+          "text": "Pay the balance",
+          "req": "Needs 60 credits",
+          "outcome": "He took the money, wrapped the passport in oilpaper and pushed it into your coat. \"Learn her birthday,\" he said. \"Sometimes they ask.\""
+        },
+        "haggle": {
+          "text": "Push him down to thirty-five",
+          "req": "Needs 35 credits",
+          "outcome": "He looked at you a long time, then said fine. The twenty-five he lost went into a little notebook. \"I won't chase you,\" he said. \"But I'll remember.\""
+        },
+        "back_out": {
+          "text": "Back out",
+          "outcome": "He put it back in the drawer. \"You're cleaner than I thought.\" It didn't sound like a compliment, but you didn't argue."
+        }
+      }
+    },
+    "market_ilya_arrest": {
+      "title": "They have his face on the table",
+      "desc": "Three inspectors have Ilya bent over the folding table, going through his drawer. \"Document fraud. Twenty years.\" One turns to you. \"You know him?\" Ilya doesn't look up.",
+      "choices": {
+        "vouch": {
+          "text": "Say he just repairs watches",
+          "req": "Needs Rachel ≥ 15",
+          "outcome": "You dropped Rachel's name. The inspectors looked at each other and let him go. Ilya stood up, rubbed his face and said, \"I owe you one.\""
+        },
+        "silence": {
+          "text": "Say nothing",
+          "outcome": "You stood there while they bagged every item in the drawer. As they took him out, Ilya made a small gesture with his right hand, like a goodbye."
+        },
+        "identify": {
+          "text": "Identify him",
+          "outcome": "Fifty credits, settled on the spot. When the cuffs went on he finally looked up at you. You saw that look on a lot of faces afterwards."
+        }
+      }
+    },
+    "market_ilya_debt": {
+      "title": "He owes the company four hundred and fifty",
+      "desc": "Ilya's stall is in pieces and he's sitting in the glass. \"The company's money. Four-fifty.\" He shows you the notebook, every entry there. \"They gave me three days.\"",
+      "choices": {
+        "pay_debt": {
+          "text": "Pay it for him",
+          "req": "Needs 45 credits",
+          "outcome": "You pushed the money into his hand. He counted it twice, then took a brass seal from around his neck and gave it to you. \"Old quarantine seal. Genuine. It's worth something now.\""
+        },
+        "let_him": {
+          "text": "Let him sort it out",
+          "outcome": "You said you couldn't help. He nodded and closed the notebook. \"I know.\" Three days later the stall was gone, he was still there, and the empty sleeve seemed emptier."
+        },
+        "buy_stamp": {
+          "text": "Buy the seal off him",
+          "req": "Needs 25 credits",
+          "outcome": "You bought the seal. When he put the brass into your palm his fingers paused, then withdrew quickly."
+        }
+      }
+    },
+    "market_ilya_choice": {
+      "title": "The last genuine boarding pass",
+      "desc": "Ilya sets a stiff card in front of you, embossed edges, the real thing. \"I kept it for myself,\" he says. \"Now it's yours. Take me with you.\"",
+      "choices": {
+        "take_his": {
+          "text": "Take the pass. Leave him",
+          "outcome": "You put the card in your pocket. He didn't stop you. He smoothed the empty sleeve and said, \"You could at least say thank you.\""
+        },
+        "give_to_chen": {
+          "text": "Give it to Dr. Chen",
+          "outcome": "Ilya was quiet a long time, then laughed. \"Best deal I ever made,\" he said, \"was giving it to the wrong person.\""
+        },
+        "burn_both": {
+          "text": "Burn both passes",
+          "outcome": "You tore them up in front of him and put them in the stove. He watched the fire and said at last, \"You know what I was thinking? That this is fine too.\""
+        }
+      }
+    },
+    "market_militia": {
+      "title": "The militia wants this month's protection",
+      "desc": "Five men with armbands block the alley. The one in front holds a tin box. \"Price went up. Twenty.\" He shrugs. \"Or don't pay. We just can't guarantee your stall's still here tomorrow.\"",
+      "choices": {
+        "pay": {
+          "text": "Pay",
+          "req": "Needs 20 credits",
+          "outcome": "You threw twenty in the tin. He counted it, said good, and stuck a red marker on your stall."
+        },
+        "refuse": {
+          "text": "Refuse",
+          "outcome": "They hit you rhythmically and then helped you up. \"Twenty next month,\" the leader said. You spat blood and said, \"Still no.\""
+        },
+        "name_drop": {
+          "text": "Drop a quarantine control name",
+          "outcome": "You said a name. They looked at each other, picked up the box and left. Only later did you learn that name belonged to their supplier."
+        }
+      }
+    },
+    "market_child_return": {
+      "title": "The boy who stole tins comes back",
+      "desc": "He stands at the edge of the stall, thinner than last time, holding two empty cans. \"I can work,\" he says fast. \"Carry things, watch the stall, run errands. I eat once a day.\"",
+      "choices": {
+        "hire": {
+          "text": "Hire him",
+          "req": "Needs 10 credits",
+          "outcome": "You gave him ten and told him to start hauling. He worked all day and that night handed nine-fifty back. \"I only ate once.\" You never let him go hungry again."
+        },
+        "chase": {
+          "text": "Send him off",
+          "outcome": "You waved him away. He ran three steps, looked back at your stall, and it wasn't a child's look."
+        },
+        "ignore": {
+          "text": "Act like he isn't there",
+          "outcome": "You kept sorting stock. He stood there about ten minutes, then left. Two empty cans stayed on the ground. You didn't pick them up."
+        }
+      }
+    },
+    "market_fence_seal": {
+      "title": "Someone wants a quarantine seal",
+      "desc": "The fence offers thirty-five for a complete seal — numbered, stamped. \"Better than a passport,\" he says. \"Put a seal on a crate and nobody opens it.\"",
+      "choices": {
+        "sell_seal": {
+          "text": "Sell it",
+          "outcome": "Thirty-five credits. Three days later three trucks of \"medical supplies\" left the city under your seal. You didn't ask what was inside."
+        },
+        "keep_seal": {
+          "text": "Keep it",
+          "outcome": "You slid the seal into your duty log. It might save you once. It might hang you once. You decided to wait for the day you needed it."
+        }
+      }
+    },
+    "medbay_chen_intro": {
+      "title": "Dr. Chen and three cold boxes",
+      "desc": "Half the lights in the medbay are off. Dr. Chen is crouched on the floor counting three cold boxes stamped with a pharma batch number. \"Serum samples,\" she says. \"They collect them tomorrow, then burn them. This disease is treatable.\"",
+      "choices": {
+        "steal_samples": {
+          "text": "Help her move the boxes out",
+          "outcome": "You pushed them out the back and into a corpse cart. She said nothing the whole way, then, at the door: \"I'm Chen Jing. If you hadn't come, I'd have died here tonight.\""
+        },
+        "buy_meds": {
+          "text": "Just buy medicine. Ask nothing",
+          "req": "Needs 20 credits",
+          "outcome": "She took the money, gave you two boxes of antipyretics and nudged the cold boxes further into the corner. You heard her lock the door behind you."
+        },
+        "report_her": {
+          "text": "Report her for hoarding samples",
+          "outcome": "Thirty credits. Next day every light in the medbay was on and two pharma vans pulled up. When they took her away she was still holding a vial."
+        }
+      }
+    },
+    "medbay_chen_raid": {
+      "title": "Four company men at the door",
+      "desc": "Unmarked black uniforms, a clipboard. \"Three cold boxes. Serial 7741 through 7743.\" The one in front slaps it on the table. \"Dr. Chen. Don't make this difficult.\"",
+      "choices": {
+        "block": {
+          "text": "Stand in front of the boxes",
+          "outcome": "The first blow caught your ribs and your breathing changed sound. They left without the boxes, but they took your ID badge."
+        },
+        "handover": {
+          "text": "Let them take it",
+          "outcome": "The boxes went into the van, four men working efficiently. Dr. Chen watched from the end of the corridor. She didn't cry. She buttoned her coat, one button at a time."
+        },
+        "swap": {
+          "text": "Swap in three decoys",
+          "req": "Needs 30 credits",
+          "outcome": "Thirty credits bought three identical empty boxes, filled with ice and saline. They weighed them and said, \"Next time, be quicker.\""
+        }
+      }
+    },
+    "medbay_chen_daughter": {
+      "title": "Her daughter is in B sector",
+      "desc": "Dr. Chen sets a photograph on the table, corners worn round. \"Fourteen. B sector quarantine camp, number 2291.\" She slides a transfer form across. \"You have signing authority.\"",
+      "choices": {
+        "pull_strings": {
+          "text": "Use your authority to get her out",
+          "outcome": "You signed her out as a medical volunteer. The girl came through thin as a shadow. She didn't run to her mother. She just stood there."
+        },
+        "admit_powerless": {
+          "text": "Tell her you can't sign it",
+          "outcome": "She put the photograph away and said, \"I know.\" Then she went back to work and did eleven debridements that day without a word."
+        },
+        "sell_hope": {
+          "text": "Take the money and promise to try",
+          "outcome": "Twenty-five credits. She asked you every week how it was going. You said soon, every week. In week four she stopped asking."
+        }
+      }
+    },
+    "medbay_trial": {
+      "title": "Twelve vials left",
+      "desc": "Twelve trial doses in the cold box. Forty critical cases in the corridor. \"By protocol this needs phase three,\" Dr. Chen says. \"By body count, it needs to happen now.\"",
+      "choices": {
+        "run_trial": {
+          "text": "Dose the twelve worst cases",
+          "outcome": "Nine fevers broke. Three didn't. You wrote \"75% effective\" in the record and found your hand shaking when you finished."
+        },
+        "block_trial": {
+          "text": "Wait for authorisation",
+          "outcome": "You locked the box in the cabinet. Authorisation came in three days. By then two were dead and ten were still waiting. The form said approved, patient assumes risk."
+        },
+        "sell_trial": {
+          "text": "Sell it on the black market",
+          "outcome": "Sixty credits, one transaction. Twelve vials went into a private clinic in C sector that night at eighty each. You heard it saved people. You heard it killed people."
+        }
+      }
+    },
+    "medbay_chen_choice": {
+      "title": "The samples can only go one place",
+      "desc": "Dr. Chen puts the cold box on the table. The thermometer reads minus eighteen. \"Three buyers,\" she says. \"Quarantine control, the camps, or your boat. Choose.\"",
+      "choices": {
+        "broadcast_formula": {
+          "text": "Broadcast the extraction protocol",
+          "outcome": "Three hours reading the process out loud, and Nadia's transmitter carried it four hundred kilometres. By the next day four camps were compounding their own."
+        },
+        "trade_berth": {
+          "text": "Trade it to quarantine control for a berth",
+          "outcome": "Eighty credits and a handwritten boarding chit. Dr. Chen watched you take the money, then said, \"What's in that box could have saved twenty thousand people.\""
+        },
+        "carry_aboard": {
+          "text": "Take it on board",
+          "outcome": "You packed the box into your rucksack and let the weight settle on your shoulder. It could save a great many people — if you ever find a lab."
+        }
+      }
+    },
+    "medbay_ward_round": {
+      "title": "Forty beds, forty-nine patients",
+      "desc": "Nine of them are on stretchers in the corridor. One is still talking. The other eight make no sound at all.",
+      "choices": {
+        "unplug": {
+          "text": "Pull the line on the far bed",
+          "outcome": "You were quick and nobody noticed. The bed was free and a nurse had fresh sheets on it inside two minutes. You smoked half a cigarette at the end of the corridor."
+        },
+        "share_ration": {
+          "text": "Give your rations to the corridor",
+          "outcome": "Three days of biscuits, handed out. They shared it and left you half a piece. You shook with hunger that day and slept better than you had in weeks."
+        },
+        "walk": {
+          "text": "Do the round and do nothing",
+          "outcome": "You walked all forty beds and remembered every face. Outside, your hand closed into a fist in your pocket."
+        }
+      }
+    },
+    "medbay_quarantine_break": {
+      "title": "The camp wall came down",
+      "desc": "At three in the morning the B sector perimeter was pushed over. Two hundred people who weren't dead yet came through. The medbay door is the only one still locked.",
+      "choices": {
+        "open_ward": {
+          "text": "Open up. Take them all",
+          "outcome": "You took sixty-seven. The rest were penned at the junction by riot control. There wasn't a clean patch of floor in the medbay that day."
+        },
+        "lock": {
+          "text": "Keep it locked",
+          "outcome": "The pounding went on for forty minutes. You sat with your back against the door and counted your own heartbeat. Then it went quiet outside."
+        },
+        "ticket_only": {
+          "text": "Only those with boarding chits",
+          "outcome": "Seventeen came in on paper. The rest were shut out. You charged three of them passage — thirty credits total. The paper felt hot in your hand."
+        }
+      }
+    },
+    "medbay_stay_with_chen": {
+      "title": "She says she isn't leaving",
+      "desc": "Two nights before departure, Dr. Chen is filing records. \"There's no lab on that submarine,\" she says. \"There are two thousand patients here. If I go, nobody even writes it down.\"",
+      "choices": {
+        "stay": {
+          "text": "Stay with her",
+          "outcome": "You folded your ticket into a drawer. She looked up once and said, \"Think about it.\" You said you had. That night you filed three hundred records together."
+        },
+        "persuade": {
+          "text": "Try to get her on the boat",
+          "outcome": "You talked for forty minutes. She didn't argue and didn't agree. Finally: \"You go ahead. I'll finish with these patients.\" You knew she wouldn't come."
+        },
+        "leave_alone": {
+          "text": "Leave alone",
+          "outcome": "You said nothing and closed the door softly. The corridor was quiet. You could hear her turning pages inside, all the way to the end of the building."
+        }
+      }
+    },
+    "pub_rachel_trust": {
+      "title": "She takes you down to the hold",
+      "desc": "Rachel lifts the floor behind the bar and shows you an iron ladder. \"Two berths, rented, in the sub's hold.\" She hands you a torch. \"Cramped down there. But you live. Now you know why quarantine control doesn't frighten me.\"",
+      "choices": {
+        "ally": {
+          "text": "Take her side",
+          "outcome": "You shook on the ladder. Her palm was hard with callus. \"I don't need friends,\" she said. \"I need someone who won't run at the last minute.\""
+        },
+        "business": {
+          "text": "Keep it strictly business",
+          "outcome": "You asked the price. She named it, you knocked ten off, done. She never offered to show you the hold again."
+        },
+        "sell_berth": {
+          "text": "Sell the location to quarantine control",
+          "outcome": "Sixty credits, paid in full. Three days later they raided the bar. Rachel wasn't in it. She never came back to this sector."
+        }
+      }
+    },
+    "pub_rachel_crew": {
+      "title": "Four people, two berths",
+      "desc": "Rachel's four crew stand behind the bar and say nothing. She only bought two berths. \"You choose.\" She slides the list over. \"Two of them will hate you for the rest of their lives.\"",
+      "choices": {
+        "draw_lots": {
+          "text": "Make them draw lots",
+          "outcome": "Four lots. The one who drew short laughed and said he couldn't run far anyway. He stayed, hauling crates on the gate side, right up to the last night."
+        },
+        "pick_strong": {
+          "text": "Pick the two strongest",
+          "outcome": "You took the two with the most muscle. The others didn't argue; they moved out of the bar that night. One of them later sold your movements at the market."
+        },
+        "take_one": {
+          "text": "Put yourself down for one",
+          "outcome": "You wrote your name in the second slot. Rachel looked at you for a long moment, said nothing, folded the list away. She didn't speak to you again that night."
+        }
+      }
+    },
+    "pub_rachel_offer": {
+      "title": "She needs a duty roster",
+      "desc": "Rachel pushes a blank sheet across the bar. \"Sub docking times. Shift change gaps. Patrol blind spots.\" She taps the paper. \"Give me those and the berth is yours. Free.\"",
+      "choices": {
+        "accept": {
+          "text": "Agree",
+          "outcome": "You copied three months of rosters by hand until dawn. She folded it into a cigarette case. From then on, every time the radio clicked, your pulse jumped."
+        },
+        "refuse": {
+          "text": "Refuse",
+          "outcome": "You pushed the sheet back. She raised an eyebrow. \"Fine. Full price then.\" Walking out, the money in your pocket felt suddenly heavier."
+        },
+        "report_her": {
+          "text": "Take the sheet and report her",
+          "outcome": "Seventy credits and a major service record. When the team hit the bar she had already burned the cigarette case. All she said was, \"So it was you.\""
+        }
+      }
+    },
+    "pub_rachel_arrest": {
+      "title": "They bring her into the booth",
+      "desc": "Two military police have Rachel bent over the iron counter. Her lip is split, but when she sees you she smiles. \"I know this one,\" the MP says. \"Do you know her?\"",
+      "choices": {
+        "release": {
+          "text": "Let her go",
+          "req": "Needs Rachel ≥ 30",
+          "outcome": "You signed the handover form and said the paperwork was wrong. The MP swore, but they left. Rachel dropped a brass key on the sill as she went out the back."
+        },
+        "pretend": {
+          "text": "Say you've never seen her",
+          "outcome": "\"Never seen her.\" She watched you the whole way out. No shouting, no pleading. Three days later the bar had a new owner."
+        },
+        "cuff": {
+          "text": "Put the cuffs on yourself",
+          "outcome": "The cuffs clicked loudly. She said quietly, \"You'll get your berth.\" Sixty credits landed that day, marked assistance with interdiction."
+        }
+      }
+    },
+    "pub_smuggle_run": {
+      "title": "The mechanic's boat leaves tonight",
+      "desc": "The mechanic you helped has patched up a leaking tug. Room for eight. \"Tide peaks at two,\" he says. \"After that she sits in the mud and you wait to die.\"",
+      "choices": {
+        "give_seat": {
+          "text": "Give your seat to Rachel's crew",
+          "outcome": "Eight people got on. Not you. The tug died two hundred metres out and they rowed by hand for four hours. At dawn they made the far bank."
+        },
+        "keep_route": {
+          "text": "Keep it as a way out",
+          "outcome": "Tide times, boat position, the mechanic's name. You carried them in your head for days, like a piece of dry food you could bite."
+        },
+        "strip": {
+          "text": "Break it up for parts",
+          "outcome": "Forty credits. Twenty-five for the engine, fifteen for the hull. The mechanic watched you carry off the last sheet of steel and said nothing."
+        }
+      }
+    },
+    "pub_bounty_after": {
+      "title": "The hunter comes to say goodbye",
+      "desc": "The man who collected the bounty sits in the corner with two glasses. He pushes one towards you. \"I'm done,\" he says. \"In this trade, whoever I kill today comes for me tomorrow.\"",
+      "choices": {
+        "drink": {
+          "text": "Have a drink with him",
+          "req": "Needs 8 credits",
+          "outcome": "You drank until closing. He said a great deal; you remember none of it except the last thing: you don't look like you belong in this line."
+        },
+        "ask_client": {
+          "text": "Ask who paid him",
+          "outcome": "He was quiet a long time, then gave you a name. The name belongs to office three at quarantine control. You never went up to that floor again."
+        },
+        "take_gun": {
+          "text": "Take his gun",
+          "outcome": "You came from behind and he had no time. The gun was heavier than you expected. He looked up at you from the floor and said, \"I should have known.\""
+        }
+      }
+    },
+    "pub_rota_use": {
+      "title": "That roster is useful now",
+      "desc": "Half of your copy is out of date, but blind spots don't move. Tonight, 20:00 to 21:20, nobody on the B section wall.",
+      "choices": {
+        "tell_rachel": {
+          "text": "Tell Rachel",
+          "outcome": "She moved three people through that night. Came back with mud to the ankles. \"You're more reliable than I thought.\" First compliment she'd given anyone."
+        },
+        "self_use": {
+          "text": "Use the gap yourself",
+          "outcome": "Eighty minutes bought you two cordon crossings and a look at what's outside. There's nothing outside. Just more walls."
+        },
+        "sell": {
+          "text": "Sell it to quarantine control",
+          "outcome": "Thirty-five credits. Where did the information come from, they asked. You said you heard it on shift. They didn't ask again, but they wrote your name down."
+        }
+      }
+    },
+    "pub_list_rumor": {
+      "title": "The list can be bought",
+      "desc": "Word in the bar: the evacuation list isn't a lottery, it's a sale. Four hundred places, three hundred already allocated, the last hundred taking bids.",
+      "choices": {
+        "probe": {
+          "text": "Pay for the buyer's name",
+          "req": "Needs 10 credits",
+          "outcome": "Ten credits bought a name and an office number. You wrote both on the back of a drinks tab, in light pencil."
+        },
+        "warn": {
+          "text": "Tell Rachel to stop waiting",
+          "outcome": "She said \"noted\", then put two crew on a truck that same night. She trusted you. That's rare in this sector."
+        },
+        "save": {
+          "text": "Do nothing. Keep saving",
+          "outcome": "You finished your drink and counted your savings three times. The number hadn't changed, but it felt lighter."
+        }
+      }
+    },
+    "pub_last_smoke_variant": {
+      "title": "One last time, she leaves you a way in",
+      "desc": "Rachel keeps one light on after closing. \"Cargo bay nineteen. I kept it for you.\" She sets the key on the bar. \"Don't thank me. Just remember that berth was my crew's.\"",
+      "choices": {
+        "promise": {
+          "text": "Promise to bring someone up with you",
+          "outcome": "You closed your hand around the key and said nothing. She laughed. \"Knew you'd say yes.\" It may have been the first thing she ever got wrong."
+        },
+        "truth": {
+          "text": "Tell her you might go alone",
+          "outcome": "She nodded, took the key back, then pushed it over again. \"Up to you,\" she said. \"This place is finished anyway.\""
+        }
+      }
+    },
+    "dorm_rest": {
+      "title": "Two Hours on an Iron Bunk",
+      "desc": "The barracks window doesn't close properly and the wind comes through the gap. Someone in the top bunk is snoring, someone at the end of the corridor is reciting something under their breath. You put your coat over your face and try to sleep.",
+      "choices": {
+        "sleep": {
+          "text": "Sleep",
+          "outcome": "You sleep for about two hours and dream that you're stamping papers. You keep stamping until your fingers wear through."
+        }
+      }
+    },
+    "dorm_radio": {
+      "title": "The Shortwave",
+      "desc": "There's an old shortwave set in the barracks. You put on the headphones and turn the dial through the static until a woman's voice comes through clear: \"...third evacuation list has been revised, the submarine will depart...\" The signal dies.",
+      "choices": {
+        "tune_in": {
+          "text": "Keep tuning until you get the whole thing",
+          "outcome": "Forty minutes of work and you have the time: the sub is leaving a full day early. That piece of information might save your life tomorrow night."
+        },
+        "switch_off": {
+          "text": "Switch it off",
+          "outcome": "You take the headphones off and the world goes quiet and blurry again. Some things are easier to sleep through when you don't know them."
+        }
+      }
+    },
+    "dorm_nightmare": {
+      "title": "That Dream Again",
+      "desc": "You dream you're behind the window and the queue files in one at a time, every one of them wearing the same face. You stamp and stamp and the paper reaches the ceiling. You want to stop. Your hand won't listen.",
+      "choices": {
+        "wake": {
+          "text": "Wake up and sit upright",
+          "outcome": "You jolt upright, your back soaked. The top bunk shifts. It's four in the morning and it's raining outside."
+        },
+        "write": {
+          "text": "Write the dream down in the dark",
+          "outcome": "You fill three pages. By the end your heartbeat has slowed. Writing it down made it smaller."
+        },
+        "drink": {
+          "text": "Drink the half bottle by the bed",
+          "outcome": "Half the bottle and the noise in your head finally drops. The next morning your hands shake too much to stamp cleanly."
+        }
+      }
+    },
+    "dorm_journal": {
+      "title": "The Blank Page",
+      "desc": "You write on an empty page of the shift log. Halfway down you realise you can no longer remember the details of that first night. You only remember a woman in the rain, and a shoe left in a puddle.",
+      "choices": {
+        "write": {
+          "text": "Keep writing",
+          "outcome": "You write for a long time and the pen tears the paper in several places. When you close the book, you feel a little lighter."
+        }
+      }
+    },
+    "dorm_neighbor": {
+      "title": "Crying Next Door",
+      "desc": "There's muffled crying from the next room — the trainee who just turned nineteen. It was his first shift at the gate today. You don't ask what he saw. You can guess.",
+      "choices": {
+        "check": {
+          "text": "Knock and sit with him a while",
+          "req": "Needs 5 credits",
+          "outcome": "You bring two cans of beer and ask nothing. He doesn't speak until the second can, and then he talks for a long time. He's asleep by dawn."
+        },
+        "ignore": {
+          "text": "Roll over and pretend you can't hear",
+          "outcome": "You roll over and press the pillow over your ear. The crying lasts until two, then stops. You don't sleep either."
+        }
+      }
+    },
+    "dorm_mirror": {
+      "title": "The Washroom Mirror",
+      "desc": "The tap is dripping. You look up and see yourself — eyes sunken, mouth turned down, looking at you like a stranger. You suddenly can't remember what that face looked like five days ago.",
+      "choices": {
+        "confront": {
+          "text": "Hold the mirror's gaze and say it out loud",
+          "outcome": "You tell the mirror: I know what I did, and I'm going to carry it. After that, the face finally looks a little like yours."
+        },
+        "turn_away": {
+          "text": "Look down, wash your hands, leave",
+          "outcome": "You wash your hands and go. On the way back you avoid anything that reflects."
+        }
+      }
+    },
+    "dorm_letter": {
+      "title": "A Letter From Home",
+      "desc": "Under the mattress is an unopened letter that arrived two months ago. Your sister's handwriting on the envelope, and a postmark that reads \"quarantined\". You've never had the nerve to open it.",
+      "choices": {
+        "read": {
+          "text": "Open it",
+          "outcome": "She says everyone is fine, the tree in the yard fruited this year, and asks when you're coming home. You fold it back into the envelope and then you cry."
+        },
+        "burn": {
+          "text": "Burn it unread",
+          "outcome": "You set it alight and watch it curl into ash on the floor. You're not sure whether you're protecting yourself or giving something up."
+        }
+      }
+    },
+    "gate_mother_child": {
+      "title": "The Girl With a Fever",
+      "desc": "Rain is coming down in sheets. A soaked woman kneels at the window holding an unconscious child, pressing a permit against the glass — dated yesterday, the red stamp bled open by water. \"She only has pneumonia, not the Ash. Let us through. Just this once.\" The camera behind her blinks red.",
+      "choices": {
+        "let_through": {
+          "text": "Wave them through — stamp it green in the camera's blind spot",
+          "req": "Needs 10 credits for the fine",
+          "outcome": "You feed the permit into the reader, cover the lens with your sleeve, and press the green stamp. She doesn't thank you. She just presses her forehead to the glass and disappears into the rain. There will be a red line on your review sheet at month's end."
+        },
+        "report": {
+          "text": "Sound the alarm and claim the bounty",
+          "outcome": "The siren tears the night open. Riot squad drags them away. One of the child's shoes stays behind in a puddle. The system credits you 25 — reference: \"assisted quarantine.\""
+        },
+        "refuse": {
+          "text": "Reject the papers and pull the shutter down",
+          "outcome": "\"Expired. Next.\" You pull the armoured shutter down and the crying becomes something far away. Your base shift pay has been deposited."
+        }
+      }
+    },
+    "gate_mother_revenge": {
+      "title": "A Gun in the Alley",
+      "desc": "You step out of the booth after your shift and something cold presses against the back of your skull. \"Remember the woman and the girl you reported three days ago? The camp was cleared out last night.\" The man's voice shakes. That frightens you more than the gun.",
+      "choices": {
+        "pay": {
+          "text": "Throw every credit you have on the ground",
+          "req": "Needs 35 credits",
+          "outcome": "You scatter the notes into the standing water and roll into a drain the moment he bends to pick them up. The butt of the gun catches your shoulder. You live."
+        },
+        "fight": {
+          "text": "Fight him for the gun",
+          "outcome": "The shot goes off and grazes your ribs. Pinning him down, you realise he is thinner than you are. He stops struggling and just looks at you."
+        },
+        "call_backup": {
+          "text": "Key the radio and call the riot squad",
+          "outcome": "They arrive in three minutes and handle it cleanly. You don't need the details. It's just that from then on, you hear knocking on the walls at night."
+        }
+      }
+    },
+    "gate_pharma_convoy": {
+      "title": "Three Unmarked Armoured Cars",
+      "desc": "Three black armoured cars stop at the gate. A window drops and a man in a suit offers a black card. \"Don't ask what's in the crates. Raise the barrier. This covers half a seat.\" From the rear compartment comes a soft, rhythmic thumping.",
+      "choices": {
+        "take_card": {
+          "text": "Take the card and look away",
+          "outcome": "The convoy tears past and leaves the smell of formaldehyde in the air. You check the balance three times. Your hands won't stop shaking."
+        },
+        "inspect": {
+          "text": "Insist on a routine inspection",
+          "req": "Needs sanity ≥ 50",
+          "outcome": "Banned serum samples. The man decides you're not worth the trouble, drops a stack of hush money and turns around. You memorise the plates."
+        },
+        "turn_away": {
+          "text": "Do nothing and watch them leave",
+          "outcome": "You retreat into the booth and pretend you saw nothing. The convoy waits two minutes, then finds another route. Tonight's log says only: \"No irregularities.\""
+        }
+      }
+    },
+    "gate_pharma_audit": {
+      "title": "Summoned by Internal Affairs",
+      "desc": "A red-sealed notice is taped to your booth window: you're on the \"routine audit\" list. The interrogation room's lamp goes straight into your eyes while the man across the table reads from a three-month-old log and slowly recites the plates of those three armoured cars.",
+      "choices": {
+        "confess": {
+          "text": "Tell the truth and return the money",
+          "outcome": "You sign, you pay it back, you take a major reprimand. Dawn is breaking as you leave the room, and to your surprise you feel lighter."
+        },
+        "bribe_auditor": {
+          "text": "Slide what's left across the table",
+          "req": "Needs 25 credits",
+          "outcome": "He doesn't even count it before sweeping it into a drawer. \"I'll file this record.\" You understand what filing means."
+        },
+        "deny": {
+          "text": "Deny everything",
+          "outcome": "They find no evidence, but they move you to the coldest night post. Your name gets circled — which means someone will always be watching."
+        }
+      }
+    },
+    "gate_inspector": {
+      "title": "An Unannounced Inspection",
+      "desc": "The inspector appears at your booth without notice. He turns the pages of your ledger with gloved hands, slowly, one by one. \"This stamp is a little irregular.\" He says it while looking at your drawer.",
+      "choices": {
+        "bribe": {
+          "text": "Put something in his pocket",
+          "req": "Needs 20 credits",
+          "outcome": "He folds the notes in half and tucks them into his inner pocket, then writes in your file: \"Procedures followed, records complete.\""
+        },
+        "honest": {
+          "text": "Report everything straight",
+          "outcome": "He's quiet for a long time, then adds a single word to your file: \"usable\". That word is worth a five-credit bonus."
+        },
+        "push_back": {
+          "text": "Push back — every stamp was on your orders",
+          "outcome": "His face reddens but he says nothing more. He slams the door on the way out. You won that round, and it went on your record."
+        }
+      }
+    },
+    "gate_deserter": {
+      "title": "The Deserter and His Family",
+      "desc": "A young man still in uniform holds an infant, his wife behind him. He sets his sidearm on the sill with the muzzle pointed at himself. \"I'm turning in the gun. We only want to reach the south — there are ports there that aren't locked down.\" The system says he went missing from the eastern line three hours ago.",
+      "choices": {
+        "let_pass": {
+          "text": "Take the gun and let them through",
+          "req": "Needs 15 credits",
+          "outcome": "You take the weapon, erase the crossing record and press some money into their hands. His wife looks back at you once. You don't forget that look."
+        },
+        "report": {
+          "text": "Report it per regulations",
+          "outcome": "Thirty credits of bounty lands. He's tagged in the system as \"deserter — processed.\" The word processed sits on the screen and stares back."
+        },
+        "take_gear": {
+          "text": "Skin him for gear, then let them through",
+          "outcome": "You take his dive watch and respirator, worth twenty. He doesn't resist. He just holds the baby tighter."
+        }
+      }
+    },
+    "gate_body_cart": {
+      "title": "The Body Cart Doesn't Add Up",
+      "desc": "The disposal truck comes twice a night. Tonight's manifest says fourteen, but the bed is packed with clearly more than fourteen bags. \"The extras are black cargo,\" the driver says quietly. \"You don't look, and there's a share in it for you.\"",
+      "choices": {
+        "look_inside": {
+          "text": "Open it and count",
+          "outcome": "The five extra bags hold contraband cigarettes and antibiotics. You skim a \"handling fee\" and sign the rest through."
+        },
+        "wave_through": {
+          "text": "Sign it and don't look",
+          "outcome": "You sign the manifest and the driver presses a roll of notes into your hand. You made no decision tonight, and perhaps that was the decision."
+        }
+      }
+    },
+    "gate_riot": {
+      "title": "Two Thousand People at the Gate",
+      "desc": "The crowd has come all the way from the slums and the iron gate is humming under the impact. Your orders are four words: maintain order. You have tear gas, a sidearm, and outside the gate there are children, old people, and the auntie who brought you hot water yesterday.",
+      "choices": {
+        "fire_warning": {
+          "text": "Fire a warning shot and gas them",
+          "outcome": "The gas spreads through the rain and the crowd screams and falls back. A dozen people don't get up. You're commended, and you never go back to the shop that sold hot water."
+        },
+        "open_gate": {
+          "text": "Disobey — raise the gate",
+          "outcome": "The crowd goes silent for a heartbeat as the gate rises, then floods through. You're suspended and lose every allowance, and someone hands you a whole bag of steamed buns."
+        },
+        "call_backup": {
+          "text": "Call the riot squad and retreat inside",
+          "outcome": "The squad \"handles\" the disturbance. You listen from the booth through two layers of glass. Afterwards you receive a fifteen-credit allowance."
+        }
+      }
+    },
+    "gate_children": {
+      "title": "Children Against the Gate",
+      "desc": "Seven or eight kids are pressed against the gate. The oldest looks twelve; the smallest is still being carried. No permits — they were smuggled out of the quarantine zone. \"Mister, we don't want to be burned.\"",
+      "choices": {
+        "register": {
+          "text": "Register them one by one, by the book",
+          "outcome": "You enter them into the intake queue and the system pays you twelve in registration fees. You know what's at the other end of that queue."
+        },
+        "hide": {
+          "text": "Hide them in the storehouse behind the booth",
+          "req": "Needs 15 credits",
+          "outcome": "You spend a little to buy off the patrol and pack them into the storehouse. The booth is quiet tonight, except for the occasional sound from the back."
+        },
+        "send_back": {
+          "text": "Call the quarantine zone to collect them",
+          "outcome": "Their truck arrives in ten minutes. You don't go out to watch. After that day, the sound of children laughing makes you hold your breath."
+        }
+      }
+    },
+    "gate_new_order": {
+      "title": "Lockdown Order",
+      "desc": "An encrypted channel delivers new orders: from midnight tomorrow, Sector-07 is exit-only. All unregistered persons are quarantined on site. The last line reads: do not disclose to non-personnel. You know Rachel still has twenty people waiting in her hold.",
+      "choices": {
+        "obey": {
+          "text": "Comply and say nothing",
+          "outcome": "You tick \"acknowledged\". Starting tomorrow, the gate only opens one way."
+        },
+        "warn_rachel": {
+          "text": "Leak it to Rachel",
+          "outcome": "You slip into the bar during a ten-minute shift change. Rachel hears you out and says two words: \"Thank you.\" She will remember this."
+        },
+        "ignore": {
+          "text": "Pretend you never received it",
+          "outcome": "You don't tick the box and you tell no one. The order takes effect at midnight anyway. You spend a little money forging registrations for a few people you know."
+        }
+      }
+    },
+    "gate_bribe_small": {
+      "title": "The Envelope in the Window",
+      "desc": "A man in a merchant's coat pushes an envelope through the slot. \"A small token. My shipment is a little urgent.\" The envelope is thick enough to be twelve credits. There are a dozen more people in line.",
+      "choices": {
+        "take": {
+          "text": "Take it and speed things up",
+          "outcome": "The envelope goes into your inner pocket and his truck clears the gate in thirty seconds. The line behind him keeps waiting."
+        },
+        "refuse": {
+          "text": "Follow procedure",
+          "outcome": "You push the envelope back. He blinks, then takes his place at the end of the queue. Three credits of overtime is all you make tonight."
+        }
+      }
+    },
+    "gate_quiet_night": {
+      "title": "A Quiet Night",
+      "desc": "The rain has stopped and only a few stragglers come to register. You refill the kettle and dim the desk lamp a notch. From the submarine docks comes a horn, three times a night, never late.",
+      "choices": {
+        "stamp": {
+          "text": "Keep stamping until dawn",
+          "outcome": "The whole night passes with four permits. You write \"no irregularities\" on the last line, then sleep face-down on the desk for twenty minutes."
+        }
+      }
+    },
+    "market_forger": {
+      "title": "The Paper Man",
+      "desc": "Deep in the market, a man with no left hand sells permits. \"Sixty. The real kind. The submarine hold doesn't check faces, only stamps.\" He holds a sheet up to the light; the fibre grain matches a genuine one exactly.",
+      "choices": {
+        "buy_papers": {
+          "text": "Buy one",
+          "req": "Needs 35 credits",
+          "outcome": "The paper is real and so is the stamp — peeled off a dead man. He folds it and hands it over. \"And don't look back at the dock.\""
+        },
+        "refuse": {
+          "text": "Shake your head and walk away",
+          "outcome": "You walk off. He calls after you: \"Price goes up tomorrow!\" You don't look back."
+        }
+      }
+    },
+    "market_organs": {
+      "title": "Your Body Is Currency",
+      "desc": "A man in a lab coat runs \"recovery\" out of a tarpaulin shelter. He appraises you the way a butcher weighs a cut. \"One kidney. Fifty-five. Clean surgery, two hours, you walk out on your own.\"",
+      "choices": {
+        "sell": {
+          "text": "Sell",
+          "outcome": "You walk out with fifty-five credits and have to hold the wall to stay upright. The painkillers don't help much. The money does."
+        },
+        "walk": {
+          "text": "Leave",
+          "outcome": "You step out of the shelter and take a deep breath. Lungs still there. Kidney still there."
+        }
+      }
+    },
+    "market_pawn_gun": {
+      "title": "Pawn the Sidearm",
+      "desc": "The pawnbroker lifts your sidearm between two fingers as if it were something dirty. \"Thirty-five. Nobody wants these now. You can't eat a gun.\"",
+      "choices": {
+        "pawn": {
+          "text": "Pawn it",
+          "outcome": "You trade the gun for thirty-five credits and a ticket. Walking out, it hits you that you no longer own a single thing in this city to lean on."
+        },
+        "keep": {
+          "text": "Take it back",
+          "outcome": "You holster it again. The broker shrugs. \"Your call. Worth less tomorrow anyway.\""
+        }
+      }
+    },
+    "market_thief": {
+      "title": "The Kid With the Tin",
+      "desc": "A boy no older than ten is held up by the collar, feet kicking, a tin of corned beef clenched in his fist. The stallholder is shouting, \"Break his hand!\" The boy doesn't cry.",
+      "choices": {
+        "catch": {
+          "text": "Do what the stallholder says",
+          "outcome": "You pin his wrist. The stallholder kicks him twice and tosses you ten credits for your trouble. When the boy breaks free the tin falls and rolls into the drain."
+        },
+        "buy_food": {
+          "text": "Buy the tin and let him go",
+          "req": "Needs 15 credits",
+          "outcome": "You pay for it and press a second tin into his hands. He runs a dozen metres, looks back once, then disappears into the crowd."
+        },
+        "let_go": {
+          "text": "Let him run",
+          "outcome": "You open your hand and the boy slips into the crowd like a fish. The stallholder curses at you. You ignore him."
+        }
+      }
+    },
+    "market_fake_medicine": {
+      "title": "\"Ash Cure\"",
+      "desc": "A stall is piled with garish bottles. \"Cures the Ash. Fifteen a bottle. Last course available.\" The batch number on the base is handwritten and the ink is still wet.",
+      "choices": {
+        "buy": {
+          "text": "Buy a bottle",
+          "outcome": "Your stomach cramps all night. The factory on that batch number burned down three years ago."
+        },
+        "refuse": {
+          "text": "Don't buy",
+          "outcome": "You put the bottle down and the seller turns immediately to the next customer."
+        }
+      }
+    },
+    "market_dice": {
+      "title": "Dice in the Alley",
+      "desc": "Three men are shooting dice against a wall. One of them pushes the cup towards you. The dice are weighted — you can tell, and they don't mind that you can tell.",
+      "choices": {
+        "roll": {
+          "text": "Put down twenty",
+          "req": "Needs 20 credits",
+          "outcome": "The cup comes up against the wall and all four of you stare at the dice.",
+          "win": "All red. All three of them swear at once and push thirty-eight across. Your hands are steady when you take it.",
+          "lose": "All black. You put down the twenty and hear one of them laugh. That laugh follows you down the whole street."
+        },
+        "pass": {
+          "text": "Smile and wave it off",
+          "outcome": "You wave and walk on. Behind you, the dice hit the ground and someone starts cursing."
+        }
+      }
+    },
+    "market_rumor": {
+      "title": "Word From the Meat Stall",
+      "desc": "The butcher keeps chopping while he talks. \"Heard? The sub changed schedule. Leaves a day early. They don't want too many people knowing.\" He never looks up.",
+      "choices": {
+        "listen": {
+          "text": "Buy some meat and hear him out",
+          "outcome": "You spend five credits on half a kilo of something unidentifiable. The rumour is worth more than the meat: the sub really is leaving early."
+        }
+      }
+    },
+    "market_ration": {
+      "title": "Ration Coupons",
+      "desc": "Behind the distribution centre, a man in uniform is buying coupons. \"Eighteen each, cash.\" You know exactly where those coupons come from — the hands of people who didn't make it to today.",
+      "choices": {
+        "sell": {
+          "text": "Sell this week's coupons",
+          "outcome": "You get eighteen credits. For the next three days you live on water and cigarettes."
+        },
+        "share": {
+          "text": "Give them to the old woman in the queue",
+          "outcome": "You press the coupons into the hands of a woman holding an empty pot. She chases you half a block to say thank you. You walk faster."
+        }
+      }
+    },
+    "medbay_routine": {
+      "title": "Quarantine Medbay",
+      "desc": "The disinfectant stings your eyes. The duty doctor doesn't look up. \"Anti-infection serum is fifteen. Neural sedative is fifteen. Pay first, then the needle.\"",
+      "choices": {
+        "serum": {
+          "text": "Take the anti-infection serum",
+          "req": "Needs 15 credits",
+          "outcome": "Cold fluid goes into the vein and your strength comes back within minutes."
+        },
+        "sedative": {
+          "text": "Take the neural sedative",
+          "req": "Needs 15 credits",
+          "outcome": "The buzzing in your ears fades. Your chest feels tight, but the world finally goes quiet."
+        },
+        "leave": {
+          "text": "Sit on the corridor bench for ten minutes",
+          "outcome": "You sat at the end of the corridor for ten minutes, thinking nothing, looking at none of the beds. When you stood up, your hands were steady."
+        }
+      }
+    },
+    "medbay_triage": {
+      "title": "Only One Can Be Saved",
+      "desc": "After a small crush at the gate, the medbay is down to a single unit of plasma. Two patients: a seven-year-old girl, and the district councillor's nephew — who is awake and already on the phone. The doctor looks at you. \"Your call.\"",
+      "choices": {
+        "save_child": {
+          "text": "Give it to the girl",
+          "req": "Needs 20 credits",
+          "outcome": "You pay the shortfall out of your own pocket and the girl lives. The councillor's office calls the next day and hangs up without a word."
+        },
+        "save_officer": {
+          "text": "Give it to the councillor's nephew",
+          "outcome": "The office sends twenty credits as a \"token of thanks\" and a promise to \"remember you\". The girl is wheeled out at three in the morning. You don't follow."
+        },
+        "by_rule": {
+          "text": "Follow protocol — first come, first served",
+          "outcome": "Sorted by registration time, the girl was first. You hand the decision to the system, and the system pays you five credits of overtime."
+        }
+      }
+    },
+    "medbay_theft": {
+      "title": "The Missing Box",
+      "desc": "A whole box of painkillers is gone. The camera caught the night orderly, a single father. He stands in front of you with shaking hands. \"My daughter has a fever... I'm not selling them. I'm really not selling them.\"",
+      "choices": {
+        "report": {
+          "text": "Report it as theft",
+          "outcome": "They take him away and you collect ten credits for the report. The box sits in an evidence bag. You never dare look at it."
+        },
+        "cover": {
+          "text": "Cover for him and pay the difference",
+          "req": "Needs 10 credits",
+          "outcome": "You make up the shortfall yourself and tell the doctor the batch was expired and destroyed. He doesn't thank you — he just starts leaving the best vial aside for you."
+        },
+        "steal": {
+          "text": "Pocket a share for yourself",
+          "outcome": "You take half of what's left. The next day, the painkiller ration is cut by thirty percent."
+        }
+      }
+    },
+    "medbay_doctor": {
+      "title": "The Doctor Is Sick",
+      "desc": "The first grey patch has appeared on the duty doctor's hand. He sees it too, pulls his sleeve down, and keeps writing notes. \"Don't tell anyone,\" he says. \"I'm the only one here who can stitch a wound.\"",
+      "choices": {
+        "give_meds": {
+          "text": "Leave the serum for him",
+          "req": "Needs 25 credits",
+          "outcome": "You pay for the serum and one extra dose. The patch recedes by the third day. Later, he saves your life once."
+        },
+        "walk_away": {
+          "text": "Pretend you didn't see it",
+          "outcome": "You do nothing. Three days later a new duty roster goes up at the medbay door. His name isn't on it."
+        },
+        "report_doctor": {
+          "text": "Report it and request quarantine",
+          "outcome": "The medbay closes for six hours the day they take him. You receive fifteen credits for \"proactive reporting\" and a note in your file saying \"diligent\"."
+        }
+      }
+    },
+    "medbay_painkiller": {
+      "title": "Off-Book Painkiller",
+      "desc": "The doctor pulls an unlabelled syringe from a drawer. \"This never goes on the books. Five credits. Four hours where you can't feel anything — including your conscience.\"",
+      "choices": {
+        "take": {
+          "text": "Take the shot",
+          "outcome": "For four hours you breathe, talk and stamp like a normal person. When it wears off, everything comes back at once."
+        },
+        "refuse": {
+          "text": "No thanks",
+          "outcome": "You push the syringe back. On the way out, your hands feel reasonably steady."
+        }
+      }
+    },
+    "medbay_last_patient": {
+      "title": "The Last Patient",
+      "desc": "The night before evacuation, an old man is helped in. His permit is genuine, but his name is on last night's lockdown list. The doctor left with the first evacuation group. It's just you and a locked cabinet of medicine.",
+      "choices": {
+        "treat": {
+          "text": "Break the cabinet open and treat him",
+          "req": "Needs 30 credits",
+          "outcome": "You force the lock and use up most of the stock. His fever breaks before dawn. You don't log any of it."
+        },
+        "refuse": {
+          "text": "Turn off the lights and lock the door",
+          "outcome": "You kill the lights and listen to him cough all night from the other side of the door. By morning, he has stopped."
+        }
+      }
+    },
+    "pub_rachel_deal": {
+      "title": "Rachel",
+      "desc": "Rachel polishes a cup with a cracked rim behind the bar and slides a cloudy drink towards you. \"A submarine seat isn't something you buy, officer. If you want me to fit you in, first prove you're worth the risk.\"",
+      "choices": {
+        "buy_intel": {
+          "text": "Buy her information and drink with her",
+          "req": "Needs 15 credits",
+          "outcome": "You pay, and she murmurs a sailing window and a passphrase. \"And don't mention my name on the gate side.\""
+        },
+        "forge": {
+          "text": "Forge a batch of transit papers for her",
+          "outcome": "You stamp twenty documents with the booth seal and make a little money on the side. The cost is that you shake for the rest of the night."
+        },
+        "listen": {
+          "text": "Buy nothing, just sit at the bar",
+          "outcome": "You order the cheapest thing on the board and listen to other people's stories for half the night. Walking out, your head is strangely quiet."
+        }
+      }
+    },
+    "pub_mechanic_gift": {
+      "title": "The Mechanic's Debt",
+      "desc": "A man in the corner with engine grease to his elbows pulls his cap down and waves you over. \"Sir — I'm the husband. The woman and the girl from that night. They reached the safe zone. Her fever broke. This is from the submarine yard.\" He pushes a paper bag across the table.",
+      "choices": {
+        "accept": {
+          "text": "Accept the gift",
+          "outcome": "The bag holds thirty credits and an internal yard pass. Rachel raises an eyebrow. \"Didn't think the iron officer had a soft spot.\""
+        },
+        "refuse": {
+          "text": "Push it back — leave it for his family",
+          "outcome": "He takes the bag back and his eyes go red. Rachel pours you a drink she doesn't charge for. \"You,\" she says, \"won't last long.\""
+        }
+      }
+    },
+    "pub_rachel_test": {
+      "title": "Rachel's Test",
+      "desc": "Rachel slides a locked steel box across the bar. \"Tomorrow morning someone will ask whether you've seen this box. If you say no, we can talk business. There are twenty lives inside it.\"",
+      "choices": {
+        "prove": {
+          "text": "Take the box and carry it for her",
+          "req": "Needs 20 credits",
+          "outcome": "You hide the box in the booth's dead space and pay off the people likely to come asking. Something in the way Rachel looks at you has changed."
+        },
+        "refuse": {
+          "text": "Push the box back",
+          "outcome": "\"I don't get involved in this.\" You push it back across the bar. She nods, not angry, and takes your drink away."
+        }
+      }
+    },
+    "pub_ticket_cash": {
+      "title": "Cash for a Seat",
+      "desc": "Rachel slaps an envelope on the bar. \"Someone gave up a seat tonight. Ninety, cash, no haggling. By this time tomorrow it won't be this price.\"",
+      "choices": {
+        "buy_now": {
+          "text": "Pay and take the seat",
+          "outcome": "You push ninety across and she doesn't count it, just tucks it into her apron. She writes you a number by hand: cargo bay nineteen."
+        },
+        "haggle": {
+          "text": "Push the price down — imply you know the hotline",
+          "outcome": "She stares at you for a long moment and takes seventy. \"Fine. You saved twenty. This seat doesn't have a vent.\""
+        }
+      }
+    },
+    "pub_bounty": {
+      "title": "Someone Wants You Dead",
+      "desc": "The bar goes quiet the moment you sit down. Three men block the door. The one in front slaps a sheet of paper on the table: your employee number and a blurred photograph. \"Someone put forty on you not going home tonight.\"",
+      "choices": {
+        "pay_off": {
+          "text": "Buy your way out",
+          "req": "Needs 40 credits",
+          "outcome": "You push the money across. He takes it and tears up the paper. \"Price goes up next time,\" he says on his way out."
+        },
+        "fight": {
+          "text": "Break a bottle and swing",
+          "outcome": "You break one man's nose and get beaten into the floor. Rachel drives them out with a crowbar."
+        },
+        "run": {
+          "text": "Run out the back",
+          "outcome": "You go over the alley wall, land in the rubbish and twist your ankle. You don't show up for work the next day. Nobody asks."
+        }
+      }
+    },
+    "pub_rachel_farewell": {
+      "title": "One Last Cigarette",
+      "desc": "The submarine leaves tomorrow night. Rachel stands in the doorway smoking, watching the last of the street drag their bags towards the docks. \"You've got one night,\" she says, holding out the cigarette. \"Work out what you want.\"",
+      "choices": {
+        "stay": {
+          "text": "Stand with her until dawn",
+          "outcome": "You do nothing at all — just smoke one after another and watch the sky lighten. At the end she says: \"If you can't get out, there's a spot behind me.\""
+        },
+        "ask_jump": {
+          "text": "Ask if she can fit you in the hold",
+          "req": "Needs Rachel's trust ≥ 20",
+          "outcome": "She looks at you, grinds the cigarette out on the doorframe. \"Don't ask. Tomorrow night. Back door. Bring nothing extra.\""
+        }
+      }
+    },
+    "pub_drunk": {
+      "title": "A Dockworker's Joke",
+      "desc": "A drunk dockworker lies across the bar telling the same joke over and over: why doesn't the Ash infect the rich? Because they already bought their tickets. Every time he lands it the room laughs, and by the end it sounds like crying.",
+      "choices": {
+        "listen": {
+          "text": "Hear him out and laugh along",
+          "outcome": "You laugh, then realise you haven't laughed in a very long time. The night's drinks cost you three."
+        }
+      }
+    },
+    "pub_bet": {
+      "title": "Dice at the Bar",
+      "desc": "Two miners are shooting dice. They see you coming and push the cup towards you. \"Care to try, officer? Fifteen to start.\" The inside of the cup is faintly polished. You know what that means. Tonight you don't care.",
+      "choices": {
+        "gamble": {
+          "text": "Put down fifteen",
+          "req": "Needs 15 credits",
+          "outcome": "The cup comes up and the room reacts.",
+          "win": "All three red. The miner swears and pushes forty-five across. You hear yourself laugh out loud, and the sound is unfamiliar.",
+          "lose": "All three black. You stare at the bar for three seconds, then put down fifteen. The miner pats your shoulder. \"Same time tomorrow, officer?\""
+        },
+        "watch": {
+          "text": "Watch, but don't bet",
+          "outcome": "You stand there for half an hour and both of them end up cleaned out. You win nothing and lose nothing."
+        }
+      }
+    },
+    "pub_song": {
+      "title": "A Song in the Bar",
+      "desc": "Someone starts an old tune on a harmonica. The bar slowly goes quiet, even Rachel stops working. You remember this song from a radio in your childhood.",
+      "choices": {
+        "stay": {
+          "text": "Sit and listen to the end",
+          "outcome": "Nobody claps when it finishes. Everyone is looking at the floor. You pay five and consider it money well spent."
+        }
+      }
+    }
+  },
+  "endings": {
+    "ending_together": {
+      "title": "Four on two berths",
+      "desc": "The submarine had two seats. Four of you went aboard. You still can't explain how — maybe someone handed their papers to someone else, maybe Rachel tore the cargo seal at the last minute. You spent the crossing in a forty-centimetre gap, and nobody spoke. It was raining when you landed. Same as when you left."
+    },
+    "ending_gateopen": {
+      "title": "The one who opened it",
+      "desc": "You pressed the green button and killed the cameras. Sixty thousand people went through Gate 7 in eight hours. In the quarantine files, the page is marked equipment failure. Nobody investigated. The investigators were in the queue."
+    },
+    "ending_broadcast": {
+      "title": "Four hundred names",
+      "desc": "That night every shortwave in the city read the same list. On the third day they started smashing radios. On the fourth, someone copied the names onto a wall. When the submarine left, the docks were packed and nobody made a sound."
+    },
+    "ending_cure": {
+      "title": "The answer at minus eighteen",
+      "desc": "The formula was read out over four hours and four camps started compounding their own. You never got on that boat, but Ashfall mortality fell from sixty percent to twenty in a fortnight. Someone painted on a wall: Dr. Chen's recipe."
+    },
+    "ending_identity": {
+      "title": "A borrowed name",
+      "desc": "You boarded under a dead woman's name. She was twenty-nine in the photograph, and smiling. For two days nobody used your real name. You found work in the new city and gave them her birthday."
+    },
+    "ending_boat": {
+      "title": "The two o'clock tide",
+      "desc": "The mechanic's tug left at two with eight aboard and an engine that kept dying. You rowed by hand for four hours. Near dawn someone started laughing, and then everyone was laughing, including the child who had been sick the whole way."
+    },
+    "ending_soldlist": {
+      "title": "Three hundred and sixty empty seats",
+      "desc": "You sold the list for ninety credits and bought a berth with it. The hold was still three hundred and sixty seats empty when the submarine left. Beside you, someone asked, \"Where are all these people?\" You said, \"They didn't make it.\""
+    },
+    "ending_golden": {
+      "title": "The golden ticket",
+      "desc": "On the last night you emptied everything you had and bought the final first-class seat out. As the hatch sealed you saw people still waving on the other side of the gate. You did not wave back."
+    },
+    "ending_smuggler": {
+      "title": "Night runner",
+      "desc": "You never raised the fare, but Rachel opened the cargo hatch a hand's width. \"Not a sound,\" she said. \"And don't forget you owe me a life.\" As the submarine dived, you heard someone knocking on the hull outside."
+    },
+    "ending_cutrate": {
+      "title": "The berth with no vent",
+      "desc": "The stamp on your forged papers came off a dead man. Cargo bay nineteen has no vent. You lasted eleven hours curled in a forty-centimetre gap. They practically dragged you out at the dock — but you were alive."
+    },
+    "ending_lighthouse": {
+      "title": "The lighthouse of Sector 7",
+      "desc": "You never boarded. On the last morning a thousand people gathered outside the gate, chanting your name, and pushed the gate open from the outside. You didn't become an evacuee. You became the first person among those who stayed to speak."
+    },
+    "ending_loyalist": {
+      "title": "Promoted",
+      "desc": "Your report was clean and your handling decisive, so the system gave you a better post — a larger quarantine zone. The promotion letter carried your staff number and, beneath it, one small line: this position may not apply for evacuation."
+    },
+    "ending_forgotten": {
+      "title": "The forgotten guard",
+      "desc": "The submarine's horn sounded in the harbour once, twice, three times. You never raised the fare and never found a contact. When the gate came down you were still in the booth, holding a stamp you never used."
+    },
+    "ending_dead": {
+      "title": "Killed at Gate 7",
+      "desc": "Your vitals flatlined on post. The cleanup crew carried you out the next morning. The register says line of duty, and there is a neat tick after your number."
+    },
+    "ending_mad": {
+      "title": "The keeper of the gate",
+      "desc": "Eighteen days of moral arithmetic finally broke you. You sealed the gate, swallowed the key, and read the same manifest over the broadcast again and again. When they broke in, you were stamping your own papers."
+    },
+    "ending_starved": {
+      "title": "The hungry ghost",
+      "desc": "You didn't die at the gate and you didn't die by a gun. You died on a cold iron bunk with nothing in your stomach. Your post was filled the next day. It took four hours."
+    }
+  }
+}

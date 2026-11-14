@@ -1,0 +1,74 @@
+{
+  "study_lecture": {
+    "title": "The lecture",
+    "desc": "The lecturer is reading the Book of Documents. At 'Heaven has no favourites; it aids only the virtuous' he pauses, glances up at you, then reads on. There are three people in the hall: him, you, and the historian recording everything in the corner.",
+    "choices": {
+      "listen": {
+        "text": "Hear him out, then ask what virtue is",
+        "outcome": "He answers slowly: virtue is getting — getting it in the heart, not borrowing it from men. You understand half. The other half will take years: that not borrowing it from men means no one can be emperor in your place."
+      },
+      "ask_father": {
+        "text": "Ask whether the late emperor heard this too",
+        "outcome": "His scroll stops in the air. A long while later he says: when the late emperor heard this passage, this subject did not dare look up. The lecture ends early. You sit alone in the hall until the sun goes down."
+      },
+      "cancel": {
+        "text": "Cancel today",
+        "outcome": "The lecturer withdraws with the book, very correct. You have saved an hour, to sleep or to stare at nothing. The lecture is the only place in this court still teaching you anything, and you have closed it."
+      }
+    }
+  },
+  "study_river_works": {
+    "title": "The river viceroy's memorial",
+    "desc": "One page: the autumn flood is coming, seven sections of the dike are weak, three hundred thousand taels are needed. Attached is a map, seven circles in vermilion, each with the name of a village written beside it.",
+    "choices": {
+      "fund": {
+        "text": "Release three hundred thousand taels. Repair all seven.",
+        "outcome": "The silver leaves the capital in three shipments. Autumn passes and not one of the seven breaches. The viceroy's reply says: the dike stands; the elders along the river wish to present the umbrella of ten thousand names. You read it twice before remembering you have never seen that river."
+      },
+      "partial": {
+        "text": "Repair only the two nearest the capital",
+        "outcome": "You circle the two closest to the capital. The viceroy does not mention the other five again. At the end of the memorial he writes one small line: this subject will do what he can."
+      },
+      "refuse_works": {
+        "text": "The treasury is empty. Defer it.",
+        "outcome": "Defer — two characters in vermilion, written lightly. No further memorial comes. You roll up the map and put it on the second shelf. All autumn you wait for news from the northern gate, and none from the river."
+      }
+    }
+  },
+  "study_land_ledger": {
+    "title": "Three hundred and twenty-seven ledgers",
+    "desc": "The survey ledgers are carried into the study, three hundred and twenty-seven of them, stacked to a man's chest. You pull one from the middle at random: eleven pages have been torn out at the root, and the tear is fresh. A scrap of paper in the gutter holds one character: Shen.",
+    "choices": {
+      "audit": {
+        "text": "Collect on the books. Not one name spared.",
+        "outcome": "The recovered silver fills an entire room of the inner treasury. Three great houses are confiscated, one of them bearing a plaque the late emperor wrote himself. The Chancellor stands outside a long time before entering, and then says only: after this, no one will dare hide anything."
+      },
+      "burn_ledger": {
+        "text": "Burn the ledgers too",
+        "outcome": "You burn them in the bronze brazier all night. Two jars of ash go into the palace canal. The next day the south sends a letter of thanks listing twenty-seven names, every one of them willing to 'contribute salary to the army'."
+      },
+      "keep_ledger": {
+        "text": "Lock them away. Show no one.",
+        "outcome": "The ledgers go into the deepest shelf of the inner vault. You neither collect nor burn. Three hundred and twenty-seven books that say nothing, and remind you every day that you hold a blade you have not brought down."
+      }
+    }
+  },
+  "study_intercepted_letter": {
+    "title": "The intercepted letter",
+    "desc": "The agents bring it in with the wax still intact. It is addressed to the commander of the capital guard — the Dowager's brother. There is no signature, but you know the hand: the old maid who has served the Dowager for thirty years. One line: after the ninth month, do not enter the palace again.",
+    "choices": {
+      "intercept": {
+        "text": "Open it, copy it, keep the original",
+        "outcome": "You copy it into a box. The original stays with the agents, unsent. Three days later the Dowager sends to ask: where is the letter. You say: lost on the road. She looks at you a long time and says: the emperor has grown up."
+      },
+      "pretend": {
+        "text": "Reseal it. See nothing.",
+        "outcome": "You reseal it and let the agents deliver it. The wax repair is clumsy; anyone receiving it will know it was opened. From then on no rotation order from the capital guard reaches the Ministry of War on time again."
+      },
+      "return_it": {
+        "text": "Carry it back to her yourself",
+        "outcome": "You set it on the low table in front of her and say nothing. Her hand closes inside her sleeve for a long time. At last she says: this old woman was only afraid. You ask: of what. She does not answer. The lamps in that hall burn until the fourth watch."
+      }
+    }
+  }
+}

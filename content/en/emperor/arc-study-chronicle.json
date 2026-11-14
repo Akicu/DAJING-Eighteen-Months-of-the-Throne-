@@ -1,0 +1,129 @@
+{
+  "study_veritable_record": {
+    "title": "The veritable record",
+    "desc": "The record office sends the late emperor's final year, brushed in regular script on yellow silk. Three places are left blank for you to decide. The first is three characters: the emperor is unwell. The chief compiler kneels below and waits to hear whether you will change it.",
+    "choices": {
+      "write_truth": {
+        "text": "Write it true: took medicine, died suddenly",
+        "outcome": "His hands shake as he receives the order. Once those characters are on the silk they can never come out again. You sit until dark and understand something: what you have written is not your father's cause of death. It is your own, and one day someone will write it the same way."
+      },
+      "soften": {
+        "text": "Change it to 'a slight chill, much worse by morning'",
+        "outcome": "The chief compiler breathes out and writes quickly. The silk is rolled and sealed in its cabinet. This court's greatest skill is turning one thing into another thing, and doing it gracefully."
+      },
+      "leave_blank": {
+        "text": "Leave it blank",
+        "outcome": "The three characters stay where they are, empty as a hole. The historian glances up once and does not ask. He knows the page will be filled eventually — by you, or by someone else."
+      }
+    }
+  },
+  "study_physician": {
+    "title": "The imperial physician",
+    "desc": "The physician kneels outside the curtain and speaks through the gauze: Your Majesty is not ill, Your Majesty is being spent. He offers three prescriptions — calming, strengthening, and one circled in vermilion with two characters beside it: not advisable.",
+    "choices": {
+      "take_calming": {
+        "text": "Take the calming draft. Sleep three watches.",
+        "outcome": "It is bitter and leaves your throat numb. You sleep until the morning watch and wake to full daylight with the memorials exactly as they were. For half a day you owe nothing to anyone except a whole morning of your own."
+      },
+      "refuse_drugs": {
+        "text": "Refuse. Put the prescription under the inkstone.",
+        "outcome": "You go on reviewing until the third watch, until the brush shakes, and then you switch hands. At morning court you stand very steady and no one notices. The physician kneels on the steps and says nothing at all."
+      },
+      "ask_father_drug": {
+        "text": "Ask him who prescribed the late emperor's last dose",
+        "req": "Requires knowing the truth, or having questioned the lecturer",
+        "outcome": "The breathing beyond the curtain stops for a moment. He says: this subject was only an assistant then. The prescription came from the college. The medicine was — he stops there and does not go on. You finish it for him: was sent in from the inner court. He does not deny it."
+      }
+    }
+  },
+  "study_banned_book": {
+    "title": "A book that should not be in the palace",
+    "desc": "A book has appeared on your desk. Cheap paper, woodblock print, the corners worn soft from reading: Twelve Discourses on Order and Disorder. The first line reads: the empire's sickness is not at the frontier. It is in the palace. The book was banned in your father's reign.",
+    "choices": {
+      "read_it": {
+        "text": "Read it end to end",
+        "outcome": "By the seventh discourse it is daylight. Every point it makes, you have seen walking around this court in a robe. You close it feeling you have not read a book but a verdict, written long ago and waiting."
+      },
+      "trace_it": {
+        "text": "Hand it to the secret police. Find the printer.",
+        "outcome": "Three days. A failed examination candidate, two rooms in the south of the city, cutting his own blocks and pulling his own sheets. Seven hundred copies are confiscated and burned in the yard half the night. You watch from the corridor and feel something burning with them."
+      },
+      "burn_it": {
+        "text": "Into the bronze brazier",
+        "outcome": "The paper is poor and goes fast, with a smell of oil smoke. You watch it finish, level the ash, and go back to the memorials. A banned book should not have a second copy in the palace."
+      }
+    }
+  },
+  "study_omen": {
+    "title": "Mars in the heart",
+    "desc": "The astronomer kneels at the steps with a shaking voice: Mars has taken station in the Heart, an omen of a change of rule. On the chart he holds up, the red star sits in the Heart lodge and has not moved for three nights.",
+    "choices": {
+      "edict_of_blame": {
+        "text": "Issue an edict of self-blame",
+        "outcome": "You write it yourself, revise four times, and keep three hundred characters. When you read it to the astronomer he weeps and knocks his head on the floor. You know an edict cannot stop a planet, but it can make three hundred thousand people feel that someone in this court will still admit a fault."
+      },
+      "rebuke_astrologer": {
+        "text": "Call it nonsense. Send him out of the observatory.",
+        "outcome": "He is demoted to an idle post in the southern capital. He leaves the chart at the bottom of the steps. On it, beside the Heart lodge, there is a line in his small hand: this subject dare not deceive heaven, and dare not deceive the emperor."
+      },
+      "rewrite_stars": {
+        "text": "Order him to redraw the chart and report again",
+        "outcome": "The chart presented the next day has Mars one inch to the side. It passes, and from then on every star chart must be reviewed by the inner court before it is filed. You keep the people's faith and lose something harder to get back."
+      }
+    }
+  },
+  "study_tutor_resign": {
+    "title": "The lecturer asks leave",
+    "desc": "The lecturer is old. He finishes the last passage, sets the book on the desk with both hands pressed flat, and says: this subject can no longer lecture. The book is better with Your Majesty than with me.",
+    "choices": {
+      "keep_him": {
+        "text": "Keep him. Make him a grand guardian.",
+        "outcome": "He stumbles on the thanks and catches the pillar. After that he comes every third day, lecturing shorter and shorter, sometimes reading one passage and then simply sitting. You know he is not teaching any more. He is keeping you company until court disperses."
+      },
+      "let_him_go": {
+        "text": "Let him go home. Three thousand taels.",
+        "outcome": "He leaves without ceremony: one cart, two cases. You watch from the wall as the cart goes out the west gate. The book he left is a copy; the original stays on your desk, and on its flyleaf a line in his hand: may Your Majesty finish it."
+      },
+      "take_book_only": {
+        "text": "Take the book. Keep no one.",
+        "outcome": "He withdraws with a very old-fashioned bow, knees bending deep. The book is volume nine of the Comprehensive Mirror, the most worn of the set, beginning with the fall of the Han."
+      }
+    }
+  },
+  "study_banned_author": {
+    "title": "The man who wrote it",
+    "desc": "The prefecture reports: the author has been caught. A failed candidate, thirty-seven, still writing in his cell. The jailer says he made one request — this body, for one reading by the emperor.",
+    "choices": {
+      "release_and_meet": {
+        "text": "Release him. Grant an audience.",
+        "outcome": "He kneels in the hall still smelling of the cell. You ask: do you hate this court. He says: this subject hated that no one read it. You keep him for a meal and send him to the college with a post and no rank. He writes thirteen more books. None of them is ever banned."
+      },
+      "exile_him": {
+        "text": "Exile him three thousand li",
+        "outcome": "The order reads: reckless speech about state affairs. No one sees him off. Three years later a dispatch from the north says an exile is teaching the soldiers' children to read, seventy of them, and requests commendation. You know the name."
+      },
+      "leave_in_jail": {
+        "text": "Leave him there. Ask nothing.",
+        "outcome": "The case sits at the Ministry of Justice for half a year. He finishes the book in his cell and has a second one smuggled out; you do not read it. Some men's words reach you only at the moment you are least able to hear them."
+      }
+    }
+  },
+  "study_petition_stone": {
+    "title": "The stone at the village gate",
+    "desc": "Shandong sends a rubbing. The villagers carved your edict of self-blame into the stone at their gate; the characters were written by the village schoolmaster and two are cut crooked. The magistrate attaches one line and asks for instruction: should the stone be destroyed.",
+    "choices": {
+      "let_it_stand": {
+        "text": "Let it stand",
+        "outcome": "Two characters in vermilion: not necessary. The rubbing hangs on the west wall of the study, on rough paper, the two crooked characters visible at a glance. You rarely look at it. But whenever someone says the people's heart is usable, your eyes go that way."
+      },
+      "destroy_it": {
+        "text": "Destroy it. Ban private carving of edicts.",
+        "outcome": "The stone is broken and the pieces used to mend the village road. The magistrate is thorough and sends a letter of thanks. The next year Shandong's grain tax comes in remarkably smoothly. So smoothly that it makes you cold."
+      },
+      "copy_it": {
+        "text": "Take a copy. Send one back.",
+        "outcome": "You have two rubbings made: one kept, one returned to Shandong with a note — the stone need not be destroyed; the characters may be recut. Three months later a new rubbing arrives. The two crooked characters are straight and the carving is by the county school's instructor."
+      }
+    }
+  }
+}

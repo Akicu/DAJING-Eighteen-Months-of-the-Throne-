@@ -1,0 +1,97 @@
+{
+  "dorm_rest": {
+    "title": "Two Hours on an Iron Bunk",
+    "desc": "The barracks window doesn't close properly and the wind comes through the gap. Someone in the top bunk is snoring, someone at the end of the corridor is reciting something under their breath. You put your coat over your face and try to sleep.",
+    "choices": {
+      "sleep": {
+        "text": "Sleep",
+        "outcome": "You sleep for about two hours and dream that you're stamping papers. You keep stamping until your fingers wear through."
+      }
+    }
+  },
+  "dorm_radio": {
+    "title": "The Shortwave",
+    "desc": "There's an old shortwave set in the barracks. You put on the headphones and turn the dial through the static until a woman's voice comes through clear: \"...third evacuation list has been revised, the submarine will depart...\" The signal dies.",
+    "choices": {
+      "tune_in": {
+        "text": "Keep tuning until you get the whole thing",
+        "outcome": "Forty minutes of work and you have the time: the sub is leaving a full day early. That piece of information might save your life tomorrow night."
+      },
+      "switch_off": {
+        "text": "Switch it off",
+        "outcome": "You take the headphones off and the world goes quiet and blurry again. Some things are easier to sleep through when you don't know them."
+      }
+    }
+  },
+  "dorm_nightmare": {
+    "title": "That Dream Again",
+    "desc": "You dream you're behind the window and the queue files in one at a time, every one of them wearing the same face. You stamp and stamp and the paper reaches the ceiling. You want to stop. Your hand won't listen.",
+    "choices": {
+      "wake": {
+        "text": "Wake up and sit upright",
+        "outcome": "You jolt upright, your back soaked. The top bunk shifts. It's four in the morning and it's raining outside."
+      },
+      "write": {
+        "text": "Write the dream down in the dark",
+        "outcome": "You fill three pages. By the end your heartbeat has slowed. Writing it down made it smaller."
+      },
+      "drink": {
+        "text": "Drink the half bottle by the bed",
+        "outcome": "Half the bottle and the noise in your head finally drops. The next morning your hands shake too much to stamp cleanly."
+      }
+    }
+  },
+  "dorm_journal": {
+    "title": "The Blank Page",
+    "desc": "You write on an empty page of the shift log. Halfway down you realise you can no longer remember the details of that first night. You only remember a woman in the rain, and a shoe left in a puddle.",
+    "choices": {
+      "write": {
+        "text": "Keep writing",
+        "outcome": "You write for a long time and the pen tears the paper in several places. When you close the book, you feel a little lighter."
+      }
+    }
+  },
+  "dorm_neighbor": {
+    "title": "Crying Next Door",
+    "desc": "There's muffled crying from the next room — the trainee who just turned nineteen. It was his first shift at the gate today. You don't ask what he saw. You can guess.",
+    "choices": {
+      "check": {
+        "text": "Knock and sit with him a while",
+        "req": "Needs 5 credits",
+        "outcome": "You bring two cans of beer and ask nothing. He doesn't speak until the second can, and then he talks for a long time. He's asleep by dawn."
+      },
+      "ignore": {
+        "text": "Roll over and pretend you can't hear",
+        "outcome": "You roll over and press the pillow over your ear. The crying lasts until two, then stops. You don't sleep either."
+      }
+    }
+  },
+  "dorm_mirror": {
+    "title": "The Washroom Mirror",
+    "desc": "The tap is dripping. You look up and see yourself — eyes sunken, mouth turned down, looking at you like a stranger. You suddenly can't remember what that face looked like five days ago.",
+    "choices": {
+      "confront": {
+        "text": "Hold the mirror's gaze and say it out loud",
+        "outcome": "You tell the mirror: I know what I did, and I'm going to carry it. After that, the face finally looks a little like yours."
+      },
+      "turn_away": {
+        "text": "Look down, wash your hands, leave",
+        "outcome": "You wash your hands and go. On the way back you avoid anything that reflects."
+      }
+    }
+  },
+  "dorm_letter": {
+    "title": "A Letter From Home",
+    "desc": "Under the mattress is an unopened letter that arrived two months ago. Your sister's handwriting on the envelope, and a postmark that reads \"quarantined\". You've never had the nerve to open it.",
+    "choices": {
+      "read": {
+        "text": "Open it",
+        "outcome": "She says everyone is fine, the tree in the yard fruited this year, and asks when you're coming home. You fold it back into the envelope and then you cry."
+      },
+      "burn": {
+        "text": "Burn it unread",
+        "outcome": "You set it alight and watch it curl into ash on the floor. You're not sure whether you're protecting yourself or giving something up."
+      }
+    }
+  }
+}

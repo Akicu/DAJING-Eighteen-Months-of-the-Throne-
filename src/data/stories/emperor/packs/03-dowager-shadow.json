@@ -1,0 +1,192 @@
+{
+  "pack": "03-dowager-shadow",
+  "loc": "chamber",
+  "bookkeeping": [
+    "broth_drunk",
+    "broth_tested",
+    "dowager_defied",
+    "knows_poison_truth",
+    "coup_attempted",
+    "coup_aborted",
+    "water_pavilion_resolved",
+    "met_dowager",
+    "dowager_betrayed",
+    "wang_ally"
+  ],
+  "events": [
+    {
+      "id": "chamber_bitter_broth",
+      "loc": "chamber",
+      "npc": "dowager",
+      "priority": 82,
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "notFlags": [
+          "broth_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "drink",
+          "tone": "neutral",
+          "effects": {
+            "health": -5,
+            "sanity": -4,
+            "favor": 8
+          },
+          "setFlags": {
+            "broth_done": true,
+            "broth_drunk": true,
+            "met_dowager": true
+          }
+        },
+        {
+          "id": "reward_eunuch",
+          "tone": "dark",
+          "effects": {
+            "sanity": -8,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "broth_done": true,
+            "dowager_defied": true,
+            "met_dowager": true,
+            "dowager_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "silver_needle",
+          "tone": "good",
+          "effects": {
+            "sanity": -6,
+            "health": 2
+          },
+          "setFlags": {
+            "broth_done": true,
+            "broth_tested": true,
+            "knows_poison_truth": true,
+            "met_dowager": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_blood_edict",
+      "loc": "study",
+      "npc": "wang",
+      "priority": 86,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "anyFlags": [
+          "knows_poison_truth",
+          "dowager_defied",
+          "knows_truth"
+        ],
+        "notFlags": [
+          "blood_edict_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "send_edict",
+          "tone": "dark",
+          "effects": {
+            "money": -25,
+            "favor": 18,
+            "sanity": -14,
+            "health": -8
+          },
+          "morality": 1,
+          "setFlags": {
+            "blood_edict_done": true,
+            "coup_attempted": true,
+            "dowager_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "bribe_guard",
+          "tone": "neutral",
+          "requires": {
+            "statMin": {
+              "money": 40
+            }
+          },
+          "effects": {
+            "money": -40,
+            "favor": 10,
+            "sanity": -6
+          },
+          "setFlags": {
+            "blood_edict_done": true,
+            "wang_ally": true
+          }
+        },
+        {
+          "id": "burn_edict",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -12,
+            "favor": 4
+          },
+          "setFlags": {
+            "blood_edict_done": true,
+            "coup_aborted": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_water_pavilion",
+      "loc": "chamber",
+      "npc": "dowager",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 13,
+        "flags": [
+          "coup_attempted"
+        ],
+        "notFlags": [
+          "water_pavilion_resolved"
+        ]
+      },
+      "choices": [
+        {
+          "id": "endure",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -10,
+            "health": -8,
+            "favor": -12
+          },
+          "setFlags": {
+            "water_pavilion_resolved": true
+          },
+          "key": true
+        },
+        {
+          "id": "smash_bridge",
+          "tone": "dark",
+          "effects": {
+            "sanity": 8,
+            "favor": -20,
+            "health": -5
+          },
+          "morality": -1,
+          "setFlags": {
+            "water_pavilion_resolved": true,
+            "dowager_betrayed": true
+          },
+          "key": true
+        }
+      ]
+    }
+  ]
+}

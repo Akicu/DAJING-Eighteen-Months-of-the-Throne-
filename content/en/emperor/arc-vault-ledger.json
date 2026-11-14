@@ -1,0 +1,115 @@
+{
+  "vault_private_mint": {
+    "title": "Coins a hair too thin",
+    "desc": "The vault clerk sets two strings of cash side by side: one struck by the Ministry of Revenue, one taken off the market. The market string is a hair thinner — a thousand coins weighing three taels short. The copper to make them was scraped off grain barges.",
+    "choices": {
+      "crack_down": {
+        "text": "Seal the furnaces. Trace the copper. Confiscate.",
+        "outcome": "Seven furnaces are sealed in the capital; the false coin takes three days to melt. The copper trail leads to the grain commissioner's books, and his clerk hangs himself in the storehouse that night. Overnight the coins in the market grow thick again, and the price of rice does not fall."
+      },
+      "tax_it": {
+        "text": "Don't seal them. Take three tenths.",
+        "outcome": "Your men set a customs post outside the city that collects no tax, only a share. The counterfeiters pay on time and the coins get thinner every year. Three years later the Ministry of Revenue works it out for you: half the copper cash in the empire was not struck by the state."
+      },
+      "ignore_mint": {
+        "text": "Pretend you didn't see it",
+        "outcome": "You keep both strings and ask nothing more. It is not a great matter. Every counterfeiter in the city can trace three generations of service to the throne."
+      },
+      "stake_it_out": {
+        "text": "Don't seal the furnace. Wait three days and see who comes for the money.",
+        "win": "On the third night the man who comes for the money is a ministry secretary in a fourth-rank chair. Following him leads to three senior officials. The coin goes to the treasury and not one man is touched — the list on your desk is worth more than the money.",
+        "lose": "On the third night the furnace, the men and the moulds are gone. The vault is locked and the key is in your hand. Only at the end of the count do you find what is missing: not copper, but thirty thousand strings of coin already cast."
+      }
+    }
+  },
+  "vault_armory": {
+    "title": "The armory",
+    "desc": "The register lists thirty thousand suits of armour and twelve thousand bows. You open the store yourself: fourteen thousand suits. The rest are stacked in the corner and look like armour, but lift like nothing — the rivets are all new. The old keeper kneels and says: these books are a dozen years old.",
+    "choices": {
+      "replenish": {
+        "text": "Fund the shortfall. Let the past go.",
+        "outcome": "Two hundred and eighty thousand taels go out; the Ministry of Works forges day and night. At the eight thousandth suit a report comes from the north: Huo Lie was ambushed beyond the pass, lost three hundred men, armour that did not cover them. You hold the memorial down on the desk for a long time."
+      },
+      "report_it": {
+        "text": "Punish it all the way down. Three generations.",
+        "outcome": "The bureau is replaced top to bottom and a hundred and eighty thousand taels of property recovered. The new keeper is a ninth-rank clerk whose first act is to burn the empty shells in the yard; the firelight moves on the palace wall half the night."
+      },
+      "look_away": {
+        "text": "Note the real numbers. Don't act yet.",
+        "outcome": "You have the true count copied into your own box. The empty armour goes back in the corner, the register closes as it was. Two hundred and sixty thousand taels of difference, and what it bought is four words: not yet, not yet."
+      }
+    }
+  },
+  "vault_border_market": {
+    "title": "The market beyond the pass",
+    "desc": "The market is three li outside the gate, a compound of rammed earth. On the first market day more than two hundred riders come in: hides, horses, salt, heaped on the snow. The garrison commander asks how the tax is collected. By old rule, border markets are untaxed.",
+    "choices": {
+      "tax_market": {
+        "text": "Set a post. One in thirty.",
+        "outcome": "First month: fourteen hundred taels. Second: twenty-one hundred. Not much money, but it is the first silver ever taken out of the northern wind. The commander brings the tax book himself, smiling in a way that does not quite suit a soldier."
+      },
+      "free_trade": {
+        "text": "No tax. First get them coming.",
+        "outcome": "You waive the tax for three years. By the third, the market outside the pass is busier than the county town inside it, and the horses traded for iron pots and salt are enough to remount the northern gate. Huo Lie says: this is worth more than a battle."
+      },
+      "close_market": {
+        "text": "Close the market. No one leaves the pass.",
+        "outcome": "The earth wall comes down and the people are driven back. That night two hundred riders circle outside for a long time. They do not attack. They only make sure the men on the wall can count them."
+      }
+    }
+  },
+  "vault_river_report": {
+    "title": "The umbrella of ten thousand names",
+    "desc": "The river viceroy sends an umbrella. The canopy is pieced from over three hundred squares of coarse cloth, each with the name of a village, some written in charcoal. Seven counties along the river put it together and insisted it be carried to the capital. The ribs are willow, still damp.",
+    "choices": {
+      "accept_umbrella": {
+        "text": "Accept it. Hang it in the study.",
+        "outcome": "The umbrella hangs on the west wall of the study, and sixty thousand taels of repair silver leave the treasury. At every council after that, you look up and see three hundred squares of cloth. One reads Liujiadu, in very bad handwriting."
+      },
+      "reward_engineers": {
+        "text": "Pay the dike workers. Send the umbrella back.",
+        "outcome": "A hundred and eighty thousand taels go to the labourers, three taels each, and three years of household tax are forgiven along the river. The umbrella goes back. The viceroy writes: the people will not take the money, only the umbrella. You read that line twice."
+      },
+      "downplay": {
+        "text": "Into the storeroom. Don't make a fuss.",
+        "outcome": "The umbrella is logged as one item, sundries. You release eighty thousand taels, less than owed. No further memorial comes. The next flood season, three hundred farmers show up on the dike with their own hoes."
+      }
+    }
+  },
+  "vault_flood_crisis": {
+    "title": "The breach",
+    "desc": "On the seventeenth of the seventh month the river breaks. Three post horses die carrying the news. Three hundred thousand refugees walk north and stop at the capital's edge, because north of that is a wall. The Ministry of Revenue says the granaries hold forty days.",
+    "choices": {
+      "open_granary": {
+        "text": "Open the granaries. All of it.",
+        "outcome": "Four hundred thousand taels of grain go out and thirty-seven gruel kitchens open around the capital. One of them gets into a song, and the song says you are a good emperor. It reaches the palace while you are working out next year's tax."
+      },
+      "work_for_food": {
+        "text": "Food for work. Rebuild the dike.",
+        "outcome": "The refugees are formed into work gangs, two thin meals a day, repairing the same section that will break next year. You stand on the dike for half a day. The wind is strong and no one recognises you. You are ill for a week after."
+      },
+      "seal_gates": {
+        "text": "Seal the gates. Drive them off.",
+        "outcome": "Nine gates lock, shelters go up outside, and soldiers stand beyond the shelters. Twenty days later the ground outside is quiet. The historian writes fourteen characters in the daily record, sets down his brush, and does not move for a long while."
+      }
+    }
+  },
+  "vault_ledger_buyer": {
+    "title": "The man who wants the ledger",
+    "desc": "He is a salt merchant, plainly dressed, and he knocks his head three times on the floor before speaking. He says: ten thousand taels for the land ledger. His fingers tremble the whole time — from fear, or from a lifetime of counting silver. Three generations of his family are in that book.",
+    "choices": {
+      "sell_ledger": {
+        "text": "Sell it. The silver goes to the treasury.",
+        "outcome": "The silver comes in, the ledger goes out. The next day seven counties in the south report land 'returned to its original owners'. You have made ten thousand taels and sold a blade you never intended to use."
+      },
+      "expose_them": {
+        "text": "No silver. Copy it to all six ministries.",
+        "outcome": "Thirty copies go out, one to each ministry. The merchant spends three months in prison and comes out with seven tenths of his property gone. Some call you cruel. Some say this is what an emperor is for."
+      },
+      "keep_quiet": {
+        "text": "Take no money. Give him nothing.",
+        "outcome": "He kneels an hour and you say nothing. At last he stands up on his own and withdraws. The ledger stays where it is. He is ill for a year afterwards, and then donates three thousand mu of land to a charity school."
+      }
+    }
+  }
+}

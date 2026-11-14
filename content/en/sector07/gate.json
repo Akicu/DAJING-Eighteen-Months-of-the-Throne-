@@ -1,0 +1,209 @@
+{
+  "gate_mother_child": {
+    "title": "The Girl With a Fever",
+    "desc": "Rain is coming down in sheets. A soaked woman kneels at the window holding an unconscious child, pressing a permit against the glass — dated yesterday, the red stamp bled open by water. \"She only has pneumonia, not the Ash. Let us through. Just this once.\" The camera behind her blinks red.",
+    "choices": {
+      "let_through": {
+        "text": "Wave them through — stamp it green in the camera's blind spot",
+        "req": "Needs 10 credits for the fine",
+        "outcome": "You feed the permit into the reader, cover the lens with your sleeve, and press the green stamp. She doesn't thank you. She just presses her forehead to the glass and disappears into the rain. There will be a red line on your review sheet at month's end."
+      },
+      "report": {
+        "text": "Sound the alarm and claim the bounty",
+        "outcome": "The siren tears the night open. Riot squad drags them away. One of the child's shoes stays behind in a puddle. The system credits you 25 — reference: \"assisted quarantine.\""
+      },
+      "refuse": {
+        "text": "Reject the papers and pull the shutter down",
+        "outcome": "\"Expired. Next.\" You pull the armoured shutter down and the crying becomes something far away. Your base shift pay has been deposited."
+      }
+    }
+  },
+  "gate_mother_revenge": {
+    "title": "A Gun in the Alley",
+    "desc": "You step out of the booth after your shift and something cold presses against the back of your skull. \"Remember the woman and the girl you reported three days ago? The camp was cleared out last night.\" The man's voice shakes. That frightens you more than the gun.",
+    "choices": {
+      "pay": {
+        "text": "Throw every credit you have on the ground",
+        "req": "Needs 35 credits",
+        "outcome": "You scatter the notes into the standing water and roll into a drain the moment he bends to pick them up. The butt of the gun catches your shoulder. You live."
+      },
+      "fight": {
+        "text": "Fight him for the gun",
+        "outcome": "The shot goes off and grazes your ribs. Pinning him down, you realise he is thinner than you are. He stops struggling and just looks at you."
+      },
+      "call_backup": {
+        "text": "Key the radio and call the riot squad",
+        "outcome": "They arrive in three minutes and handle it cleanly. You don't need the details. It's just that from then on, you hear knocking on the walls at night."
+      }
+    }
+  },
+  "gate_pharma_convoy": {
+    "title": "Three Unmarked Armoured Cars",
+    "desc": "Three black armoured cars stop at the gate. A window drops and a man in a suit offers a black card. \"Don't ask what's in the crates. Raise the barrier. This covers half a seat.\" From the rear compartment comes a soft, rhythmic thumping.",
+    "choices": {
+      "take_card": {
+        "text": "Take the card and look away",
+        "outcome": "The convoy tears past and leaves the smell of formaldehyde in the air. You check the balance three times. Your hands won't stop shaking."
+      },
+      "inspect": {
+        "text": "Insist on a routine inspection",
+        "req": "Needs sanity ≥ 50",
+        "outcome": "Banned serum samples. The man decides you're not worth the trouble, drops a stack of hush money and turns around. You memorise the plates."
+      },
+      "turn_away": {
+        "text": "Do nothing and watch them leave",
+        "outcome": "You retreat into the booth and pretend you saw nothing. The convoy waits two minutes, then finds another route. Tonight's log says only: \"No irregularities.\""
+      }
+    }
+  },
+  "gate_pharma_audit": {
+    "title": "Summoned by Internal Affairs",
+    "desc": "A red-sealed notice is taped to your booth window: you're on the \"routine audit\" list. The interrogation room's lamp goes straight into your eyes while the man across the table reads from a three-month-old log and slowly recites the plates of those three armoured cars.",
+    "choices": {
+      "confess": {
+        "text": "Tell the truth and return the money",
+        "outcome": "You sign, you pay it back, you take a major reprimand. Dawn is breaking as you leave the room, and to your surprise you feel lighter."
+      },
+      "bribe_auditor": {
+        "text": "Slide what's left across the table",
+        "req": "Needs 25 credits",
+        "outcome": "He doesn't even count it before sweeping it into a drawer. \"I'll file this record.\" You understand what filing means."
+      },
+      "deny": {
+        "text": "Deny everything",
+        "outcome": "They find no evidence, but they move you to the coldest night post. Your name gets circled — which means someone will always be watching."
+      }
+    }
+  },
+  "gate_inspector": {
+    "title": "An Unannounced Inspection",
+    "desc": "The inspector appears at your booth without notice. He turns the pages of your ledger with gloved hands, slowly, one by one. \"This stamp is a little irregular.\" He says it while looking at your drawer.",
+    "choices": {
+      "bribe": {
+        "text": "Put something in his pocket",
+        "req": "Needs 20 credits",
+        "outcome": "He folds the notes in half and tucks them into his inner pocket, then writes in your file: \"Procedures followed, records complete.\""
+      },
+      "honest": {
+        "text": "Report everything straight",
+        "outcome": "He's quiet for a long time, then adds a single word to your file: \"usable\". That word is worth a five-credit bonus."
+      },
+      "push_back": {
+        "text": "Push back — every stamp was on your orders",
+        "outcome": "His face reddens but he says nothing more. He slams the door on the way out. You won that round, and it went on your record."
+      }
+    }
+  },
+  "gate_deserter": {
+    "title": "The Deserter and His Family",
+    "desc": "A young man still in uniform holds an infant, his wife behind him. He sets his sidearm on the sill with the muzzle pointed at himself. \"I'm turning in the gun. We only want to reach the south — there are ports there that aren't locked down.\" The system says he went missing from the eastern line three hours ago.",
+    "choices": {
+      "let_pass": {
+        "text": "Take the gun and let them through",
+        "req": "Needs 15 credits",
+        "outcome": "You take the weapon, erase the crossing record and press some money into their hands. His wife looks back at you once. You don't forget that look."
+      },
+      "report": {
+        "text": "Report it per regulations",
+        "outcome": "Thirty credits of bounty lands. He's tagged in the system as \"deserter — processed.\" The word processed sits on the screen and stares back."
+      },
+      "take_gear": {
+        "text": "Skin him for gear, then let them through",
+        "outcome": "You take his dive watch and respirator, worth twenty. He doesn't resist. He just holds the baby tighter."
+      }
+    }
+  },
+  "gate_body_cart": {
+    "title": "The Body Cart Doesn't Add Up",
+    "desc": "The disposal truck comes twice a night. Tonight's manifest says fourteen, but the bed is packed with clearly more than fourteen bags. \"The extras are black cargo,\" the driver says quietly. \"You don't look, and there's a share in it for you.\"",
+    "choices": {
+      "look_inside": {
+        "text": "Open it and count",
+        "outcome": "The five extra bags hold contraband cigarettes and antibiotics. You skim a \"handling fee\" and sign the rest through."
+      },
+      "wave_through": {
+        "text": "Sign it and don't look",
+        "outcome": "You sign the manifest and the driver presses a roll of notes into your hand. You made no decision tonight, and perhaps that was the decision."
+      }
+    }
+  },
+  "gate_riot": {
+    "title": "Two Thousand People at the Gate",
+    "desc": "The crowd has come all the way from the slums and the iron gate is humming under the impact. Your orders are four words: maintain order. You have tear gas, a sidearm, and outside the gate there are children, old people, and the auntie who brought you hot water yesterday.",
+    "choices": {
+      "fire_warning": {
+        "text": "Fire a warning shot and gas them",
+        "outcome": "The gas spreads through the rain and the crowd screams and falls back. A dozen people don't get up. You're commended, and you never go back to the shop that sold hot water."
+      },
+      "open_gate": {
+        "text": "Disobey — raise the gate",
+        "outcome": "The crowd goes silent for a heartbeat as the gate rises, then floods through. You're suspended and lose every allowance, and someone hands you a whole bag of steamed buns."
+      },
+      "call_backup": {
+        "text": "Call the riot squad and retreat inside",
+        "outcome": "The squad \"handles\" the disturbance. You listen from the booth through two layers of glass. Afterwards you receive a fifteen-credit allowance."
+      }
+    }
+  },
+  "gate_children": {
+    "title": "Children Against the Gate",
+    "desc": "Seven or eight kids are pressed against the gate. The oldest looks twelve; the smallest is still being carried. No permits — they were smuggled out of the quarantine zone. \"Mister, we don't want to be burned.\"",
+    "choices": {
+      "register": {
+        "text": "Register them one by one, by the book",
+        "outcome": "You enter them into the intake queue and the system pays you twelve in registration fees. You know what's at the other end of that queue."
+      },
+      "hide": {
+        "text": "Hide them in the storehouse behind the booth",
+        "req": "Needs 15 credits",
+        "outcome": "You spend a little to buy off the patrol and pack them into the storehouse. The booth is quiet tonight, except for the occasional sound from the back."
+      },
+      "send_back": {
+        "text": "Call the quarantine zone to collect them",
+        "outcome": "Their truck arrives in ten minutes. You don't go out to watch. After that day, the sound of children laughing makes you hold your breath."
+      }
+    }
+  },
+  "gate_new_order": {
+    "title": "Lockdown Order",
+    "desc": "An encrypted channel delivers new orders: from midnight tomorrow, Sector-07 is exit-only. All unregistered persons are quarantined on site. The last line reads: do not disclose to non-personnel. You know Rachel still has twenty people waiting in her hold.",
+    "choices": {
+      "obey": {
+        "text": "Comply and say nothing",
+        "outcome": "You tick \"acknowledged\". Starting tomorrow, the gate only opens one way."
+      },
+      "warn_rachel": {
+        "text": "Leak it to Rachel",
+        "outcome": "You slip into the bar during a ten-minute shift change. Rachel hears you out and says two words: \"Thank you.\" She will remember this."
+      },
+      "ignore": {
+        "text": "Pretend you never received it",
+        "outcome": "You don't tick the box and you tell no one. The order takes effect at midnight anyway. You spend a little money forging registrations for a few people you know."
+      }
+    }
+  },
+  "gate_bribe_small": {
+    "title": "The Envelope in the Window",
+    "desc": "A man in a merchant's coat pushes an envelope through the slot. \"A small token. My shipment is a little urgent.\" The envelope is thick enough to be twelve credits. There are a dozen more people in line.",
+    "choices": {
+      "take": {
+        "text": "Take it and speed things up",
+        "outcome": "The envelope goes into your inner pocket and his truck clears the gate in thirty seconds. The line behind him keeps waiting."
+      },
+      "refuse": {
+        "text": "Follow procedure",
+        "outcome": "You push the envelope back. He blinks, then takes his place at the end of the queue. Three credits of overtime is all you make tonight."
+      }
+    }
+  },
+  "gate_quiet_night": {
+    "title": "A Quiet Night",
+    "desc": "The rain has stopped and only a few stragglers come to register. You refill the kettle and dim the desk lamp a notch. From the submarine docks comes a horn, three times a night, never late.",
+    "choices": {
+      "stamp": {
+        "text": "Keep stamping until dawn",
+        "outcome": "The whole night passes with four permits. You write \"no irregularities\" on the last line, then sleep face-down on the desk for twenty minutes."
+      }
+    }
+  }
+}

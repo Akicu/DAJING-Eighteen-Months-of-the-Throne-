@@ -1,0 +1,388 @@
+{
+  "pack": "11-study-chronicle",
+  "loc": "study",
+  "bookkeeping": [
+    "truth_written",
+    "truth_edited",
+    "physician_trusted",
+    "tutor_gift"
+  ],
+  "events": [
+    {
+      "id": "study_veritable_record",
+      "loc": "study",
+      "priority": 56,
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "notFlags": [
+          "record_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "write_truth",
+          "tone": "good",
+          "effects": {
+            "favor": -5,
+            "sanity": -8
+          },
+          "morality": 3,
+          "setFlags": {
+            "record_done": true,
+            "truth_written": true
+          }
+        },
+        {
+          "id": "soften",
+          "tone": "dark",
+          "effects": {
+            "favor": 7,
+            "sanity": 2
+          },
+          "morality": -2,
+          "setFlags": {
+            "record_done": true,
+            "truth_edited": true
+          }
+        },
+        {
+          "id": "leave_blank",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -4
+          },
+          "setFlags": {
+            "record_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_physician",
+      "loc": "study",
+      "priority": 54,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "physician_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take_calming",
+          "tone": "neutral",
+          "effects": {
+            "money": -6,
+            "health": 6,
+            "sanity": 9
+          },
+          "setFlags": {
+            "physician_done": true
+          }
+        },
+        {
+          "id": "refuse_drugs",
+          "tone": "dark",
+          "effects": {
+            "money": 8,
+            "sanity": -5,
+            "favor": 4
+          },
+          "setFlags": {
+            "physician_done": true
+          }
+        },
+        {
+          "id": "ask_father_drug",
+          "tone": "neutral",
+          "requires": {
+            "anyFlags": [
+              "knows_truth",
+              "asked_tutor"
+            ]
+          },
+          "effects": {
+            "health": -3,
+            "sanity": -10
+          },
+          "setFlags": {
+            "physician_done": true,
+            "physician_trusted": true,
+            "knows_poison_truth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_banned_book",
+      "loc": "study",
+      "priority": 58,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "banned_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "read_it",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": -6
+          },
+          "setFlags": {
+            "banned_done": true,
+            "read_banned": true
+          }
+        },
+        {
+          "id": "trace_it",
+          "tone": "dark",
+          "effects": {
+            "money": 8,
+            "favor": -4,
+            "sanity": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "banned_done": true
+          }
+        },
+        {
+          "id": "burn_it",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": 3
+          },
+          "setFlags": {
+            "banned_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_omen",
+      "loc": "study",
+      "priority": 60,
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "omen_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "edict_of_blame",
+          "tone": "good",
+          "effects": {
+            "money": -8,
+            "favor": 11,
+            "sanity": -5
+          },
+          "morality": 2,
+          "setFlags": {
+            "omen_done": true,
+            "edict_of_blame": true
+          },
+          "key": true
+        },
+        {
+          "id": "rebuke_astrologer",
+          "tone": "dark",
+          "effects": {
+            "favor": -7,
+            "sanity": 3
+          },
+          "setFlags": {
+            "omen_done": true
+          }
+        },
+        {
+          "id": "rewrite_stars",
+          "tone": "dark",
+          "effects": {
+            "favor": 4,
+            "sanity": -7
+          },
+          "morality": -2,
+          "setFlags": {
+            "omen_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_tutor_resign",
+      "loc": "study",
+      "priority": 62,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "flags": [
+          "lecture_done"
+        ],
+        "notFlags": [
+          "tutor_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "keep_him",
+          "tone": "neutral",
+          "effects": {
+            "money": -12,
+            "favor": 8,
+            "sanity": 2
+          },
+          "setFlags": {
+            "tutor_done": true
+          }
+        },
+        {
+          "id": "let_him_go",
+          "tone": "good",
+          "effects": {
+            "money": -18,
+            "favor": 6,
+            "sanity": -2
+          },
+          "morality": 2,
+          "setFlags": {
+            "tutor_done": true,
+            "tutor_gift": true
+          }
+        },
+        {
+          "id": "take_book_only",
+          "tone": "neutral",
+          "effects": {
+            "favor": -3,
+            "sanity": 4
+          },
+          "setFlags": {
+            "tutor_done": true,
+            "tutor_gift": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_banned_author",
+      "loc": "study",
+      "priority": 74,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 11,
+        "flags": [
+          "read_banned"
+        ],
+        "notFlags": [
+          "author_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "release_and_meet",
+          "tone": "good",
+          "effects": {
+            "money": -14,
+            "favor": 10,
+            "sanity": -4
+          },
+          "morality": 2,
+          "setFlags": {
+            "author_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "exile_him",
+          "tone": "dark",
+          "effects": {
+            "money": 6,
+            "favor": -5,
+            "sanity": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "author_done": true
+          }
+        },
+        {
+          "id": "leave_in_jail",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -5
+          },
+          "setFlags": {
+            "author_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_petition_stone",
+      "loc": "study",
+      "priority": 70,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 14,
+        "flags": [
+          "edict_of_blame"
+        ],
+        "notFlags": [
+          "stone_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "let_it_stand",
+          "tone": "good",
+          "effects": {
+            "favor": 9,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "stone_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "destroy_it",
+          "tone": "dark",
+          "effects": {
+            "money": 10,
+            "favor": -8,
+            "sanity": -3
+          },
+          "morality": -2,
+          "setFlags": {
+            "stone_done": true
+          }
+        },
+        {
+          "id": "copy_it",
+          "tone": "neutral",
+          "effects": {
+            "money": -4,
+            "favor": 4,
+            "sanity": -2
+          },
+          "setFlags": {
+            "stone_done": true
+          }
+        }
+      ]
+    }
+  ]
+}

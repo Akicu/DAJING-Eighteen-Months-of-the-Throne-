@@ -1,0 +1,564 @@
+{
+  "pack": "06-frontier-watch",
+  "loc": "frontier",
+  "bookkeeping": [
+    "frontier_strict",
+    "frontier_merciful",
+    "names_honored",
+    "beacon_answered",
+    "salt_deal",
+    "salt_cleared",
+    "salt_seized",
+    "huo_cold",
+    "wall_held",
+    "wall_lost",
+    "enemy_bought_off"
+  ],
+  "events": [
+    {
+      "id": "frontier_deserter",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 66,
+      "once": true,
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "deserter_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "behead",
+          "tone": "dark",
+          "effects": {
+            "favor": 9,
+            "sanity": -7
+          },
+          "morality": -2,
+          "setFlags": {
+            "deserter_done": true,
+            "frontier_strict": true
+          }
+        },
+        {
+          "id": "spare",
+          "tone": "good",
+          "effects": {
+            "money": -10,
+            "favor": -7,
+            "sanity": 5
+          },
+          "morality": 2,
+          "setFlags": {
+            "deserter_done": true,
+            "frontier_merciful": true
+          }
+        },
+        {
+          "id": "hand_back",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": -3
+          },
+          "setFlags": {
+            "deserter_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_wall_crack",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 72,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "wall_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "repair",
+          "tone": "good",
+          "effects": {
+            "money": -24,
+            "favor": 12,
+            "health": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "wall_done": true,
+            "wall_repaired": true
+          },
+          "key": true
+        },
+        {
+          "id": "patch",
+          "tone": "neutral",
+          "effects": {
+            "money": -10,
+            "favor": 4
+          },
+          "setFlags": {
+            "wall_done": true,
+            "wall_repaired": true
+          }
+        },
+        {
+          "id": "ignore",
+          "tone": "dark",
+          "effects": {
+            "favor": -6,
+            "sanity": -5
+          },
+          "morality": -2,
+          "setFlags": {
+            "wall_done": true,
+            "wall_weak": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_name_wall",
+      "loc": "frontier",
+      "weight": 3,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "names_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "add_name",
+          "tone": "good",
+          "effects": {
+            "sanity": 6,
+            "health": -3,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "names_done": true,
+            "names_honored": true
+          }
+        },
+        {
+          "id": "order_monument",
+          "tone": "good",
+          "effects": {
+            "money": -12,
+            "favor": 12
+          },
+          "morality": 1,
+          "setFlags": {
+            "names_done": true,
+            "names_honored": true
+          }
+        },
+        {
+          "id": "walk_away",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "favor": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "names_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_beacon",
+      "loc": "frontier",
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "beacon_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "light",
+          "tone": "neutral",
+          "effects": {
+            "favor": 10,
+            "money": -8,
+            "sanity": -6
+          },
+          "setFlags": {
+            "beacon_done": true,
+            "beacon_answered": true
+          }
+        },
+        {
+          "id": "wait",
+          "tone": "dark",
+          "effects": {
+            "sanity": -10,
+            "health": -4
+          },
+          "morality": -1,
+          "setFlags": {
+            "beacon_done": true
+          }
+        },
+        {
+          "id": "scout",
+          "tone": "good",
+          "effects": {
+            "money": -10,
+            "sanity": -3,
+            "favor": 6
+          },
+          "morality": 1,
+          "setFlags": {
+            "beacon_done": true,
+            "beacon_answered": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_salt_cart",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 9,
+        "flags": [
+          "frontier_smuggled"
+        ],
+        "notFlags": [
+          "salt_cart_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take_iron",
+          "tone": "dark",
+          "effects": {
+            "money": 30,
+            "favor": 12
+          },
+          "morality": -1,
+          "setFlags": {
+            "salt_cart_done": true,
+            "salt_deal": true
+          }
+        },
+        {
+          "id": "pay_fair",
+          "tone": "good",
+          "effects": {
+            "money": -18,
+            "favor": 8
+          },
+          "morality": 2,
+          "setFlags": {
+            "salt_cart_done": true,
+            "salt_cleared": true
+          },
+          "key": true
+        },
+        {
+          "id": "seize_cart",
+          "tone": "neutral",
+          "effects": {
+            "money": 20,
+            "favor": -10,
+            "sanity": -4
+          },
+          "setFlags": {
+            "salt_cart_done": true,
+            "salt_seized": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_huo_drink",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 74,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "anyFlags": [
+          "huo_ally",
+          "met_huo"
+        ],
+        "notFlags": [
+          "huo_drink_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "drink",
+          "tone": "good",
+          "effects": {
+            "sanity": 7,
+            "health": -5,
+            "favor": 9
+          },
+          "setFlags": {
+            "huo_drink_done": true,
+            "huo_ally": true,
+            "huo_oath": true
+          }
+        },
+        {
+          "id": "ask_graves",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -6,
+            "favor": 4
+          },
+          "setFlags": {
+            "huo_drink_done": true,
+            "huo_oath": true
+          }
+        },
+        {
+          "id": "send_away",
+          "tone": "dark",
+          "effects": {
+            "favor": -9,
+            "sanity": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "huo_drink_done": true,
+            "huo_cold": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_siege",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "notFlags": [
+          "siege_done",
+          "wall_weak"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hold_wall",
+          "tone": "neutral",
+          "effects": {
+            "money": -12,
+            "favor": 16,
+            "health": -12
+          },
+          "morality": 1,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "use_repaired_wall",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "wall_repaired"
+            ]
+          },
+          "effects": {
+            "money": -6,
+            "favor": 20,
+            "health": -6
+          },
+          "morality": 2,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "stand_with_huo",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "huo_oath"
+            ]
+          },
+          "effects": {
+            "favor": 18,
+            "health": -10,
+            "sanity": 6
+          },
+          "morality": 2,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true,
+            "huo_ally": true
+          },
+          "key": true
+        },
+        {
+          "id": "abandon_wall",
+          "tone": "dark",
+          "effects": {
+            "money": 25,
+            "favor": -18,
+            "sanity": -12
+          },
+          "morality": -3,
+          "setFlags": {
+            "siege_done": true,
+            "wall_lost": true
+          },
+          "key": true
+        },
+        {
+          "id": "ride_out",
+          "tone": "dark",
+          "roll": {
+            "chance": 0.4,
+            "win": {
+              "effects": {
+                "favor": 20,
+                "money": -8,
+                "health": -9,
+                "sanity": 8
+              },
+              "morality": 2,
+              "setFlags": {
+                "siege_done": true,
+                "wall_held": true,
+                "enemy_bought_off": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "health": -16,
+                "favor": -16,
+                "sanity": -13,
+                "money": 6
+              },
+              "setFlags": {
+                "siege_done": true,
+                "wall_lost": true
+              }
+            }
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_siege_broken",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 91,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "flags": [
+          "wall_weak"
+        ],
+        "notFlags": [
+          "siege_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "plug_gap",
+          "tone": "neutral",
+          "effects": {
+            "money": -16,
+            "favor": 12,
+            "health": -14
+          },
+          "morality": 1,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "street_fight",
+          "tone": "dark",
+          "effects": {
+            "favor": 8,
+            "health": -20,
+            "sanity": -8
+          },
+          "morality": -1,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "abandon_wall",
+          "tone": "dark",
+          "effects": {
+            "money": 25,
+            "favor": -18,
+            "sanity": -12
+          },
+          "morality": -3,
+          "setFlags": {
+            "siege_done": true,
+            "wall_lost": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_watch_night",
+      "loc": "frontier",
+      "repeatable": true,
+      "weight": 14,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "walk_wall",
+          "tone": "neutral",
+          "effects": {
+            "health": -6,
+            "money": 11,
+            "favor": 3
+          }
+        },
+        {
+          "id": "sit_fire",
+          "tone": "good",
+          "effects": {
+            "sanity": 7,
+            "health": 2,
+            "money": -3
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "pack": "04-frontier-crisis",
+  "loc": "frontier",
+  "bookkeeping": [
+    "frontier_smuggled",
+    "frontier_clamped",
+    "frontier_relieved",
+    "huo_ally",
+    "huo_betrayed"
+  ],
+  "events": [
+    {
+      "id": "frontier_black_market",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 85,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "frontier_market_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "tolerate",
+          "tone": "dark",
+          "effects": {
+            "money": 35,
+            "favor": 8,
+            "health": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "frontier_market_done": true,
+            "frontier_smuggled": true,
+            "huo_ally": true
+          },
+          "key": true
+        },
+        {
+          "id": "ban_strict",
+          "tone": "neutral",
+          "effects": {
+            "money": -20,
+            "favor": -10,
+            "health": -4
+          },
+          "morality": 1,
+          "setFlags": {
+            "frontier_market_done": true,
+            "frontier_clamped": true,
+            "huo_betrayed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_snow_storm",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 88,
+      "once": true,
+      "cond": {
+        "dayMin": 11,
+        "notFlags": [
+          "frontier_storm_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "drain_vault",
+          "tone": "good",
+          "effects": {
+            "money": -30,
+            "favor": 22,
+            "sanity": 2
+          },
+          "morality": 2,
+          "setFlags": {
+            "frontier_storm_done": true,
+            "frontier_relieved": true,
+            "huo_ally": true
+          },
+          "key": true
+        },
+        {
+          "id": "ignore_storm",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "favor": -15
+          },
+          "morality": -3,
+          "setFlags": {
+            "frontier_storm_done": true,
+            "huo_betrayed": true
+          }
+        }
+      ]
+    }
+  ]
+}

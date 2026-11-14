@@ -1,0 +1,192 @@
+{
+  "pack": "05-dorm",
+  "loc": "dorm",
+  "events": [
+    {
+      "id": "dorm_rest",
+      "loc": "dorm",
+      "weight": 5,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "sleep",
+          "effects": {
+            "sanity": 22,
+            "health": 6
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_radio",
+      "loc": "dorm",
+      "weight": 8,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "tune_in",
+          "effects": {
+            "sanity": 10
+          },
+          "setFlags": {
+            "knows_schedule": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "switch_off",
+          "effects": {
+            "sanity": -6
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nightmare",
+      "loc": "dorm",
+      "priority": 80,
+      "once": true,
+      "cond": {
+        "statMax": {
+          "sanity": 45
+        }
+      },
+      "choices": [
+        {
+          "id": "wake",
+          "effects": {
+            "sanity": -10
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "write",
+          "effects": {
+            "sanity": 16
+          },
+          "morality": 1,
+          "tone": "good"
+        },
+        {
+          "id": "drink",
+          "effects": {
+            "money": -5,
+            "sanity": 20,
+            "health": -5
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_journal",
+      "loc": "dorm",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 2,
+      "choices": [
+        {
+          "id": "write",
+          "effects": {
+            "sanity": 12
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_neighbor",
+      "loc": "dorm",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "check",
+          "effects": {
+            "sanity": 10,
+            "money": -5
+          },
+          "morality": 1,
+          "tone": "good"
+        },
+        {
+          "id": "ignore",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_mirror",
+      "loc": "dorm",
+      "priority": 70,
+      "once": true,
+      "cond": {
+        "dayMin": 10
+      },
+      "choices": [
+        {
+          "id": "confront",
+          "effects": {
+            "sanity": 18
+          },
+          "morality": 1,
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "turn_away",
+          "effects": {
+            "sanity": -12
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_letter",
+      "loc": "dorm",
+      "weight": 5,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "read",
+          "effects": {
+            "sanity": 18
+          },
+          "morality": 1,
+          "setFlags": {
+            "read_letter": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "burn",
+          "effects": {
+            "sanity": -10
+          },
+          "setFlags": {
+            "burned_letter": true
+          },
+          "tone": "dark"
+        }
+      ]
+    }
+  ]
+}

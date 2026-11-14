@@ -1,0 +1,364 @@
+{
+  "pack": "02-pub",
+  "loc": "pub",
+  "events": [
+    {
+      "id": "pub_rachel_deal",
+      "loc": "pub",
+      "priority": 20,
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "notFlags": [
+          "met_rachel"
+        ]
+      },
+      "choices": [
+        {
+          "id": "buy_intel",
+          "effects": {
+            "money": -15,
+            "favor": 12
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "met_rachel": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "forge",
+          "effects": {
+            "money": 20,
+            "sanity": -15,
+            "favor": 8
+          },
+          "setFlags": {
+            "met_rachel": true,
+            "forged_for_rachel": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "listen",
+          "effects": {
+            "sanity": 10
+          },
+          "setFlags": {
+            "met_rachel": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_mechanic_gift",
+      "loc": "pub",
+      "priority": 100,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "saved_mother"
+        ],
+        "notFlags": [
+          "got_mechanic_help"
+        ],
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "accept",
+          "effects": {
+            "money": 35,
+            "favor": 10,
+            "sanity": 10
+          },
+          "setFlags": {
+            "got_mechanic_help": true,
+            "boat_pass": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": 15,
+            "favor": 15
+          },
+          "morality": 1,
+          "setFlags": {
+            "got_mechanic_help": true
+          },
+          "tone": "good",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_test",
+      "loc": "pub",
+      "priority": 60,
+      "once": true,
+      "cond": {
+        "statMin": {
+          "favor": 25
+        },
+        "dayMin": 5,
+        "notFlags": [
+          "rachel_test_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "prove",
+          "effects": {
+            "money": -20,
+            "favor": 18
+          },
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "setFlags": {
+            "rachel_test_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": 10,
+            "favor": -8
+          },
+          "setFlags": {
+            "rachel_test_done": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "pub_ticket_cash",
+      "loc": "pub",
+      "priority": 65,
+      "once": true,
+      "cond": {
+        "statMin": {
+          "money": 90
+        },
+        "dayMin": 2,
+        "notFlags": [
+          "ticket_secured"
+        ]
+      },
+      "choices": [
+        {
+          "id": "buy_now",
+          "effects": {
+            "money": -90,
+            "favor": 30
+          },
+          "setFlags": {
+            "ticket_secured": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "haggle",
+          "effects": {
+            "money": -70,
+            "favor": 12,
+            "sanity": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "cut_rate_ticket": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_bounty",
+      "loc": "pub",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "moralityMax": -2,
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "pay_off",
+          "effects": {
+            "money": -40,
+            "sanity": -10
+          },
+          "requires": {
+            "statMin": {
+              "money": 40
+            }
+          },
+          "setFlags": {
+            "bounty_cleared": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "fight",
+          "effects": {
+            "health": -35,
+            "sanity": -10
+          },
+          "setFlags": {
+            "bounty_cleared": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "run",
+          "effects": {
+            "health": -15,
+            "sanity": -15,
+            "money": -10
+          },
+          "setFlags": {
+            "bounty_cleared": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_farewell",
+      "loc": "pub",
+      "priority": 95,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "notFlags": [
+          "farewell_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "stay",
+          "effects": {
+            "favor": 12,
+            "sanity": 10
+          },
+          "setFlags": {
+            "farewell_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "ask_jump",
+          "effects": {
+            "favor": 6,
+            "sanity": -5
+          },
+          "requires": {
+            "statMin": {
+              "favor": 20
+            }
+          },
+          "setFlags": {
+            "farewell_done": true,
+            "asked_for_seat": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_drunk",
+      "loc": "pub",
+      "weight": 4,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "listen",
+          "effects": {
+            "sanity": 12,
+            "money": -3
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_bet",
+      "loc": "pub",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "gamble",
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "roll": {
+            "chance": 0.42,
+            "win": {
+              "effects": {
+                "money": 45,
+                "sanity": 5
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -15,
+                "sanity": -8
+              }
+            }
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "watch",
+          "effects": {
+            "sanity": 4
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_song",
+      "loc": "pub",
+      "weight": 4,
+      "once": true,
+      "choices": [
+        {
+          "id": "stay",
+          "effects": {
+            "sanity": 15,
+            "money": -5
+          },
+          "tone": "good"
+        }
+      ]
+    }
+  ],
+  "bookkeeping": [
+    "ticket_secured",
+    "asked_for_seat"
+  ]
+}

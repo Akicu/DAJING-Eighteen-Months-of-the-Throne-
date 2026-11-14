@@ -1,0 +1,135 @@
+{
+  "pub_rachel_deal": {
+    "title": "Rachel",
+    "desc": "Rachel polishes a cup with a cracked rim behind the bar and slides a cloudy drink towards you. \"A submarine seat isn't something you buy, officer. If you want me to fit you in, first prove you're worth the risk.\"",
+    "choices": {
+      "buy_intel": {
+        "text": "Buy her information and drink with her",
+        "req": "Needs 15 credits",
+        "outcome": "You pay, and she murmurs a sailing window and a passphrase. \"And don't mention my name on the gate side.\""
+      },
+      "forge": {
+        "text": "Forge a batch of transit papers for her",
+        "outcome": "You stamp twenty documents with the booth seal and make a little money on the side. The cost is that you shake for the rest of the night."
+      },
+      "listen": {
+        "text": "Buy nothing, just sit at the bar",
+        "outcome": "You order the cheapest thing on the board and listen to other people's stories for half the night. Walking out, your head is strangely quiet."
+      }
+    }
+  },
+  "pub_mechanic_gift": {
+    "title": "The Mechanic's Debt",
+    "desc": "A man in the corner with engine grease to his elbows pulls his cap down and waves you over. \"Sir — I'm the husband. The woman and the girl from that night. They reached the safe zone. Her fever broke. This is from the submarine yard.\" He pushes a paper bag across the table.",
+    "choices": {
+      "accept": {
+        "text": "Accept the gift",
+        "outcome": "The bag holds thirty credits and an internal yard pass. Rachel raises an eyebrow. \"Didn't think the iron officer had a soft spot.\""
+      },
+      "refuse": {
+        "text": "Push it back — leave it for his family",
+        "outcome": "He takes the bag back and his eyes go red. Rachel pours you a drink she doesn't charge for. \"You,\" she says, \"won't last long.\""
+      }
+    }
+  },
+  "pub_rachel_test": {
+    "title": "Rachel's Test",
+    "desc": "Rachel slides a locked steel box across the bar. \"Tomorrow morning someone will ask whether you've seen this box. If you say no, we can talk business. There are twenty lives inside it.\"",
+    "choices": {
+      "prove": {
+        "text": "Take the box and carry it for her",
+        "req": "Needs 20 credits",
+        "outcome": "You hide the box in the booth's dead space and pay off the people likely to come asking. Something in the way Rachel looks at you has changed."
+      },
+      "refuse": {
+        "text": "Push the box back",
+        "outcome": "\"I don't get involved in this.\" You push it back across the bar. She nods, not angry, and takes your drink away."
+      }
+    }
+  },
+  "pub_ticket_cash": {
+    "title": "Cash for a Seat",
+    "desc": "Rachel slaps an envelope on the bar. \"Someone gave up a seat tonight. Ninety, cash, no haggling. By this time tomorrow it won't be this price.\"",
+    "choices": {
+      "buy_now": {
+        "text": "Pay and take the seat",
+        "outcome": "You push ninety across and she doesn't count it, just tucks it into her apron. She writes you a number by hand: cargo bay nineteen."
+      },
+      "haggle": {
+        "text": "Push the price down — imply you know the hotline",
+        "outcome": "She stares at you for a long moment and takes seventy. \"Fine. You saved twenty. This seat doesn't have a vent.\""
+      }
+    }
+  },
+  "pub_bounty": {
+    "title": "Someone Wants You Dead",
+    "desc": "The bar goes quiet the moment you sit down. Three men block the door. The one in front slaps a sheet of paper on the table: your employee number and a blurred photograph. \"Someone put forty on you not going home tonight.\"",
+    "choices": {
+      "pay_off": {
+        "text": "Buy your way out",
+        "req": "Needs 40 credits",
+        "outcome": "You push the money across. He takes it and tears up the paper. \"Price goes up next time,\" he says on his way out."
+      },
+      "fight": {
+        "text": "Break a bottle and swing",
+        "outcome": "You break one man's nose and get beaten into the floor. Rachel drives them out with a crowbar."
+      },
+      "run": {
+        "text": "Run out the back",
+        "outcome": "You go over the alley wall, land in the rubbish and twist your ankle. You don't show up for work the next day. Nobody asks."
+      }
+    }
+  },
+  "pub_rachel_farewell": {
+    "title": "One Last Cigarette",
+    "desc": "The submarine leaves tomorrow night. Rachel stands in the doorway smoking, watching the last of the street drag their bags towards the docks. \"You've got one night,\" she says, holding out the cigarette. \"Work out what you want.\"",
+    "choices": {
+      "stay": {
+        "text": "Stand with her until dawn",
+        "outcome": "You do nothing at all — just smoke one after another and watch the sky lighten. At the end she says: \"If you can't get out, there's a spot behind me.\""
+      },
+      "ask_jump": {
+        "text": "Ask if she can fit you in the hold",
+        "req": "Needs Rachel's trust ≥ 20",
+        "outcome": "She looks at you, grinds the cigarette out on the doorframe. \"Don't ask. Tomorrow night. Back door. Bring nothing extra.\""
+      }
+    }
+  },
+  "pub_drunk": {
+    "title": "A Dockworker's Joke",
+    "desc": "A drunk dockworker lies across the bar telling the same joke over and over: why doesn't the Ash infect the rich? Because they already bought their tickets. Every time he lands it the room laughs, and by the end it sounds like crying.",
+    "choices": {
+      "listen": {
+        "text": "Hear him out and laugh along",
+        "outcome": "You laugh, then realise you haven't laughed in a very long time. The night's drinks cost you three."
+      }
+    }
+  },
+  "pub_bet": {
+    "title": "Dice at the Bar",
+    "desc": "Two miners are shooting dice. They see you coming and push the cup towards you. \"Care to try, officer? Fifteen to start.\" The inside of the cup is faintly polished. You know what that means. Tonight you don't care.",
+    "choices": {
+      "gamble": {
+        "text": "Put down fifteen",
+        "req": "Needs 15 credits",
+        "outcome": "The cup comes up and the room reacts.",
+        "win": "All three red. The miner swears and pushes forty-five across. You hear yourself laugh out loud, and the sound is unfamiliar.",
+        "lose": "All three black. You stare at the bar for three seconds, then put down fifteen. The miner pats your shoulder. \"Same time tomorrow, officer?\""
+      },
+      "watch": {
+        "text": "Watch, but don't bet",
+        "outcome": "You stand there for half an hour and both of them end up cleaned out. You win nothing and lose nothing."
+      }
+    }
+  },
+  "pub_song": {
+    "title": "A Song in the Bar",
+    "desc": "Someone starts an old tune on a harmonica. The bar slowly goes quiet, even Rachel stops working. You remember this song from a radio in your childhood.",
+    "choices": {
+      "stay": {
+        "text": "Sit and listen to the end",
+        "outcome": "Nobody claps when it finishes. Everyone is looking at the floor. You pay five and consider it money well spent."
+      }
+    }
+  }
+}

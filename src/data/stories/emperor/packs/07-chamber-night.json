@@ -1,0 +1,491 @@
+{
+  "pack": "07-chamber-night",
+  "loc": "chamber",
+  "bookkeeping": [
+    "nightmare_calm",
+    "father_robe",
+    "robe_burned",
+    "mirror_afraid",
+    "taster_dead",
+    "wang_loyal"
+  ],
+  "events": [
+    {
+      "id": "chamber_nightmare",
+      "loc": "chamber",
+      "priority": 62,
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "notFlags": [
+          "nightmare_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sit_up",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "health": -3
+          },
+          "setFlags": {
+            "nightmare_done": true,
+            "nightmare_haunted": true
+          }
+        },
+        {
+          "id": "call_lamp",
+          "tone": "neutral",
+          "effects": {
+            "favor": 3,
+            "sanity": 5
+          },
+          "setFlags": {
+            "nightmare_done": true,
+            "nightmare_calm": true
+          }
+        },
+        {
+          "id": "write_down",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3,
+            "health": 2
+          },
+          "setFlags": {
+            "nightmare_done": true,
+            "nightmare_calm": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_lamp_oil",
+      "loc": "chamber",
+      "weight": 3,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "lamp_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "let_sleep",
+          "tone": "good",
+          "effects": {
+            "sanity": 5,
+            "health": -2
+          },
+          "morality": 1,
+          "setFlags": {
+            "lamp_done": true
+          }
+        },
+        {
+          "id": "wake_ask",
+          "tone": "neutral",
+          "effects": {
+            "favor": 4,
+            "sanity": 3
+          },
+          "setFlags": {
+            "lamp_done": true
+          }
+        },
+        {
+          "id": "replace",
+          "tone": "dark",
+          "effects": {
+            "favor": -5,
+            "sanity": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "lamp_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_old_robe",
+      "loc": "chamber",
+      "priority": 64,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "robe_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "wear",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -8,
+            "favor": 6
+          },
+          "setFlags": {
+            "robe_done": true,
+            "father_robe": true
+          }
+        },
+        {
+          "id": "burn",
+          "tone": "dark",
+          "effects": {
+            "sanity": 4,
+            "favor": -6
+          },
+          "morality": -1,
+          "setFlags": {
+            "robe_done": true,
+            "robe_burned": true
+          }
+        },
+        {
+          "id": "close_lid",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -2
+          },
+          "setFlags": {
+            "robe_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_mirror",
+      "loc": "chamber",
+      "weight": 3,
+      "once": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "mirror_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "stare",
+          "tone": "dark",
+          "effects": {
+            "sanity": -9,
+            "health": -2
+          },
+          "setFlags": {
+            "mirror_done": true,
+            "mirror_afraid": true
+          }
+        },
+        {
+          "id": "cover",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 3,
+            "health": 2
+          },
+          "setFlags": {
+            "mirror_done": true
+          }
+        },
+        {
+          "id": "ask",
+          "tone": "good",
+          "effects": {
+            "favor": 4,
+            "sanity": -3
+          },
+          "setFlags": {
+            "mirror_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_taster",
+      "loc": "chamber",
+      "npc": "wang",
+      "priority": 76,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "anyFlags": [
+          "broth_drunk",
+          "broth_tested"
+        ],
+        "notFlags": [
+          "taster_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "save",
+          "tone": "good",
+          "effects": {
+            "money": -14,
+            "sanity": 6,
+            "favor": -3
+          },
+          "morality": 2,
+          "setFlags": {
+            "taster_done": true,
+            "taster_saved": true
+          },
+          "key": true
+        },
+        {
+          "id": "gift",
+          "tone": "neutral",
+          "effects": {
+            "money": -8,
+            "sanity": -5
+          },
+          "setFlags": {
+            "taster_done": true
+          }
+        },
+        {
+          "id": "ignore",
+          "tone": "dark",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "taster_done": true,
+            "taster_dead": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "chamber_dowager_gift",
+      "loc": "chamber",
+      "npc": "dowager",
+      "priority": 78,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "dowager_ally"
+        ],
+        "notFlags": [
+          "gift_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take",
+          "tone": "neutral",
+          "effects": {
+            "favor": 10,
+            "sanity": 4
+          },
+          "setFlags": {
+            "gift_done": true,
+            "dowager_trust": true
+          }
+        },
+        {
+          "id": "refuse",
+          "tone": "dark",
+          "effects": {
+            "sanity": -4,
+            "favor": -6
+          },
+          "setFlags": {
+            "gift_done": true
+          }
+        },
+        {
+          "id": "ask",
+          "tone": "good",
+          "effects": {
+            "sanity": -6,
+            "favor": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "gift_done": true,
+            "dowager_trust": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_wang_knife",
+      "loc": "chamber",
+      "npc": "wang",
+      "priority": 74,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 14,
+        "anyFlags": [
+          "wang_ally",
+          "wang_betrayed"
+        ],
+        "notFlags": [
+          "knife_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "trust",
+          "tone": "good",
+          "effects": {
+            "favor": 6,
+            "sanity": 5
+          },
+          "setFlags": {
+            "knife_done": true,
+            "wang_loyal": true
+          }
+        },
+        {
+          "id": "disarm",
+          "tone": "neutral",
+          "effects": {
+            "favor": -5,
+            "health": 3,
+            "sanity": -2
+          },
+          "setFlags": {
+            "knife_done": true
+          }
+        },
+        {
+          "id": "banish",
+          "tone": "dark",
+          "effects": {
+            "favor": -8,
+            "sanity": -4
+          },
+          "morality": -1,
+          "setFlags": {
+            "knife_done": true
+          }
+        },
+        {
+          "id": "turn_back",
+          "tone": "dark",
+          "roll": {
+            "chance": 0.5,
+            "win": {
+              "effects": {
+                "favor": 13,
+                "sanity": 9
+              },
+              "morality": 1,
+              "setFlags": {
+                "knife_done": true,
+                "wang_loyal": true,
+                "wang_ally": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "health": -24,
+                "favor": -7,
+                "sanity": -11
+              },
+              "setFlags": {
+                "knife_done": true,
+                "wang_betrayed": true
+              }
+            }
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "chamber_last_night",
+      "loc": "chamber",
+      "priority": 95,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 17,
+        "notFlags": [
+          "last_night_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sleep",
+          "tone": "neutral",
+          "requires": {
+            "notFlags": [
+              "nightmare_haunted"
+            ]
+          },
+          "effects": {
+            "sanity": 14,
+            "health": 8
+          },
+          "setFlags": {
+            "last_night_done": true
+          }
+        },
+        {
+          "id": "walk_hall",
+          "tone": "neutral",
+          "effects": {
+            "favor": 10,
+            "sanity": 4,
+            "health": -4
+          },
+          "setFlags": {
+            "last_night_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "sit_with_mother",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "dowager_trust"
+            ]
+          },
+          "effects": {
+            "favor": 12,
+            "sanity": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_night_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "name_the_taster",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "taster_saved"
+            ]
+          },
+          "effects": {
+            "sanity": 6,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_night_done": true
+          },
+          "key": true
+        }
+      ]
+    }
+  ]
+}

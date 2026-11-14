@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0b0906;
+  color: #e8dcc8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+}
+
+/* 纸：一层极细的斜纹，只在 0.014 的不透明度上。
+   用 repeating-linear-gradient 而不是 SVG 噪声 —— 后者在大面积上会被逐帧重绘，
+   低端安卓能直接掉到 30 帧。这一条是静态背景，代价约等于零。 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(232, 220, 200, 0.014) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+/* 暗角：让边框附近的纸自然沉下去，避免整屏亮度过于均匀（均匀是模板感的主要来源之一）。
+   alpha 走 CSS 变量 —— 心力濒死时外框内会再压一层暗红，那一层叠上这层会糊成一片黑，
+   所以 App 在低心力时把这里的 0.42 降到 0.16，让位给会呼吸的那层。 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    transparent 42%,
+    rgba(0, 0, 0, var(--vignette-a, 0.42)) 100%
+  );
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(178, 58, 46, 0.42);
+  color: #f4eee1;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3128;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 长按批红时不能选中文字、不能触发长按菜单，否则在 iOS 上会弹「拷贝」气泡 */
+.unselectable {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* 心力濒死（<15）时外框内那层暗红。
+   8 秒一个周期、只动 opacity：快了像警报灯，慢到接近呼吸才是「撑不住」。
+   手写而不走 Tailwind —— 全局 reduced-motion 规则会把动画停在第 0 帧（opacity .4），
+   等于把暗角划掉了，所以这里要单独给一个静态亮度。 */
+@keyframes vignettePulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.vignette-pulse {
+  animation: vignettePulse 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vignette-pulse {
+    animation: none !important;
+    opacity: 0.82 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* 全局降级：保留终态（duration 极小而非 none），但不允许循环动画继续跳动。
+     低端安卓上这条媒体查询不一定命中，所以动画本身也都选了只动 opacity / transform 的。 */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

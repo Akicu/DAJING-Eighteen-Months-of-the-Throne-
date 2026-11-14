@@ -1,0 +1,185 @@
+{
+  "version": 2,
+  "config": {
+    "maxDays": 18,
+    "actionsPerDay": 3,
+    "ticketCost": 240,
+    "ticketFavor": 60,
+    "dailyUpkeep": 14,
+    "startStats": {
+      "health": 100,
+      "sanity": 75,
+      "money": 45,
+      "favor": 12
+    },
+    "statCeiling": 100,
+    "dailyWage": 13,
+    "upkeepRampEvery": 5,
+    "upkeepRampAdd": 3,
+    "dailySanityRestore": 6,
+    "dayLabel": "lunar"
+  },
+  "locations": [
+    {
+      "id": "court",
+      "accent": "amber",
+      "icon": "throne",
+      "apCost": 1,
+      "art": "art/loc-court.jpg"
+    },
+    {
+      "id": "study",
+      "accent": "sky",
+      "icon": "scroll",
+      "apCost": 1,
+      "art": "art/loc-study.jpg"
+    },
+    {
+      "id": "vault",
+      "accent": "emerald",
+      "icon": "vault",
+      "apCost": 1,
+      "art": "art/loc-vault.jpg"
+    },
+    {
+      "id": "frontier",
+      "accent": "rose",
+      "icon": "banner",
+      "apCost": 1,
+      "art": "art/loc-frontier.jpg"
+    },
+    {
+      "id": "chamber",
+      "accent": "violet",
+      "icon": "moon",
+      "apCost": 1,
+      "art": "art/loc-chamber.jpg"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "shen",
+      "accent": "sky",
+      "metFlag": "met_shen",
+      "allyFlag": "shen_ally",
+      "betrayFlag": "shen_betrayed",
+      "portrait": "art/npc-shen.jpg"
+    },
+    {
+      "id": "dowager",
+      "accent": "violet",
+      "metFlag": "met_dowager",
+      "allyFlag": "dowager_ally",
+      "betrayFlag": "dowager_betrayed",
+      "portrait": "art/npc-dowager.jpg"
+    },
+    {
+      "id": "huo",
+      "accent": "rose",
+      "metFlag": "met_huo",
+      "allyFlag": "huo_ally",
+      "betrayFlag": "huo_betrayed",
+      "portrait": "art/npc-huo.jpg"
+    },
+    {
+      "id": "wang",
+      "accent": "emerald",
+      "metFlag": "met_wang",
+      "allyFlag": "wang_ally",
+      "betrayFlag": "wang_betrayed",
+      "portrait": "art/npc-wang.jpg"
+    }
+  ],
+  "acts": [
+    {
+      "from": 1,
+      "id": "regency"
+    },
+    {
+      "from": 7,
+      "id": "faction"
+    },
+    {
+      "from": 13,
+      "id": "reckoning"
+    }
+  ],
+  "endings": [
+    {
+      "id": "ending_emperor_zenith",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "flags": [
+          "zenith_ready"
+        ],
+        "statMin": {
+          "money": 200,
+          "favor": 55
+        }
+      }
+    },
+    {
+      "id": "ending_emperor_beloved",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "statMin": {
+          "favor": 50
+        },
+        "moralityMin": 0
+      }
+    },
+    {
+      "id": "ending_emperor_ironfist",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "moralityMax": -6,
+        "statMin": {
+          "money": 150
+        }
+      }
+    },
+    {
+      "id": "ending_emperor_abdicate",
+      "win": false,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "abdicated"
+        ]
+      }
+    },
+    {
+      "id": "ending_emperor_puppet",
+      "win": false,
+      "rarity": 2,
+      "cond": {
+        "statMax": {
+          "favor": 24
+        }
+      }
+    },
+    {
+      "id": "ending_dead",
+      "win": false,
+      "rarity": 1
+    },
+    {
+      "id": "ending_mad",
+      "win": false,
+      "rarity": 1
+    },
+    {
+      "id": "ending_starved",
+      "win": false,
+      "rarity": 1
+    },
+    {
+      "id": "ending_emperor_faded",
+      "win": false,
+      "rarity": 1
+    }
+  ]
+}

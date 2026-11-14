@@ -1,0 +1,162 @@
+{
+  "vault_empty": {
+    "title": "The books",
+    "desc": "The revenue board reports: one hundred and ten thousand taels. Next month requires four hundred and seventy thousand — three border armies, the capital salaries, the river works. The old clerk pushes the abacus away and says: sire, I cannot make it add up.",
+    "choices": {
+      "levy": {
+        "text": "Levy an extra year's tax",
+        "outcome": "The order is posted in the counties. Three months later a new column appears in the judicial memorials: tax resistance. You count five hundred thousand new taels in the treasury. They stack very neatly."
+      },
+      "cut": {
+        "text": "Cut the court, cut the table, cut the music",
+        "outcome": "You halve the palace budget, including the Dowager's charcoal. The two hundred and fifty thousand saved doesn't cover the gap. The next day she sends over an old quilt and says nothing at all."
+      },
+      "borrow": {
+        "text": "Borrow from the Jiangnan merchants",
+        "outcome": "Four hundred and fifty thousand, six months, thirty percent. The silver arrives and so does the ledger. When the merchant guild comes to give thanks, they ride in a sedan you granted — wider than a second-rank minister's."
+      }
+    }
+  },
+  "vault_famine": {
+    "title": "The memorial from Henan",
+    "desc": "It says: severe drought, people eating people, granaries sealed. What it means is six words long: open them or don't, but now. Opening costs five hundred thousand taels. Not opening won't necessarily kill those people — but someone else will say it for you.",
+    "choices": {
+      "open_granary": {
+        "text": "Open everything",
+        "outcome": "Five hundred thousand taels leave the treasury and the first grain carts roll three days later. When the first snow comes, the refugees have not moved south. The county magistrates send a petition with fingerprints pressed all over it."
+      },
+      "half": {
+        "text": "Open half, make the province cover the rest",
+        "outcome": "Two hundred thousand goes out and the province collects next year's tax early. Nobody eats anybody. Henan also only remits sixty percent of its revenue this year."
+      },
+      "shut": {
+        "text": "Seal them and post troops",
+        "outcome": "The order is cold: granaries are the foundation of the army and the state, and will not be touched. When winter ends, one line remains in the memorial: Henan's population is down by a hundred and ten thousand. You read it three times, then burn it."
+      }
+    }
+  },
+  "vault_merchant": {
+    "title": "A draft",
+    "desc": "The largest salt merchant in Jiangnan sends a draft for seven hundred thousand taels and no request attached. The courier says: we only ask the emperor to remember our house. The money is clean. Clean money usually has a price.",
+    "choices": {
+      "take": {
+        "text": "Take it",
+        "outcome": "The draft goes into the treasury and you sign nothing. Six months later Jiangnan has thirty extra salt licenses. The revenue board calls it precedent. Nobody answers who set it."
+      },
+      "refuse": {
+        "text": "Return it with one sentence",
+        "outcome": "The draft goes back sealed. You send one line with it: the emperor does not lack silver, he lacks people. That house later donates thirty thousand piculs of grain, unsigned."
+      }
+    }
+  },
+  "vault_eunuch_cut": {
+    "title": "The house rule",
+    "desc": "Everything entering and leaving the inner treasury passes through the Directorate's hands, and one part in a hundred sticks to them. It has stuck for decades and the ledger calls it 'tea money'. The chief eunuch kneels with the book held above his head.",
+    "choices": {
+      "audit": {
+        "text": "Audit it, root and branch",
+        "outcome": "Thirty-seven thousand taels found, thirty recovered, the rest 'given to the servants'. The Directorate gets a new chief who can't read the old handwriting, and so the old rule dies of illiteracy."
+      },
+      "share": {
+        "text": "Leave the rule, but make him owe you",
+        "outcome": "You don't touch the rule. You only require a copy of the ledger on your desk. Three months later he sends thirty thousand taels unprompted and calls it 'court surplus'."
+      }
+    }
+  },
+  "frontier_tribute": {
+    "title": "The northern envoy",
+    "desc": "The envoy presents his state letter: a hundred thousand bolts of silk, thirty thousand catties of iron, in exchange for the phrase 'brothers forever'. Your father paid this once. Huo Lie's dispatch arrives the same hour: fewer than thirty thousand arrows in the city.",
+    "choices": {
+      "pay": {
+        "text": "Pay it, buy three years",
+        "outcome": "Silk and iron go north. The envoy gets drunk at the banquet and says something true: your emperor is easier to talk to than his father. Someone repeats it to you, word for word."
+      },
+      "war": {
+        "text": "Refuse. Ask whether his master's blade is still sharp",
+        "outcome": "The north wind rises the day the envoy leaves. Twenty days later the gate is under attack. You climb the wall once to see it yourself. Blood freezes black in the brick joints. You win that battle and lose a piece of your lung."
+      },
+      "stall": {
+        "text": "Stall. Say it will be discussed",
+        "outcome": "The envoy stays in the guest house two months and leaves with an ambiguous answer. There is no war and no peace. It is the cheapest arrangement and the most exhausting."
+      }
+    }
+  },
+  "frontier_general_ask": {
+    "title": "He wants grain",
+    "desc": "Huo Lie comes himself, no armour. He says there are thirty-seven thousand men at the north gate waiting for this month's grain, and the court has sent rations for twenty thousand. Then he kneels. The first time.",
+    "choices": {
+      "grant": {
+        "text": "Cover the shortfall from the treasury",
+        "outcome": "Three hundred and fifty thousand taels, taken from the tomb works. Huo Lie pauses on the palace steps and looks back: sire, the north will remember these three hundred and fifty."
+      },
+      "deny": {
+        "text": "Pay the old quota, tell him to cut the army",
+        "outcome": "You have done the arithmetic: cut ten thousand men, the saving is exactly enough. He doesn't argue. He says one word: yes. Back north, he cuts the veterans and keeps the ones who can fight."
+      }
+    }
+  },
+  "frontier_defect": {
+    "title": "The letters",
+    "desc": "What the agents brought back is spread across the desk: three letters in Huo Lie's hand, with the northern seal. Dated last winter — the three months he went unpaid. Not one word about surrender. They discuss the price of grain and the price of horses.",
+    "choices": {
+      "execute": {
+        "text": "Charge him with treason, bring him in chains",
+        "outcome": "The imperial commissioner arrives while Huo Lie is on the drill ground. He doesn't resist; he tells his second to put his armour away properly. In the capital he offers no defence, only four words on the confession: I sold horses, not the country. You sign."
+      },
+      "pardon": {
+        "text": "Burn the letters and promote him",
+        "outcome": "You drop all three into the brazier one at a time, and he watches every one of them go. You make him General of the North and add three thousand households to his fief. His eyes are red when he leaves. You can't tell whether that's the fire."
+      }
+    }
+  },
+  "chamber_dowager": {
+    "title": "A word with the Dowager",
+    "desc": "She has the lamps taken away except one. She says: your father wanted to rule at twenty-nine too. The next year he was ill. Then she says: it isn't that I won't let you sit in that chair. I don't want to watch you fall off it.",
+    "choices": {
+      "obey": {
+        "text": "Ask her to keep the curtain",
+        "outcome": "She nods and puts her hand over yours. It is very cold. The next day the curtain is exactly where it was. The Chancellor's eyes relax when he looks at you, the way they'd relax on an old object with no deadline."
+      },
+      "refuse": {
+        "text": "I will carry it myself",
+        "outcome": "She looks at you for a long time, then smiles. It is not a warm smile. She says: very well. From that day she never asks about state affairs again, and never sends soup again either."
+      },
+      "ask_truth": {
+        "text": "Ask how my father died",
+        "outcome": "The wick pops. She takes her hand back and says: you finally asked. Then she talks for half an hour, and when she finishes she blows out the lamp. In the dark she says: now you know too. You won't sleep from tonight."
+      }
+    }
+  },
+  "chamber_insomnia": {
+    "title": "Not sleeping",
+    "desc": "It's the third watch and your eyes are open. The guard changes outside; the footsteps are quiet. You could lie here until dawn. You could also get up and look at something.",
+    "choices": {
+      "sleep": {
+        "text": "Think nothing. Sleep",
+        "outcome": "You dream about the woods on the autumn hunt. When you wake, it has been light for three hours. It is the deepest sleep you've had this month."
+      },
+      "memorials": {
+        "text": "Get up and go through the papers",
+        "outcome": "You find a memorial nobody submitted, tucked inside an old file. It describes a place you've never been and events you've never heard of. Your eyes ache by dawn."
+      }
+    }
+  },
+  "chamber_poison": {
+    "title": "The medicine",
+    "desc": "The physician brings the calming decoction as usual. There is something in it that does not belong to the prescription, faint, like almond. The rim of the bowl has a fresh chip. The man who carried it is still kneeling outside the door.",
+    "choices": {
+      "purge": {
+        "text": "Take the carrier, the brewer, the taster",
+        "outcome": "Seventeen people go into the imperial prison. They give up a steward in the inner court, and the steward gives up the north. You cut the thread at the steward. Following it further would hurt."
+      },
+      "hide": {
+        "text": "Pretend to drink it. Say nothing",
+        "outcome": "You pour it into a planter. The orchid is dead by morning. You start memorising the face of whoever brings the bowl, and you start keeping a silver needle in your sleeve."
+      },
+      "swap": {
+        "text": "Swap the bowls and make him drink it",
+        "outcome": "He drinks it with a shaking hand and kneels for an hour. Nothing happens. Perhaps you were wrong about the almond. Either way, he will not bring a second bowl."
+      }
+    }
+  }
+}

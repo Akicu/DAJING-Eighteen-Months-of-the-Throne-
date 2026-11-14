@@ -1,0 +1,30 @@
+{
+  "court_official_audit": {
+    "title": "The Grand Evaluation",
+    "desc": "The triennial official evaluation arrives. The Ministry of Personnel submits evaluations featuring several names flagged for corruption—who happen to be Shen Yan's favorite protégés. Shen Yan stands at the head of the ranks, waiting to see how you handle the rolls.",
+    "choices": {
+      "praise": {
+        "text": "Go with the flow and grant routine commendations",
+        "outcome": "The court remains harmonious, and Shen Yan is well pleased with your compliance. Corruption festers, but you avoid a confrontation."
+      },
+      "demote": {
+        "text": "Make an example and dismiss two officials on the spot",
+        "outcome": "The ministers exchange subtle glances. You claw back two key appointments and squeeze fine money into the treasury, at the cost of Shen Yan lingering his gaze upon you."
+      }
+    }
+  },
+  "vault_patrol_routine": {
+    "title": "Inspecting the Vault",
+    "desc": "You walk the inner treasury alone. Rows of silver ingots gleam coldly beneath dim oil lamps, where an old keeper tallies records with bamboo slips. Here, the empire's lifeblood is reduced to heaps of heavy metal.",
+    "choices": {
+      "count_coins": {
+        "text": "Personally verify the purity and count of a chest of bullion",
+        "outcome": "The numbers match. You massage your aching temples; though your mind feels heavy, the extra silver on the ledger brings a measure of security."
+      },
+      "chat_keeper": {
+        "text": "Dismiss the guards and chat with the old keeper about ordinary town gossip",
+        "outcome": "Hearing of common rice and salt beyond the palace walls helps unspool your tight nerves. The crushing weight of power feels slightly lighter for a moment."
+      }
+    }
+  }
+}

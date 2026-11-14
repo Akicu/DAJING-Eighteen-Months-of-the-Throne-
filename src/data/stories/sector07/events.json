@@ -1,0 +1,4422 @@
+{
+  "id": "sector07",
+  "version": 2,
+  "config": {
+    "maxDays": 18,
+    "actionsPerDay": 3,
+    "ticketCost": 220,
+    "ticketFavor": 55,
+    "dailyUpkeep": 8,
+    "startStats": {
+      "health": 100,
+      "sanity": 80,
+      "money": 35,
+      "favor": 8
+    },
+    "statCeiling": 100,
+    "dailyWage": 12,
+    "upkeepRampEvery": 6,
+    "upkeepRampAdd": 2,
+    "dayLabel": "numeric"
+  },
+  "locations": [
+    {
+      "id": "gate",
+      "accent": "amber",
+      "icon": "gate",
+      "apCost": 1,
+      "art": "art/loc-gate.jpg"
+    },
+    {
+      "id": "pub",
+      "accent": "violet",
+      "icon": "pub",
+      "apCost": 1,
+      "art": "art/loc-pub.jpg"
+    },
+    {
+      "id": "medbay",
+      "accent": "sky",
+      "icon": "medbay",
+      "apCost": 1,
+      "art": "art/loc-medbay.jpg"
+    },
+    {
+      "id": "market",
+      "accent": "emerald",
+      "icon": "market",
+      "apCost": 1,
+      "art": "art/loc-market.jpg"
+    },
+    {
+      "id": "dorm",
+      "accent": "rose",
+      "icon": "dorm",
+      "apCost": 1,
+      "art": "art/loc-dorm.jpg"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "rachel",
+      "accent": "violet",
+      "portrait": "art/npc-rachel.jpg",
+      "metFlag": "met_rachel",
+      "allyFlag": "rachel_ally",
+      "betrayFlag": "rachel_betrayed"
+    },
+    {
+      "id": "chen",
+      "accent": "sky",
+      "portrait": "art/npc-chen.jpg",
+      "metFlag": "met_chen",
+      "allyFlag": "chen_ally",
+      "betrayFlag": "chen_betrayed"
+    },
+    {
+      "id": "ilya",
+      "accent": "emerald",
+      "portrait": "art/npc-ilya.jpg",
+      "metFlag": "met_ilya",
+      "allyFlag": "ilya_ally",
+      "betrayFlag": "ilya_betrayed"
+    },
+    {
+      "id": "nadia",
+      "accent": "rose",
+      "portrait": "art/npc-nadia.jpg",
+      "metFlag": "met_nadia",
+      "allyFlag": "nadia_ally",
+      "betrayFlag": "nadia_betrayed"
+    }
+  ],
+  "acts": [
+    {
+      "from": 1,
+      "id": "gate"
+    },
+    {
+      "from": 7,
+      "id": "fault"
+    },
+    {
+      "from": 13,
+      "id": "list"
+    }
+  ],
+  "endings": [
+    {
+      "id": "ending_together",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "flags": [
+          "rachel_ally",
+          "chen_ally",
+          "nadia_ally",
+          "ilya_ally"
+        ],
+        "moralityMin": 4,
+        "notFlags": [
+          "rachel_betrayed",
+          "nadia_betrayed"
+        ]
+      }
+    },
+    {
+      "id": "ending_gateopen",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "flags": [
+          "gate_opened"
+        ],
+        "moralityMin": 3
+      }
+    },
+    {
+      "id": "ending_broadcast",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "broadcast_done"
+        ]
+      }
+    },
+    {
+      "id": "ending_cure",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "cure_shipped"
+        ]
+      }
+    },
+    {
+      "id": "ending_identity",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "new_identity"
+        ],
+        "notFlags": [
+          "ilya_betrayed"
+        ]
+      }
+    },
+    {
+      "id": "ending_boat",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "flags": [
+          "escape_route"
+        ]
+      }
+    },
+    {
+      "id": "ending_soldlist",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "flags": [
+          "sold_list"
+        ],
+        "statMin": {
+          "money": 240
+        }
+      }
+    },
+    {
+      "id": "ending_golden",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "statMin": {
+          "money": 240
+        }
+      }
+    },
+    {
+      "id": "ending_cutrate",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "flags": [
+          "cut_rate_ticket"
+        ],
+        "statMin": {
+          "money": 40
+        }
+      }
+    },
+    {
+      "id": "ending_smuggler",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "statMin": {
+          "favor": 55
+        },
+        "notFlags": [
+          "rachel_betrayed"
+        ]
+      }
+    },
+    {
+      "id": "ending_lighthouse",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "moralityMin": 3,
+        "anyFlags": [
+          "last_stand",
+          "stay_with_chen",
+          "gave_ticket"
+        ]
+      }
+    },
+    {
+      "id": "ending_loyalist",
+      "win": false,
+      "rarity": 3,
+      "cond": {
+        "moralityMax": -3
+      }
+    },
+    {
+      "id": "ending_forgotten",
+      "win": false,
+      "rarity": 2
+    },
+    {
+      "id": "ending_dead",
+      "win": false,
+      "rarity": 3
+    },
+    {
+      "id": "ending_mad",
+      "win": false,
+      "rarity": 3
+    },
+    {
+      "id": "ending_starved",
+      "win": false,
+      "rarity": 2
+    }
+  ],
+  "events": [
+    {
+      "id": "gate_mother_child",
+      "loc": "gate",
+      "weight": 14,
+      "once": true,
+      "cond": {
+        "notFlags": [
+          "met_mother"
+        ],
+        "dayMax": 3
+      },
+      "choices": [
+        {
+          "id": "let_through",
+          "effects": {
+            "money": -10,
+            "sanity": 15
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "setFlags": {
+            "met_mother": true,
+            "saved_mother": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 25,
+            "sanity": -20
+          },
+          "morality": -2,
+          "setFlags": {
+            "met_mother": true,
+            "reported_mother": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "money": 10,
+            "sanity": -5
+          },
+          "setFlags": {
+            "met_mother": true
+          },
+          "tone": "neutral",
+          "key": true
+        }
+      ],
+      "art": "art/ev-gate-mother.jpg"
+    },
+    {
+      "id": "gate_mother_revenge",
+      "loc": "gate",
+      "priority": 100,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "reported_mother"
+        ],
+        "notFlags": [
+          "revenge_resolved"
+        ],
+        "dayMin": 3
+      },
+      "choices": [
+        {
+          "id": "pay",
+          "effects": {
+            "money": -35,
+            "health": -15
+          },
+          "requires": {
+            "statMin": {
+              "money": 35
+            }
+          },
+          "setFlags": {
+            "revenge_resolved": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "fight",
+          "effects": {
+            "health": -45,
+            "sanity": -15
+          },
+          "setFlags": {
+            "revenge_resolved": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "call_backup",
+          "effects": {
+            "health": -20,
+            "sanity": -25
+          },
+          "morality": -1,
+          "setFlags": {
+            "revenge_resolved": true,
+            "called_guard": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_pharma_convoy",
+      "loc": "gate",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "take_card",
+          "effects": {
+            "money": 30,
+            "sanity": -15
+          },
+          "morality": -1,
+          "setFlags": {
+            "pharma_bribe": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "inspect",
+          "effects": {
+            "money": 15,
+            "sanity": 5
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "sanity": 50
+            }
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "turn_away",
+          "effects": {
+            "sanity": -5
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_pharma_audit",
+      "loc": "gate",
+      "priority": 100,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "pharma_bribe"
+        ],
+        "notFlags": [
+          "audit_done"
+        ],
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "confess",
+          "effects": {
+            "money": -40,
+            "sanity": 10
+          },
+          "morality": 2,
+          "setFlags": {
+            "audit_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "bribe_auditor",
+          "effects": {
+            "money": -25,
+            "sanity": -10
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 25
+            }
+          },
+          "setFlags": {
+            "audit_done": true,
+            "auditor_bribed": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "deny",
+          "effects": {
+            "sanity": -20,
+            "health": -10
+          },
+          "setFlags": {
+            "audit_done": true,
+            "denied_audit": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_inspector",
+      "loc": "gate",
+      "weight": 7,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "bribe",
+          "effects": {
+            "money": -20,
+            "sanity": 10
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "honest",
+          "effects": {
+            "money": 5,
+            "sanity": 5
+          },
+          "morality": 1,
+          "tone": "good"
+        },
+        {
+          "id": "push_back",
+          "effects": {
+            "money": 15,
+            "sanity": -10
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_deserter",
+      "loc": "gate",
+      "weight": 9,
+      "once": true,
+      "choices": [
+        {
+          "id": "let_pass",
+          "effects": {
+            "money": -15,
+            "sanity": 10
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "helped_deserter": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 30,
+            "sanity": -25
+          },
+          "morality": -2,
+          "setFlags": {
+            "reported_deserter": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "take_gear",
+          "effects": {
+            "money": 20,
+            "sanity": -20
+          },
+          "morality": -1,
+          "setFlags": {
+            "took_gear": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_body_cart",
+      "loc": "gate",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "look_inside",
+          "effects": {
+            "money": 20,
+            "sanity": -12
+          },
+          "morality": -1,
+          "tone": "neutral"
+        },
+        {
+          "id": "wave_through",
+          "effects": {
+            "money": 10,
+            "sanity": -5
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_riot",
+      "loc": "gate",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "fire_warning",
+          "effects": {
+            "money": 10,
+            "health": -30,
+            "sanity": -15
+          },
+          "morality": -1,
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "open_gate",
+          "effects": {
+            "money": -20,
+            "sanity": 20
+          },
+          "morality": 2,
+          "setFlags": {
+            "opened_gate": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "call_backup",
+          "effects": {
+            "money": 15,
+            "sanity": -10
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_children",
+      "loc": "gate",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "register",
+          "effects": {
+            "money": 12,
+            "sanity": -8
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "hide",
+          "effects": {
+            "money": -15,
+            "sanity": 10
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "good"
+        },
+        {
+          "id": "send_back",
+          "effects": {
+            "sanity": -12
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_new_order",
+      "loc": "gate",
+      "weight": 8,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "lockdown_order"
+        ]
+      },
+      "choices": [
+        {
+          "id": "obey",
+          "effects": {
+            "money": 5,
+            "sanity": 5
+          },
+          "setFlags": {
+            "lockdown_order": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "warn_rachel",
+          "effects": {
+            "favor": 15,
+            "sanity": -20
+          },
+          "morality": 1,
+          "setFlags": {
+            "lockdown_order": true,
+            "warned_rachel": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "ignore",
+          "effects": {
+            "money": -15,
+            "sanity": -10
+          },
+          "setFlags": {
+            "lockdown_order": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_bribe_small",
+      "loc": "gate",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "take",
+          "effects": {
+            "money": 12,
+            "sanity": -8
+          },
+          "morality": -1,
+          "tone": "dark"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "money": 3,
+            "sanity": 3
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "gate_quiet_night",
+      "loc": "gate",
+      "weight": 2,
+      "repeatable": true,
+      "choices": [
+        {
+          "id": "stamp",
+          "effects": {
+            "money": 10,
+            "sanity": 4
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_overtime",
+      "loc": "gate",
+      "repeatable": true,
+      "cooldown": 2,
+      "weight": 9,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "double",
+          "effects": {
+            "money": 16,
+            "health": -6,
+            "sanity": -8
+          },
+          "tone": "neutral",
+          "key": false
+        },
+        {
+          "id": "normal",
+          "effects": {
+            "money": 4,
+            "sanity": 4
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_deal",
+      "loc": "pub",
+      "priority": 20,
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "notFlags": [
+          "met_rachel"
+        ]
+      },
+      "choices": [
+        {
+          "id": "buy_intel",
+          "effects": {
+            "money": -15,
+            "favor": 12
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "met_rachel": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "forge",
+          "effects": {
+            "money": 20,
+            "sanity": -15,
+            "favor": 8
+          },
+          "setFlags": {
+            "met_rachel": true,
+            "forged_for_rachel": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "listen",
+          "effects": {
+            "sanity": 10
+          },
+          "setFlags": {
+            "met_rachel": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_mechanic_gift",
+      "loc": "pub",
+      "priority": 100,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "saved_mother"
+        ],
+        "notFlags": [
+          "got_mechanic_help"
+        ],
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "accept",
+          "effects": {
+            "money": 35,
+            "favor": 10,
+            "sanity": 10
+          },
+          "setFlags": {
+            "got_mechanic_help": true,
+            "boat_pass": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": 15,
+            "favor": 15
+          },
+          "morality": 1,
+          "setFlags": {
+            "got_mechanic_help": true
+          },
+          "tone": "good",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_test",
+      "loc": "pub",
+      "priority": 60,
+      "once": true,
+      "cond": {
+        "statMin": {
+          "favor": 25
+        },
+        "dayMin": 5,
+        "notFlags": [
+          "rachel_test_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "prove",
+          "effects": {
+            "money": -20,
+            "favor": 18
+          },
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "setFlags": {
+            "rachel_test_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": 10,
+            "favor": -8
+          },
+          "setFlags": {
+            "rachel_test_done": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "pub_ticket_cash",
+      "loc": "pub",
+      "priority": 65,
+      "once": true,
+      "cond": {
+        "statMin": {
+          "money": 90
+        },
+        "dayMin": 2,
+        "notFlags": [
+          "ticket_secured"
+        ]
+      },
+      "choices": [
+        {
+          "id": "buy_now",
+          "effects": {
+            "money": -90,
+            "favor": 30
+          },
+          "setFlags": {
+            "ticket_secured": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "haggle",
+          "effects": {
+            "money": -70,
+            "favor": 12,
+            "sanity": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "cut_rate_ticket": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_bounty",
+      "loc": "pub",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "moralityMax": -2,
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "pay_off",
+          "effects": {
+            "money": -40,
+            "sanity": -10
+          },
+          "requires": {
+            "statMin": {
+              "money": 40
+            }
+          },
+          "setFlags": {
+            "bounty_cleared": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "fight",
+          "effects": {
+            "health": -35,
+            "sanity": -10
+          },
+          "setFlags": {
+            "bounty_cleared": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "run",
+          "effects": {
+            "health": -15,
+            "sanity": -15,
+            "money": -10
+          },
+          "setFlags": {
+            "bounty_cleared": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_farewell",
+      "loc": "pub",
+      "priority": 95,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "notFlags": [
+          "farewell_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "stay",
+          "effects": {
+            "favor": 12,
+            "sanity": 10
+          },
+          "setFlags": {
+            "farewell_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "ask_jump",
+          "effects": {
+            "favor": 6,
+            "sanity": -5
+          },
+          "requires": {
+            "statMin": {
+              "favor": 20
+            }
+          },
+          "setFlags": {
+            "farewell_done": true,
+            "asked_for_seat": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_drunk",
+      "loc": "pub",
+      "weight": 4,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "listen",
+          "effects": {
+            "sanity": 12,
+            "money": -3
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_bet",
+      "loc": "pub",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "gamble",
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "roll": {
+            "chance": 0.42,
+            "win": {
+              "effects": {
+                "money": 45,
+                "sanity": 5
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -15,
+                "sanity": -8
+              }
+            }
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "watch",
+          "effects": {
+            "sanity": 4
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_song",
+      "loc": "pub",
+      "weight": 4,
+      "once": true,
+      "choices": [
+        {
+          "id": "stay",
+          "effects": {
+            "sanity": 15,
+            "money": -5
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "medbay_routine",
+      "loc": "medbay",
+      "weight": 6,
+      "repeatable": true,
+      "choices": [
+        {
+          "id": "serum",
+          "effects": {
+            "money": -15,
+            "health": 30
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "neutral",
+          "setFlags": {
+            "met_chen": true
+          }
+        },
+        {
+          "id": "sedative",
+          "effects": {
+            "money": -15,
+            "sanity": 28,
+            "health": -5
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "leave",
+          "effects": {
+            "sanity": 4
+          },
+          "tone": "neutral"
+        }
+      ],
+      "npc": "chen"
+    },
+    {
+      "id": "medbay_triage",
+      "loc": "medbay",
+      "weight": 9,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "save_child",
+          "effects": {
+            "money": -20,
+            "sanity": 15
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "save_officer",
+          "effects": {
+            "money": 20,
+            "sanity": -15
+          },
+          "morality": -1,
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "by_rule",
+          "effects": {
+            "money": 5,
+            "sanity": -5
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_theft",
+      "loc": "medbay",
+      "weight": 7,
+      "once": true,
+      "choices": [
+        {
+          "id": "report",
+          "effects": {
+            "money": 10,
+            "sanity": -10
+          },
+          "morality": -1,
+          "tone": "dark"
+        },
+        {
+          "id": "cover",
+          "effects": {
+            "money": -10,
+            "sanity": 10
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "tone": "good"
+        },
+        {
+          "id": "steal",
+          "effects": {
+            "money": 20,
+            "sanity": -15
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "medbay_doctor",
+      "loc": "medbay",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 4
+      },
+      "choices": [
+        {
+          "id": "give_meds",
+          "effects": {
+            "money": -25,
+            "health": 10
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 25
+            }
+          },
+          "setFlags": {
+            "saved_doctor": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "walk_away",
+          "effects": {
+            "sanity": -12
+          },
+          "morality": -1,
+          "tone": "neutral"
+        },
+        {
+          "id": "report_doctor",
+          "effects": {
+            "money": 15,
+            "sanity": -20
+          },
+          "morality": -2,
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "medbay_painkiller",
+      "loc": "medbay",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "take",
+          "effects": {
+            "sanity": 20,
+            "health": -12,
+            "money": -5
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": -2
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_last_patient",
+      "loc": "medbay",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15
+      },
+      "choices": [
+        {
+          "id": "treat",
+          "effects": {
+            "money": -30,
+            "sanity": 20
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 30
+            }
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": -18
+          },
+          "morality": -1,
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "market_forger",
+      "loc": "market",
+      "weight": 8,
+      "once": true,
+      "choices": [
+        {
+          "id": "buy_papers",
+          "effects": {
+            "money": -60,
+            "sanity": 10
+          },
+          "requires": {
+            "statMin": {
+              "money": 60
+            }
+          },
+          "setFlags": {
+            "cut_rate_ticket": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": 2
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_organs",
+      "loc": "market",
+      "weight": 5,
+      "once": true,
+      "cond": {
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "sell",
+          "effects": {
+            "money": 55,
+            "health": -45
+          },
+          "morality": -2,
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "walk",
+          "effects": {
+            "sanity": 5
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_pawn_gun",
+      "loc": "market",
+      "weight": 7,
+      "once": true,
+      "choices": [
+        {
+          "id": "pawn",
+          "effects": {
+            "money": 35,
+            "sanity": -12
+          },
+          "setFlags": {
+            "unarmed": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "keep",
+          "effects": {
+            "sanity": 4
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_thief",
+      "loc": "market",
+      "weight": 6,
+      "once": true,
+      "choices": [
+        {
+          "id": "catch",
+          "effects": {
+            "money": 10,
+            "sanity": -6
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "buy_food",
+          "effects": {
+            "money": -15,
+            "sanity": 15
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "good"
+        },
+        {
+          "id": "let_go",
+          "effects": {
+            "sanity": 6
+          },
+          "morality": 1,
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_fake_medicine",
+      "loc": "market",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "buy",
+          "effects": {
+            "money": -15,
+            "health": -10
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": -3
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_dice",
+      "loc": "market",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "roll",
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "roll": {
+            "chance": 0.46,
+            "win": {
+              "effects": {
+                "money": 38
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -20,
+                "sanity": -6
+              }
+            }
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "pass",
+          "effects": {
+            "sanity": 3
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_rumor",
+      "loc": "market",
+      "weight": 4,
+      "repeatable": true,
+      "cooldown": 2,
+      "choices": [
+        {
+          "id": "listen",
+          "effects": {
+            "sanity": 8,
+            "money": -5
+          },
+          "setFlags": {
+            "heard_rumor": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_ration",
+      "loc": "market",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "sell",
+          "effects": {
+            "money": 18,
+            "sanity": -8
+          },
+          "morality": -1,
+          "tone": "dark"
+        },
+        {
+          "id": "share",
+          "effects": {
+            "money": -10,
+            "sanity": 12
+          },
+          "morality": 1,
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "dorm_rest",
+      "loc": "dorm",
+      "weight": 5,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "sleep",
+          "effects": {
+            "sanity": 22,
+            "health": 6
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_radio",
+      "loc": "dorm",
+      "weight": 8,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "tune_in",
+          "effects": {
+            "sanity": 10
+          },
+          "setFlags": {
+            "knows_schedule": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "switch_off",
+          "effects": {
+            "sanity": -6
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nightmare",
+      "loc": "dorm",
+      "priority": 80,
+      "once": true,
+      "cond": {
+        "statMax": {
+          "sanity": 45
+        }
+      },
+      "choices": [
+        {
+          "id": "wake",
+          "effects": {
+            "sanity": -10
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "write",
+          "effects": {
+            "sanity": 16
+          },
+          "morality": 1,
+          "tone": "good"
+        },
+        {
+          "id": "drink",
+          "effects": {
+            "money": -5,
+            "sanity": 20,
+            "health": -5
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_journal",
+      "loc": "dorm",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 2,
+      "choices": [
+        {
+          "id": "write",
+          "effects": {
+            "sanity": 12
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_neighbor",
+      "loc": "dorm",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "check",
+          "effects": {
+            "sanity": 10,
+            "money": -5
+          },
+          "morality": 1,
+          "tone": "good"
+        },
+        {
+          "id": "ignore",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_mirror",
+      "loc": "dorm",
+      "priority": 70,
+      "once": true,
+      "cond": {
+        "dayMin": 10
+      },
+      "choices": [
+        {
+          "id": "confront",
+          "effects": {
+            "sanity": 18
+          },
+          "morality": 1,
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "turn_away",
+          "effects": {
+            "sanity": -12
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_letter",
+      "loc": "dorm",
+      "weight": 5,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "read",
+          "effects": {
+            "sanity": 18
+          },
+          "morality": 1,
+          "setFlags": {
+            "read_letter": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "burn",
+          "effects": {
+            "sanity": -10
+          },
+          "setFlags": {
+            "burned_letter": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_queues",
+      "loc": "gate",
+      "weight": 12,
+      "once": true,
+      "cond": {
+        "dayMin": 4
+      },
+      "choices": [
+        {
+          "id": "triage",
+          "effects": {
+            "health": -8,
+            "sanity": -5,
+            "favor": 6
+          },
+          "morality": 1,
+          "setFlags": {
+            "ordered_queue": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "auction",
+          "effects": {
+            "money": 35,
+            "sanity": -8,
+            "favor": -6
+          },
+          "morality": -2,
+          "setFlags": {
+            "sold_numbers": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "shut",
+          "effects": {
+            "sanity": 5,
+            "favor": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "queue_shut": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_deserter_return",
+      "loc": "gate",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "npc": "chen",
+      "cond": {
+        "flags": [
+          "helped_deserter"
+        ],
+        "notFlags": [
+          "serum_route"
+        ],
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "believe",
+          "effects": {
+            "sanity": 8,
+            "favor": 8
+          },
+          "setFlags": {
+            "serum_route": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "doubt",
+          "effects": {
+            "sanity": -5
+          },
+          "setFlags": {
+            "serum_route_missed": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell_him",
+          "effects": {
+            "money": 45,
+            "sanity": -15,
+            "favor": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "deserter_dead": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "gate_guard_grudge",
+      "loc": "gate",
+      "priority": 85,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "called_guard"
+        ],
+        "notFlags": [
+          "guard_grudge_done"
+        ],
+        "dayMin": 7
+      },
+      "choices": [
+        {
+          "id": "drinks",
+          "effects": {
+            "money": -15,
+            "favor": 6,
+            "sanity": 3
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "guard_grudge_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "stand",
+          "effects": {
+            "health": -20,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "guard_grudge_done": true,
+            "guard_enemies": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "remember",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "guard_grudge_done": true,
+            "guard_enemies": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_audit_return",
+      "loc": "gate",
+      "priority": 88,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "anyFlags": [
+          "auditor_bribed",
+          "denied_audit"
+        ],
+        "notFlags": [
+          "audit_closed"
+        ],
+        "dayMin": 8
+      },
+      "choices": [
+        {
+          "id": "ledger",
+          "effects": {
+            "money": -30,
+            "sanity": 5
+          },
+          "requires": {
+            "statMin": {
+              "money": 30
+            }
+          },
+          "setFlags": {
+            "audit_closed": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "counter",
+          "effects": {
+            "money": 25,
+            "sanity": -8,
+            "favor": 8
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "sanity": 50
+            }
+          },
+          "setFlags": {
+            "audit_closed": true,
+            "auditor_down": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "pay_again",
+          "effects": {
+            "money": -55,
+            "sanity": -10
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 60
+            }
+          },
+          "setFlags": {
+            "audit_closed": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_rifle",
+      "loc": "gate",
+      "once": true,
+      "cond": {
+        "flags": [
+          "took_gear"
+        ],
+        "notFlags": [
+          "rifle_settled"
+        ],
+        "dayMin": 7
+      },
+      "choices": [
+        {
+          "id": "sell",
+          "effects": {
+            "money": 55,
+            "sanity": -5
+          },
+          "morality": -1,
+          "setFlags": {
+            "rifle_settled": true,
+            "unarmed": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "keep",
+          "effects": {
+            "sanity": 8
+          },
+          "setFlags": {
+            "rifle_settled": true,
+            "armed": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "hand_in",
+          "effects": {
+            "favor": 12,
+            "money": 0
+          },
+          "morality": 1,
+          "setFlags": {
+            "rifle_settled": true,
+            "rifle_handed": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "gate_lockdown_blame",
+      "loc": "gate",
+      "priority": 86,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "opened_gate"
+        ],
+        "notFlags": [
+          "blame_done"
+        ],
+        "dayMin": 9
+      },
+      "choices": [
+        {
+          "id": "confess",
+          "effects": {
+            "health": -20,
+            "sanity": 10,
+            "favor": 10
+          },
+          "morality": 2,
+          "setFlags": {
+            "blame_done": true,
+            "confessed": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "frame",
+          "effects": {
+            "sanity": -12,
+            "money": 20
+          },
+          "morality": -2,
+          "setFlags": {
+            "blame_done": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "hide",
+          "effects": {
+            "sanity": -6,
+            "favor": -12
+          },
+          "setFlags": {
+            "blame_done": true,
+            "hiding": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_tunnel",
+      "loc": "gate",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "dayMin": 9
+      },
+      "choices": [
+        {
+          "id": "dig",
+          "effects": {
+            "health": -15,
+            "favor": 8,
+            "sanity": 5
+          },
+          "morality": 2,
+          "setFlags": {
+            "tunnel_known": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 40,
+            "sanity": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "tunnel_sealed": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "ignore",
+          "effects": {
+            "sanity": -3
+          },
+          "setFlags": {
+            "tunnel_known": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "gate_press",
+      "loc": "gate",
+      "weight": 11,
+      "once": true,
+      "cond": {
+        "dayMin": 10
+      },
+      "choices": [
+        {
+          "id": "perform",
+          "effects": {
+            "money": 25,
+            "favor": 5,
+            "sanity": -6
+          },
+          "morality": -1,
+          "setFlags": {
+            "press_fake": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "turn_camera",
+          "effects": {
+            "money": -10,
+            "favor": 10,
+            "sanity": 5
+          },
+          "morality": 2,
+          "setFlags": {
+            "press_truth": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "grab",
+          "effects": {
+            "health": -15,
+            "sanity": -8,
+            "favor": 5
+          },
+          "morality": 1,
+          "setFlags": {
+            "press_truth": true,
+            "press_incident": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "gate_evac_list",
+      "loc": "gate",
+      "priority": 92,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 13,
+        "notFlags": [
+          "list_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "copy",
+          "effects": {
+            "sanity": -10,
+            "favor": 10
+          },
+          "morality": 1,
+          "setFlags": {
+            "list_done": true,
+            "has_list": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "sell_copy",
+          "effects": {
+            "money": 90,
+            "sanity": -15,
+            "favor": -15
+          },
+          "morality": -2,
+          "setFlags": {
+            "list_done": true,
+            "sold_list": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "burn",
+          "effects": {
+            "sanity": 8,
+            "favor": 12
+          },
+          "morality": 2,
+          "setFlags": {
+            "list_done": true,
+            "burned_list": true
+          },
+          "tone": "good"
+        }
+      ],
+      "art": "art/ev-list.jpg"
+    },
+    {
+      "id": "gate_last_night",
+      "loc": "gate",
+      "priority": 95,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 17,
+        "notFlags": [
+          "last_night_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hold",
+          "effects": {
+            "health": -10,
+            "sanity": 10,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_night_done": true,
+            "last_stand": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "clock_out",
+          "effects": {
+            "sanity": -10,
+            "favor": -8
+          },
+          "setFlags": {
+            "last_night_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "open",
+          "effects": {
+            "health": -20,
+            "sanity": 5,
+            "favor": 20
+          },
+          "morality": 3,
+          "requires": {
+            "statMin": {
+              "sanity": 40
+            }
+          },
+          "setFlags": {
+            "last_night_done": true,
+            "gate_opened": true
+          },
+          "tone": "good",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "gate_list_use",
+      "loc": "gate",
+      "priority": 93,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "has_list"
+        ],
+        "notFlags": [
+          "list_used"
+        ],
+        "dayMin": 14
+      },
+      "choices": [
+        {
+          "id": "by_list",
+          "effects": {
+            "favor": 12,
+            "sanity": 5
+          },
+          "morality": 1,
+          "setFlags": {
+            "list_used": true,
+            "gate_opened": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "give_rachel",
+          "effects": {
+            "favor": 18,
+            "money": 0
+          },
+          "morality": 1,
+          "setFlags": {
+            "list_used": true,
+            "rachel_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "tear",
+          "effects": {
+            "sanity": 10,
+            "favor": -8
+          },
+          "morality": 2,
+          "setFlags": {
+            "list_used": true,
+            "burned_list": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "gate_tunnel_escape",
+      "loc": "gate",
+      "priority": 94,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "tunnel_known"
+        ],
+        "notFlags": [
+          "tunnel_escape_done"
+        ],
+        "dayMin": 16
+      },
+      "choices": [
+        {
+          "id": "alone",
+          "effects": {
+            "health": -20,
+            "sanity": 12
+          },
+          "morality": -1,
+          "setFlags": {
+            "tunnel_escape_done": true,
+            "escape_route": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "lead_them",
+          "effects": {
+            "health": -30,
+            "favor": 18,
+            "sanity": 15
+          },
+          "morality": 3,
+          "requires": {
+            "statMin": {
+              "favor": 30
+            }
+          },
+          "setFlags": {
+            "tunnel_escape_done": true,
+            "escape_route": true,
+            "crew_saved": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "collapse",
+          "effects": {
+            "sanity": 5
+          },
+          "morality": 1,
+          "setFlags": {
+            "tunnel_escape_done": true,
+            "tunnel_sealed": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_trust",
+      "loc": "pub",
+      "priority": 82,
+      "once": true,
+      "chain": true,
+      "npc": "rachel",
+      "cond": {
+        "dayMin": 5,
+        "anyFlags": [
+          "warned_rachel",
+          "forged_for_rachel"
+        ],
+        "notFlags": [
+          "rachel_trust_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "ally",
+          "effects": {
+            "favor": 15,
+            "sanity": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "rachel_trust_done": true,
+            "rachel_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "business",
+          "effects": {
+            "money": 25,
+            "favor": 8
+          },
+          "setFlags": {
+            "rachel_trust_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell_berth",
+          "effects": {
+            "money": 60,
+            "favor": -20,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "rachel_trust_done": true,
+            "rachel_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_crew",
+      "loc": "pub",
+      "weight": 10,
+      "once": true,
+      "npc": "rachel",
+      "cond": {
+        "flags": [
+          "met_rachel"
+        ],
+        "dayMin": 7,
+        "notFlags": [
+          "rachel_crew_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "draw_lots",
+          "effects": {
+            "favor": 8,
+            "sanity": -6
+          },
+          "morality": 1,
+          "setFlags": {
+            "rachel_crew_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "pick_strong",
+          "effects": {
+            "favor": 12,
+            "sanity": -3
+          },
+          "morality": -2,
+          "setFlags": {
+            "rachel_crew_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "take_one",
+          "effects": {
+            "favor": -15,
+            "money": 0
+          },
+          "morality": -2,
+          "setFlags": {
+            "rachel_crew_done": true,
+            "rachel_seat": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_offer",
+      "loc": "pub",
+      "priority": 84,
+      "once": true,
+      "chain": true,
+      "npc": "rachel",
+      "cond": {
+        "dayMin": 10,
+        "statMin": {
+          "favor": 22
+        },
+        "notFlags": [
+          "rota_offer_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "accept",
+          "effects": {
+            "favor": 14,
+            "sanity": -12
+          },
+          "morality": -1,
+          "setFlags": {
+            "rota_offer_done": true,
+            "rota_stolen": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "favor": -8,
+            "sanity": 6
+          },
+          "setFlags": {
+            "rota_offer_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "report_her",
+          "effects": {
+            "money": 70,
+            "sanity": -20,
+            "favor": -30
+          },
+          "morality": -3,
+          "setFlags": {
+            "rota_offer_done": true,
+            "rachel_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_rachel_arrest",
+      "loc": "pub",
+      "priority": 87,
+      "once": true,
+      "chain": true,
+      "npc": "rachel",
+      "cond": {
+        "flags": [
+          "rota_stolen"
+        ],
+        "notFlags": [
+          "rachel_arrest_done"
+        ],
+        "dayMin": 12
+      },
+      "choices": [
+        {
+          "id": "release",
+          "effects": {
+            "health": -15,
+            "favor": 20,
+            "sanity": 5
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "favor": 30
+            }
+          },
+          "setFlags": {
+            "rachel_arrest_done": true,
+            "rachel_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "pretend",
+          "effects": {
+            "sanity": -15,
+            "favor": -25
+          },
+          "setFlags": {
+            "rachel_arrest_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "cuff",
+          "effects": {
+            "money": 60,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "rachel_arrest_done": true,
+            "rachel_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "pub_smuggle_run",
+      "loc": "pub",
+      "priority": 86,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "boat_pass"
+        ],
+        "notFlags": [
+          "boat_pass_done"
+        ],
+        "dayMin": 14
+      },
+      "choices": [
+        {
+          "id": "give_seat",
+          "effects": {
+            "favor": 18,
+            "sanity": 10
+          },
+          "morality": 2,
+          "setFlags": {
+            "boat_pass_done": true,
+            "crew_saved": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "keep_route",
+          "effects": {
+            "sanity": 10,
+            "favor": -6
+          },
+          "setFlags": {
+            "boat_pass_done": true,
+            "escape_route": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "strip",
+          "effects": {
+            "money": 40,
+            "favor": -12
+          },
+          "morality": -1,
+          "setFlags": {
+            "boat_pass_done": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_bounty_after",
+      "loc": "pub",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "bounty_cleared"
+        ],
+        "notFlags": [
+          "bounty_after_done"
+        ],
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "drink",
+          "effects": {
+            "money": -8,
+            "favor": 6,
+            "sanity": 8
+          },
+          "requires": {
+            "statMin": {
+              "money": 8
+            }
+          },
+          "setFlags": {
+            "bounty_after_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "ask_client",
+          "effects": {
+            "sanity": -8,
+            "favor": 3
+          },
+          "setFlags": {
+            "bounty_after_done": true,
+            "knows_client": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "take_gun",
+          "effects": {
+            "health": -25,
+            "money": 30,
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "bounty_after_done": true,
+            "armed": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_rota_use",
+      "loc": "pub",
+      "once": true,
+      "cond": {
+        "flags": [
+          "knows_schedule"
+        ],
+        "notFlags": [
+          "rota_used"
+        ],
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "tell_rachel",
+          "effects": {
+            "favor": 10,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "rota_used": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "self_use",
+          "effects": {
+            "sanity": 5
+          },
+          "setFlags": {
+            "rota_used": true,
+            "patrol_gap": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell",
+          "effects": {
+            "money": 35,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "rota_used": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "pub_list_rumor",
+      "loc": "pub",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "flags": [
+          "heard_rumor"
+        ],
+        "dayMin": 8,
+        "notFlags": [
+          "list_rumor_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "probe",
+          "effects": {
+            "money": -10,
+            "sanity": -6
+          },
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "setFlags": {
+            "list_rumor_done": true,
+            "knows_buyer": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "warn",
+          "effects": {
+            "favor": 6,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "list_rumor_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "save",
+          "effects": {
+            "sanity": 3
+          },
+          "setFlags": {
+            "list_rumor_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "pub_last_smoke_variant",
+      "loc": "pub",
+      "weight": 8,
+      "once": true,
+      "npc": "rachel",
+      "cond": {
+        "flags": [
+          "rachel_ally"
+        ],
+        "dayMin": 13,
+        "notFlags": [
+          "farewell_done",
+          "last_smoke_variant_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "promise",
+          "effects": {
+            "sanity": 12,
+            "favor": 10
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_smoke_variant_done": true,
+            "farewell_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "truth",
+          "effects": {
+            "sanity": -6,
+            "favor": 4
+          },
+          "setFlags": {
+            "last_smoke_variant_done": true,
+            "farewell_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_chen_intro",
+      "loc": "medbay",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "npc": "chen",
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "met_chen"
+        ]
+      },
+      "choices": [
+        {
+          "id": "steal_samples",
+          "effects": {
+            "health": -10,
+            "sanity": 10
+          },
+          "morality": 2,
+          "setFlags": {
+            "met_chen": true,
+            "chen_ally": true,
+            "samples_held": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "buy_meds",
+          "effects": {
+            "money": -20,
+            "sanity": 8
+          },
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "setFlags": {
+            "met_chen": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "report_her",
+          "effects": {
+            "money": 30,
+            "sanity": -15
+          },
+          "morality": -3,
+          "setFlags": {
+            "met_chen": true,
+            "chen_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "medbay_chen_raid",
+      "loc": "medbay",
+      "priority": 85,
+      "once": true,
+      "chain": true,
+      "npc": "chen",
+      "cond": {
+        "flags": [
+          "met_chen"
+        ],
+        "notFlags": [
+          "chen_raid_done"
+        ],
+        "dayMin": 6,
+        "anyFlags": [
+          "chen_ally",
+          "chen_betrayed",
+          "saved_doctor"
+        ]
+      },
+      "choices": [
+        {
+          "id": "block",
+          "effects": {
+            "health": -25,
+            "sanity": 8,
+            "favor": 5
+          },
+          "morality": 2,
+          "setFlags": {
+            "chen_raid_done": true,
+            "samples_held": true,
+            "chen_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "handover",
+          "effects": {
+            "money": 40,
+            "sanity": -12
+          },
+          "morality": -2,
+          "setFlags": {
+            "chen_raid_done": true,
+            "samples_held": false,
+            "samples_lost": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "swap",
+          "effects": {
+            "money": -30,
+            "sanity": -6
+          },
+          "requires": {
+            "statMin": {
+              "money": 30
+            }
+          },
+          "setFlags": {
+            "chen_raid_done": true,
+            "samples_held": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_chen_daughter",
+      "loc": "medbay",
+      "weight": 10,
+      "once": true,
+      "npc": "chen",
+      "cond": {
+        "flags": [
+          "met_chen"
+        ],
+        "dayMin": 9,
+        "notFlags": [
+          "daughter_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "pull_strings",
+          "effects": {
+            "favor": -10,
+            "sanity": 12
+          },
+          "morality": 2,
+          "setFlags": {
+            "daughter_done": true,
+            "daughter_out": true,
+            "chen_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "admit_powerless",
+          "effects": {
+            "sanity": -8
+          },
+          "morality": 1,
+          "setFlags": {
+            "daughter_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell_hope",
+          "effects": {
+            "money": 25,
+            "sanity": -15
+          },
+          "morality": -2,
+          "setFlags": {
+            "daughter_done": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "medbay_trial",
+      "loc": "medbay",
+      "priority": 84,
+      "once": true,
+      "chain": true,
+      "npc": "chen",
+      "cond": {
+        "flags": [
+          "samples_held"
+        ],
+        "notFlags": [
+          "trial_done"
+        ],
+        "dayMin": 11
+      },
+      "choices": [
+        {
+          "id": "run_trial",
+          "effects": {
+            "health": -5,
+            "sanity": 12,
+            "favor": 5
+          },
+          "morality": 1,
+          "setFlags": {
+            "trial_done": true,
+            "trial_ok": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "block_trial",
+          "effects": {
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "trial_done": true,
+            "trial_blocked": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "sell_trial",
+          "effects": {
+            "money": 60,
+            "sanity": -15
+          },
+          "morality": -3,
+          "setFlags": {
+            "trial_done": true,
+            "trial_sold": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "medbay_chen_choice",
+      "loc": "medbay",
+      "priority": 91,
+      "once": true,
+      "chain": true,
+      "npc": "chen",
+      "cond": {
+        "flags": [
+          "samples_held"
+        ],
+        "notFlags": [
+          "samples_decided"
+        ],
+        "dayMin": 14
+      },
+      "choices": [
+        {
+          "id": "broadcast_formula",
+          "effects": {
+            "sanity": 15,
+            "favor": 12
+          },
+          "morality": 3,
+          "setFlags": {
+            "samples_decided": true,
+            "cure_shipped": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "trade_berth",
+          "effects": {
+            "money": 80,
+            "sanity": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "samples_decided": true,
+            "samples_sold": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "carry_aboard",
+          "effects": {
+            "favor": -15,
+            "sanity": 5
+          },
+          "morality": -2,
+          "setFlags": {
+            "samples_decided": true,
+            "samples_carried": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_ward_round",
+      "loc": "medbay",
+      "weight": 9,
+      "once": true,
+      "cond": {
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "unplug",
+          "effects": {
+            "money": 10,
+            "sanity": -15
+          },
+          "morality": -3,
+          "setFlags": {
+            "bed_freed": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "share_ration",
+          "effects": {
+            "health": -10,
+            "favor": 6,
+            "sanity": 8
+          },
+          "morality": 1,
+          "setFlags": {},
+          "tone": "good"
+        },
+        {
+          "id": "walk",
+          "effects": {
+            "sanity": -3
+          },
+          "setFlags": {},
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_quarantine_break",
+      "loc": "medbay",
+      "priority": 83,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "notFlags": [
+          "quarantine_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "open_ward",
+          "effects": {
+            "health": -5,
+            "favor": 12,
+            "sanity": 8
+          },
+          "morality": 2,
+          "setFlags": {
+            "quarantine_done": true,
+            "ward_open": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "lock",
+          "effects": {
+            "sanity": -12
+          },
+          "morality": -2,
+          "setFlags": {
+            "quarantine_done": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "ticket_only",
+          "effects": {
+            "money": 30,
+            "sanity": -8
+          },
+          "morality": -3,
+          "setFlags": {
+            "quarantine_done": true,
+            "sold_triage": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "medbay_stay_with_chen",
+      "loc": "medbay",
+      "priority": 89,
+      "once": true,
+      "chain": true,
+      "npc": "chen",
+      "cond": {
+        "flags": [
+          "chen_ally"
+        ],
+        "dayMin": 16,
+        "notFlags": [
+          "stay_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "stay",
+          "effects": {
+            "sanity": 15,
+            "health": -10
+          },
+          "morality": 2,
+          "setFlags": {
+            "stay_done": true,
+            "stay_with_chen": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "persuade",
+          "effects": {
+            "favor": 8,
+            "sanity": -5
+          },
+          "setFlags": {
+            "stay_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "leave_alone",
+          "effects": {
+            "sanity": -12
+          },
+          "setFlags": {
+            "stay_done": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "market_ilya_intro",
+      "loc": "market",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "npc": "ilya",
+      "cond": {
+        "dayMin": 2,
+        "notFlags": [
+          "met_ilya"
+        ]
+      },
+      "choices": [
+        {
+          "id": "buy_papers",
+          "effects": {
+            "money": -55,
+            "sanity": 8
+          },
+          "requires": {
+            "statMin": {
+              "money": 55
+            }
+          },
+          "setFlags": {
+            "met_ilya": true,
+            "papers_started": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "buy_pass",
+          "effects": {
+            "money": -20,
+            "sanity": 5
+          },
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "setFlags": {
+            "met_ilya": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "rob_him",
+          "effects": {
+            "money": 30,
+            "sanity": -12
+          },
+          "morality": -3,
+          "setFlags": {
+            "met_ilya": true,
+            "ilya_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "market_ilya_papers",
+      "loc": "market",
+      "priority": 82,
+      "once": true,
+      "chain": true,
+      "npc": "ilya",
+      "cond": {
+        "flags": [
+          "papers_started"
+        ],
+        "notFlags": [
+          "papers_done"
+        ],
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "pay_full",
+          "effects": {
+            "money": -60,
+            "sanity": 10
+          },
+          "requires": {
+            "statMin": {
+              "money": 60
+            }
+          },
+          "setFlags": {
+            "papers_done": true,
+            "new_identity": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "haggle",
+          "effects": {
+            "money": -35,
+            "sanity": -6
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 35
+            }
+          },
+          "setFlags": {
+            "papers_done": true,
+            "new_identity": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "back_out",
+          "effects": {
+            "sanity": 4
+          },
+          "setFlags": {
+            "papers_done": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_ilya_arrest",
+      "loc": "market",
+      "priority": 86,
+      "once": true,
+      "chain": true,
+      "npc": "ilya",
+      "cond": {
+        "flags": [
+          "met_ilya"
+        ],
+        "notFlags": [
+          "ilya_arrest_done"
+        ],
+        "dayMin": 10
+      },
+      "choices": [
+        {
+          "id": "vouch",
+          "effects": {
+            "health": -10,
+            "favor": 10,
+            "sanity": 8
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "favor": 15
+            }
+          },
+          "setFlags": {
+            "ilya_arrest_done": true,
+            "ilya_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "silence",
+          "effects": {
+            "sanity": -12
+          },
+          "setFlags": {
+            "ilya_arrest_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "identify",
+          "effects": {
+            "money": 50,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "ilya_arrest_done": true,
+            "ilya_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "market_ilya_debt",
+      "loc": "market",
+      "weight": 10,
+      "once": true,
+      "npc": "ilya",
+      "cond": {
+        "flags": [
+          "ilya_ally"
+        ],
+        "dayMin": 12,
+        "notFlags": [
+          "ilya_debt_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "pay_debt",
+          "effects": {
+            "money": -45,
+            "favor": 15,
+            "sanity": 10
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 45
+            }
+          },
+          "setFlags": {
+            "ilya_debt_done": true,
+            "ilya_stamp": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "let_him",
+          "effects": {
+            "favor": -6,
+            "sanity": -5
+          },
+          "setFlags": {
+            "ilya_debt_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "buy_stamp",
+          "effects": {
+            "money": -25,
+            "sanity": -5
+          },
+          "morality": -1,
+          "requires": {
+            "statMin": {
+              "money": 25
+            }
+          },
+          "setFlags": {
+            "ilya_debt_done": true,
+            "ilya_stamp": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "market_ilya_choice",
+      "loc": "market",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "npc": "ilya",
+      "cond": {
+        "dayMin": 15,
+        "notFlags": [
+          "ilya_final_done"
+        ],
+        "anyFlags": [
+          "ilya_ally",
+          "ilya_stamp"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take_his",
+          "effects": {
+            "sanity": -8,
+            "favor": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "ilya_final_done": true,
+            "new_identity": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "give_to_chen",
+          "effects": {
+            "sanity": 12,
+            "favor": 10
+          },
+          "morality": 3,
+          "setFlags": {
+            "ilya_final_done": true,
+            "chen_ally": true,
+            "papers_given": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "burn_both",
+          "effects": {
+            "sanity": 8,
+            "favor": 12
+          },
+          "morality": 2,
+          "setFlags": {
+            "ilya_final_done": true,
+            "burned_papers": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_militia",
+      "loc": "market",
+      "weight": 11,
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "militia_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "pay",
+          "effects": {
+            "money": -20,
+            "favor": 3
+          },
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "setFlags": {
+            "militia_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "health": -20,
+            "sanity": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "militia_done": true,
+            "militia_enemy": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "name_drop",
+          "effects": {
+            "favor": -5,
+            "sanity": 5
+          },
+          "morality": -1,
+          "setFlags": {
+            "militia_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_child_return",
+      "loc": "market",
+      "weight": 9,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "child_return_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hire",
+          "effects": {
+            "money": -10,
+            "favor": 8,
+            "sanity": 10
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "setFlags": {
+            "child_return_done": true,
+            "child_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "chase",
+          "effects": {
+            "sanity": -6
+          },
+          "morality": -1,
+          "setFlags": {
+            "child_return_done": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "ignore",
+          "effects": {
+            "sanity": -2
+          },
+          "setFlags": {
+            "child_return_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_fence_seal",
+      "loc": "market",
+      "weight": 8,
+      "once": true,
+      "cond": {
+        "dayMin": 12,
+        "notFlags": [
+          "fence_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sell_seal",
+          "effects": {
+            "money": 35,
+            "sanity": -6
+          },
+          "morality": -1,
+          "setFlags": {
+            "fence_done": true
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "keep_seal",
+          "effects": {
+            "sanity": 4
+          },
+          "setFlags": {
+            "fence_done": true,
+            "has_seal": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_intro",
+      "loc": "dorm",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "met_nadia"
+        ]
+      },
+      "choices": [
+        {
+          "id": "feed",
+          "effects": {
+            "money": -5,
+            "sanity": 15
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 5
+            }
+          },
+          "setFlags": {
+            "met_nadia": true,
+            "nadia_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "evict",
+          "effects": {
+            "sanity": -8
+          },
+          "setFlags": {
+            "met_nadia": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "report",
+          "effects": {
+            "money": 35,
+            "sanity": -18
+          },
+          "morality": -3,
+          "setFlags": {
+            "met_nadia": true,
+            "nadia_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_parts",
+      "loc": "dorm",
+      "priority": 82,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "nadia_ally"
+        ],
+        "notFlags": [
+          "antenna_fixed"
+        ],
+        "dayMin": 6
+      },
+      "choices": [
+        {
+          "id": "steal_parts",
+          "effects": {
+            "sanity": -8,
+            "health": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "antenna_fixed": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "buy_parts",
+          "effects": {
+            "money": -40,
+            "sanity": 8
+          },
+          "requires": {
+            "statMin": {
+              "money": 40
+            }
+          },
+          "setFlags": {
+            "antenna_fixed": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "give_up",
+          "effects": {
+            "sanity": -5
+          },
+          "setFlags": {
+            "antenna_abandoned": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_broadcast",
+      "loc": "dorm",
+      "priority": 88,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "antenna_fixed"
+        ],
+        "notFlags": [
+          "broadcast_tried"
+        ],
+        "dayMin": 10
+      },
+      "choices": [
+        {
+          "id": "let_her",
+          "effects": {
+            "health": -15,
+            "sanity": 15,
+            "favor": 10
+          },
+          "morality": 3,
+          "requires": {
+            "statMin": {
+              "sanity": 40
+            }
+          },
+          "setFlags": {
+            "broadcast_tried": true,
+            "broadcast_done": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "stop_her",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "broadcast_tried": true,
+            "broadcast_blocked": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "do_it_yourself",
+          "effects": {
+            "sanity": -20,
+            "favor": 15
+          },
+          "morality": 2,
+          "setFlags": {
+            "broadcast_tried": true,
+            "broadcast_done": true
+          },
+          "tone": "dark",
+          "key": true
+        }
+      ],
+      "art": "art/ev-broadcast.jpg"
+    },
+    {
+      "id": "dorm_nadia_raid",
+      "loc": "dorm",
+      "priority": 92,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "met_nadia"
+        ],
+        "notFlags": [
+          "nadia_raid_done"
+        ],
+        "dayMin": 13,
+        "anyFlags": [
+          "nadia_ally",
+          "broadcast_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hide_her",
+          "effects": {
+            "health": -10,
+            "sanity": 8
+          },
+          "morality": 2,
+          "setFlags": {
+            "nadia_raid_done": true,
+            "nadia_hidden": true,
+            "nadia_ally": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "hand_over",
+          "effects": {
+            "money": 60,
+            "sanity": -20
+          },
+          "morality": -3,
+          "setFlags": {
+            "nadia_raid_done": true,
+            "nadia_betrayed": true
+          },
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "roof_escape",
+          "effects": {
+            "sanity": -10,
+            "health": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "nadia_raid_done": true,
+            "nadia_free": true
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "dorm_nadia_choice",
+      "loc": "dorm",
+      "priority": 89,
+      "once": true,
+      "chain": true,
+      "npc": "nadia",
+      "cond": {
+        "flags": [
+          "nadia_ally"
+        ],
+        "dayMin": 16,
+        "notFlags": [
+          "nadia_final_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "give_ticket",
+          "effects": {
+            "sanity": 15,
+            "favor": 5
+          },
+          "morality": 3,
+          "setFlags": {
+            "nadia_final_done": true,
+            "gave_ticket": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "let_stay",
+          "effects": {
+            "sanity": -5,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "nadia_final_done": true,
+            "nadia_stays": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "tell_truth",
+          "effects": {
+            "sanity": -10
+          },
+          "setFlags": {
+            "nadia_final_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_guard_search",
+      "loc": "dorm",
+      "priority": 81,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "flags": [
+          "called_guard"
+        ],
+        "notFlags": [
+          "guard_search_done"
+        ],
+        "dayMin": 8
+      },
+      "choices": [
+        {
+          "id": "comply",
+          "effects": {
+            "money": -15,
+            "sanity": -5
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "setFlags": {
+            "guard_search_done": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "hide_stuff",
+          "effects": {
+            "health": -15,
+            "sanity": -8
+          },
+          "setFlags": {
+            "guard_search_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "point_next_door",
+          "effects": {
+            "money": 20,
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "guard_search_done": true
+          },
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "dorm_letter_reply",
+      "loc": "dorm",
+      "weight": 9,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "letter_reply_done"
+        ],
+        "anyFlags": [
+          "read_letter",
+          "burned_letter"
+        ]
+      },
+      "choices": [
+        {
+          "id": "read_reply",
+          "effects": {
+            "sanity": 12
+          },
+          "morality": 1,
+          "setFlags": {
+            "letter_reply_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "no_reply",
+          "effects": {
+            "sanity": -10
+          },
+          "setFlags": {
+            "letter_reply_done": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "dorm_rooftop",
+      "loc": "dorm",
+      "weight": 10,
+      "once": true,
+      "cond": {
+        "dayMin": 12,
+        "notFlags": [
+          "rooftop_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "count_berths",
+          "effects": {
+            "sanity": -6
+          },
+          "setFlags": {
+            "rooftop_done": true,
+            "counted_berths": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "just_watch",
+          "effects": {
+            "sanity": 10
+          },
+          "setFlags": {
+            "rooftop_done": true
+          },
+          "tone": "good"
+        },
+        {
+          "id": "with_nadia",
+          "effects": {
+            "sanity": 14,
+            "favor": 5
+          },
+          "requires": {
+            "flags": [
+              "met_nadia"
+            ]
+          },
+          "setFlags": {
+            "rooftop_done": true,
+            "nadia_ally": true
+          },
+          "tone": "good",
+          "key": true
+        }
+      ]
+    }
+  ]
+}

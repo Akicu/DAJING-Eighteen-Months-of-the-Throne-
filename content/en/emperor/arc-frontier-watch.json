@@ -1,0 +1,171 @@
+{
+  "frontier_deserter": {
+    "title": "The Deserter",
+    "desc": "A soldier slipped away at the changing of the guard. They caught him three li north. Military law says beheading. Huo has him on his knees in front of you. Your call, Majesty.",
+    "choices": {
+      "behead": {
+        "text": "Behead him, as the law says",
+        "outcome": "It was done below the gate, and the whole city came to watch. The blood soaked into the snow and the new snow covered it by evening. Nobody ran that night."
+      },
+      "spare": {
+        "text": "Spare him. Send him to the farms",
+        "outcome": "You pardoned him and sent him to the Hexi garrison farms. Huo's hands shook when he took the edict — not from anger. One fewer man on the wall."
+      },
+      "hand_back": {
+        "text": "Hand him back to Huo",
+        "outcome": "You said army matters belong to the army. Huo bowed and rose. Three days later a report came: the deserter had been executed. He never said whose hand did it."
+      }
+    }
+  },
+  "frontier_wall_crack": {
+    "title": "The Crack",
+    "desc": "The third stretch of wall has split — from the battlement all the way down to the footing. Wind pours through it. At night you can hear the wall creak. The works ministry says it was built thirty years ago with salvaged brick. Thirty thousand taels to fix.",
+    "choices": {
+      "repair": {
+        "text": "Send the silver",
+        "outcome": "Thirty thousand taels, and the labourers went up. On the seventh day the crack closed. The new brick is a different colour from the old, and it shows."
+      },
+      "patch": {
+        "text": "Prop it with timber for now",
+        "outcome": "The timber held, and it looked repaired. Huo stood at the foot of the wall and looked up for a long time. Then he said: wood rots, Majesty."
+      },
+      "ignore": {
+        "text": "Leave it",
+        "outcome": "You buried the memorial in the pile. The wind kept coming through. At night the wall still creaked — one knock after another, like someone inside it."
+      }
+    }
+  },
+  "frontier_name_wall": {
+    "title": "The Names",
+    "desc": "Inside the gate there is a brick wall carved with the names of the dead. The last line is unfinished — the man who was carving it died before he got to the end. Huo holds out a chisel.",
+    "choices": {
+      "add_name": {
+        "text": "Carve it yourself",
+        "outcome": "You crouched at the wall for half an hour until your fingers split. When you straightened up, Huo was standing behind you. He said nothing. He took the chisel."
+      },
+      "order_monument": {
+        "text": "Order a stone stele instead",
+        "outcome": "The stele went up, cut in formal court script, very neat. Huo took his men to see it and came back with one remark: it looks better than brick."
+      },
+      "walk_away": {
+        "text": "Turn and walk away",
+        "outcome": "You brushed the dust off your hands and left. Nobody called after you. Back in the hall there was still brick dust under your nails."
+      }
+    }
+  },
+  "frontier_beacon": {
+    "title": "The Beacon",
+    "desc": "At the third watch the westernmost tower lit its fire. The next one lit. The third did not. The watchman kneels below you and asks: do we light it?",
+    "choices": {
+      "light": {
+        "text": "Light it",
+        "outcome": "The whole line burned until dawn. At first light the scouts came back: herders burning grass. The camps broke and re-formed three times that night."
+      },
+      "wait": {
+        "text": "Wait one more quarter",
+        "outcome": "You waited. The third tower never lit. You did not light yours. By dawn word came from the west: three villages were gone."
+      },
+      "scout": {
+        "text": "Send scouts first",
+        "outcome": "They were gone two hours and came back on a ruined horse. Empty ground, they said. Nothing but burnt grass. The beacon was never lit, and you never slept."
+      }
+    }
+  },
+  "frontier_salt_cart": {
+    "title": "Under the Salt",
+    "desc": "Huo's men brought in a convoy of salt carts, seized contraband. Lift the matting and there are thirty thousand catties of iron underneath. Good iron. From the north.",
+    "choices": {
+      "take_iron": {
+        "text": "Take it. Stop asking",
+        "outcome": "The iron went into the store and the ledger says SEIZED. You never asked where it came from. Seven thousand arrowheads came out of that iron."
+      },
+      "pay_fair": {
+        "text": "Pay market price, and find out where it came from",
+        "outcome": "You had the treasury pay full price, then asked three times where it came from. The carters answered without a single gap. Good iron, clean ledger."
+      },
+      "seize_cart": {
+        "text": "Take the carts, let the men go",
+        "outcome": "The salt went to the state. The men were driven out of the gate. Three days later Huo reported that the convoy had been robbed beyond the pass. None survived."
+      }
+    }
+  },
+  "frontier_huo_drink": {
+    "title": "One Jar of Wine",
+    "desc": "Huo came without his armour, carrying a jar. From his home county, he said. Three years and he never finished it. Halfway through he said: I have buried three thousand men.",
+    "choices": {
+      "drink": {
+        "text": "Finish it with him",
+        "outcome": "You drank until dawn. He never mentioned the three thousand again — only kept saying, it wasn't that I wouldn't hold. When you set the bowl down the sky was grey."
+      },
+      "ask_graves": {
+        "text": "Ask where they are buried",
+        "outcome": "Three li outside the walls, he said. No stone. You asked why no stone. He said: the report I sent up called it a rout."
+      },
+      "send_away": {
+        "text": "Send him back to the wall",
+        "outcome": "You told him the wall could not spare him. He rose and withdrew. The jar stayed where it was. Nobody ever moved it."
+      }
+    }
+  },
+  "frontier_siege": {
+    "title": "Below the Wall",
+    "desc": "Thirty thousand northern horse, three sides surrounded. Eight thousand arrows left in the city — two days of fighting. Huo stands on the battlement with snow all over his armour. He asks: hold, Majesty, or go?",
+    "choices": {
+      "hold_wall": {
+        "text": "Hold",
+        "outcome": "Six days. On the seventh morning they withdrew. There was no time to bury the men who froze on the wall, so they laid them at its foot. He made sure you never saw them."
+      },
+      "use_repaired_wall": {
+        "text": "Hold where the wall was repaired",
+        "outcome": "The rebuilt stretch took the first ramming without giving. Huo shouted from the battlement: Majesty, this wall is sound! You had never heard him shout so loud.",
+        "req": "You never had that stretch repaired"
+      },
+      "stand_with_huo": {
+        "text": "Go up. Stand with Huo",
+        "outcome": "You went up onto the wall. The soldiers froze when they saw you, and then one of them shouted. After that shout the wall was never breached.",
+        "req": "You never shared that jar with him"
+      },
+      "abandon_wall": {
+        "text": "Give up the wall. Fall back to the inner city",
+        "outcome": "You gave the order. Huo knelt at the gate and did not stop you. On the road to the inner city you could still hear the fighting behind you."
+      },
+      "ride_out": {
+        "text": "Open one gate. Ride out alone and meet him.",
+        "win": "The gate opens a hand's width. You ride out alone and stand before the lines for half an hour. He withdraws, on condition that half the market tax next year is his. When you come back the men on the wall do not cheer. They are looking at the snow on your shoulders.",
+        "lose": "You ride out and do not come back. He keeps you in his tent three days, makes you watch his men build ladders. On the fourth he lets you go, and the flag on the wall has already changed. They say you signed the surrender yourself. You do not deny it."
+      }
+    }
+  },
+  "frontier_siege_broken": {
+    "title": "The Wall Gave Way",
+    "desc": "The crack opened on the third ramming. They came through it — the wall was shorter than a man there. Huo and what was left of his men are plugging the gap. He turns and shouts at you: go!",
+    "choices": {
+      "plug_gap": {
+        "text": "Open the treasury, pay for labour, close the gap",
+        "outcome": "The silver went out on the spot and every man in the city went up. Four hours to close it. They carried down more than a hundred."
+      },
+      "street_fight": {
+        "text": "Don't plug it. Fall back and fight in the streets",
+        "outcome": "It came down to the alleys. Three days later they withdrew, and half the city had burned. You walked the streets and nobody looked up."
+      },
+      "abandon_wall": {
+        "text": "Give up the wall. Fall back to the inner city",
+        "outcome": "You gave the order. Huo did not kneel and did not speak. He drove his sword into the ground at the gate and fell back with the rest."
+      }
+    }
+  },
+  "frontier_watch_night": {
+    "title": "Night Watch",
+    "desc": "You sat on the gatehouse all night. The charcoal in the brazier burned down to white. The watch stamped their feet against the cold and said nothing.",
+    "choices": {
+      "walk_wall": {
+        "text": "Walk the whole wall",
+        "outcome": "You walked the full circuit. By the time you came back your fingers could not close. The watch saw you and stood a little straighter."
+      },
+      "sit_fire": {
+        "text": "Sit by the brazier",
+        "outcome": "You sat by the fire until dawn, listening to them talk quietly about home. None of them knew who you were."
+      }
+    }
+  }
+}

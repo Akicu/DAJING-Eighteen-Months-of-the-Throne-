@@ -1,0 +1,244 @@
+{
+  "pack": "03-medbay",
+  "loc": "medbay",
+  "events": [
+    {
+      "id": "medbay_routine",
+      "loc": "medbay",
+      "weight": 6,
+      "repeatable": true,
+      "choices": [
+        {
+          "id": "serum",
+          "effects": {
+            "money": -15,
+            "health": 30
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "neutral",
+          "setFlags": {
+            "met_chen": true
+          }
+        },
+        {
+          "id": "sedative",
+          "effects": {
+            "money": -15,
+            "sanity": 28,
+            "health": -5
+          },
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "leave",
+          "effects": {
+            "sanity": 4
+          },
+          "tone": "neutral"
+        }
+      ],
+      "npc": "chen"
+    },
+    {
+      "id": "medbay_triage",
+      "loc": "medbay",
+      "weight": 9,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "save_child",
+          "effects": {
+            "money": -20,
+            "sanity": 15
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "save_officer",
+          "effects": {
+            "money": 20,
+            "sanity": -15
+          },
+          "morality": -1,
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "by_rule",
+          "effects": {
+            "money": 5,
+            "sanity": -5
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_theft",
+      "loc": "medbay",
+      "weight": 7,
+      "once": true,
+      "choices": [
+        {
+          "id": "report",
+          "effects": {
+            "money": 10,
+            "sanity": -10
+          },
+          "morality": -1,
+          "tone": "dark"
+        },
+        {
+          "id": "cover",
+          "effects": {
+            "money": -10,
+            "sanity": 10
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 10
+            }
+          },
+          "tone": "good"
+        },
+        {
+          "id": "steal",
+          "effects": {
+            "money": 20,
+            "sanity": -15
+          },
+          "morality": -1,
+          "tone": "dark"
+        }
+      ]
+    },
+    {
+      "id": "medbay_doctor",
+      "loc": "medbay",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 4
+      },
+      "choices": [
+        {
+          "id": "give_meds",
+          "effects": {
+            "money": -25,
+            "health": 10
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 25
+            }
+          },
+          "setFlags": {
+            "saved_doctor": true
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "walk_away",
+          "effects": {
+            "sanity": -12
+          },
+          "morality": -1,
+          "tone": "neutral"
+        },
+        {
+          "id": "report_doctor",
+          "effects": {
+            "money": 15,
+            "sanity": -20
+          },
+          "morality": -2,
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "medbay_painkiller",
+      "loc": "medbay",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "take",
+          "effects": {
+            "sanity": 20,
+            "health": -12,
+            "money": -5
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": -2
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "medbay_last_patient",
+      "loc": "medbay",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15
+      },
+      "choices": [
+        {
+          "id": "treat",
+          "effects": {
+            "money": -30,
+            "sanity": 20
+          },
+          "morality": 2,
+          "requires": {
+            "statMin": {
+              "money": 30
+            }
+          },
+          "tone": "good",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": -18
+          },
+          "morality": -1,
+          "tone": "dark",
+          "key": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3768 @@
+{
+  "id": "emperor",
+  "version": 2,
+  "config": {
+    "maxDays": 18,
+    "actionsPerDay": 3,
+    "ticketCost": 240,
+    "ticketFavor": 60,
+    "dailyUpkeep": 14,
+    "startStats": {
+      "health": 100,
+      "sanity": 75,
+      "money": 45,
+      "favor": 12
+    },
+    "statCeiling": 100,
+    "dailyWage": 13,
+    "upkeepRampEvery": 5,
+    "upkeepRampAdd": 3,
+    "dailySanityRestore": 6,
+    "dayLabel": "lunar"
+  },
+  "locations": [
+    {
+      "id": "court",
+      "accent": "amber",
+      "icon": "throne",
+      "apCost": 1,
+      "art": "art/loc-court.jpg"
+    },
+    {
+      "id": "study",
+      "accent": "sky",
+      "icon": "scroll",
+      "apCost": 1,
+      "art": "art/loc-study.jpg"
+    },
+    {
+      "id": "vault",
+      "accent": "emerald",
+      "icon": "vault",
+      "apCost": 1,
+      "art": "art/loc-vault.jpg"
+    },
+    {
+      "id": "frontier",
+      "accent": "rose",
+      "icon": "banner",
+      "apCost": 1,
+      "art": "art/loc-frontier.jpg"
+    },
+    {
+      "id": "chamber",
+      "accent": "violet",
+      "icon": "moon",
+      "apCost": 1,
+      "art": "art/loc-chamber.jpg"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "shen",
+      "accent": "sky",
+      "metFlag": "met_shen",
+      "allyFlag": "shen_ally",
+      "betrayFlag": "shen_betrayed",
+      "portrait": "art/npc-shen.jpg"
+    },
+    {
+      "id": "dowager",
+      "accent": "violet",
+      "metFlag": "met_dowager",
+      "allyFlag": "dowager_ally",
+      "betrayFlag": "dowager_betrayed",
+      "portrait": "art/npc-dowager.jpg"
+    },
+    {
+      "id": "huo",
+      "accent": "rose",
+      "metFlag": "met_huo",
+      "allyFlag": "huo_ally",
+      "betrayFlag": "huo_betrayed",
+      "portrait": "art/npc-huo.jpg"
+    },
+    {
+      "id": "wang",
+      "accent": "emerald",
+      "metFlag": "met_wang",
+      "allyFlag": "wang_ally",
+      "betrayFlag": "wang_betrayed",
+      "portrait": "art/npc-wang.jpg"
+    }
+  ],
+  "acts": [
+    {
+      "from": 1,
+      "id": "regency"
+    },
+    {
+      "from": 7,
+      "id": "faction"
+    },
+    {
+      "from": 13,
+      "id": "reckoning"
+    }
+  ],
+  "endings": [
+    {
+      "id": "ending_emperor_zenith",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "flags": [
+          "zenith_ready"
+        ],
+        "statMin": {
+          "money": 200,
+          "favor": 55
+        }
+      }
+    },
+    {
+      "id": "ending_emperor_beloved",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "statMin": {
+          "favor": 50
+        },
+        "moralityMin": 0
+      }
+    },
+    {
+      "id": "ending_emperor_ironfist",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "moralityMax": -6,
+        "statMin": {
+          "money": 150
+        }
+      }
+    },
+    {
+      "id": "ending_emperor_abdicate",
+      "win": false,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "abdicated"
+        ]
+      }
+    },
+    {
+      "id": "ending_emperor_puppet",
+      "win": false,
+      "rarity": 2,
+      "cond": {
+        "statMax": {
+          "favor": 24
+        }
+      }
+    },
+    {
+      "id": "ending_dead",
+      "win": false,
+      "rarity": 1
+    },
+    {
+      "id": "ending_mad",
+      "win": false,
+      "rarity": 1
+    },
+    {
+      "id": "ending_starved",
+      "win": false,
+      "rarity": 1
+    },
+    {
+      "id": "ending_emperor_faded",
+      "win": false,
+      "rarity": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "court_first_court",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 95,
+      "once": true,
+      "cond": {
+        "dayMax": 2
+      },
+      "choices": [
+        {
+          "id": "sign",
+          "tone": "neutral",
+          "effects": {
+            "favor": 5,
+            "sanity": -2
+          },
+          "setFlags": {
+            "met_shen": true,
+            "met_dowager": true,
+            "regency_quiet": true
+          },
+          "key": true
+        },
+        {
+          "id": "amend",
+          "tone": "good",
+          "effects": {
+            "favor": 10,
+            "sanity": -6
+          },
+          "morality": 2,
+          "setFlags": {
+            "met_shen": true,
+            "met_dowager": true,
+            "court_defied": true
+          },
+          "key": true
+        },
+        {
+          "id": "reject_all",
+          "tone": "dark",
+          "effects": {
+            "favor": -6,
+            "sanity": -10
+          },
+          "setFlags": {
+            "met_shen": true,
+            "met_dowager": true,
+            "court_clashed": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "court_salt_tax",
+      "loc": "court",
+      "npc": "shen",
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "flags": [
+          "met_shen"
+        ],
+        "notFlags": [
+          "salt_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "probe",
+          "tone": "good",
+          "effects": {
+            "money": 40,
+            "favor": -6,
+            "sanity": -4
+          },
+          "morality": 2,
+          "setFlags": {
+            "salt_done": true,
+            "salt_probed": true
+          }
+        },
+        {
+          "id": "bury",
+          "tone": "dark",
+          "effects": {
+            "money": -25,
+            "favor": 12
+          },
+          "morality": -2,
+          "setFlags": {
+            "salt_done": true,
+            "salt_buried": true,
+            "shen_ally": true
+          }
+        },
+        {
+          "id": "bleed",
+          "tone": "neutral",
+          "effects": {
+            "money": 30,
+            "favor": 4
+          },
+          "setFlags": {
+            "salt_done": true,
+            "salt_bled": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_impeach_huo",
+      "loc": "court",
+      "npc": "huo",
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "impeach_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "try_him",
+          "tone": "neutral",
+          "effects": {
+            "favor": -8,
+            "sanity": -3
+          },
+          "setFlags": {
+            "impeach_done": true,
+            "met_huo": true,
+            "huo_betrayed": true
+          }
+        },
+        {
+          "id": "shelve",
+          "tone": "good",
+          "effects": {
+            "favor": 10,
+            "money": -15
+          },
+          "morality": 1,
+          "setFlags": {
+            "impeach_done": true,
+            "met_huo": true,
+            "huo_ally": true
+          }
+        },
+        {
+          "id": "summon",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "favor": -2
+          },
+          "setFlags": {
+            "impeach_done": true,
+            "met_huo": true,
+            "huo_summoned": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_empty_seat",
+      "loc": "court",
+      "npc": "dowager",
+      "once": true,
+      "cond": {
+        "dayMin": 10,
+        "notFlags": [
+          "empty_seat_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "ask",
+          "tone": "neutral",
+          "effects": {
+            "favor": 5,
+            "sanity": -3
+          },
+          "setFlags": {
+            "empty_seat_done": true,
+            "met_dowager": true,
+            "dowager_ally": true
+          }
+        },
+        {
+          "id": "cut",
+          "tone": "dark",
+          "effects": {
+            "favor": -12,
+            "money": 35
+          },
+          "morality": -2,
+          "setFlags": {
+            "empty_seat_done": true,
+            "met_dowager": true,
+            "dowager_betrayed": true
+          }
+        },
+        {
+          "id": "ignore",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 2
+          },
+          "setFlags": {
+            "empty_seat_done": true,
+            "met_dowager": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_grand_audience",
+      "loc": "court",
+      "priority": 92,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "notFlags": [
+          "audience_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "declare",
+          "tone": "good",
+          "effects": {
+            "favor": 24,
+            "sanity": -8
+          },
+          "morality": 2,
+          "setFlags": {
+            "audience_done": true,
+            "zenith_ready": true
+          },
+          "key": true
+        },
+        {
+          "id": "purge",
+          "tone": "dark",
+          "effects": {
+            "money": 60,
+            "favor": -20,
+            "sanity": -6
+          },
+          "morality": -3,
+          "setFlags": {
+            "audience_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "abdicate",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 10,
+            "favor": -4
+          },
+          "setFlags": {
+            "audience_done": true,
+            "abdicated": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "study_memorial_stack",
+      "loc": "study",
+      "repeatable": true,
+      "weight": 26,
+      "choices": [
+        {
+          "id": "work",
+          "tone": "neutral",
+          "effects": {
+            "money": 14,
+            "sanity": -5
+          }
+        },
+        {
+          "id": "skim",
+          "tone": "neutral",
+          "effects": {
+            "money": 6,
+            "sanity": -2
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_forged_edict",
+      "loc": "study",
+      "npc": "wang",
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "edict_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "burn",
+          "tone": "good",
+          "effects": {
+            "sanity": -5,
+            "favor": 6
+          },
+          "morality": 2,
+          "setFlags": {
+            "edict_done": true,
+            "met_wang": true,
+            "wang_betrayed": true
+          }
+        },
+        {
+          "id": "use",
+          "tone": "dark",
+          "effects": {
+            "money": 55,
+            "favor": -8
+          },
+          "morality": -3,
+          "setFlags": {
+            "edict_done": true,
+            "met_wang": true,
+            "wang_ally": true,
+            "edict_forged": true
+          }
+        },
+        {
+          "id": "trace",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3,
+            "favor": 3,
+            "money": 10
+          },
+          "setFlags": {
+            "edict_done": true,
+            "met_wang": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_secret_memorial",
+      "loc": "study",
+      "npc": "huo",
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "secret_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "pay",
+          "tone": "good",
+          "effects": {
+            "money": -40,
+            "favor": 10,
+            "sanity": -3
+          },
+          "morality": 1,
+          "setFlags": {
+            "secret_done": true,
+            "met_huo": true,
+            "huo_ally": true
+          }
+        },
+        {
+          "id": "ignore_it",
+          "tone": "dark",
+          "effects": {
+            "money": 10,
+            "favor": -6
+          },
+          "morality": -1,
+          "setFlags": {
+            "secret_done": true,
+            "met_huo": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_history",
+      "loc": "study",
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "history_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "read",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -12,
+            "favor": 4
+          },
+          "setFlags": {
+            "history_done": true,
+            "knows_truth": true
+          },
+          "key": true
+        },
+        {
+          "id": "close",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 4
+          },
+          "setFlags": {
+            "history_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_empty",
+      "loc": "vault",
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "vault_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "levy",
+          "tone": "dark",
+          "effects": {
+            "money": 45,
+            "favor": -14
+          },
+          "morality": -2,
+          "setFlags": {
+            "vault_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "cut",
+          "tone": "neutral",
+          "effects": {
+            "money": 25,
+            "favor": -4,
+            "sanity": -3
+          },
+          "setFlags": {
+            "vault_done": true,
+            "cut_court": true
+          }
+        },
+        {
+          "id": "borrow",
+          "tone": "neutral",
+          "effects": {
+            "money": 40,
+            "favor": 4,
+            "sanity": -6
+          },
+          "setFlags": {
+            "vault_done": true,
+            "loan_taken": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_famine",
+      "loc": "vault",
+      "npc": "shen",
+      "once": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "famine_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "open_granary",
+          "tone": "good",
+          "effects": {
+            "money": -50,
+            "favor": 26,
+            "sanity": 4
+          },
+          "morality": 3,
+          "setFlags": {
+            "famine_done": true,
+            "granary_opened": true
+          },
+          "key": true
+        },
+        {
+          "id": "half",
+          "tone": "neutral",
+          "effects": {
+            "money": -20,
+            "favor": 6
+          },
+          "morality": 1,
+          "setFlags": {
+            "famine_done": true
+          }
+        },
+        {
+          "id": "shut",
+          "tone": "dark",
+          "effects": {
+            "money": 20,
+            "favor": -20,
+            "sanity": -8
+          },
+          "morality": -3,
+          "setFlags": {
+            "famine_done": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "vault_merchant",
+      "loc": "vault",
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "merchant_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take",
+          "tone": "dark",
+          "effects": {
+            "money": 45,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "merchant_done": true
+          }
+        },
+        {
+          "id": "refuse",
+          "tone": "good",
+          "effects": {
+            "favor": 8,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "merchant_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_eunuch_cut",
+      "loc": "vault",
+      "npc": "wang",
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "eunuch_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "audit",
+          "tone": "good",
+          "effects": {
+            "money": 28,
+            "favor": -6,
+            "sanity": -5
+          },
+          "morality": 2,
+          "setFlags": {
+            "eunuch_done": true,
+            "met_wang": true,
+            "wang_betrayed": true
+          }
+        },
+        {
+          "id": "share",
+          "tone": "dark",
+          "effects": {
+            "money": 24,
+            "favor": 2
+          },
+          "morality": -2,
+          "setFlags": {
+            "eunuch_done": true,
+            "met_wang": true,
+            "wang_ally": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_tribute",
+      "loc": "frontier",
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "tribute_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "pay",
+          "tone": "neutral",
+          "effects": {
+            "money": -45,
+            "favor": -4,
+            "sanity": 2
+          },
+          "setFlags": {
+            "tribute_done": true,
+            "tribute_paid": true
+          }
+        },
+        {
+          "id": "war",
+          "tone": "dark",
+          "effects": {
+            "money": -30,
+            "favor": 10,
+            "health": -10
+          },
+          "morality": -1,
+          "setFlags": {
+            "tribute_done": true,
+            "war_declared": true
+          },
+          "key": true
+        },
+        {
+          "id": "stall",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -6,
+            "favor": -2
+          },
+          "setFlags": {
+            "tribute_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_general_ask",
+      "loc": "frontier",
+      "npc": "huo",
+      "once": true,
+      "cond": {
+        "dayMin": 11,
+        "anyFlags": [
+          "huo_ally",
+          "huo_summoned"
+        ],
+        "notFlags": [
+          "general_ask_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "grant",
+          "tone": "good",
+          "effects": {
+            "money": -35,
+            "favor": 12,
+            "health": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "general_ask_done": true,
+            "met_huo": true,
+            "huo_ally": true
+          }
+        },
+        {
+          "id": "deny",
+          "tone": "dark",
+          "effects": {
+            "money": 20,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "general_ask_done": true,
+            "met_huo": true,
+            "huo_betrayed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_defect",
+      "loc": "frontier",
+      "npc": "huo",
+      "once": true,
+      "cond": {
+        "dayMin": 14,
+        "flags": [
+          "huo_summoned"
+        ],
+        "notFlags": [
+          "defect_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "execute",
+          "tone": "dark",
+          "effects": {
+            "favor": -8,
+            "money": 30,
+            "sanity": -10
+          },
+          "morality": -3,
+          "setFlags": {
+            "defect_done": true,
+            "huo_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "pardon",
+          "tone": "good",
+          "effects": {
+            "favor": 10,
+            "health": -8
+          },
+          "morality": 2,
+          "setFlags": {
+            "defect_done": true,
+            "huo_ally": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_dowager",
+      "loc": "chamber",
+      "npc": "dowager",
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "dowager_talk_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "obey",
+          "tone": "neutral",
+          "effects": {
+            "favor": 12,
+            "sanity": 4
+          },
+          "setFlags": {
+            "dowager_talk_done": true,
+            "met_dowager": true,
+            "dowager_ally": true
+          }
+        },
+        {
+          "id": "refuse",
+          "tone": "dark",
+          "effects": {
+            "favor": -10,
+            "sanity": -4,
+            "health": -4
+          },
+          "morality": -1,
+          "setFlags": {
+            "dowager_talk_done": true,
+            "met_dowager": true,
+            "dowager_betrayed": true
+          }
+        },
+        {
+          "id": "ask_truth",
+          "tone": "good",
+          "effects": {
+            "sanity": -8,
+            "favor": 3
+          },
+          "setFlags": {
+            "dowager_talk_done": true,
+            "met_dowager": true,
+            "knows_truth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_insomnia",
+      "loc": "chamber",
+      "repeatable": true,
+      "weight": 30,
+      "choices": [
+        {
+          "id": "sleep",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 12,
+            "health": 4
+          }
+        },
+        {
+          "id": "memorials",
+          "tone": "neutral",
+          "effects": {
+            "money": 12,
+            "sanity": -7
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_poison",
+      "loc": "chamber",
+      "once": true,
+      "cond": {
+        "dayMin": 12,
+        "notFlags": [
+          "poison_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "purge",
+          "tone": "dark",
+          "effects": {
+            "health": 5,
+            "favor": -14,
+            "sanity": -6
+          },
+          "morality": -2,
+          "setFlags": {
+            "poison_done": true,
+            "huo_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "hide",
+          "tone": "neutral",
+          "effects": {
+            "health": -6,
+            "sanity": 2
+          },
+          "setFlags": {
+            "poison_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "swap",
+          "tone": "good",
+          "effects": {
+            "health": 2,
+            "sanity": -4,
+            "favor": 4
+          },
+          "setFlags": {
+            "poison_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_bitter_broth",
+      "loc": "chamber",
+      "npc": "dowager",
+      "priority": 82,
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "notFlags": [
+          "broth_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "drink",
+          "tone": "neutral",
+          "effects": {
+            "health": -5,
+            "sanity": -4,
+            "favor": 8
+          },
+          "setFlags": {
+            "broth_done": true,
+            "broth_drunk": true,
+            "met_dowager": true
+          }
+        },
+        {
+          "id": "reward_eunuch",
+          "tone": "dark",
+          "effects": {
+            "sanity": -8,
+            "favor": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "broth_done": true,
+            "dowager_defied": true,
+            "met_dowager": true,
+            "dowager_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "silver_needle",
+          "tone": "good",
+          "effects": {
+            "sanity": -6,
+            "health": 2
+          },
+          "setFlags": {
+            "broth_done": true,
+            "broth_tested": true,
+            "knows_poison_truth": true,
+            "met_dowager": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_blood_edict",
+      "loc": "study",
+      "npc": "wang",
+      "priority": 86,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "anyFlags": [
+          "knows_poison_truth",
+          "dowager_defied",
+          "knows_truth"
+        ],
+        "notFlags": [
+          "blood_edict_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "send_edict",
+          "tone": "dark",
+          "effects": {
+            "money": -25,
+            "favor": 18,
+            "sanity": -14,
+            "health": -8
+          },
+          "morality": 1,
+          "setFlags": {
+            "blood_edict_done": true,
+            "coup_attempted": true,
+            "dowager_betrayed": true
+          },
+          "key": true
+        },
+        {
+          "id": "bribe_guard",
+          "tone": "neutral",
+          "requires": {
+            "statMin": {
+              "money": 40
+            }
+          },
+          "effects": {
+            "money": -40,
+            "favor": 10,
+            "sanity": -6
+          },
+          "setFlags": {
+            "blood_edict_done": true,
+            "wang_ally": true
+          }
+        },
+        {
+          "id": "burn_edict",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -12,
+            "favor": 4
+          },
+          "setFlags": {
+            "blood_edict_done": true,
+            "coup_aborted": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_water_pavilion",
+      "loc": "chamber",
+      "npc": "dowager",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 13,
+        "flags": [
+          "coup_attempted"
+        ],
+        "notFlags": [
+          "water_pavilion_resolved"
+        ]
+      },
+      "choices": [
+        {
+          "id": "endure",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -10,
+            "health": -8,
+            "favor": -12
+          },
+          "setFlags": {
+            "water_pavilion_resolved": true
+          },
+          "key": true
+        },
+        {
+          "id": "smash_bridge",
+          "tone": "dark",
+          "effects": {
+            "sanity": 8,
+            "favor": -20,
+            "health": -5
+          },
+          "morality": -1,
+          "setFlags": {
+            "water_pavilion_resolved": true,
+            "dowager_betrayed": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_black_market",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 85,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "frontier_market_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "tolerate",
+          "tone": "dark",
+          "effects": {
+            "money": 35,
+            "favor": 8,
+            "health": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "frontier_market_done": true,
+            "frontier_smuggled": true,
+            "huo_ally": true
+          },
+          "key": true
+        },
+        {
+          "id": "ban_strict",
+          "tone": "neutral",
+          "effects": {
+            "money": -20,
+            "favor": -10,
+            "health": -4
+          },
+          "morality": 1,
+          "setFlags": {
+            "frontier_market_done": true,
+            "frontier_clamped": true,
+            "huo_betrayed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_snow_storm",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 88,
+      "once": true,
+      "cond": {
+        "dayMin": 11,
+        "notFlags": [
+          "frontier_storm_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "drain_vault",
+          "tone": "good",
+          "effects": {
+            "money": -30,
+            "favor": 22,
+            "sanity": 2
+          },
+          "morality": 2,
+          "setFlags": {
+            "frontier_storm_done": true,
+            "frontier_relieved": true,
+            "huo_ally": true
+          },
+          "key": true
+        },
+        {
+          "id": "ignore_storm",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "favor": -15
+          },
+          "morality": -3,
+          "setFlags": {
+            "frontier_storm_done": true,
+            "huo_betrayed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_official_audit",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 40,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "audit_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "praise",
+          "tone": "good",
+          "effects": {
+            "favor": 8,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "audit_done": true,
+            "shen_ally": true
+          }
+        },
+        {
+          "id": "demote",
+          "tone": "dark",
+          "effects": {
+            "money": 20,
+            "favor": -8,
+            "sanity": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "audit_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_patrol_routine",
+      "loc": "vault",
+      "repeatable": true,
+      "weight": 16,
+      "choices": [
+        {
+          "id": "count_coins",
+          "tone": "neutral",
+          "effects": {
+            "money": 9,
+            "sanity": -5
+          }
+        },
+        {
+          "id": "chat_keeper",
+          "tone": "good",
+          "effects": {
+            "sanity": 3,
+            "favor": 2
+          }
+        }
+      ],
+      "cooldown": 1
+    },
+    {
+      "id": "frontier_deserter",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 66,
+      "once": true,
+      "cond": {
+        "dayMin": 3,
+        "notFlags": [
+          "deserter_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "behead",
+          "tone": "dark",
+          "effects": {
+            "favor": 9,
+            "sanity": -7
+          },
+          "morality": -2,
+          "setFlags": {
+            "deserter_done": true,
+            "frontier_strict": true
+          }
+        },
+        {
+          "id": "spare",
+          "tone": "good",
+          "effects": {
+            "money": -10,
+            "favor": -7,
+            "sanity": 5
+          },
+          "morality": 2,
+          "setFlags": {
+            "deserter_done": true,
+            "frontier_merciful": true
+          }
+        },
+        {
+          "id": "hand_back",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": -3
+          },
+          "setFlags": {
+            "deserter_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_wall_crack",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 72,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "wall_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "repair",
+          "tone": "good",
+          "effects": {
+            "money": -24,
+            "favor": 12,
+            "health": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "wall_done": true,
+            "wall_repaired": true
+          },
+          "key": true
+        },
+        {
+          "id": "patch",
+          "tone": "neutral",
+          "effects": {
+            "money": -10,
+            "favor": 4
+          },
+          "setFlags": {
+            "wall_done": true,
+            "wall_repaired": true
+          }
+        },
+        {
+          "id": "ignore",
+          "tone": "dark",
+          "effects": {
+            "favor": -6,
+            "sanity": -5
+          },
+          "morality": -2,
+          "setFlags": {
+            "wall_done": true,
+            "wall_weak": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_name_wall",
+      "loc": "frontier",
+      "weight": 3,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "names_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "add_name",
+          "tone": "good",
+          "effects": {
+            "sanity": 6,
+            "health": -3,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "names_done": true,
+            "names_honored": true
+          }
+        },
+        {
+          "id": "order_monument",
+          "tone": "good",
+          "effects": {
+            "money": -12,
+            "favor": 12
+          },
+          "morality": 1,
+          "setFlags": {
+            "names_done": true,
+            "names_honored": true
+          }
+        },
+        {
+          "id": "walk_away",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "favor": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "names_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_beacon",
+      "loc": "frontier",
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "beacon_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "light",
+          "tone": "neutral",
+          "effects": {
+            "favor": 10,
+            "money": -8,
+            "sanity": -6
+          },
+          "setFlags": {
+            "beacon_done": true,
+            "beacon_answered": true
+          }
+        },
+        {
+          "id": "wait",
+          "tone": "dark",
+          "effects": {
+            "sanity": -10,
+            "health": -4
+          },
+          "morality": -1,
+          "setFlags": {
+            "beacon_done": true
+          }
+        },
+        {
+          "id": "scout",
+          "tone": "good",
+          "effects": {
+            "money": -10,
+            "sanity": -3,
+            "favor": 6
+          },
+          "morality": 1,
+          "setFlags": {
+            "beacon_done": true,
+            "beacon_answered": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_salt_cart",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 9,
+        "flags": [
+          "frontier_smuggled"
+        ],
+        "notFlags": [
+          "salt_cart_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take_iron",
+          "tone": "dark",
+          "effects": {
+            "money": 30,
+            "favor": 12
+          },
+          "morality": -1,
+          "setFlags": {
+            "salt_cart_done": true,
+            "salt_deal": true
+          }
+        },
+        {
+          "id": "pay_fair",
+          "tone": "good",
+          "effects": {
+            "money": -18,
+            "favor": 8
+          },
+          "morality": 2,
+          "setFlags": {
+            "salt_cart_done": true,
+            "salt_cleared": true
+          },
+          "key": true
+        },
+        {
+          "id": "seize_cart",
+          "tone": "neutral",
+          "effects": {
+            "money": 20,
+            "favor": -10,
+            "sanity": -4
+          },
+          "setFlags": {
+            "salt_cart_done": true,
+            "salt_seized": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_huo_drink",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 74,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "anyFlags": [
+          "huo_ally",
+          "met_huo"
+        ],
+        "notFlags": [
+          "huo_drink_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "drink",
+          "tone": "good",
+          "effects": {
+            "sanity": 7,
+            "health": -5,
+            "favor": 9
+          },
+          "setFlags": {
+            "huo_drink_done": true,
+            "huo_ally": true,
+            "huo_oath": true
+          }
+        },
+        {
+          "id": "ask_graves",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -6,
+            "favor": 4
+          },
+          "setFlags": {
+            "huo_drink_done": true,
+            "huo_oath": true
+          }
+        },
+        {
+          "id": "send_away",
+          "tone": "dark",
+          "effects": {
+            "favor": -9,
+            "sanity": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "huo_drink_done": true,
+            "huo_cold": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "frontier_siege",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 90,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "notFlags": [
+          "siege_done",
+          "wall_weak"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hold_wall",
+          "tone": "neutral",
+          "effects": {
+            "money": -12,
+            "favor": 16,
+            "health": -12
+          },
+          "morality": 1,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "use_repaired_wall",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "wall_repaired"
+            ]
+          },
+          "effects": {
+            "money": -6,
+            "favor": 20,
+            "health": -6
+          },
+          "morality": 2,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "stand_with_huo",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "huo_oath"
+            ]
+          },
+          "effects": {
+            "favor": 18,
+            "health": -10,
+            "sanity": 6
+          },
+          "morality": 2,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true,
+            "huo_ally": true
+          },
+          "key": true
+        },
+        {
+          "id": "abandon_wall",
+          "tone": "dark",
+          "effects": {
+            "money": 25,
+            "favor": -18,
+            "sanity": -12
+          },
+          "morality": -3,
+          "setFlags": {
+            "siege_done": true,
+            "wall_lost": true
+          },
+          "key": true
+        },
+        {
+          "id": "ride_out",
+          "tone": "dark",
+          "roll": {
+            "chance": 0.4,
+            "win": {
+              "effects": {
+                "favor": 20,
+                "money": -8,
+                "health": -9,
+                "sanity": 8
+              },
+              "morality": 2,
+              "setFlags": {
+                "siege_done": true,
+                "wall_held": true,
+                "enemy_bought_off": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "health": -16,
+                "favor": -16,
+                "sanity": -13,
+                "money": 6
+              },
+              "setFlags": {
+                "siege_done": true,
+                "wall_lost": true
+              }
+            }
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_siege_broken",
+      "loc": "frontier",
+      "npc": "huo",
+      "priority": 91,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 15,
+        "flags": [
+          "wall_weak"
+        ],
+        "notFlags": [
+          "siege_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "plug_gap",
+          "tone": "neutral",
+          "effects": {
+            "money": -16,
+            "favor": 12,
+            "health": -14
+          },
+          "morality": 1,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "street_fight",
+          "tone": "dark",
+          "effects": {
+            "favor": 8,
+            "health": -20,
+            "sanity": -8
+          },
+          "morality": -1,
+          "setFlags": {
+            "siege_done": true,
+            "wall_held": true
+          },
+          "key": true
+        },
+        {
+          "id": "abandon_wall",
+          "tone": "dark",
+          "effects": {
+            "money": 25,
+            "favor": -18,
+            "sanity": -12
+          },
+          "morality": -3,
+          "setFlags": {
+            "siege_done": true,
+            "wall_lost": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "frontier_watch_night",
+      "loc": "frontier",
+      "repeatable": true,
+      "weight": 14,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "walk_wall",
+          "tone": "neutral",
+          "effects": {
+            "health": -6,
+            "money": 11,
+            "favor": 3
+          }
+        },
+        {
+          "id": "sit_fire",
+          "tone": "good",
+          "effects": {
+            "sanity": 7,
+            "health": 2,
+            "money": -3
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_nightmare",
+      "loc": "chamber",
+      "priority": 62,
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "notFlags": [
+          "nightmare_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sit_up",
+          "tone": "dark",
+          "effects": {
+            "sanity": -6,
+            "health": -3
+          },
+          "setFlags": {
+            "nightmare_done": true,
+            "nightmare_haunted": true
+          }
+        },
+        {
+          "id": "call_lamp",
+          "tone": "neutral",
+          "effects": {
+            "favor": 3,
+            "sanity": 5
+          },
+          "setFlags": {
+            "nightmare_done": true,
+            "nightmare_calm": true
+          }
+        },
+        {
+          "id": "write_down",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3,
+            "health": 2
+          },
+          "setFlags": {
+            "nightmare_done": true,
+            "nightmare_calm": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_lamp_oil",
+      "loc": "chamber",
+      "weight": 3,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "lamp_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "let_sleep",
+          "tone": "good",
+          "effects": {
+            "sanity": 5,
+            "health": -2
+          },
+          "morality": 1,
+          "setFlags": {
+            "lamp_done": true
+          }
+        },
+        {
+          "id": "wake_ask",
+          "tone": "neutral",
+          "effects": {
+            "favor": 4,
+            "sanity": 3
+          },
+          "setFlags": {
+            "lamp_done": true
+          }
+        },
+        {
+          "id": "replace",
+          "tone": "dark",
+          "effects": {
+            "favor": -5,
+            "sanity": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "lamp_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_old_robe",
+      "loc": "chamber",
+      "priority": 64,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "robe_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "wear",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -8,
+            "favor": 6
+          },
+          "setFlags": {
+            "robe_done": true,
+            "father_robe": true
+          }
+        },
+        {
+          "id": "burn",
+          "tone": "dark",
+          "effects": {
+            "sanity": 4,
+            "favor": -6
+          },
+          "morality": -1,
+          "setFlags": {
+            "robe_done": true,
+            "robe_burned": true
+          }
+        },
+        {
+          "id": "close_lid",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -2
+          },
+          "setFlags": {
+            "robe_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_mirror",
+      "loc": "chamber",
+      "weight": 3,
+      "once": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "mirror_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "stare",
+          "tone": "dark",
+          "effects": {
+            "sanity": -9,
+            "health": -2
+          },
+          "setFlags": {
+            "mirror_done": true,
+            "mirror_afraid": true
+          }
+        },
+        {
+          "id": "cover",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 3,
+            "health": 2
+          },
+          "setFlags": {
+            "mirror_done": true
+          }
+        },
+        {
+          "id": "ask",
+          "tone": "good",
+          "effects": {
+            "favor": 4,
+            "sanity": -3
+          },
+          "setFlags": {
+            "mirror_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_taster",
+      "loc": "chamber",
+      "npc": "wang",
+      "priority": 76,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "anyFlags": [
+          "broth_drunk",
+          "broth_tested"
+        ],
+        "notFlags": [
+          "taster_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "save",
+          "tone": "good",
+          "effects": {
+            "money": -14,
+            "sanity": 6,
+            "favor": -3
+          },
+          "morality": 2,
+          "setFlags": {
+            "taster_done": true,
+            "taster_saved": true
+          },
+          "key": true
+        },
+        {
+          "id": "gift",
+          "tone": "neutral",
+          "effects": {
+            "money": -8,
+            "sanity": -5
+          },
+          "setFlags": {
+            "taster_done": true
+          }
+        },
+        {
+          "id": "ignore",
+          "tone": "dark",
+          "effects": {
+            "sanity": -10
+          },
+          "morality": -2,
+          "setFlags": {
+            "taster_done": true,
+            "taster_dead": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "chamber_dowager_gift",
+      "loc": "chamber",
+      "npc": "dowager",
+      "priority": 78,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "dowager_ally"
+        ],
+        "notFlags": [
+          "gift_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take",
+          "tone": "neutral",
+          "effects": {
+            "favor": 10,
+            "sanity": 4
+          },
+          "setFlags": {
+            "gift_done": true,
+            "dowager_trust": true
+          }
+        },
+        {
+          "id": "refuse",
+          "tone": "dark",
+          "effects": {
+            "sanity": -4,
+            "favor": -6
+          },
+          "setFlags": {
+            "gift_done": true
+          }
+        },
+        {
+          "id": "ask",
+          "tone": "good",
+          "effects": {
+            "sanity": -6,
+            "favor": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "gift_done": true,
+            "dowager_trust": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "chamber_wang_knife",
+      "loc": "chamber",
+      "npc": "wang",
+      "priority": 74,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 14,
+        "anyFlags": [
+          "wang_ally",
+          "wang_betrayed"
+        ],
+        "notFlags": [
+          "knife_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "trust",
+          "tone": "good",
+          "effects": {
+            "favor": 6,
+            "sanity": 5
+          },
+          "setFlags": {
+            "knife_done": true,
+            "wang_loyal": true
+          }
+        },
+        {
+          "id": "disarm",
+          "tone": "neutral",
+          "effects": {
+            "favor": -5,
+            "health": 3,
+            "sanity": -2
+          },
+          "setFlags": {
+            "knife_done": true
+          }
+        },
+        {
+          "id": "banish",
+          "tone": "dark",
+          "effects": {
+            "favor": -8,
+            "sanity": -4
+          },
+          "morality": -1,
+          "setFlags": {
+            "knife_done": true
+          }
+        },
+        {
+          "id": "turn_back",
+          "tone": "dark",
+          "roll": {
+            "chance": 0.5,
+            "win": {
+              "effects": {
+                "favor": 13,
+                "sanity": 9
+              },
+              "morality": 1,
+              "setFlags": {
+                "knife_done": true,
+                "wang_loyal": true,
+                "wang_ally": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "health": -24,
+                "favor": -7,
+                "sanity": -11
+              },
+              "setFlags": {
+                "knife_done": true,
+                "wang_betrayed": true
+              }
+            }
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "chamber_last_night",
+      "loc": "chamber",
+      "priority": 95,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 17,
+        "notFlags": [
+          "last_night_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sleep",
+          "tone": "neutral",
+          "requires": {
+            "notFlags": [
+              "nightmare_haunted"
+            ]
+          },
+          "effects": {
+            "sanity": 14,
+            "health": 8
+          },
+          "setFlags": {
+            "last_night_done": true
+          }
+        },
+        {
+          "id": "walk_hall",
+          "tone": "neutral",
+          "effects": {
+            "favor": 10,
+            "sanity": 4,
+            "health": -4
+          },
+          "setFlags": {
+            "last_night_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "sit_with_mother",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "dowager_trust"
+            ]
+          },
+          "effects": {
+            "favor": 12,
+            "sanity": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_night_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "name_the_taster",
+          "tone": "good",
+          "requires": {
+            "flags": [
+              "taster_saved"
+            ]
+          },
+          "effects": {
+            "sanity": 6,
+            "favor": 8
+          },
+          "morality": 1,
+          "setFlags": {
+            "last_night_done": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "court_censor_coffin",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 74,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "censor_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "flog",
+          "tone": "dark",
+          "effects": {
+            "favor": 9,
+            "sanity": -6
+          },
+          "morality": -2,
+          "setFlags": {
+            "censor_done": true,
+            "censor_beaten": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "pardon",
+          "tone": "neutral",
+          "effects": {
+            "favor": 6,
+            "sanity": -3
+          },
+          "morality": 1,
+          "setFlags": {
+            "censor_done": true,
+            "censor_spared": true
+          }
+        },
+        {
+          "id": "hear",
+          "tone": "good",
+          "effects": {
+            "favor": 11,
+            "sanity": -8
+          },
+          "morality": 2,
+          "setFlags": {
+            "censor_done": true,
+            "censor_ally": true,
+            "met_shen": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_land_survey",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 68,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "land_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "survey_all",
+          "tone": "good",
+          "effects": {
+            "money": 34,
+            "favor": -12,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "land_done": true,
+            "land_surveyed": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "survey_small",
+          "tone": "neutral",
+          "effects": {
+            "money": 20,
+            "favor": -2
+          },
+          "setFlags": {
+            "land_done": true
+          }
+        },
+        {
+          "id": "drop_survey",
+          "tone": "neutral",
+          "effects": {
+            "favor": 6,
+            "sanity": 3
+          },
+          "setFlags": {
+            "land_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_northern_envoy",
+      "loc": "court",
+      "priority": 66,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "envoy_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "feast",
+          "tone": "neutral",
+          "effects": {
+            "money": -18,
+            "favor": 9,
+            "sanity": 2
+          },
+          "setFlags": {
+            "envoy_done": true,
+            "envoy_honored": true
+          }
+        },
+        {
+          "id": "insult",
+          "tone": "dark",
+          "effects": {
+            "favor": 7,
+            "sanity": 4
+          },
+          "morality": -1,
+          "setFlags": {
+            "envoy_done": true,
+            "envoy_insulted": true
+          }
+        },
+        {
+          "id": "market",
+          "tone": "good",
+          "effects": {
+            "money": 16,
+            "favor": 2,
+            "sanity": -2
+          },
+          "setFlags": {
+            "envoy_done": true,
+            "market_opened": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_red_brush",
+      "loc": "court",
+      "npc": "wang",
+      "priority": 64,
+      "once": true,
+      "cond": {
+        "dayMin": 9,
+        "notFlags": [
+          "seal_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "grant_seal",
+          "tone": "dark",
+          "effects": {
+            "money": 26,
+            "favor": 4,
+            "sanity": 5
+          },
+          "morality": -2,
+          "setFlags": {
+            "seal_done": true,
+            "wang_seal": true,
+            "wang_ally": true,
+            "met_wang": true
+          }
+        },
+        {
+          "id": "take_seal",
+          "tone": "good",
+          "effects": {
+            "favor": -7,
+            "sanity": -6
+          },
+          "morality": 1,
+          "setFlags": {
+            "seal_done": true,
+            "wang_betrayed": true,
+            "met_wang": true
+          }
+        },
+        {
+          "id": "split_seal",
+          "tone": "neutral",
+          "effects": {
+            "money": 8,
+            "favor": 3,
+            "sanity": -4
+          },
+          "setFlags": {
+            "seal_done": true,
+            "met_wang": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "court_guard_rotation",
+      "loc": "court",
+      "priority": 88,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 14,
+        "flags": [
+          "letters_intercepted"
+        ],
+        "notFlags": [
+          "rotation_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "replace_commander",
+          "tone": "dark",
+          "effects": {
+            "favor": -10,
+            "sanity": -5,
+            "money": 10
+          },
+          "morality": -1,
+          "setFlags": {
+            "rotation_done": true,
+            "met_dowager": true
+          },
+          "key": true
+        },
+        {
+          "id": "double_guard",
+          "tone": "neutral",
+          "effects": {
+            "money": -20,
+            "favor": 5,
+            "health": -4
+          },
+          "setFlags": {
+            "rotation_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "wait_and_see",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -6,
+            "favor": -3
+          },
+          "setFlags": {
+            "rotation_done": true
+          }
+        },
+        {
+          "id": "rush_gate",
+          "tone": "dark",
+          "roll": {
+            "chance": 0.55,
+            "win": {
+              "effects": {
+                "money": -8,
+                "favor": 11,
+                "health": -5,
+                "sanity": -4
+              },
+              "setFlags": {
+                "rotation_done": true,
+                "met_dowager": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -8,
+                "health": -15,
+                "favor": -7,
+                "sanity": -9
+              },
+              "setFlags": {
+                "rotation_done": true,
+                "met_dowager": true
+              }
+            }
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "court_blood_letter",
+      "loc": "court",
+      "npc": "shen",
+      "priority": 80,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "censor_beaten"
+        ],
+        "notFlags": [
+          "blood_letter_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hunt_them",
+          "tone": "dark",
+          "effects": {
+            "money": 12,
+            "favor": -8,
+            "sanity": -8
+          },
+          "morality": -2,
+          "setFlags": {
+            "blood_letter_done": true,
+            "censor_silenced": true
+          },
+          "key": true
+        },
+        {
+          "id": "reverse_it",
+          "tone": "good",
+          "effects": {
+            "money": -20,
+            "favor": 12,
+            "sanity": -4
+          },
+          "morality": 2,
+          "setFlags": {
+            "blood_letter_done": true,
+            "censor_spared": true
+          },
+          "key": true
+        },
+        {
+          "id": "let_it_stand",
+          "tone": "neutral",
+          "effects": {
+            "favor": -2,
+            "sanity": -5
+          },
+          "setFlags": {
+            "blood_letter_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_lecture",
+      "loc": "study",
+      "npc": "shen",
+      "priority": 50,
+      "once": true,
+      "cond": {
+        "dayMin": 2,
+        "notFlags": [
+          "lecture_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "listen",
+          "tone": "good",
+          "effects": {
+            "favor": 5,
+            "sanity": 5
+          },
+          "morality": 1,
+          "setFlags": {
+            "lecture_done": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "ask_father",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": -9
+          },
+          "setFlags": {
+            "lecture_done": true,
+            "asked_tutor": true,
+            "met_shen": true
+          }
+        },
+        {
+          "id": "cancel",
+          "tone": "neutral",
+          "effects": {
+            "favor": -5,
+            "sanity": 4
+          },
+          "setFlags": {
+            "lecture_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_river_works",
+      "loc": "study",
+      "priority": 62,
+      "once": true,
+      "cond": {
+        "dayMin": 6,
+        "notFlags": [
+          "river_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "fund",
+          "tone": "good",
+          "effects": {
+            "money": -30,
+            "favor": 14,
+            "sanity": 2
+          },
+          "morality": 2,
+          "setFlags": {
+            "river_done": true,
+            "dikes_repaired": true
+          }
+        },
+        {
+          "id": "partial",
+          "tone": "neutral",
+          "effects": {
+            "money": -12,
+            "favor": 4
+          },
+          "setFlags": {
+            "river_done": true
+          }
+        },
+        {
+          "id": "refuse_works",
+          "tone": "dark",
+          "effects": {
+            "sanity": 2,
+            "favor": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "river_done": true,
+            "dikes_ignored": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_land_ledger",
+      "loc": "study",
+      "npc": "shen",
+      "priority": 72,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 9,
+        "flags": [
+          "land_surveyed"
+        ],
+        "notFlags": [
+          "ledger_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "audit",
+          "tone": "good",
+          "effects": {
+            "money": 26,
+            "favor": -9,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "ledger_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "burn_ledger",
+          "tone": "dark",
+          "effects": {
+            "favor": 9,
+            "money": 8,
+            "sanity": -2
+          },
+          "morality": -2,
+          "setFlags": {
+            "ledger_done": true
+          }
+        },
+        {
+          "id": "keep_ledger",
+          "tone": "neutral",
+          "effects": {
+            "favor": 4,
+            "sanity": -4
+          },
+          "setFlags": {
+            "ledger_done": true,
+            "ledger_held": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_intercepted_letter",
+      "loc": "study",
+      "npc": "dowager",
+      "priority": 76,
+      "once": true,
+      "cond": {
+        "dayMin": 11,
+        "notFlags": [
+          "letters_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "intercept",
+          "tone": "dark",
+          "effects": {
+            "favor": -6,
+            "sanity": -7
+          },
+          "morality": -1,
+          "setFlags": {
+            "letters_done": true,
+            "letters_intercepted": true,
+            "dowager_betrayed": true,
+            "met_dowager": true
+          }
+        },
+        {
+          "id": "pretend",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3
+          },
+          "setFlags": {
+            "letters_done": true
+          }
+        },
+        {
+          "id": "return_it",
+          "tone": "good",
+          "effects": {
+            "favor": 9,
+            "sanity": -5
+          },
+          "morality": 1,
+          "setFlags": {
+            "letters_done": true,
+            "warned_dowager": true,
+            "dowager_ally": true,
+            "met_dowager": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_private_mint",
+      "loc": "vault",
+      "priority": 58,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "mint_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "crack_down",
+          "tone": "good",
+          "effects": {
+            "money": 22,
+            "favor": -6,
+            "sanity": -5
+          },
+          "morality": 2,
+          "setFlags": {
+            "mint_done": true
+          }
+        },
+        {
+          "id": "tax_it",
+          "tone": "dark",
+          "effects": {
+            "money": 38,
+            "favor": -12,
+            "sanity": -2
+          },
+          "morality": -3,
+          "setFlags": {
+            "mint_done": true,
+            "mint_tolerated": true
+          }
+        },
+        {
+          "id": "ignore_mint",
+          "tone": "neutral",
+          "effects": {
+            "sanity": 3
+          },
+          "setFlags": {
+            "mint_done": true,
+            "mint_tolerated": true
+          }
+        },
+        {
+          "id": "stake_it_out",
+          "tone": "neutral",
+          "roll": {
+            "chance": 0.45,
+            "win": {
+              "effects": {
+                "money": 34,
+                "favor": 7,
+                "sanity": -5
+              },
+              "morality": 1,
+              "setFlags": {
+                "mint_done": true,
+                "mint_ring_found": true
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -12,
+                "favor": -9,
+                "sanity": -7
+              },
+              "setFlags": {
+                "mint_done": true,
+                "mint_tolerated": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_armory",
+      "loc": "vault",
+      "npc": "huo",
+      "priority": 60,
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "armory_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "replenish",
+          "tone": "good",
+          "effects": {
+            "money": -28,
+            "favor": 10,
+            "health": 4
+          },
+          "morality": 1,
+          "setFlags": {
+            "armory_done": true,
+            "huo_ally": true,
+            "met_huo": true
+          }
+        },
+        {
+          "id": "report_it",
+          "tone": "neutral",
+          "effects": {
+            "money": 18,
+            "favor": -6,
+            "sanity": -5
+          },
+          "setFlags": {
+            "armory_done": true,
+            "huo_betrayed": true,
+            "met_huo": true
+          }
+        },
+        {
+          "id": "look_away",
+          "tone": "dark",
+          "effects": {
+            "money": 26,
+            "favor": -3,
+            "sanity": -4
+          },
+          "morality": -2,
+          "setFlags": {
+            "armory_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_border_market",
+      "loc": "vault",
+      "priority": 70,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 8,
+        "flags": [
+          "market_opened"
+        ],
+        "notFlags": [
+          "market_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "tax_market",
+          "tone": "neutral",
+          "effects": {
+            "money": 34,
+            "favor": 4
+          },
+          "setFlags": {
+            "market_done": true,
+            "market_taxed": true
+          },
+          "key": true
+        },
+        {
+          "id": "free_trade",
+          "tone": "good",
+          "effects": {
+            "money": 16,
+            "favor": 11,
+            "sanity": 2
+          },
+          "morality": 1,
+          "setFlags": {
+            "market_done": true,
+            "market_free": true
+          }
+        },
+        {
+          "id": "close_market",
+          "tone": "dark",
+          "effects": {
+            "money": 6,
+            "favor": -7,
+            "sanity": 2
+          },
+          "setFlags": {
+            "market_done": true,
+            "market_closed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_river_report",
+      "loc": "vault",
+      "priority": 66,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 11,
+        "flags": [
+          "dikes_repaired"
+        ],
+        "notFlags": [
+          "river_report_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "accept_umbrella",
+          "tone": "neutral",
+          "effects": {
+            "favor": 9,
+            "sanity": 4,
+            "money": -6
+          },
+          "setFlags": {
+            "river_report_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "reward_engineers",
+          "tone": "good",
+          "effects": {
+            "money": -18,
+            "favor": 14
+          },
+          "morality": 2,
+          "setFlags": {
+            "river_report_done": true
+          }
+        },
+        {
+          "id": "downplay",
+          "tone": "dark",
+          "effects": {
+            "money": 8,
+            "favor": -3,
+            "sanity": 2
+          },
+          "morality": -1,
+          "setFlags": {
+            "river_report_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "vault_flood_crisis",
+      "loc": "vault",
+      "priority": 78,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "dikes_ignored"
+        ],
+        "notFlags": [
+          "flood_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "open_granary",
+          "tone": "good",
+          "effects": {
+            "money": -40,
+            "favor": 16,
+            "sanity": -6
+          },
+          "morality": 3,
+          "setFlags": {
+            "flood_done": true,
+            "granary_opened": true
+          },
+          "key": true
+        },
+        {
+          "id": "work_for_food",
+          "tone": "neutral",
+          "effects": {
+            "money": -22,
+            "favor": 6,
+            "health": -6,
+            "sanity": -3
+          },
+          "morality": 1,
+          "setFlags": {
+            "flood_done": true
+          }
+        },
+        {
+          "id": "seal_gates",
+          "tone": "dark",
+          "effects": {
+            "money": 12,
+            "favor": -22,
+            "sanity": -9
+          },
+          "morality": -3,
+          "setFlags": {
+            "flood_done": true
+          },
+          "key": true
+        }
+      ]
+    },
+    {
+      "id": "vault_ledger_buyer",
+      "loc": "vault",
+      "priority": 68,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 12,
+        "flags": [
+          "ledger_held"
+        ],
+        "notFlags": [
+          "ledger_buyer_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "sell_ledger",
+          "tone": "dark",
+          "effects": {
+            "money": 48,
+            "favor": -12,
+            "sanity": 2
+          },
+          "morality": -3,
+          "setFlags": {
+            "ledger_buyer_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "expose_them",
+          "tone": "good",
+          "effects": {
+            "money": -10,
+            "favor": 12,
+            "sanity": -6
+          },
+          "morality": 2,
+          "setFlags": {
+            "ledger_buyer_done": true
+          }
+        },
+        {
+          "id": "keep_quiet",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -3,
+            "favor": 2
+          },
+          "setFlags": {
+            "ledger_buyer_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_veritable_record",
+      "loc": "study",
+      "priority": 56,
+      "once": true,
+      "cond": {
+        "dayMin": 4,
+        "notFlags": [
+          "record_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "write_truth",
+          "tone": "good",
+          "effects": {
+            "favor": -5,
+            "sanity": -8
+          },
+          "morality": 3,
+          "setFlags": {
+            "record_done": true,
+            "truth_written": true
+          }
+        },
+        {
+          "id": "soften",
+          "tone": "dark",
+          "effects": {
+            "favor": 7,
+            "sanity": 2
+          },
+          "morality": -2,
+          "setFlags": {
+            "record_done": true,
+            "truth_edited": true
+          }
+        },
+        {
+          "id": "leave_blank",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -4
+          },
+          "setFlags": {
+            "record_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_physician",
+      "loc": "study",
+      "priority": 54,
+      "once": true,
+      "cond": {
+        "dayMin": 5,
+        "notFlags": [
+          "physician_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "take_calming",
+          "tone": "neutral",
+          "effects": {
+            "money": -6,
+            "health": 6,
+            "sanity": 9
+          },
+          "setFlags": {
+            "physician_done": true
+          }
+        },
+        {
+          "id": "refuse_drugs",
+          "tone": "dark",
+          "effects": {
+            "money": 8,
+            "sanity": -5,
+            "favor": 4
+          },
+          "setFlags": {
+            "physician_done": true
+          }
+        },
+        {
+          "id": "ask_father_drug",
+          "tone": "neutral",
+          "requires": {
+            "anyFlags": [
+              "knows_truth",
+              "asked_tutor"
+            ]
+          },
+          "effects": {
+            "health": -3,
+            "sanity": -10
+          },
+          "setFlags": {
+            "physician_done": true,
+            "physician_trusted": true,
+            "knows_poison_truth": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_banned_book",
+      "loc": "study",
+      "priority": 58,
+      "once": true,
+      "cond": {
+        "dayMin": 7,
+        "notFlags": [
+          "banned_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "read_it",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": -6
+          },
+          "setFlags": {
+            "banned_done": true,
+            "read_banned": true
+          }
+        },
+        {
+          "id": "trace_it",
+          "tone": "dark",
+          "effects": {
+            "money": 8,
+            "favor": -4,
+            "sanity": -3
+          },
+          "morality": -1,
+          "setFlags": {
+            "banned_done": true
+          }
+        },
+        {
+          "id": "burn_it",
+          "tone": "neutral",
+          "effects": {
+            "favor": 2,
+            "sanity": 3
+          },
+          "setFlags": {
+            "banned_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_omen",
+      "loc": "study",
+      "priority": 60,
+      "once": true,
+      "cond": {
+        "dayMin": 8,
+        "notFlags": [
+          "omen_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "edict_of_blame",
+          "tone": "good",
+          "effects": {
+            "money": -8,
+            "favor": 11,
+            "sanity": -5
+          },
+          "morality": 2,
+          "setFlags": {
+            "omen_done": true,
+            "edict_of_blame": true
+          },
+          "key": true
+        },
+        {
+          "id": "rebuke_astrologer",
+          "tone": "dark",
+          "effects": {
+            "favor": -7,
+            "sanity": 3
+          },
+          "setFlags": {
+            "omen_done": true
+          }
+        },
+        {
+          "id": "rewrite_stars",
+          "tone": "dark",
+          "effects": {
+            "favor": 4,
+            "sanity": -7
+          },
+          "morality": -2,
+          "setFlags": {
+            "omen_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_tutor_resign",
+      "loc": "study",
+      "priority": 62,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 10,
+        "flags": [
+          "lecture_done"
+        ],
+        "notFlags": [
+          "tutor_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "keep_him",
+          "tone": "neutral",
+          "effects": {
+            "money": -12,
+            "favor": 8,
+            "sanity": 2
+          },
+          "setFlags": {
+            "tutor_done": true
+          }
+        },
+        {
+          "id": "let_him_go",
+          "tone": "good",
+          "effects": {
+            "money": -18,
+            "favor": 6,
+            "sanity": -2
+          },
+          "morality": 2,
+          "setFlags": {
+            "tutor_done": true,
+            "tutor_gift": true
+          }
+        },
+        {
+          "id": "take_book_only",
+          "tone": "neutral",
+          "effects": {
+            "favor": -3,
+            "sanity": 4
+          },
+          "setFlags": {
+            "tutor_done": true,
+            "tutor_gift": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_banned_author",
+      "loc": "study",
+      "priority": 74,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 11,
+        "flags": [
+          "read_banned"
+        ],
+        "notFlags": [
+          "author_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "release_and_meet",
+          "tone": "good",
+          "effects": {
+            "money": -14,
+            "favor": 10,
+            "sanity": -4
+          },
+          "morality": 2,
+          "setFlags": {
+            "author_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "exile_him",
+          "tone": "dark",
+          "effects": {
+            "money": 6,
+            "favor": -5,
+            "sanity": -2
+          },
+          "morality": -1,
+          "setFlags": {
+            "author_done": true
+          }
+        },
+        {
+          "id": "leave_in_jail",
+          "tone": "neutral",
+          "effects": {
+            "sanity": -5
+          },
+          "setFlags": {
+            "author_done": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "study_petition_stone",
+      "loc": "study",
+      "priority": 70,
+      "once": true,
+      "chain": true,
+      "cond": {
+        "dayMin": 14,
+        "flags": [
+          "edict_of_blame"
+        ],
+        "notFlags": [
+          "stone_done"
+        ]
+      },
+      "choices": [
+        {
+          "id": "let_it_stand",
+          "tone": "good",
+          "effects": {
+            "favor": 9,
+            "sanity": 3
+          },
+          "morality": 1,
+          "setFlags": {
+            "stone_done": true
+          },
+          "key": true
+        },
+        {
+          "id": "destroy_it",
+          "tone": "dark",
+          "effects": {
+            "money": 10,
+            "favor": -8,
+            "sanity": -3
+          },
+          "morality": -2,
+          "setFlags": {
+            "stone_done": true
+          }
+        },
+        {
+          "id": "copy_it",
+          "tone": "neutral",
+          "effects": {
+            "money": -4,
+            "favor": 4,
+            "sanity": -2
+          },
+          "setFlags": {
+            "stone_done": true
+          }
+        }
+      ]
+    }
+  ]
+}

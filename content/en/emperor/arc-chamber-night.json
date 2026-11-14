@@ -1,0 +1,158 @@
+{
+  "chamber_nightmare": {
+    "title": "The Dream",
+    "desc": "In the dream your father is lying on his bed calling your name. You walk over. He reaches for you and his hand is cold. You try to speak and nothing comes out. You wake with a wet pillow and the sky still black.",
+    "choices": {
+      "sit_up": {
+        "text": "Sit up until dawn. Do nothing",
+        "outcome": "You sat there until the sky went grey. At audience the master of rites glanced at you once and said nothing."
+      },
+      "call_lamp": {
+        "text": "Call someone to light the lamp",
+        "outcome": "A young eunuch came in with a lamp and knelt by the bed without lifting his head. You told him to stay. He knelt there until the daylight came in."
+      },
+      "write_down": {
+        "text": "Write the dream down",
+        "outcome": "You wrote one line and found you did not know how to end it. The page stayed on the desk afterwards. Nobody dared move it."
+      }
+    }
+  },
+  "chamber_lamp_oil": {
+    "title": "Trimming the Wick",
+    "desc": "A young eunuch is crouched under the lamp trimming the wick, and he has fallen asleep doing it, the snips still in his hand. There is only this one lamp left burning in the hall.",
+    "choices": {
+      "let_sleep": {
+        "text": "Don't wake him. Trim it yourself",
+        "outcome": "You trimmed the wick yourself and the flame came up brighter. He woke at dawn, saw you reading memorials under the lamp, and kowtowed until his forehead was red."
+      },
+      "wake_ask": {
+        "text": "Wake him. Ask about his family",
+        "outcome": "It took him a while to answer: a younger sister in the laundry. You said you would release her next year. He knocked his head on the floor three times, hard."
+      },
+      "replace": {
+        "text": "Replace him in the morning",
+        "outcome": "An older one came the next day. Steady hands, silent with the snips. You never thought about the first one again."
+      }
+    }
+  },
+  "chamber_old_robe": {
+    "title": "The Old Robe",
+    "desc": "At the bottom of a camphor chest there is an old robe. Your father's. There is a patch at the cuff, stitched coarsely — not the wardrobe bureau's work.",
+    "choices": {
+      "wear": {
+        "text": "Put it on",
+        "outcome": "It was a little too big and the shoulders sagged. You stood in front of the bronze mirror for a while, then took it off, folded it, and put it back at the very bottom."
+      },
+      "burn": {
+        "text": "Burn it",
+        "outcome": "You burned it in the brazier and it went slowly. The next day the wardrobe asked whether to make a new one. You said no need."
+      },
+      "close_lid": {
+        "text": "Close the chest",
+        "outcome": "You closed the lid and turned the brass lock. You have no idea where the key went. You did not look for it."
+      }
+    }
+  },
+  "chamber_mirror": {
+    "title": "The Bronze Mirror",
+    "desc": "The bronze mirror is polished bright. When you look up, the face in it is your father's at forty — a face you have only seen in paintings.",
+    "choices": {
+      "stare": {
+        "text": "Keep looking. Don't move",
+        "outcome": "You looked for a long time. The candle guttered and the face in the mirror guttered with it. You stepped back, and only then did he step back."
+      },
+      "cover": {
+        "text": "Turn the mirror face down",
+        "outcome": "You set it face down on the desk and the sound was muffled. They replaced it afterwards. The new one was never polished again."
+      },
+      "ask": {
+        "text": "Send someone to ask the empress dowager",
+        "outcome": "She sent back one sentence: when your father was forty, he could not sleep either. Nothing more."
+      }
+    }
+  },
+  "chamber_taster": {
+    "title": "The Taster",
+    "desc": "The boy who tasted your soup that day has fallen ill. His face is grey and he no longer knows anyone. The physician calls it a chill. He is fourteen.",
+    "choices": {
+      "save": {
+        "text": "Send the imperial physician. Spare nothing",
+        "outcome": "Three days of medicine and he woke. The first thing he asked was whether anyone had drunk the soup. You did not answer."
+      },
+      "gift": {
+        "text": "Send money to his family. Keep it quiet",
+        "outcome": "The money reached his family. He died three days later. The palace register says DIED OF ILLNESS, and paid two taels for the burial."
+      },
+      "ignore": {
+        "text": "Do nothing",
+        "outcome": "You said nothing. The next morning, when the servants carried the soup out, they were very gentle about it, as if afraid of waking someone."
+      }
+    }
+  },
+  "chamber_dowager_gift": {
+    "title": "A Ring of Keys",
+    "desc": "The empress dowager came late, alone, without attendants. She set something down and left: a ring of brass keys, worn shiny. You recognise them. The old storehouse.",
+    "choices": {
+      "take": {
+        "text": "Take them",
+        "outcome": "The ring was heavy. You counted: seventeen keys, two missing. You did not ask which two."
+      },
+      "refuse": {
+        "text": "Push them back",
+        "outcome": "You pushed the keys back across the table. She picked them up and said nothing. At the door she paused, then went on."
+      },
+      "ask": {
+        "text": "Follow her out and ask",
+        "outcome": "You caught her in the corridor. She said: your father was missing those two as well. Then she pressed the keys into your hand and left."
+      }
+    }
+  },
+  "chamber_wang_knife": {
+    "title": "The Man With the Knife",
+    "desc": "Wang Bao is kneeling outside the hall with a knife on him. For your protection, he says. The palace has not been calm these past nights. He has been kneeling long enough for the scabbard to sink into the snow.",
+    "choices": {
+      "trust": {
+        "text": "Let him in to stand the night",
+        "outcome": "He stood outside the door and did not move once. At dawn you pushed the door open and found him asleep on his knees, his hand still on the knife."
+      },
+      "disarm": {
+        "text": "Take the knife. Let him stay",
+        "outcome": "He unbuckled it and held it out to you in both hands, head down. He stood outside your door all night with empty hands."
+      },
+      "banish": {
+        "text": "Expel him from the inner court",
+        "outcome": "He did not cry out when they dragged him away. The next day everyone in the inner court kept their heads lower than usual when they saw you."
+      },
+      "turn_back": {
+        "text": "Turn around. Give him your back.",
+        "win": "You turn and listen to the breathing behind you. A long time later the knife falls. He kneels and weeps, saying the late emperor asked him to watch over you. You tell him to rise. From then on he walks half a step behind your left shoulder.",
+        "lose": "You turn and hear cloth shift. The knife goes in under the shoulder blade and stops against bone. He runs. The blood runs along the brick in a line. The physician says half an inch deeper and there would have been no morning."
+      }
+    }
+  },
+  "chamber_last_night": {
+    "title": "The Night Before",
+    "desc": "The ceremony is tomorrow. The water clock has run to the third watch and you are not remotely sleepy. The edict you must read out is spread on the desk. The first line is not finished.",
+    "choices": {
+      "sleep": {
+        "text": "Sleep",
+        "outcome": "You lay down and, to your surprise, slept. You woke to full daylight with the edict still open on the desk. You finished it. You changed not one character.",
+        "req": "You cannot — every time you close your eyes you are in your father's room"
+      },
+      "walk_hall": {
+        "text": "Walk to the throne hall. Sit there alone",
+        "outcome": "The hall was empty and your footsteps went all the way up into the beams. You stood in front of the throne for a long time without sitting, then went back and finished the edict."
+      },
+      "sit_with_mother": {
+        "text": "Go and sit with the empress dowager",
+        "outcome": "She did not ask why you had come. She had another quilt brought. You sat and neither of you spoke. Just before dawn she said: go on, then.",
+        "req": "There is not that much between you and her"
+      },
+      "name_the_taster": {
+        "text": "Write the taster's name into the edict",
+        "outcome": "You added a line to the general amnesty and wrote one name into it. Nobody knew who he was. When the herald read that line, the hall went quiet for a moment.",
+        "req": "The boy did not survive"
+      }
+    }
+  }
+}

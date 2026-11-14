@@ -1,0 +1,53 @@
+{
+  "chamber_bitter_broth": {
+    "title": "Broth of Maternal Grace",
+    "desc": "Third watch. The Dowager's head eunuch brings a porcelain bowl of bird's nest soup—'boiled under Her Majesty's own eye,' he says. Steam rises, carrying the faint, sharp scent of bitter almonds. He keeps his head bowed, yet his eyes never leave your throat.",
+    "choices": {
+      "drink": {
+        "text": "Drain the bowl while he watches",
+        "outcome": "Too sweet. Sickeningly sweet. The eunuch bows out satisfied. An hour later, cramps twist your gut—yet behind the silk screen at dawn, the Dowager praises your filial piety."
+      },
+      "reward_eunuch": {
+        "text": "Claim no appetite and bestow the bowl upon him",
+        "outcome": "Color drains from his face. Hands shaking, he drinks it down. Before an incense stick burns halfway, a dull thud echoes from the side hall. No food ever comes from her palace again."
+      },
+      "silver_needle": {
+        "text": "Keep it, and test with a silver needle once alone",
+        "outcome": "You dismiss the attendants under the pretext of letting it cool. The silver needle emerges with a faint bluish tarnish. You pour the broth into the spittoon, cold sweat soaking your inner robe."
+      }
+    }
+  },
+  "study_blood_edict": {
+    "title": "The Blood Edict",
+    "desc": "Hidden beneath the dragon desk lies a strip of white silk, inked in blood—a secret decree summoning loyalists to retake the capital guard. One seal, and the coup begins tonight. Then you glance at the corridor: your trusted captain of the guard wears a new jade thumb ring from the Dowager.",
+    "choices": {
+      "send_edict": {
+        "text": "Risk everything and dispatch the decree tonight",
+        "outcome": "The silk leaves the gate, but never reaches your allies. By dawn, the guard is replaced. The Dowager stands before you holding the bloodied silk, ordering half the windows of the West Pavilion boarded shut."
+      },
+      "bribe_guard": {
+        "text": "Pay Wang Bao 400,000 taels to silence the captain and use a secret passage",
+        "req": "Requires Treasury ≥ 40",
+        "outcome": "Wang Bao weighs the silver notes, detains the captain, and slips your decree out through the slop gate. The court trembles, but you survive the night."
+      },
+      "burn_edict": {
+        "text": "Hold it to the candle flame and burn it yourself",
+        "outcome": "Fire curls the blood-red characters into black ash. You stare at the embers until dawn. Your life is spared, yet you know this throne has officially become your cell."
+      }
+    }
+  },
+  "chamber_water_pavilion": {
+    "title": "The Water Pavilion",
+    "desc": "Word of the plot leaked after all. You are moved to an isolated pavilion surrounded by autumn water. Three planks of the wooden bridge are removed, laid down only when meals arrive. Across the water, the Dowager watches beneath a black parasol.",
+    "choices": {
+      "endure": {
+        "text": "Stand by the window and meet her gaze in silence",
+        "outcome": "For a quarter hour, neither speaks across the ten yards of water. She turns toward her palanquin, leaving only words carried on the wind: 'Rest well. Leave the realm to me.'"
+      },
+      "smash_bridge": {
+        "text": "Seize a bronze brazier and shatter the remaining planks",
+        "outcome": "Splintered wood sinks into the murky water. Guards across the bank grip their hilts, but the Dowager raises a hand to halt them. For the first time, a flicker of unfamiliarity crosses her eyes."
+      }
+    }
+  }
+}

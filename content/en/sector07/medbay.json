@@ -1,0 +1,108 @@
+{
+  "medbay_routine": {
+    "title": "Quarantine Medbay",
+    "desc": "The disinfectant stings your eyes. The duty doctor doesn't look up. \"Anti-infection serum is fifteen. Neural sedative is fifteen. Pay first, then the needle.\"",
+    "choices": {
+      "serum": {
+        "text": "Take the anti-infection serum",
+        "req": "Needs 15 credits",
+        "outcome": "Cold fluid goes into the vein and your strength comes back within minutes."
+      },
+      "sedative": {
+        "text": "Take the neural sedative",
+        "req": "Needs 15 credits",
+        "outcome": "The buzzing in your ears fades. Your chest feels tight, but the world finally goes quiet."
+      },
+      "leave": {
+        "text": "Sit on the corridor bench for ten minutes",
+        "outcome": "You sat at the end of the corridor for ten minutes, thinking nothing, looking at none of the beds. When you stood up, your hands were steady."
+      }
+    }
+  },
+  "medbay_triage": {
+    "title": "Only One Can Be Saved",
+    "desc": "After a small crush at the gate, the medbay is down to a single unit of plasma. Two patients: a seven-year-old girl, and the district councillor's nephew — who is awake and already on the phone. The doctor looks at you. \"Your call.\"",
+    "choices": {
+      "save_child": {
+        "text": "Give it to the girl",
+        "req": "Needs 20 credits",
+        "outcome": "You pay the shortfall out of your own pocket and the girl lives. The councillor's office calls the next day and hangs up without a word."
+      },
+      "save_officer": {
+        "text": "Give it to the councillor's nephew",
+        "outcome": "The office sends twenty credits as a \"token of thanks\" and a promise to \"remember you\". The girl is wheeled out at three in the morning. You don't follow."
+      },
+      "by_rule": {
+        "text": "Follow protocol — first come, first served",
+        "outcome": "Sorted by registration time, the girl was first. You hand the decision to the system, and the system pays you five credits of overtime."
+      }
+    }
+  },
+  "medbay_theft": {
+    "title": "The Missing Box",
+    "desc": "A whole box of painkillers is gone. The camera caught the night orderly, a single father. He stands in front of you with shaking hands. \"My daughter has a fever... I'm not selling them. I'm really not selling them.\"",
+    "choices": {
+      "report": {
+        "text": "Report it as theft",
+        "outcome": "They take him away and you collect ten credits for the report. The box sits in an evidence bag. You never dare look at it."
+      },
+      "cover": {
+        "text": "Cover for him and pay the difference",
+        "req": "Needs 10 credits",
+        "outcome": "You make up the shortfall yourself and tell the doctor the batch was expired and destroyed. He doesn't thank you — he just starts leaving the best vial aside for you."
+      },
+      "steal": {
+        "text": "Pocket a share for yourself",
+        "outcome": "You take half of what's left. The next day, the painkiller ration is cut by thirty percent."
+      }
+    }
+  },
+  "medbay_doctor": {
+    "title": "The Doctor Is Sick",
+    "desc": "The first grey patch has appeared on the duty doctor's hand. He sees it too, pulls his sleeve down, and keeps writing notes. \"Don't tell anyone,\" he says. \"I'm the only one here who can stitch a wound.\"",
+    "choices": {
+      "give_meds": {
+        "text": "Leave the serum for him",
+        "req": "Needs 25 credits",
+        "outcome": "You pay for the serum and one extra dose. The patch recedes by the third day. Later, he saves your life once."
+      },
+      "walk_away": {
+        "text": "Pretend you didn't see it",
+        "outcome": "You do nothing. Three days later a new duty roster goes up at the medbay door. His name isn't on it."
+      },
+      "report_doctor": {
+        "text": "Report it and request quarantine",
+        "outcome": "The medbay closes for six hours the day they take him. You receive fifteen credits for \"proactive reporting\" and a note in your file saying \"diligent\"."
+      }
+    }
+  },
+  "medbay_painkiller": {
+    "title": "Off-Book Painkiller",
+    "desc": "The doctor pulls an unlabelled syringe from a drawer. \"This never goes on the books. Five credits. Four hours where you can't feel anything — including your conscience.\"",
+    "choices": {
+      "take": {
+        "text": "Take the shot",
+        "outcome": "For four hours you breathe, talk and stamp like a normal person. When it wears off, everything comes back at once."
+      },
+      "refuse": {
+        "text": "No thanks",
+        "outcome": "You push the syringe back. On the way out, your hands feel reasonably steady."
+      }
+    }
+  },
+  "medbay_last_patient": {
+    "title": "The Last Patient",
+    "desc": "The night before evacuation, an old man is helped in. His permit is genuine, but his name is on last night's lockdown list. The doctor left with the first evacuation group. It's just you and a locked cabinet of medicine.",
+    "choices": {
+      "treat": {
+        "text": "Break the cabinet open and treat him",
+        "req": "Needs 30 credits",
+        "outcome": "You force the lock and use up most of the stock. His fever breaks before dawn. You don't log any of it."
+      },
+      "refuse": {
+        "text": "Turn off the lights and lock the door",
+        "outcome": "You kill the lights and listen to him cough all night from the other side of the door. By morning, he has stopped."
+      }
+    }
+  }
+}

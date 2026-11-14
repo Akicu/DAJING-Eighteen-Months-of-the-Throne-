@@ -1,0 +1,242 @@
+{
+  "pack": "04-market",
+  "loc": "market",
+  "events": [
+    {
+      "id": "market_forger",
+      "loc": "market",
+      "weight": 8,
+      "once": true,
+      "choices": [
+        {
+          "id": "buy_papers",
+          "effects": {
+            "money": -60,
+            "sanity": 10
+          },
+          "requires": {
+            "statMin": {
+              "money": 60
+            }
+          },
+          "setFlags": {
+            "cut_rate_ticket": true
+          },
+          "tone": "neutral",
+          "key": true
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": 2
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_organs",
+      "loc": "market",
+      "weight": 5,
+      "once": true,
+      "cond": {
+        "dayMin": 5
+      },
+      "choices": [
+        {
+          "id": "sell",
+          "effects": {
+            "money": 55,
+            "health": -45
+          },
+          "morality": -2,
+          "tone": "dark",
+          "key": true
+        },
+        {
+          "id": "walk",
+          "effects": {
+            "sanity": 5
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_pawn_gun",
+      "loc": "market",
+      "weight": 7,
+      "once": true,
+      "choices": [
+        {
+          "id": "pawn",
+          "effects": {
+            "money": 35,
+            "sanity": -12
+          },
+          "setFlags": {
+            "unarmed": true
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "keep",
+          "effects": {
+            "sanity": 4
+          },
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_thief",
+      "loc": "market",
+      "weight": 6,
+      "once": true,
+      "choices": [
+        {
+          "id": "catch",
+          "effects": {
+            "money": 10,
+            "sanity": -6
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "buy_food",
+          "effects": {
+            "money": -15,
+            "sanity": 15
+          },
+          "morality": 1,
+          "requires": {
+            "statMin": {
+              "money": 15
+            }
+          },
+          "tone": "good"
+        },
+        {
+          "id": "let_go",
+          "effects": {
+            "sanity": 6
+          },
+          "morality": 1,
+          "tone": "good"
+        }
+      ]
+    },
+    {
+      "id": "market_fake_medicine",
+      "loc": "market",
+      "weight": 6,
+      "once": true,
+      "cond": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "id": "buy",
+          "effects": {
+            "money": -15,
+            "health": -10
+          },
+          "tone": "dark"
+        },
+        {
+          "id": "refuse",
+          "effects": {
+            "sanity": -3
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_dice",
+      "loc": "market",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "roll",
+          "requires": {
+            "statMin": {
+              "money": 20
+            }
+          },
+          "roll": {
+            "chance": 0.46,
+            "win": {
+              "effects": {
+                "money": 38
+              }
+            },
+            "lose": {
+              "effects": {
+                "money": -20,
+                "sanity": -6
+              }
+            }
+          },
+          "tone": "neutral"
+        },
+        {
+          "id": "pass",
+          "effects": {
+            "sanity": 3
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_rumor",
+      "loc": "market",
+      "weight": 4,
+      "repeatable": true,
+      "cooldown": 2,
+      "choices": [
+        {
+          "id": "listen",
+          "effects": {
+            "sanity": 8,
+            "money": -5
+          },
+          "setFlags": {
+            "heard_rumor": true
+          },
+          "tone": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market_ration",
+      "loc": "market",
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 1,
+      "choices": [
+        {
+          "id": "sell",
+          "effects": {
+            "money": 18,
+            "sanity": -8
+          },
+          "morality": -1,
+          "tone": "dark"
+        },
+        {
+          "id": "share",
+          "effects": {
+            "money": -10,
+            "sanity": 12
+          },
+          "morality": 1,
+          "tone": "good"
+        }
+      ]
+    }
+  ]
+}

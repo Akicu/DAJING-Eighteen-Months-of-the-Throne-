@@ -1,0 +1,270 @@
+{
+  "version": 2,
+  "config": {
+    "maxDays": 18,
+    "actionsPerDay": 3,
+    "ticketCost": 220,
+    "ticketFavor": 55,
+    "dailyUpkeep": 8,
+    "startStats": {
+      "health": 100,
+      "sanity": 80,
+      "money": 35,
+      "favor": 8
+    },
+    "statCeiling": 100,
+    "dailyWage": 12,
+    "upkeepRampEvery": 6,
+    "upkeepRampAdd": 2,
+    "dayLabel": "numeric"
+  },
+  "locations": [
+    {
+      "id": "gate",
+      "accent": "amber",
+      "icon": "gate",
+      "apCost": 1,
+      "art": "art/loc-gate.jpg"
+    },
+    {
+      "id": "pub",
+      "accent": "violet",
+      "icon": "pub",
+      "apCost": 1,
+      "art": "art/loc-pub.jpg"
+    },
+    {
+      "id": "medbay",
+      "accent": "sky",
+      "icon": "medbay",
+      "apCost": 1,
+      "art": "art/loc-medbay.jpg"
+    },
+    {
+      "id": "market",
+      "accent": "emerald",
+      "icon": "market",
+      "apCost": 1,
+      "art": "art/loc-market.jpg"
+    },
+    {
+      "id": "dorm",
+      "accent": "rose",
+      "icon": "dorm",
+      "apCost": 1,
+      "art": "art/loc-dorm.jpg"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "rachel",
+      "accent": "violet",
+      "portrait": "art/npc-rachel.jpg",
+      "metFlag": "met_rachel",
+      "allyFlag": "rachel_ally",
+      "betrayFlag": "rachel_betrayed"
+    },
+    {
+      "id": "chen",
+      "accent": "sky",
+      "portrait": "art/npc-chen.jpg",
+      "metFlag": "met_chen",
+      "allyFlag": "chen_ally",
+      "betrayFlag": "chen_betrayed"
+    },
+    {
+      "id": "ilya",
+      "accent": "emerald",
+      "portrait": "art/npc-ilya.jpg",
+      "metFlag": "met_ilya",
+      "allyFlag": "ilya_ally",
+      "betrayFlag": "ilya_betrayed"
+    },
+    {
+      "id": "nadia",
+      "accent": "rose",
+      "portrait": "art/npc-nadia.jpg",
+      "metFlag": "met_nadia",
+      "allyFlag": "nadia_ally",
+      "betrayFlag": "nadia_betrayed"
+    }
+  ],
+  "acts": [
+    {
+      "from": 1,
+      "id": "gate"
+    },
+    {
+      "from": 7,
+      "id": "fault"
+    },
+    {
+      "from": 13,
+      "id": "list"
+    }
+  ],
+  "endings": [
+    {
+      "id": "ending_together",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "flags": [
+          "rachel_ally",
+          "chen_ally",
+          "nadia_ally",
+          "ilya_ally"
+        ],
+        "moralityMin": 4,
+        "notFlags": [
+          "rachel_betrayed",
+          "nadia_betrayed"
+        ]
+      }
+    },
+    {
+      "id": "ending_gateopen",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "flags": [
+          "gate_opened"
+        ],
+        "moralityMin": 3
+      }
+    },
+    {
+      "id": "ending_broadcast",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "broadcast_done"
+        ]
+      }
+    },
+    {
+      "id": "ending_cure",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "cure_shipped"
+        ]
+      }
+    },
+    {
+      "id": "ending_identity",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "flags": [
+          "new_identity"
+        ],
+        "notFlags": [
+          "ilya_betrayed"
+        ]
+      }
+    },
+    {
+      "id": "ending_boat",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "flags": [
+          "escape_route"
+        ]
+      }
+    },
+    {
+      "id": "ending_soldlist",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "flags": [
+          "sold_list"
+        ],
+        "statMin": {
+          "money": 240
+        }
+      }
+    },
+    {
+      "id": "ending_golden",
+      "win": true,
+      "rarity": 5,
+      "cond": {
+        "statMin": {
+          "money": 240
+        }
+      }
+    },
+    {
+      "id": "ending_cutrate",
+      "win": true,
+      "rarity": 3,
+      "cond": {
+        "flags": [
+          "cut_rate_ticket"
+        ],
+        "statMin": {
+          "money": 40
+        }
+      }
+    },
+    {
+      "id": "ending_smuggler",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "statMin": {
+          "favor": 55
+        },
+        "notFlags": [
+          "rachel_betrayed"
+        ]
+      }
+    },
+    {
+      "id": "ending_lighthouse",
+      "win": true,
+      "rarity": 4,
+      "cond": {
+        "moralityMin": 3,
+        "anyFlags": [
+          "last_stand",
+          "stay_with_chen",
+          "gave_ticket"
+        ]
+      }
+    },
+    {
+      "id": "ending_loyalist",
+      "win": false,
+      "rarity": 3,
+      "cond": {
+        "moralityMax": -3
+      }
+    },
+    {
+      "id": "ending_forgotten",
+      "win": false,
+      "rarity": 2
+    },
+    {
+      "id": "ending_dead",
+      "win": false,
+      "rarity": 3
+    },
+    {
+      "id": "ending_mad",
+      "win": false,
+      "rarity": 3
+    },
+    {
+      "id": "ending_starved",
+      "win": false,
+      "rarity": 2
+    }
+  ]
+}

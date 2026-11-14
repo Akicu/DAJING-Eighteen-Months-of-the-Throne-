@@ -1,0 +1,115 @@
+{
+  "court_censor_coffin": {
+    "title": "The coffin at the steps",
+    "desc": "The old censor came into the palace carrying a plain coffin. The memorial is three pages: it accuses the Dowager's brother of eating army pay, conscripting military households, and taking three thousand qing of farmland. The coffin is his own. It sits at the bottom of the steps, and the lacquer has not dried yet.",
+    "choices": {
+      "flog": {
+        "text": "Drag him out. Forty strokes.",
+        "outcome": "He stopped making noise at the twenty-seventh. They carried him out alive; the coffin went unused. The next day all thirteen censorate desks submitted resignations together — not asking to leave office, asking you to take the order back. You shelved it without approving anyone."
+      },
+      "pardon": {
+        "text": "Pardon him, leave the memorial on the desk",
+        "outcome": "You say: a remonstrating official has committed no crime. Four words, and half the hall kneels. The memorial is neither issued nor burned. It stays on your desk. At every court session afterwards you can see its corner."
+      },
+      "hear": {
+        "text": "Let him finish",
+        "outcome": "He speaks for half an hour, from army pay to soldiers' widows. Then he knocks his head on the brick until it bleeds. You say: I have heard. Three words do not buy back three thousand qing of land, but from that day the censorate's memorials begin to say what they mean."
+      }
+    }
+  },
+  "court_land_survey": {
+    "title": "The missing four tenths",
+    "desc": "The Ministry of Revenue carries in the land registers: the empire's farmland is four tenths smaller than in the first emperor's reign. Every missing field is marked with the same word — exempt. The exemption was granted to the gentry, and their holdings now exceed a county's.",
+    "choices": {
+      "survey_all": {
+        "text": "Survey every province. Not one field exempt.",
+        "outcome": "The order goes out and thirteen provinces move at once. Three months later the acreage is frighteningly good, and the treasury takes in silver nobody budgeted for. The price is that every academy south of the river is writing about you, and writing with style."
+      },
+      "survey_small": {
+        "text": "Audit the smallholders. Leave the gentry alone.",
+        "outcome": "The survey starts in the poorest counties and recovers enough land to pay for a year of river works. The gentry breathe out and send a joint letter of thanks. You accept it, knowing the four tenths are still where they were."
+      },
+      "drop_survey": {
+        "text": "Drop it. Never raise it again.",
+        "outcome": "The Minister of Revenue carries the registers back out, very carefully. You sit in the hall a while longer. Some wars an emperor has to grow into before he can fight them."
+      }
+    }
+  },
+  "court_northern_envoy": {
+    "title": "The envoy who would not kneel",
+    "desc": "The northern envoy stands in the hall and does not kneel. He brings two things: the annual tribute cut in half, and a market. Twelve carts of hides are stopped outside Xuanwu Gate, frozen stiff. He says: our herds for your iron pots and salt. Both sides live.",
+    "choices": {
+      "feast": {
+        "text": "Feast him. Send him back with gifts.",
+        "outcome": "He drinks three bowls, and at the gate he kneels once — by their custom, only to heaven and earth. Twenty carts of return gifts go with him, more than his hides. That winter no riders come against the northern gate."
+      },
+      "insult": {
+        "text": "Have him forced to his knees",
+        "outcome": "Two guards press his shoulders down; he never bends. In the end you wave them off. He leaves the twelve carts of hides at the gate, not taking a single one. Three years later his name appears in a battle report from the north."
+      },
+      "market": {
+        "text": "No tribute talk. Open a market instead.",
+        "outcome": "You mark out a ground beyond the pass, set a customs post, and cap iron pots at three catties. The first month's tax is small; the second doubles. Some people look at that silver and see something else: that there is a road besides the sword."
+      }
+    }
+  },
+  "court_red_brush": {
+    "title": "The red brush",
+    "desc": "Wang Bao kneels, holding not a memorial but an old seal with a chipped corner — the Grand Secretariat's vermilion brush seal. He says: Your Majesty reviews three hundred memorials a day, until the third watch, until the brush will not stay in your hand. Let this slave take half. Your Majesty need only nod.",
+    "choices": {
+      "grant_seal": {
+        "text": "Give him the seal",
+        "outcome": "From that day memorials go to the Directorate of Ceremonial first, and reach your desk with a slip of paper on each one saying what should be written. Your hand stops aching. You sleep enough. Six months later you realise you have not read a single memorial end to end in three months."
+      },
+      "take_seal": {
+        "text": "Take the seal back. Lock it in the treasury.",
+        "outcome": "The seal goes into the inner vault and the key hangs at your waist. That night you work until the fourth watch and your sight swims at morning court. Wang Bao says nothing from the steps. He only moves the candle a little closer."
+      },
+      "split_seal": {
+        "text": "Split the brush with the Grand Secretariat. No eunuch touches it.",
+        "outcome": "The Chancellor's hand shakes when he takes his half. From then on the Secretariat and the Directorate watch each other. Half the memorials stop coming to your desk, and the ones that come are two factions impeaching each other."
+      }
+    }
+  },
+  "court_guard_rotation": {
+    "title": "The guard rotation",
+    "desc": "Ten days after the letter was intercepted, the commander of the capital guard reports himself ill. The same day the Ministry of War receives three rotation orders for the capital garrison. The dates have been altered — carefully, three days later each. Three days is enough for a column to walk from the west of the city to the palace gate.",
+    "choices": {
+      "replace_commander": {
+        "text": "Take his tally",
+        "outcome": "The tally is recovered that night and his residence surrounded. He does not resist. Handing over the seal he says one thing: Your Majesty, this subject never thought of it. You do not know whether he means he never thought of rebelling, or never thought you would suspect him."
+      },
+      "double_guard": {
+        "text": "Double the watch. Men you trust.",
+        "outcome": "Two hundred thousand taels are released and twelve hundred unfamiliar faces appear in the palace. You sleep three full nights. On the fourth, every footstep makes you open your eyes."
+      },
+      "wait_and_see": {
+        "text": "Say nothing. Watch what he does next.",
+        "outcome": "You do nothing. The rotation happens on schedule, the days go on, nothing occurs. Afterwards, every time you pass the gate you count the guards. You stop at the seventh."
+      },
+      "rush_gate": {
+        "text": "Do not wait for the rotation. Take the guard to the east gate tonight.",
+        "win": "The east gate changes its locks, three days ahead of the paperwork. You stand in the archway watching the sky go pale and none of the twenty men beside you speaks. At dawn the commander submits a leave request. He really is ill.",
+        "lose": "They moved half a quarter-hour before you. The east gate opens, seven guards die, and your own men carry you back into the inner city. The rotation proceeds the next day and no one mentions the night. Seven coffins leave by the west gate. None of them has a name."
+      }
+    }
+  },
+  "court_blood_letter": {
+    "title": "The blood letter",
+    "desc": "A blood letter is pasted on the examination hall wall. The words are a student's; the blood is the censor's — he died on the seventh day after the flogging. Copies have passed through the six ministries three times, and each copy has a few more sentences than the last.",
+    "choices": {
+      "hunt_them": {
+        "text": "Hunt down everyone who copied it",
+        "outcome": "Nineteen are arrested, the youngest sixteen. The wall is scraped clean. What cannot be scraped clean is one sentence: what died under the rod was not a censor, it was the face of the court. It stays in your ear for years."
+      },
+      "reverse_it": {
+        "text": "Honour him, reverse the sentence, provide for his family",
+        "outcome": "The day the order goes out, the students kneel along the whole street. You release two hundred thousand taels: half to the family, half to repair the censorate's old hall. The Chancellor says in open court: this deed is worth ten years of lectures."
+      },
+      "let_it_stand": {
+        "text": "Don't investigate. Don't acknowledge it.",
+        "outcome": "The letter stays on the wall three days and the rain fades it. Nobody dies for it, and nobody is compensated for it. You do nothing, and it passes, the way a great many things pass."
+      }
+    }
+  }
+}

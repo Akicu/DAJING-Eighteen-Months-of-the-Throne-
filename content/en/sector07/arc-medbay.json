@@ -1,0 +1,148 @@
+{
+  "medbay_chen_intro": {
+    "title": "Dr. Chen and three cold boxes",
+    "desc": "Half the lights in the medbay are off. Dr. Chen is crouched on the floor counting three cold boxes stamped with a pharma batch number. \"Serum samples,\" she says. \"They collect them tomorrow, then burn them. This disease is treatable.\"",
+    "choices": {
+      "steal_samples": {
+        "text": "Help her move the boxes out",
+        "outcome": "You pushed them out the back and into a corpse cart. She said nothing the whole way, then, at the door: \"I'm Chen Jing. If you hadn't come, I'd have died here tonight.\""
+      },
+      "buy_meds": {
+        "text": "Just buy medicine. Ask nothing",
+        "req": "Needs 20 credits",
+        "outcome": "She took the money, gave you two boxes of antipyretics and nudged the cold boxes further into the corner. You heard her lock the door behind you."
+      },
+      "report_her": {
+        "text": "Report her for hoarding samples",
+        "outcome": "Thirty credits. Next day every light in the medbay was on and two pharma vans pulled up. When they took her away she was still holding a vial."
+      }
+    }
+  },
+  "medbay_chen_raid": {
+    "title": "Four company men at the door",
+    "desc": "Unmarked black uniforms, a clipboard. \"Three cold boxes. Serial 7741 through 7743.\" The one in front slaps it on the table. \"Dr. Chen. Don't make this difficult.\"",
+    "choices": {
+      "block": {
+        "text": "Stand in front of the boxes",
+        "outcome": "The first blow caught your ribs and your breathing changed sound. They left without the boxes, but they took your ID badge."
+      },
+      "handover": {
+        "text": "Let them take it",
+        "outcome": "The boxes went into the van, four men working efficiently. Dr. Chen watched from the end of the corridor. She didn't cry. She buttoned her coat, one button at a time."
+      },
+      "swap": {
+        "text": "Swap in three decoys",
+        "req": "Needs 30 credits",
+        "outcome": "Thirty credits bought three identical empty boxes, filled with ice and saline. They weighed them and said, \"Next time, be quicker.\""
+      }
+    }
+  },
+  "medbay_chen_daughter": {
+    "title": "Her daughter is in B sector",
+    "desc": "Dr. Chen sets a photograph on the table, corners worn round. \"Fourteen. B sector quarantine camp, number 2291.\" She slides a transfer form across. \"You have signing authority.\"",
+    "choices": {
+      "pull_strings": {
+        "text": "Use your authority to get her out",
+        "outcome": "You signed her out as a medical volunteer. The girl came through thin as a shadow. She didn't run to her mother. She just stood there."
+      },
+      "admit_powerless": {
+        "text": "Tell her you can't sign it",
+        "outcome": "She put the photograph away and said, \"I know.\" Then she went back to work and did eleven debridements that day without a word."
+      },
+      "sell_hope": {
+        "text": "Take the money and promise to try",
+        "outcome": "Twenty-five credits. She asked you every week how it was going. You said soon, every week. In week four she stopped asking."
+      }
+    }
+  },
+  "medbay_trial": {
+    "title": "Twelve vials left",
+    "desc": "Twelve trial doses in the cold box. Forty critical cases in the corridor. \"By protocol this needs phase three,\" Dr. Chen says. \"By body count, it needs to happen now.\"",
+    "choices": {
+      "run_trial": {
+        "text": "Dose the twelve worst cases",
+        "outcome": "Nine fevers broke. Three didn't. You wrote \"75% effective\" in the record and found your hand shaking when you finished."
+      },
+      "block_trial": {
+        "text": "Wait for authorisation",
+        "outcome": "You locked the box in the cabinet. Authorisation came in three days. By then two were dead and ten were still waiting. The form said approved, patient assumes risk."
+      },
+      "sell_trial": {
+        "text": "Sell it on the black market",
+        "outcome": "Sixty credits, one transaction. Twelve vials went into a private clinic in C sector that night at eighty each. You heard it saved people. You heard it killed people."
+      }
+    }
+  },
+  "medbay_chen_choice": {
+    "title": "The samples can only go one place",
+    "desc": "Dr. Chen puts the cold box on the table. The thermometer reads minus eighteen. \"Three buyers,\" she says. \"Quarantine control, the camps, or your boat. Choose.\"",
+    "choices": {
+      "broadcast_formula": {
+        "text": "Broadcast the extraction protocol",
+        "outcome": "Three hours reading the process out loud, and Nadia's transmitter carried it four hundred kilometres. By the next day four camps were compounding their own."
+      },
+      "trade_berth": {
+        "text": "Trade it to quarantine control for a berth",
+        "outcome": "Eighty credits and a handwritten boarding chit. Dr. Chen watched you take the money, then said, \"What's in that box could have saved twenty thousand people.\""
+      },
+      "carry_aboard": {
+        "text": "Take it on board",
+        "outcome": "You packed the box into your rucksack and let the weight settle on your shoulder. It could save a great many people — if you ever find a lab."
+      }
+    }
+  },
+  "medbay_ward_round": {
+    "title": "Forty beds, forty-nine patients",
+    "desc": "Nine of them are on stretchers in the corridor. One is still talking. The other eight make no sound at all.",
+    "choices": {
+      "unplug": {
+        "text": "Pull the line on the far bed",
+        "outcome": "You were quick and nobody noticed. The bed was free and a nurse had fresh sheets on it inside two minutes. You smoked half a cigarette at the end of the corridor."
+      },
+      "share_ration": {
+        "text": "Give your rations to the corridor",
+        "outcome": "Three days of biscuits, handed out. They shared it and left you half a piece. You shook with hunger that day and slept better than you had in weeks."
+      },
+      "walk": {
+        "text": "Do the round and do nothing",
+        "outcome": "You walked all forty beds and remembered every face. Outside, your hand closed into a fist in your pocket."
+      }
+    }
+  },
+  "medbay_quarantine_break": {
+    "title": "The camp wall came down",
+    "desc": "At three in the morning the B sector perimeter was pushed over. Two hundred people who weren't dead yet came through. The medbay door is the only one still locked.",
+    "choices": {
+      "open_ward": {
+        "text": "Open up. Take them all",
+        "outcome": "You took sixty-seven. The rest were penned at the junction by riot control. There wasn't a clean patch of floor in the medbay that day."
+      },
+      "lock": {
+        "text": "Keep it locked",
+        "outcome": "The pounding went on for forty minutes. You sat with your back against the door and counted your own heartbeat. Then it went quiet outside."
+      },
+      "ticket_only": {
+        "text": "Only those with boarding chits",
+        "outcome": "Seventeen came in on paper. The rest were shut out. You charged three of them passage — thirty credits total. The paper felt hot in your hand."
+      }
+    }
+  },
+  "medbay_stay_with_chen": {
+    "title": "She says she isn't leaving",
+    "desc": "Two nights before departure, Dr. Chen is filing records. \"There's no lab on that submarine,\" she says. \"There are two thousand patients here. If I go, nobody even writes it down.\"",
+    "choices": {
+      "stay": {
+        "text": "Stay with her",
+        "outcome": "You folded your ticket into a drawer. She looked up once and said, \"Think about it.\" You said you had. That night you filed three hundred records together."
+      },
+      "persuade": {
+        "text": "Try to get her on the boat",
+        "outcome": "You talked for forty minutes. She didn't argue and didn't agree. Finally: \"You go ahead. I'll finish with these patients.\" You knew she wouldn't come."
+      },
+      "leave_alone": {
+        "text": "Leave alone",
+        "outcome": "You said nothing and closed the door softly. The corridor was quiet. You could hear her turning pages inside, all the way to the end of the building."
+      }
+    }
+  }
+}
